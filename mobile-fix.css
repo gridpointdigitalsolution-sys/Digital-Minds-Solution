@@ -557,3 +557,159 @@ body, html[data-theme="light"] body {
     justify-content: space-between !important;
   }
 }
+
+/* ── Mobile nav layout: logo left, controls right, no overlap ── */
+@media (max-width: 900px) {
+  #navbar {
+    background: rgba(8, 16, 30, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid #1E3055 !important;
+  }
+
+  #navbar .nav-inner,
+  .nav-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    padding: 0 16px !important;
+    width: 100% !important;
+  }
+
+  .nav-logo {
+    flex: 0 0 auto !important;
+    margin-right: auto !important;
+  }
+
+  .nav-logo img {
+    height: 36px !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  .nav-right {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+
+  /* Lang switcher: compact on mobile */
+  .lang-switcher,
+  .lang-btn {
+    flex-shrink: 0 !important;
+  }
+  .lang-btn {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+
+  .nav-hamburger {
+    flex-shrink: 0 !important;
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  /* Kill the floating pill on scroll — keep nav as one unified bar */
+  #navbar.scrolled {
+    background: rgba(8, 16, 30, 0.95) !important;
+    border-radius: 0 !important;
+  }
+  #navbar.scrolled .nav-inner {
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 16px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ── No white backgrounds anywhere — force dark unified ── */
+section,
+[data-theme="light"] section,
+[data-theme="light"] section:nth-of-type(even),
+[data-theme="light"] body,
+[data-theme="light"] #footer,
+[data-theme="light"] footer,
+[data-theme="light"] .work-card,
+[data-theme="light"] .case-card,
+[data-theme="light"] .team-card,
+[data-theme="light"] .deliverable,
+[data-theme="light"] .value-item,
+[data-theme="light"] .insight-card,
+[data-theme="light"] .svc-card,
+[data-theme="light"] .pillar-card,
+[data-theme="light"] .seo-card,
+[data-theme="light"] .pricing-card,
+[data-theme="light"] .channel-card,
+[data-theme="light"] .contact-form-card,
+[data-theme="light"] .article-card,
+[data-theme="light"] #contact-main,
+[data-theme="light"] #contact-hero,
+[data-theme="light"] #trust-strip,
+[data-theme="light"] .light-bg {
+  background: #08101E !important;
+  color: #FFFFFF !important;
+  border-color: #1E3055 !important;
+}
+
+/* Cards must stay readable */
+.work-card, .case-card, .team-card, .insight-card, .svc-card, .pillar-card,
+.seo-card, .pricing-card, .channel-card, .article-card, .deliverable,
+.value-item {
+  background: #0D1826 !important;
+  border: 1px solid #1E3055 !important;
+}
+
+/* Inputs / form fields readable on dark */
+input, textarea, select,
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: #0D1826 !important;
+  color: #FFFFFF !important;
+  border-color: #1E3055 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #B8CBE8 !important;
+  opacity: 0.6;
+}
+
+/* Body text on light theme overrides */
+[data-theme="light"] p,
+[data-theme="light"] li,
+[data-theme="light"] td,
+[data-theme="light"] label,
+[data-theme="light"] .body-lg,
+[data-theme="light"] .channel-desc,
+[data-theme="light"] .channel-detail,
+[data-theme="light"] .form-label,
+[data-theme="light"] .form-note,
+[data-theme="light"] .footer-brand p,
+[data-theme="light"] .footer-col ul a,
+[data-theme="light"] .footer-bottom p {
+  color: #B8CBE8 !important;
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] .h1,
+[data-theme="light"] .h2,
+[data-theme="light"] .h3,
+[data-theme="light"] .h4,
+[data-theme="light"] .footer-col-title,
+[data-theme="light"] .channel-card .h3,
+[data-theme="light"] .contact-form-card .h3 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="light"] .nav-logo img {
+  filter: none !important;
+}
