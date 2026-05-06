@@ -1,7 +1,11 @@
 Options -Indexes
 RewriteEngine On
 
-# Serve .html files without extension in URL
+# Redirect .html URLs to clean URLs (301 permanent)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Serve clean URLs by internally mapping to .html files
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
