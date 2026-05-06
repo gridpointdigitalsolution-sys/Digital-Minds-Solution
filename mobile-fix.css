@@ -19,6 +19,47 @@ body {
   box-sizing: border-box;
 }
 
+/* ── Nav CTA: gold/amber style on all pages — matches home page ── */
+@media (min-width: 1181px) {
+  .nav-right .btn-gold,
+  .nav-actions .nav-cta {
+    color: var(--amber-gold, #E5A820) !important;
+    border: 2px solid var(--amber-gold, #E5A820) !important;
+    background: transparent !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    padding: 10px 18px !important;
+    letter-spacing: .02em !important;
+    box-shadow: 0 6px 24px rgba(229,168,32,.18) !important;
+    border-radius: 8px !important;
+  }
+  .nav-right .btn-gold::before,
+  .nav-actions .nav-cta::before {
+    display: block !important;
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--amber-gold, #E5A820) !important;
+    transition: left .4s cubic-bezier(.4,0,.2,1) !important;
+    z-index: -1 !important;
+  }
+  .nav-right .btn-gold::after,
+  .nav-actions .nav-cta::after {
+    display: none !important;
+  }
+  .nav-right .btn-gold:hover,
+  .nav-actions .nav-cta:hover {
+    color: #08101E !important;
+  }
+  .nav-right .btn-gold:hover::before,
+  .nav-actions .nav-cta:hover::before {
+    left: 0 !important;
+  }
+}
+
 /* ── Hide nav CTA at tablet + mobile (unified button system overrides inline
       display:none at 1180px — this external file fires after, wins) ── */
 @media (max-width: 1180px) {
