@@ -1327,6 +1327,33 @@ button{cursor:pointer;border:none;background:none;font:inherit}
 /* Hide nav CTA on narrow viewports */
 @media(max-width:1180px){.nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}#navbar:not(.scrolled) .nav-inner{padding-right:40px!important}}
 
+/* ── NAV CTA: Gold pill, inset from edge, bigger, white-fill hover ── */
+.nav-actions .nav-cta,.nav-right .btn-gold{
+  right:52px!important;
+  top:16px!important;
+  font-size:15px!important;
+  font-weight:800!important;
+  padding:13px 30px!important;
+  border-radius:99px!important;
+  color:var(--amber-gold,#E5A820)!important;
+  border:2px solid var(--amber-gold,#E5A820)!important;
+  box-shadow:0 4px 22px rgba(229,168,32,.22)!important;
+  letter-spacing:.03em!important;
+}
+.nav-actions .nav-cta::after,.nav-right .btn-gold::after{
+  background:#fff!important;
+  border-radius:99px!important;
+}
+.nav-actions .nav-cta:hover,.nav-right .btn-gold:hover{
+  color:#08101E!important;
+  border-color:#fff!important;
+}
+#navbar:not(.scrolled) .nav-inner{padding-right:210px!important}
+@media(max-width:1180px){
+  .nav-actions .nav-cta,.nav-right .btn-gold{display:none!important}
+  #navbar:not(.scrolled) .nav-inner{padding-right:40px!important}
+}
+
 /* ── AI CHAT ANIMATION ── */
 .ai-chat-scroll{display:flex;flex-direction:column;gap:12px;max-height:200px;overflow:hidden;position:relative;margin-bottom:12px}
 .ai-chat-scroll::after{content:'';position:absolute;bottom:0;left:0;right:0;height:48px;background:linear-gradient(transparent,var(--card-dark));pointer-events:none}
