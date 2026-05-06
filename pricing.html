@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing. Digital Minds Solution</title>
+  <title>Pricing. Digital Minds Solutions</title>
   <meta name="description" content="Transparent investment ranges for every growth stage. From focused optimisation to full-stack digital transformation. no hidden fees, no offshore handoffs." />
   <link rel="canonical" href="https://digitalminds.solutions/pricing" />
 
@@ -1673,10 +1673,10 @@
           <div class="footer-logo">Digital<span>Minds</span><em>.</em></div>
           <p>Houston-based digital agency building growth infrastructure for ambitious brands across 9 countries. No outsourcing. No excuses. Just results.</p>
           <div class="footer-social">
-            <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
-            <a href="#" class="social-icon" aria-label="Instagram">ig</a>
-            <a href="#" class="social-icon" aria-label="Twitter / X">𝕏</a>
-            <a href="#" class="social-icon" aria-label="TikTok">tt</a>
+            <a href="https://www.linkedin.com/company/digital-minds-solutions" target="_blank" rel="noopener">in</a>
+            <a href="https://www.instagram.com/digitalminds_solution" target="_blank" rel="noopener">ig</a>
+            <a href="https://x.com/DigitalMindsSol" class="social-icon" aria-label="Twitter / X" target="_blank" rel="noopener">𝕏</a>
+            <a href="https://www.tiktok.com/@digitalminds_solution" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener">tt</a>
           </div>
         </div>
         <div class="footer-col">
@@ -1691,7 +1691,7 @@
         <div class="footer-col">
           <h5>Services</h5>
           <ul>
-            <li><a href="service-web.html-design">Web Design</a></li>
+            <li><a href="service-web.html">Web Design</a></li>
             <li><a href="service-seo.html">SEO / AEO / GEO</a></li>
             <li><a href="services.html#paid-media">Paid Media</a></li>
             <li><a href="services.html#automation">Automation</a></li>
@@ -1710,7 +1710,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Digital Minds Solution LLC. All rights reserved. Houston, TX.</p>
+        <p>© 2026 Digital Minds Solutions LLC. All rights reserved. Houston, TX.</p>
         <div class="footer-bottom-links">
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
@@ -1859,5 +1859,20 @@
   <script src="footer-marquee.js"></script>
 
 
+<script>
+/* GSAP visibility fallback — forces .gs elements visible if ScrollTrigger never fires */
+(function(){
+  var DELAY = 3500;
+  setTimeout(function(){
+    document.querySelectorAll('.gs').forEach(function(el){
+      if(parseFloat(getComputedStyle(el).opacity) < 0.1){
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      }
+    });
+  }, DELAY);
+})();
+</script>
 </body>
 </html>
