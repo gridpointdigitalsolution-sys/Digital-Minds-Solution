@@ -5,8 +5,9 @@
    ============================================================ */
 
 /* ── Stop horizontal overflow everywhere ── */
+/* overflow-x:clip on html avoids breaking position:fixed (unlike hidden) */
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 body {
