@@ -1,0 +1,55 @@
+/* ============================================================
+   DMS MOUSE GLOW — gold radial spotlight CSS
+   ============================================================ */
+#dms-mouse-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transform: translate(-9999px, -9999px);
+  background: radial-gradient(
+    circle,
+    rgba(229, 168, 32, 0.18) 0%,
+    rgba(229, 168, 32, 0.10) 25%,
+    rgba(229, 168, 32, 0.04) 45%,
+    rgba(229, 168, 32, 0)    70%
+  );
+  mix-blend-mode: screen;
+  filter: blur(20px);
+  transition: opacity 0.4s ease;
+  will-change: transform, opacity;
+}
+
+#dms-mouse-glow.dms-glow-hot {
+  background: radial-gradient(
+    circle,
+    rgba(229, 168, 32, 0.32) 0%,
+    rgba(229, 168, 32, 0.18) 25%,
+    rgba(229, 168, 32, 0.06) 45%,
+    rgba(229, 168, 32, 0)    70%
+  );
+}
+
+/* Light theme: tone down brightness, switch blend mode */
+[data-theme="light"] #dms-mouse-glow {
+  mix-blend-mode: multiply;
+  background: radial-gradient(
+    circle,
+    rgba(229, 168, 32, 0.20) 0%,
+    rgba(229, 168, 32, 0.10) 30%,
+    rgba(229, 168, 32, 0)    65%
+  );
+}
+[data-theme="light"] #dms-mouse-glow.dms-glow-hot {
+  background: radial-gradient(
+    circle,
+    rgba(229, 168, 32, 0.30) 0%,
+    rgba(229, 168, 32, 0.15) 30%,
+    rgba(229, 168, 32, 0)    65%
+  );
+}
