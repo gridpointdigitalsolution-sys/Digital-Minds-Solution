@@ -148,15 +148,18 @@ img { display: block; max-width: 100%; }
 .article-hero {
   padding-top: calc(var(--nav-h) + 80px);
   padding-bottom: 72px;
-  background: linear-gradient(160deg, #050a14 0%, var(--cobalt-shade) 55%, #0A0E1A 100%);
+  background-color: #050a14;
+  background-size: cover;
+  background-position: center;
   position: relative;
   overflow: hidden;
 }
 .article-hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 65% 40%, rgba(0,71,171,0.22) 0%, transparent 65%);
+  background: linear-gradient(160deg, rgba(5,10,20,0.88) 0%, rgba(10,36,99,0.62) 55%, rgba(10,14,26,0.9) 100%);
   pointer-events: none;
+  z-index: 0;
 }
 [data-theme="light"] .article-hero { background: linear-gradient(160deg, #0A2463 0%, #1B3A8A 55%, #0A2463 100%); }
 .hero-container {
