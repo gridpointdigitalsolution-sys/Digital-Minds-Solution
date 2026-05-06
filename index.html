@@ -45,7 +45,7 @@
    RESET
    ============================================================ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%overflow-x:hidden;}
 body{
   font-family:var(--font-body);
   background:var(--deep-space);
@@ -556,7 +556,7 @@ button{cursor:pointer;border:none;background:none;font:inherit}
   border:1px solid rgba(229,168,32,.3);
 }
 @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.services-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr}}
 
 /* ============================================================
    FEATURED WORK
@@ -1455,6 +1455,7 @@ footer#footer{position:relative;overflow:hidden}
 <!-- /DMS:OG -->
   <link rel="stylesheet" href="buttons.css">
   <link rel="stylesheet" href="loader.css">
+  <link rel="stylesheet" href="mobile-fix.css">
 </head>
 <body>
   <script src="loader.js"></script>
