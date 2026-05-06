@@ -18,6 +18,16 @@ body {
   box-sizing: border-box;
 }
 
+/* ── Hide nav CTA at tablet + mobile (unified button system overrides inline
+      display:none at 1180px — this external file fires after, wins) ── */
+@media (max-width: 1180px) {
+  .nav-right .btn-gold,
+  .nav-actions .nav-cta,
+  .nav-cta {
+    display: none !important;
+  }
+}
+
 /* ── Nav: never overflow viewport, hamburger always visible ── */
 @media (max-width: 900px) {
   #navbar,
@@ -33,13 +43,6 @@ body {
     padding-right: 16px !important;
     width: 100% !important;
     max-width: 100% !important;
-  }
-  /* Force CTA off on mobile — hamburger takes its place */
-  .nav-right .btn-gold,
-  .nav-actions .nav-cta,
-  .nav-right .btn-gold,
-  .nav-cta {
-    display: none !important;
   }
   /* Hamburger must show */
   .nav-hamburger,
