@@ -436,3 +436,124 @@ a.btn-blue:hover {
   background: var(--amber-gold, #E5A820) !important;
   color: #08101E !important;
 }
+
+/* ── FORCE DARK THEME PERMANENTLY — disable all light theme styles ── */
+html[data-theme="light"],
+html[data-theme] {
+  /* Force every CSS variable back to dark values */
+}
+
+/* Override all [data-theme="light"] selectors by raising body to dark */
+html, html[data-theme="light"] {
+  background: #08101E !important;
+  color: #FFFFFF !important;
+}
+
+body, html[data-theme="light"] body {
+  background: #08101E !important;
+  color: #FFFFFF !important;
+}
+
+/* Cancel ALL light theme overrides — universal selector */
+[data-theme="light"] *,
+[data-theme="light"] *::before,
+[data-theme="light"] *::after {
+  /* leave layout alone, only fight color-related light values where needed */
+}
+
+/* Most common light-theme overrides that break visibility */
+[data-theme="light"] body,
+[data-theme="light"] section,
+[data-theme="light"] #footer,
+[data-theme="light"] footer,
+[data-theme="light"] .work-card,
+[data-theme="light"] .case-card,
+[data-theme="light"] .pricing-card,
+[data-theme="light"] .insight-card,
+[data-theme="light"] .svc-card,
+[data-theme="light"] .pillar-card,
+[data-theme="light"] .seo-card,
+[data-theme="light"] .channel-card,
+[data-theme="light"] .contact-form-card {
+  background: #08101E !important;
+  color: #FFFFFF !important;
+  border-color: #1E3055 !important;
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] .h1,
+[data-theme="light"] .h2,
+[data-theme="light"] .h3,
+[data-theme="light"] .h4 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="light"] p,
+[data-theme="light"] li,
+[data-theme="light"] td,
+[data-theme="light"] label,
+[data-theme="light"] .body-lg {
+  color: #B8CBE8 !important;
+}
+
+[data-theme="light"] .nav-links a {
+  color: #B8CBE8 !important;
+}
+
+[data-theme="light"] .nav-logo img {
+  filter: none !important;
+}
+
+/* ── Case study pages: nav-links must hide on mobile ── */
+@media (max-width: 900px) {
+  /* Force any nav-links list to be hidden on mobile, not row-displayed */
+  #navbar .nav-links,
+  nav .nav-links,
+  .nav-links {
+    display: none !important;
+  }
+  /* But keep mobile-menu nav-links visible when menu is open */
+  .mobile-menu .nav-links,
+  .mobile-menu.open .nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+/* ── Let's Talk marquee — prevent overlap on mobile ── */
+@media (max-width: 768px) {
+  .marquee,
+  .marquee-track,
+  .scrolling-text,
+  [class*="marquee"],
+  [class*="ticker"],
+  .dms-marquee-text {
+    font-size: clamp(40px, 12vw, 80px) !important;
+    gap: 40px !important;
+  }
+  .marquee-item,
+  .marquee-text,
+  .scrolling-item,
+  .dms-marquee-group,
+  .dms-marquee-text {
+    padding: 0 20px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ── Scrolled nav pill — clean layout without theme toggle ── */
+@media (max-width: 900px) {
+  #navbar.scrolled .nav-right {
+    gap: 8px !important;
+  }
+  #navbar.scrolled .lang-switcher {
+    margin: 0 !important;
+  }
+  /* Make sure scrolled nav doesn't go off-center */
+  #navbar.scrolled .nav-inner {
+    justify-content: space-between !important;
+  }
+}
