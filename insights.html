@@ -1060,15 +1060,6 @@
 
       </div><!-- /articles-grid -->
 
-      <!-- Pagination -->
-      <div class="pagination gs">
-        <button class="page-btn arrow">←</button>
-        <button class="page-btn active">1</button>
-        <button class="page-btn">2</button>
-        <button class="page-btn">3</button>
-        <button class="page-btn">4</button>
-        <button class="page-btn arrow">→</button>
-      </div>
     </div>
   </section>
 
@@ -1302,14 +1293,6 @@
         });
       });
 
-      // Pagination (visual only — placeholder)
-      document.querySelectorAll('.page-btn:not(.arrow)').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.page-btn:not(.arrow)').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      });
 
       // GSAP
       window.addEventListener('load', function () {

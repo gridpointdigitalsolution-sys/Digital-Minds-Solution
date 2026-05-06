@@ -399,14 +399,22 @@ a{text-decoration:none;color:inherit}img{display:block;max-width:100%}ul{list-st
   transition:color .2s,border-color .2s,background .2s;
 }
 .industry-pill:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.07)}
-.track-countries{margin-top:48px;text-align:center}
-.countries-label{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--muted-blue);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
-.country-list{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.track-countries{margin-top:48px}
+.countries-label{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--muted-blue);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.country-list{display:flex;flex-wrap:nowrap;gap:10px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:rgba(229,168,32,.25) transparent}
+.country-list::-webkit-scrollbar{height:3px}
+.country-list::-webkit-scrollbar-track{background:transparent}
+.country-list::-webkit-scrollbar-thumb{background:rgba(229,168,32,.3);border-radius:3px}
 .country-tag{
-  font-family:var(--font-head);font-size:14px;font-weight:700;
-  color:var(--white);padding:8px 20px;border-radius:var(--r-md);
-  background:var(--cobalt-shade);border:1px solid var(--card-border);
+  font-family:var(--font-head);font-size:13px;font-weight:700;
+  color:rgba(255,255,255,.85);padding:9px 22px;border-radius:99px;flex-shrink:0;
+  background:rgba(0,47,167,.14);border:1px solid rgba(0,47,167,.38);
+  white-space:nowrap;cursor:default;
+  transition:background .2s,border-color .2s,color .2s,transform .15s;
 }
+.country-tag:hover{background:rgba(229,168,32,.12);border-color:rgba(229,168,32,.5);color:var(--amber-gold);transform:translateY(-2px)}
+.country-tag.country-etc{color:var(--muted-blue);font-style:italic;background:transparent;border-style:dashed;border-color:rgba(107,122,153,.3)}
+.country-tag.country-etc:hover{color:var(--amber-gold);border-color:rgba(229,168,32,.45);background:rgba(229,168,32,.07);font-style:normal}
 @media(max-width:900px){.track-stats{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.track-stats{grid-template-columns:1fr 1fr}}
 
@@ -789,7 +797,7 @@ a{text-decoration:none;color:inherit}img{display:block;max-width:100%}ul{list-st
           </div>
           <div class="founder-hero-info">
             <div class="founder-hero-name">Phillip Akin</div>
-            <div class="founder-hero-role">Co-Founder &amp; Strategy Director</div>
+            <div class="founder-hero-role">Co-Founder, Trustee &amp; Strategy Director</div>
             <button class="founder-read-btn" data-founder="2">Read Bio <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
         </div>
@@ -1047,17 +1055,18 @@ a{text-decoration:none;color:inherit}img{display:block;max-width:100%}ul{list-st
       </div>
     </div>
     <div class="track-countries gs">
-      <div class="countries-label">Countries we've delivered results in</div>
+      <div class="countries-label">Markets we've delivered results in</div>
       <div class="country-list">
-        <span class="country-tag">🇺🇸 United States</span>
-        <span class="country-tag">🇬🇧 United Kingdom</span>
-        <span class="country-tag">🇦🇪 UAE</span>
-        <span class="country-tag">🇨🇦 Canada</span>
-        <span class="country-tag">🇦🇺 Australia</span>
-        <span class="country-tag">🇿🇦 South Africa</span>
-        <span class="country-tag">🇸🇰 Slovakia</span>
-        <span class="country-tag">🇷🇺 Russia</span>
-        <span class="country-tag">🌍 Middle East</span>
+        <span class="country-tag">United States</span>
+        <span class="country-tag">United Kingdom</span>
+        <span class="country-tag">UAE</span>
+        <span class="country-tag">Canada</span>
+        <span class="country-tag">Australia</span>
+        <span class="country-tag">South Africa</span>
+        <span class="country-tag">Slovakia</span>
+        <span class="country-tag">Russia</span>
+        <span class="country-tag">Middle East</span>
+        <span class="country-tag country-etc">&amp; wherever you are →</span>
       </div>
     </div>
   </div>
@@ -1372,7 +1381,7 @@ document.querySelectorAll("a[href="https://cal.com/digitalminds-fx51uj"]").forEa
 </div>
 <script>
 (function(){
-  var founders={'1':{img:'../ASSETS/team/founder1 Mr Churchill Bracknell.jpg.png',name:'Churchill Bracknell',role:'Co-Founder & Technical Director · Houston, TX',bio:['Churchill Bracknell brings over 15 years of hands-on experience across web development, cybersecurity, software engineering, app development, and digital marketing. His technical range covers full-stack development, application security, complex software architecture, and performance-focused UI/UX — built through real projects across industries and continents.','He has worked alongside researchers and academics from MIT, applying rigorous engineering thinking to commercial digital problems. His career has covered companies across multiple industries and continents, and he has received multiple industry awards for his technical contributions.','At Digital Minds Solutions, Churchill leads the technical direction across every service — web builds, AI automation systems, software projects, and digital infrastructure. If something is being built, he ensures it is built to last, built to perform, and built to win.'],tags:['Web & App Development','Cybersecurity','Software Engineering','AI Systems','Digital Marketing','MIT Collaboration','15+ Years','Houston, TX']},'2':{img:'../ASSETS/team/founder2 Mr Philips Akin Phili.jpg.png',name:'Phillip Akin',role:'Co-Founder & Strategy Director · Houston, TX',bio:['Phillip Akin is a business strategist with over 25 years of experience advising companies on growth, marketing, and competitive positioning. Based in Houston, Texas, he has worked with organisations at every stage of development — from early-stage businesses to established companies rethinking how they compete in a digital-first world.','His expertise covers business strategy, digital marketing, content creation, brand positioning, and computer analysis. He treats them as one system — aligned to revenue, not activity metrics.','At Digital Minds Solutions, Phillip shapes how client businesses are positioned in the market and how the agency\'s work connects to real commercial outcomes.'],tags:['Business Strategy','Digital Marketing','Content Creation','Brand Positioning','Computer Analysis','25+ Years','Houston, TX']}};
+  var founders={'1':{img:'../ASSETS/team/founder1 Mr Churchill Bracknell.jpg.png',name:'Churchill Bracknell',role:'Co-Founder & Technical Director · Houston, TX',bio:['Churchill Bracknell brings over 15 years of hands-on experience across web development, cybersecurity, software engineering, app development, and digital marketing. His technical range covers full-stack development, application security, complex software architecture, and performance-focused UI/UX — built through real projects across industries and continents.','He has worked alongside researchers and academics from MIT, applying rigorous engineering thinking to commercial digital problems. His career has covered companies across multiple industries and continents, and he has received multiple industry awards for his technical contributions.','At Digital Minds Solutions, Churchill leads the technical direction across every service — web builds, AI automation systems, software projects, and digital infrastructure. If something is being built, he ensures it is built to last, built to perform, and built to win.'],tags:['Web & App Development','Cybersecurity','Software Engineering','AI Systems','Digital Marketing','MIT Collaboration','15+ Years','Houston, TX']},'2':{img:'../ASSETS/team/founder2 Mr Philips Akin Phili.jpg.png',name:'Phillip Akin',role:'Co-Founder, Trustee & Strategy Director · Houston, TX',bio:['Phillip Akin is a business strategist and corporate trustee with over 25 years of experience advising companies on growth, marketing, and competitive positioning. His background spans commercial strategy, organisational governance, and the kind of business development work that changes the trajectory of a company — not just its marketing numbers.','Based in Houston, Texas, he has worked with organisations at every stage: early-stage businesses finding their footing, mid-market companies restructuring for growth, and established brands rethinking how they compete in a digital-first world. His depth in business trust structures, commercial law interfaces, and stakeholder positioning gives DMS clients a strategic edge most agencies cannot offer.','His expertise covers business strategy, digital marketing, content creation, brand positioning, and analytical systems. He treats all of these as a single integrated engine — aligned to revenue and real commercial outcomes, not vanity metrics.','At Digital Minds Solutions, Phillip shapes how client businesses are positioned in the market, how the agency's work connects to real commercial outcomes, and how the business itself is structured to sustain long-term growth.'],tags:['Business Strategy','Corporate Trustee','Digital Marketing','Content Creation','Brand Positioning','Analytical Systems','25+ Years','Houston, TX']}};
   var overlay=document.getElementById('founderModal'),fImg=document.getElementById('fmodalImg'),fRole=document.getElementById('fmodalRole'),fName=document.getElementById('fmodalName'),fBio=document.getElementById('fmodalBio'),fTags=document.getElementById('fmodalTags'),fClose=document.getElementById('fmodalClose');
   function open(id){var f=founders[id];if(!f)return;fImg.src=f.img;fImg.alt=f.name;fRole.textContent=f.role;fName.textContent=f.name;fBio.innerHTML=f.bio.map(function(p){return'<p>'+p+'</p>';}).join('');fTags.innerHTML=f.tags.map(function(t){return'<span class="fmodal-tag">'+t+'</span>';}).join('');overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
   function close(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';}
