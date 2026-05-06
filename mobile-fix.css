@@ -713,3 +713,26 @@ input::placeholder, textarea::placeholder {
 [data-theme="light"] .nav-logo img {
   filter: none !important;
 }
+
+/* Ensure article thumbnails always render their inline background image */
+.article-thumb {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  display: block !important;
+  min-height: 200px !important;
+}
+.article-thumb-overlay {
+  background: linear-gradient(180deg, rgba(8,16,30,0) 0%, rgba(8,16,30,0.7) 100%) !important;
+}
+
+/* Ensure article hero inline background-image is not wiped by light-theme shorthand */
+[data-theme="light"] .article-hero {
+  background-color: #0A2463 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+[data-theme="light"] .article-hero::before {
+  background: linear-gradient(160deg, rgba(10,36,99,0.78) 0%, rgba(27,58,138,0.55) 55%, rgba(10,36,99,0.85) 100%) !important;
+}
