@@ -307,8 +307,20 @@
     .filter-inner {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
+    }
+    @media (max-width: 640px) {
+      .filter-inner {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .filter-inner::-webkit-scrollbar { display: none; }
+      .filter-pill { flex-shrink: 0; }
+      .filter-label { flex-shrink: 0; }
     }
     .filter-label {
       font-family: var(--font-code);
@@ -341,7 +353,7 @@
       gap: 28px;
     }
     @media (max-width: 1100px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px) { .articles-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .articles-grid { grid-template-columns: 1fr; } .article-card.span-2 { grid-column: 1; } }
 
     /* Featured span-2 article */
     .article-card.span-2 {
@@ -1269,10 +1281,7 @@
       function filterArticles(cat) {
         articleCards.forEach(card => {
           const match = cat === 'all' || card.dataset.cat === cat;
-          card.style.opacity = match ? '1' : '0.2';
-          card.style.pointerEvents = match ? '' : 'none';
-          card.style.transform = match ? '' : 'scale(0.97)';
-          card.style.transition = 'opacity 0.3s, transform 0.3s';
+          card.style.display = match ? '' : 'none';
         });
       }
 
@@ -1281,6 +1290,11 @@
           filterPills.forEach(p => p.classList.remove('active'));
           pill.classList.add('active');
           filterArticles(pill.dataset.cat);
+          const grid = document.getElementById('articlesGrid');
+          if (grid) {
+            const top = grid.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+          }
         });
       });
 

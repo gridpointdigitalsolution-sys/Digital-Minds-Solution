@@ -66,6 +66,17 @@
     rule.style.animationDelay = ruleDelay + 'ms';
     loader.appendChild(rule);
 
+    // Logo mark — appears after rule
+    var logoWrap = document.createElement('div');
+    logoWrap.className = 'dms-loader-logo-wrap';
+    logoWrap.style.cssText = 'opacity:0;margin-top:20px;animation:dmsSubIn 0.5s ease forwards;animation-delay:' + (ruleDelay + 120) + 'ms';
+    var logoImg = document.createElement('img');
+    logoImg.src = 'ASSETS/logo/logo-white.svg.png';
+    logoImg.alt = 'Digital Minds Solutions';
+    logoImg.style.cssText = 'height:36px;width:auto;opacity:0.55;filter:brightness(0) invert(1);display:block;margin:0 auto';
+    logoWrap.appendChild(logoImg);
+    loader.appendChild(logoWrap);
+
     // Sub label
     var sub = document.createElement('p');
     sub.className = 'dms-loader-sub';
