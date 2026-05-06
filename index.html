@@ -1454,17 +1454,14 @@ footer#footer{position:relative;overflow:hidden}
 <link rel="canonical" href="https://digitalmindssolutions.com/">
 <!-- /DMS:OG -->
   <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="loader.css">
 </head>
 <body>
+  <script src="loader.js"></script>
 
 <!-- ============================================================
-     LOADER
+     LOADER (handled globally by loader.js)
      ============================================================ -->
-<div id="loader">
-  <img src="ASSETS/logo/logo-white.svg.png" alt="Digital Minds Solutions" class="loader-logo">
-  <p class="loader-tagline">Design. Automate. Grow.</p>
-  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-</div>
 
 <!-- ============================================================
      NAVIGATION
@@ -2312,11 +2309,9 @@ footer#footer{position:relative;overflow:hidden}
   });
 
   /* ---- LOADER ---- */
+  /* Loader is handled by loader.js — start hero animations after it clears */
   window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('loader').classList.add('hidden');
-      startHeroAnimations();
-    }, 2800);
+    setTimeout(startHeroAnimations, 3000);
   });
 
   /* ---- HERO ANIMATIONS ---- */

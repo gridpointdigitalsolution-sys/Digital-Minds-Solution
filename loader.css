@@ -1,0 +1,114 @@
+/* ============================================================
+   DMS GLOBAL PAGE LOADER
+   Character-by-character gold text animation, fades out
+   ============================================================ */
+
+#dms-loader {
+  position: fixed;
+  inset: 0;
+  background: #0A0E1A;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: all;
+}
+
+#dms-loader.dms-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dms-loader-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  line-height: 1.1;
+}
+
+.dms-loader-line + .dms-loader-line {
+  margin-top: 0.08em;
+}
+
+.dms-loader-char {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  font-size: clamp(36px, 7vw, 84px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #E5A820;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: dmsCharIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  text-shadow:
+    0 0 18px rgba(229, 168, 32, 0.9),
+    0 0 40px rgba(229, 168, 32, 0.5),
+    0 0 80px rgba(229, 168, 32, 0.2);
+  will-change: opacity, transform;
+}
+
+.dms-loader-char.dms-space {
+  width: 0.28em;
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+@keyframes dmsCharIn {
+  0%   { opacity: 0; transform: translateY(10px); }
+  60%  { opacity: 1; transform: translateY(-2px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Sub-label: "Solutions" in smaller muted style */
+.dms-loader-sub {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  font-size: clamp(11px, 1.4vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 20px;
+  opacity: 0;
+  animation: dmsSubIn 0.5s ease forwards;
+  white-space: nowrap;
+}
+
+@keyframes dmsSubIn {
+  to { opacity: 1; }
+}
+
+/* Thin gold line below text */
+.dms-loader-rule {
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #E5A820, transparent);
+  margin-top: 24px;
+  border-radius: 99px;
+  opacity: 0;
+  animation: dmsRuleIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes dmsRuleIn {
+  0%  { width: 0; opacity: 0; }
+  30% { opacity: 1; }
+  100%{ width: min(320px, 60vw); opacity: 1; }
+}
+
+[data-theme="light"] #dms-loader {
+  background: #f4f6fa;
+}
+[data-theme="light"] .dms-loader-char {
+  color: #E5A820;
+}
+[data-theme="light"] .dms-loader-sub {
+  color: rgba(10, 14, 26, 0.4);
+}
