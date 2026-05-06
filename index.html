@@ -564,6 +564,14 @@ button{cursor:pointer;border:none;background:none;font:inherit}
 #work{padding:var(--sp) 0;background:var(--deep-space)}
 .work-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;flex-wrap:wrap;gap:24px}
 .work-header .h2{color:var(--white);max-width:540px}
+.work-header-meta{display:flex;flex-direction:column;align-items:flex-end;gap:20px}
+.work-stats-with-label{display:flex;align-items:center;gap:28px}
+.work-meta-label{font-family:var(--font-code,'Fira Code',monospace);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-gold,#E5A820);line-height:1.5;white-space:nowrap;opacity:.8}
+.work-stats-row{display:flex;gap:24px;align-items:flex-start}
+.work-stat-item{display:flex;flex-direction:column;gap:3px;text-align:right}
+.work-stat-num{font-family:var(--font-head);font-weight:800;font-size:clamp(22px,2.4vw,30px);color:var(--amber-gold,#E5A820);letter-spacing:-.02em;line-height:1}
+.work-stat-desc{font-size:11px;color:var(--muted-ink,#6b7a99);line-height:1.35;white-space:nowrap}
+@media(max-width:900px){.work-header-meta{align-items:flex-start}.work-stat-item{text-align:left}.work-stats-with-label{gap:18px}.work-stats-row{gap:16px}}
 .cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--card-border);border-radius:var(--r-xl);overflow:hidden}
 .case-card{
   background:var(--card-dark);
@@ -1674,9 +1682,28 @@ footer#footer{position:relative;overflow:hidden}
     <div class="work-header">
       <div>
         <div class="eyebrow">Selected Case Studies</div>
-        <h2 class="h2 gs-hidden">Verified outcomes.<br>Measured in real numbers.</h2>
+        <h2 class="h2 gs-hidden">Verified outcomes.</h2>
       </div>
-      <a href="work.html" class="btn-ghost gs-hidden">See All 12 Case Studies →</a>
+      <div class="work-header-meta gs-hidden">
+        <div class="work-stats-with-label">
+          <div class="work-meta-label">Measured in<br>real numbers.</div>
+          <div class="work-stats-row">
+            <div class="work-stat-item">
+              <span class="work-stat-num">+1,190%</span>
+              <span class="work-stat-desc">Search impressions</span>
+            </div>
+            <div class="work-stat-item">
+              <span class="work-stat-num">+800%</span>
+              <span class="work-stat-desc">Conversions</span>
+            </div>
+            <div class="work-stat-item">
+              <span class="work-stat-num">12+</span>
+              <span class="work-stat-desc">Brands scaled</span>
+            </div>
+          </div>
+        </div>
+        <a href="work.html" class="btn-ghost">See All 12 Case Studies →</a>
+      </div>
     </div>
     <div class="cases-grid">
       <!-- Barceló — Featured -->
