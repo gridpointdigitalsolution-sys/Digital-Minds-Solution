@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Button Options — Pick One</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#08101E;font-family:'Plus Jakarta Sans',sans-serif;min-height:100vh;padding:60px 40px}
+  h1{color:#fff;font-size:28px;font-weight:800;margin-bottom:8px;text-align:center}
+  .sub{color:#6b7a99;font-size:15px;text-align:center;margin-bottom:60px}
+
+  .row{display:flex;flex-direction:column;gap:56px}
+  .card{background:#0f1624;border:1px solid #1e2d4d;border-radius:16px;padding:40px 48px;display:flex;flex-direction:column;gap:24px}
+  .label{color:#E5A820;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+  .desc{color:#8ba5c8;font-size:14px;line-height:1.6}
+  .btn-wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:24px 0}
+
+  /* ── OPTION 1 — Gold Shimmer Fill ── */
+  .btn-1{
+    position:relative;padding:14px 32px;font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:16px;font-weight:800;letter-spacing:.04em;color:#08101E;
+    background:linear-gradient(135deg,#f0c040 0%,#d4870a 100%);
+    border:none;border-radius:8px;cursor:pointer;overflow:hidden;
+    box-shadow:0 0 18px rgba(212,135,10,.55),0 2px 8px rgba(0,0,0,.4);
+    transition:box-shadow .3s,transform .2s;
+  }
+  .btn-1::before{
+    content:'';position:absolute;top:-50%;left:-60%;width:50%;height:200%;
+    background:rgba(255,255,255,.28);transform:skewX(-20deg);transition:left .55s ease;
+  }
+  .btn-1:hover::before{left:130%}
+  .btn-1:hover{box-shadow:0 0 36px rgba(212,135,10,.9),0 4px 20px rgba(0,0,0,.5);transform:translateY(-3px)}
+
+  /* ── OPTION 2 — White Ghost Slide ── */
+  .btn-2{
+    padding:13px 32px;font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:16px;font-weight:700;letter-spacing:.04em;color:#fff;
+    background:transparent;border:1.5px solid rgba(255,255,255,.55);
+    border-radius:8px;cursor:pointer;position:relative;overflow:hidden;
+    transition:color .35s,border-color .35s;z-index:0;
+  }
+  .btn-2::after{
+    content:'';position:absolute;inset:0;background:#fff;
+    transform:scaleX(0);transform-origin:left;
+    transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1;
+  }
+  .btn-2:hover{color:#08101E;border-color:#fff}
+  .btn-2:hover::after{transform:scaleX(1)}
+
+  /* ── OPTION 3 — Amber Neon Pulse ── */
+  .btn-3{
+    padding:13px 32px;font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:16px;font-weight:700;letter-spacing:.05em;color:#E5A820;
+    background:transparent;border:1.5px solid #E5A820;border-radius:8px;cursor:pointer;
+    box-shadow:0 0 8px rgba(229,168,32,.3),inset 0 0 8px rgba(229,168,32,.05);
+    transition:all .3s;animation:amber-pulse 3s ease-in-out infinite;
+  }
+  .btn-3:hover{
+    background:rgba(229,168,32,.1);
+    box-shadow:0 0 28px rgba(229,168,32,.8),inset 0 0 16px rgba(229,168,32,.12);
+    transform:translateY(-3px);animation:none;
+  }
+  @keyframes amber-pulse{
+    0%,100%{box-shadow:0 0 8px rgba(229,168,32,.3),inset 0 0 8px rgba(229,168,32,.05)}
+    50%{box-shadow:0 0 22px rgba(229,168,32,.65),inset 0 0 14px rgba(229,168,32,.1)}
+  }
+
+  /* ── OPTION 4 — White Pill Arrow ── */
+  .btn-4{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:13px 32px;font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:16px;font-weight:700;color:#08101E;background:#fff;
+    border:none;border-radius:999px;cursor:pointer;
+    box-shadow:0 4px 20px rgba(255,255,255,.15);
+    transition:background .3s,box-shadow .3s,transform .2s;
+  }
+  .btn-4 svg{width:17px;height:17px;transition:transform .3s}
+  .btn-4:hover{background:#f4f4f4;box-shadow:0 6px 30px rgba(255,255,255,.28);transform:translateY(-3px)}
+  .btn-4:hover svg{transform:translateX(5px)}
+
+  /* ── OPTION 5 — Gold Wipe (border→fill) ── */
+  .btn-5{
+    position:relative;padding:13px 32px;font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:16px;font-weight:700;letter-spacing:.04em;color:#E5A820;
+    background:transparent;border:1.5px solid #E5A820;border-radius:8px;
+    cursor:pointer;overflow:hidden;transition:color .4s;z-index:0;
+  }
+  .btn-5::before{
+    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+    background:linear-gradient(135deg,#f0c040 0%,#d4870a 100%);
+    transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1;
+  }
+  .btn-5:hover{color:#08101E}
+  .btn-5:hover::before{left:0}
+
+  .note{color:#4a5568;font-size:13px;margin-top:6px}
+</style>
+</head>
+<body>
+<h1>Button Options — Pick One</h1>
+<p class="sub">Hover each button to see the interaction. Reply with the number (1–5) to apply sitewide.</p>
+
+<div class="row">
+
+  <div class="card">
+    <div class="label">Option 1 — Gold Shimmer Fill</div>
+    <div class="desc">Solid gold gradient with a light shimmer sweep on hover. Bold, warm, premium feel. Most assertive CTA.</div>
+    <div class="btn-wrap">
+      <button class="btn-1">Book a Free Call</button>
+      <button class="btn-1">See Our Work</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="label">Option 2 — White Ghost Slide</div>
+    <div class="desc">Transparent with white border. On hover, white fills in from left revealing dark text. Clean, modern contrast.</div>
+    <div class="btn-wrap">
+      <button class="btn-2">Book a Free Call</button>
+      <button class="btn-2">See Our Work</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="label">Option 3 — Amber Neon Pulse</div>
+    <div class="desc">Gold border that softly pulses when idle. On hover, glows outward. Techy, electric, on-brand with your gold tokens.</div>
+    <div class="btn-wrap">
+      <button class="btn-3">Book a Free Call</button>
+      <button class="btn-3">See Our Work</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="label">Option 4 — White Pill Arrow</div>
+    <div class="desc">Solid white pill with arrow that slides right on hover. Minimal, high-contrast, works great as a secondary CTA.</div>
+    <div class="btn-wrap">
+      <button class="btn-4">
+        Book a Free Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <button class="btn-4">
+        See Our Work
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="label">Option 5 — Gold Border Wipe</div>
+    <div class="desc">Gold outline at rest. On hover, gold gradient floods in from left and text turns dark. Satisfying wipe effect, very agency.</div>
+    <div class="btn-wrap">
+      <button class="btn-5">Book a Free Call</button>
+      <button class="btn-5">See Our Work</button>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

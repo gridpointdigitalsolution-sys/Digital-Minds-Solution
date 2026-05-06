@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Card Options — Pick One</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#08101E;font-family:'Plus Jakarta Sans',sans-serif;min-height:100vh;padding:60px 40px}
+h1{color:#fff;font-size:28px;font-weight:800;margin-bottom:8px;text-align:center}
+.sub{color:#6b7a99;font-size:15px;text-align:center;margin-bottom:70px}
+
+.section{margin-bottom:90px}
+.section-label{color:#E5A820;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
+.section-desc{color:#8ba5c8;font-size:14px;line-height:1.6;margin-bottom:32px}
+
+.tag{display:inline-block;padding:4px 10px;background:rgba(229,168,32,.1);border:1px solid rgba(229,168,32,.25);border-radius:999px;font-size:11px;font-weight:700;color:#E5A820;letter-spacing:.05em}
+
+/* ══ OPTION 1 — SPOTLIGHT GLOW ══ */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.spot-card{
+  position:relative;border-radius:16px;padding:32px 28px;overflow:hidden;
+  background:#0f1624;border:1px solid #1e2d4d;cursor:default;
+  transition:border-color .3s,transform .3s;
+}
+.spot-card::before{
+  content:'';position:absolute;inset:0;opacity:0;
+  background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),rgba(229,168,32,.12),transparent 60%);
+  transition:opacity .4s;pointer-events:none;border-radius:inherit;
+}
+.spot-card:hover{border-color:rgba(229,168,32,.4);transform:translateY(-4px)}
+.spot-card:hover::before{opacity:1}
+.spot-icon{font-size:40px;margin-bottom:18px;display:block;line-height:1}
+.spot-title{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px}
+.spot-desc{font-size:14px;color:#8ba5c8;line-height:1.65;margin-bottom:18px}
+.spot-tags{display:flex;flex-wrap:wrap;gap:6px}
+
+/* ══ OPTION 2 — 3D FLIP CARD ══ */
+.flip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.flip-wrap{perspective:1000px;height:260px}
+.flip-inner{
+  position:relative;width:100%;height:100%;
+  transform-style:preserve-3d;transition:transform .6s cubic-bezier(.4,0,.2,1);
+}
+.flip-wrap:hover .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{
+  position:absolute;inset:0;border-radius:16px;padding:28px;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+}
+.flip-front{
+  background:#0f1624;border:1px solid #1e2d4d;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.flip-back{
+  background:linear-gradient(135deg,#002FA7 0%,#0a1a3a 100%);
+  border:1px solid rgba(229,168,32,.4);
+  transform:rotateY(180deg);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.flip-icon{font-size:44px;line-height:1}
+.flip-title{font-size:17px;font-weight:800;color:#fff;margin-top:12px}
+.flip-back-title{font-size:16px;font-weight:800;color:#E5A820;margin-bottom:10px}
+.flip-back-desc{font-size:13px;color:rgba(255,255,255,.8);line-height:1.6;flex:1}
+.flip-back-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.flip-back .tag{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff}
+.flip-cta{margin-top:14px;font-size:13px;font-weight:700;color:#E5A820;text-decoration:none;letter-spacing:.03em}
+.flip-cta::after{content:' \2192'}
+
+/* ══ OPTION 3 — EXPANDABLE ACCORDION ══ */
+.accord-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.accord-card{
+  background:#0f1624;border:1px solid #1e2d4d;border-radius:14px;
+  overflow:hidden;transition:border-color .3s;cursor:pointer;
+}
+.accord-card.open{border-color:rgba(229,168,32,.5)}
+.accord-head{
+  display:flex;align-items:center;gap:16px;padding:22px 24px;
+  user-select:none;
+}
+.accord-icon{font-size:32px;flex-shrink:0;line-height:1}
+.accord-label{font-size:16px;font-weight:800;color:#fff;flex:1}
+.accord-arrow{
+  width:28px;height:28px;border-radius:50%;
+  border:1.5px solid #1e2d4d;display:flex;align-items:center;justify-content:center;
+  color:#6b7a99;font-size:14px;flex-shrink:0;
+  transition:transform .35s,border-color .3s,background .3s;
+}
+.accord-card.open .accord-arrow{transform:rotate(180deg);border-color:#E5A820;background:rgba(229,168,32,.1);color:#E5A820}
+.accord-body{
+  max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1),padding .4s;
+  padding:0 24px;
+}
+.accord-card.open .accord-body{max-height:200px;padding-bottom:22px}
+.accord-desc{font-size:14px;color:#8ba5c8;line-height:1.65;margin-bottom:14px}
+.accord-tags{display:flex;flex-wrap:wrap;gap:6px}
+
+/* ══ OPTION 4 — NUMBERED EDITORIAL ══ */
+.edit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid #1e2d4d;border-radius:16px;overflow:hidden}
+.edit-card{
+  padding:36px 28px;border-right:1px solid #1e2d4d;border-bottom:1px solid #1e2d4d;
+  position:relative;overflow:hidden;background:#0f1624;
+  transition:background .3s;
+}
+.edit-card:nth-child(3n){border-right:none}
+.edit-card:nth-child(4),.edit-card:nth-child(5),.edit-card:nth-child(6){border-bottom:none}
+.edit-card:hover{background:#111c30}
+.edit-num{
+  font-size:72px;font-weight:800;color:rgba(229,168,32,.07);
+  line-height:1;position:absolute;top:16px;right:20px;
+  letter-spacing:-.04em;transition:color .3s;
+}
+.edit-card:hover .edit-num{color:rgba(229,168,32,.13)}
+.edit-bar{width:32px;height:3px;background:#E5A820;border-radius:2px;margin-bottom:20px}
+.edit-icon{font-size:30px;margin-bottom:14px;display:block;line-height:1}
+.edit-title{font-size:16px;font-weight:800;color:#fff;margin-bottom:10px}
+.edit-desc{font-size:13px;color:#8ba5c8;line-height:1.6;margin-bottom:16px}
+.edit-tags{display:flex;flex-wrap:wrap;gap:5px}
+
+/* ══ OPTION 5 — ANIMATED GRADIENT BORDER ══ */
+.glow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.glow-card{
+  position:relative;border-radius:16px;padding:2px;
+  background:#1e2d4d;
+}
+.glow-card::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;
+  background:conic-gradient(from var(--angle,0deg),#E5A820,#002FA7,#E5A820,#002FA7,#E5A820);
+  opacity:0;transition:opacity .4s;
+}
+.glow-card:hover::before{opacity:1}
+@property --angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes spin-border{to{--angle:360deg}}
+.glow-card:hover{animation:spin-border 3s linear infinite}
+.glow-inner{
+  background:#0f1624;border-radius:14px;padding:28px;
+  position:relative;z-index:1;height:100%;
+}
+.glow-icon{font-size:40px;margin-bottom:16px;display:block;line-height:1}
+.glow-title{font-size:17px;font-weight:800;color:#fff;margin-bottom:10px}
+.glow-desc{font-size:13px;color:#8ba5c8;line-height:1.6;margin-bottom:16px}
+.glow-tags{display:flex;flex-wrap:wrap;gap:6px}
+
+/* ══ OPTION 6 — TAB SWITCHER ══ */
+.tab-layout{display:grid;grid-template-columns:280px 1fr;gap:0;background:#0f1624;border:1px solid #1e2d4d;border-radius:16px;overflow:hidden;min-height:380px}
+.tab-list{border-right:1px solid #1e2d4d;padding:8px}
+.tab-item{
+  display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:10px;
+  cursor:pointer;transition:background .25s;margin-bottom:2px;
+}
+.tab-item:hover{background:rgba(255,255,255,.04)}
+.tab-item.active{background:rgba(229,168,32,.1)}
+.tab-item.active .tab-item-icon{background:rgba(229,168,32,.15)}
+.tab-item-icon{
+  width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  flex-shrink:0;transition:background .25s;
+}
+.tab-item-title{font-size:13px;font-weight:700;color:#8ba5c8;transition:color .25s}
+.tab-item.active .tab-item-title{color:#fff}
+.tab-panel{padding:40px;display:none;flex-direction:column;gap:16px}
+.tab-panel.active{display:flex}
+.tab-panel-icon{font-size:52px;line-height:1}
+.tab-panel-title{font-size:24px;font-weight:800;color:#fff}
+.tab-panel-desc{font-size:15px;color:#8ba5c8;line-height:1.7;max-width:480px}
+.tab-panel-tags{display:flex;flex-wrap:wrap;gap:8px}
+.tab-panel-cta{
+  margin-top:8px;display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;background:linear-gradient(135deg,#f0c040,#d4870a);
+  border:none;border-radius:8px;font-family:inherit;font-size:14px;font-weight:800;
+  color:#08101E;cursor:pointer;transition:box-shadow .3s,transform .2s;
+  text-decoration:none;width:fit-content;
+}
+.tab-panel-cta:hover{box-shadow:0 0 28px rgba(212,135,10,.7);transform:translateY(-2px)}
+</style>
+</head>
+<body>
+
+<h1>Card Options — What We Build</h1>
+<p class="sub">Hover / click each option to see the interaction. Reply with the number (1–6) to apply sitewide.</p>
+
+<!-- ══ OPTION 1 ══ -->
+<div class="section">
+  <div class="section-label">Option 1 — Spotlight Glow</div>
+  <div class="section-desc">Cursor-tracking amber radial glow inside each card. Lifts on hover, gold border brightens. Subtle, premium, feels alive without being loud.</div>
+  <div class="grid-3">
+    <div class="spot-card">
+      <span class="spot-icon">🌐</span>
+      <div class="spot-title">Web Development &amp; Apps</div>
+      <div class="spot-desc">Lead-focused digital properties built to convert. Responsive UI/UX, app development, SEO and CRO in tandem.</div>
+      <div class="spot-tags"><span class="tag">React / Next.js</span><span class="tag">iOS &amp; Android</span><span class="tag">CRO</span></div>
+    </div>
+    <div class="spot-card">
+      <span class="spot-icon">🤖</span>
+      <div class="spot-title">AI Automation &amp; Systems</div>
+      <div class="spot-desc">Leads followed up automatically. Repetitive work eliminated. Zapier, Make, ActiveCampaign — live in 5 days.</div>
+      <div class="spot-tags"><span class="tag">AI Chatbots</span><span class="tag">CRM Automation</span><span class="tag">5-Day Deploy</span></div>
+    </div>
+    <div class="spot-card">
+      <span class="spot-icon">🎨</span>
+      <div class="spot-title">Graphic Design &amp; Branding</div>
+      <div class="spot-desc">Visual identity that communicates expertise before a word is read. Full branding, Adobe CC, motion graphics.</div>
+      <div class="spot-tags"><span class="tag">Adobe CC</span><span class="tag">Brand Identity</span><span class="tag">UI/UX</span></div>
+    </div>
+    <div class="spot-card">
+      <span class="spot-icon">📈</span>
+      <div class="spot-title">Digital Marketing &amp; Growth</div>
+      <div class="spot-desc">More organic traffic. Higher search rankings. 3x more qualified leads. AI-powered content, paid campaigns.</div>
+      <div class="spot-tags"><span class="tag">SEO / AEO / GEO</span><span class="tag">Paid Ads</span><span class="tag">Lead Gen</span></div>
+    </div>
+    <div class="spot-card">
+      <span class="spot-icon">⚙️</span>
+      <div class="spot-title">Software &amp; Product Dev</div>
+      <div class="spot-desc">Full-stack products from internal tools to SaaS platforms. Web apps, dashboards, API development, 0 to 1.</div>
+      <div class="spot-tags"><span class="tag">SaaS Platforms</span><span class="tag">API Dev</span><span class="tag">Cloud Deploy</span></div>
+    </div>
+    <div class="spot-card">
+      <span class="spot-icon">🎬</span>
+      <div class="spot-title">Video, Content &amp; SEO/AEO/GEO</div>
+      <div class="spot-desc">Content built to rank in Google, AI answers, and voice search. Video production, blog writing, compounding SEO.</div>
+      <div class="spot-tags"><span class="tag">Video Production</span><span class="tag">AEO / GEO</span><span class="tag">SEO Content</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ OPTION 2 ══ -->
+<div class="section">
+  <div class="section-label">Option 2 — 3D Flip Card</div>
+  <div class="section-desc">Front shows icon + title. Hover flips 180° to reveal description, tags, and a CTA. Satisfying 3D rotateY transform — interactive, agency-grade.</div>
+  <div class="flip-grid">
+    <div class="flip-wrap">
+      <div class="flip-inner">
+        <div class="flip-front"><div><div class="flip-icon">🌐</div><div class="flip-title">Web Development &amp; Apps</div></div></div>
+        <div class="flip-back">
+          <div><div class="flip-back-title">Web Development &amp; Apps</div><div class="flip-back-desc">Lead-focused digital properties built to convert. Responsive UI/UX, SEO and CRO in tandem.</div><div class="flip-back-tags"><span class="tag">React / Next.js</span><span class="tag">iOS &amp; Android</span><span class="tag">CRO</span></div></div>
+          <a href="#" class="flip-cta">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="flip-wrap">
+      <div class="flip-inner">
+        <div class="flip-front"><div><div class="flip-icon">🤖</div><div class="flip-title">AI Automation &amp; Systems</div></div></div>
+        <div class="flip-back">
+          <div><div class="flip-back-title">AI Automation &amp; Systems</div><div class="flip-back-desc">Leads followed up automatically. Repetitive work eliminated. Live in 5 days.</div><div class="flip-back-tags"><span class="tag">AI Chatbots</span><span class="tag">CRM Automation</span><span class="tag">5-Day Deploy</span></div></div>
+          <a href="#" class="flip-cta">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="flip-wrap">
+      <div class="flip-inner">
+        <div class="flip-front"><div><div class="flip-icon">🎨</div><div class="flip-title">Graphic Design &amp; Branding</div></div></div>
+        <div class="flip-back">
+          <div><div class="flip-back-title">Graphic Design &amp; Branding</div><div class="flip-back-desc">Visual identity that communicates expertise. Full branding, Adobe CC, motion graphics.</div><div class="flip-back-tags"><span class="tag">Adobe CC</span><span class="tag">Brand Identity</span><span class="tag">UI/UX</span></div></div>
+          <a href="#" class="flip-cta">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="flip-wrap">
+      <div class="flip-inner">
+        <div class="flip-front"><div><div class="flip-icon">📈</div><div class="flip-title">Digital Marketing &amp; Growth</div></div></div>
+        <div class="flip-back">
+          <div><div class="flip-back-title">Digital Marketing &amp; Growth</div><div class="flip-back-desc">More traffic. Higher rankings. 3x more qualified leads. AI-powered content, paid campaigns.</div><div class="flip-back-tags"><span class="tag">SEO / AEO / GEO</span><span class="tag">Paid Ads</span><span class="tag">Lead Gen</span></div></div>
+          <a href="#" class="flip-cta">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="flip-wrap">
+      <div class="flip-inner">
+        <div class="flip-front"><div><div class="flip-icon">⚙️</div><div class="flip-title">Software &amp; Product Dev</div></div></div>
+        <div class="flip-back">
+          <div><div class="flip-back-title">Software &amp; Product Dev</div><div class="flip-back-desc">Full-stack products from internal tools to SaaS. Web apps, API development, 0 to 1 execution.</div><div class="flip-back-tags"><span class="tag">SaaS Platforms</span><span class="tag">API Dev</span><span class="tag">Cloud Deploy</span></div></div>
+          <a href="#" class="flip-cta">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="flip-wrap">
+      <div class="flip-inner">
+        <div class="flip-front"><div><div class="flip-icon">🎬</div><div class="flip-title">Video, Content &amp; SEO</div></div></div>
+        <div class="flip-back">
+          <div><div class="flip-back-title">Video, Content &amp; SEO</div><div class="flip-back-desc">Content built to rank in Google, AI answers, and voice. Video production, compounding SEO.</div><div class="flip-back-tags"><span class="tag">Video Production</span><span class="tag">AEO / GEO</span><span class="tag">SEO Content</span></div></div>
+          <a href="#" class="flip-cta">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ OPTION 3 ══ -->
+<div class="section">
+  <div class="section-label">Option 3 — Expandable Accordion Cards</div>
+  <div class="section-desc">Cards start compact: icon + title only. Click to expand full description and tags. Arrow rotates, gold border activates. Two-column layout. Clean first impression, depth on demand.</div>
+  <div class="accord-grid">
+    <div class="accord-card">
+      <div class="accord-head"><span class="accord-icon">🌐</span><span class="accord-label">Web Development &amp; Apps</span><span class="accord-arrow">&#9660;</span></div>
+      <div class="accord-body"><div class="accord-desc">Lead-focused digital properties built to convert. Responsive UI/UX, app development, SEO and CRO in tandem.</div><div class="accord-tags"><span class="tag">React / Next.js</span><span class="tag">iOS &amp; Android</span><span class="tag">Core Web Vitals</span><span class="tag">CRO</span></div></div>
+    </div>
+    <div class="accord-card">
+      <div class="accord-head"><span class="accord-icon">🤖</span><span class="accord-label">AI Automation &amp; Systems</span><span class="accord-arrow">&#9660;</span></div>
+      <div class="accord-body"><div class="accord-desc">Leads followed up automatically. Repetitive work eliminated. Zapier, Make, ActiveCampaign — live in 5 days.</div><div class="accord-tags"><span class="tag">AI Chatbots</span><span class="tag">Zapier / Make</span><span class="tag">CRM Automation</span><span class="tag">5-Day Deploy</span></div></div>
+    </div>
+    <div class="accord-card">
+      <div class="accord-head"><span class="accord-icon">🎨</span><span class="accord-label">Graphic Design &amp; Branding</span><span class="accord-arrow">&#9660;</span></div>
+      <div class="accord-body"><div class="accord-desc">Visual identity that communicates expertise. Full branding, Adobe CC, motion graphics, brand strategy.</div><div class="accord-tags"><span class="tag">Adobe CC</span><span class="tag">Brand Identity</span><span class="tag">Motion Graphics</span><span class="tag">UI/UX</span></div></div>
+    </div>
+    <div class="accord-card">
+      <div class="accord-head"><span class="accord-icon">📈</span><span class="accord-label">Digital Marketing &amp; Growth</span><span class="accord-arrow">&#9660;</span></div>
+      <div class="accord-body"><div class="accord-desc">More organic traffic. Higher rankings. 3x more qualified leads. AI content systems, email automation, paid campaigns.</div><div class="accord-tags"><span class="tag">SEO / AEO / GEO</span><span class="tag">Paid Ads</span><span class="tag">ActiveCampaign</span><span class="tag">Lead Generation</span></div></div>
+    </div>
+    <div class="accord-card">
+      <div class="accord-head"><span class="accord-icon">⚙️</span><span class="accord-label">Software &amp; Product Dev</span><span class="accord-arrow">&#9660;</span></div>
+      <div class="accord-body"><div class="accord-desc">Full-stack products from internal tools to SaaS. Web apps, dashboards, API development, 0 to 1 execution.</div><div class="accord-tags"><span class="tag">SaaS Platforms</span><span class="tag">Web Apps</span><span class="tag">API Development</span><span class="tag">Cloud Deploy</span></div></div>
+    </div>
+    <div class="accord-card">
+      <div class="accord-head"><span class="accord-icon">🎬</span><span class="accord-label">Video, Content &amp; SEO/AEO/GEO</span><span class="accord-arrow">&#9660;</span></div>
+      <div class="accord-body"><div class="accord-desc">Content built to rank in Google, AI answers, and voice search. Video production, blog writing, compounding SEO.</div><div class="accord-tags"><span class="tag">Video Production</span><span class="tag">AEO / GEO</span><span class="tag">Blog / SEO Content</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ OPTION 4 ══ -->
+<div class="section">
+  <div class="section-label">Option 4 — Numbered Editorial</div>
+  <div class="section-desc">Large ghost numbers (01–06) watermark each card. Gold accent bar above title. Hairline grid borders. Hover darkens slightly. Editorial, confident, premium agency feel.</div>
+  <div class="edit-grid">
+    <div class="edit-card">
+      <div class="edit-num">01</div>
+      <span class="edit-icon">🌐</span>
+      <div class="edit-bar"></div>
+      <div class="edit-title">Web Development &amp; Apps</div>
+      <div class="edit-desc">Lead-focused digital properties built to convert. Responsive UI/UX, SEO and CRO in tandem.</div>
+      <div class="edit-tags"><span class="tag">React / Next.js</span><span class="tag">iOS &amp; Android</span><span class="tag">CRO</span></div>
+    </div>
+    <div class="edit-card">
+      <div class="edit-num">02</div>
+      <span class="edit-icon">🤖</span>
+      <div class="edit-bar"></div>
+      <div class="edit-title">AI Automation &amp; Systems</div>
+      <div class="edit-desc">Leads followed up automatically. Repetitive work eliminated. Live in 5 days.</div>
+      <div class="edit-tags"><span class="tag">AI Chatbots</span><span class="tag">CRM Automation</span><span class="tag">5-Day Deploy</span></div>
+    </div>
+    <div class="edit-card">
+      <div class="edit-num">03</div>
+      <span class="edit-icon">🎨</span>
+      <div class="edit-bar"></div>
+      <div class="edit-title">Graphic Design &amp; Branding</div>
+      <div class="edit-desc">Visual identity that communicates expertise. Full branding, motion graphics, brand strategy.</div>
+      <div class="edit-tags"><span class="tag">Adobe CC</span><span class="tag">Brand Identity</span><span class="tag">UI/UX</span></div>
+    </div>
+    <div class="edit-card">
+      <div class="edit-num">04</div>
+      <span class="edit-icon">📈</span>
+      <div class="edit-bar"></div>
+      <div class="edit-title">Digital Marketing &amp; Growth</div>
+      <div class="edit-desc">More traffic. Higher rankings. 3x more qualified leads. AI content, paid campaigns.</div>
+      <div class="edit-tags"><span class="tag">SEO / AEO / GEO</span><span class="tag">Paid Ads</span><span class="tag">Lead Gen</span></div>
+    </div>
+    <div class="edit-card">
+      <div class="edit-num">05</div>
+      <span class="edit-icon">⚙️</span>
+      <div class="edit-bar"></div>
+      <div class="edit-title">Software &amp; Product Dev</div>
+      <div class="edit-desc">Full-stack products from internal tools to SaaS. Web apps, API development, 0 to 1 execution.</div>
+      <div class="edit-tags"><span class="tag">SaaS Platforms</span><span class="tag">API Dev</span><span class="tag">Cloud Deploy</span></div>
+    </div>
+    <div class="edit-card">
+      <div class="edit-num">06</div>
+      <span class="edit-icon">🎬</span>
+      <div class="edit-bar"></div>
+      <div class="edit-title">Video, Content &amp; SEO/AEO/GEO</div>
+      <div class="edit-desc">Content built to rank in Google, AI answers, and voice. Video production, compounding SEO.</div>
+      <div class="edit-tags"><span class="tag">Video Production</span><span class="tag">AEO / GEO</span><span class="tag">SEO Content</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ OPTION 5 ══ -->
+<div class="section">
+  <div class="section-label">Option 5 — Animated Gradient Border</div>
+  <div class="section-desc">At rest: clean dark card. On hover: a conic gradient (gold + blue) spins around the card perimeter like a beacon. Eye-catching, tech-forward, unique.</div>
+  <div class="glow-grid">
+    <div class="glow-card">
+      <div class="glow-inner">
+        <span class="glow-icon">🌐</span>
+        <div class="glow-title">Web Development &amp; Apps</div>
+        <div class="glow-desc">Lead-focused digital properties built to convert. Responsive UI/UX, SEO and CRO in tandem.</div>
+        <div class="glow-tags"><span class="tag">React / Next.js</span><span class="tag">iOS &amp; Android</span><span class="tag">CRO</span></div>
+      </div>
+    </div>
+    <div class="glow-card">
+      <div class="glow-inner">
+        <span class="glow-icon">🤖</span>
+        <div class="glow-title">AI Automation &amp; Systems</div>
+        <div class="glow-desc">Leads followed up automatically. Repetitive work eliminated. Live in 5 days.</div>
+        <div class="glow-tags"><span class="tag">AI Chatbots</span><span class="tag">CRM Automation</span><span class="tag">5-Day Deploy</span></div>
+      </div>
+    </div>
+    <div class="glow-card">
+      <div class="glow-inner">
+        <span class="glow-icon">🎨</span>
+        <div class="glow-title">Graphic Design &amp; Branding</div>
+        <div class="glow-desc">Visual identity that communicates expertise. Full branding, motion graphics, brand strategy.</div>
+        <div class="glow-tags"><span class="tag">Adobe CC</span><span class="tag">Brand Identity</span><span class="tag">UI/UX</span></div>
+      </div>
+    </div>
+    <div class="glow-card">
+      <div class="glow-inner">
+        <span class="glow-icon">📈</span>
+        <div class="glow-title">Digital Marketing &amp; Growth</div>
+        <div class="glow-desc">More traffic. Higher rankings. 3x more qualified leads. AI content, paid campaigns.</div>
+        <div class="glow-tags"><span class="tag">SEO / AEO / GEO</span><span class="tag">Paid Ads</span><span class="tag">Lead Gen</span></div>
+      </div>
+    </div>
+    <div class="glow-card">
+      <div class="glow-inner">
+        <span class="glow-icon">⚙️</span>
+        <div class="glow-title">Software &amp; Product Dev</div>
+        <div class="glow-desc">Full-stack products from internal tools to SaaS. Web apps, API development, 0 to 1 execution.</div>
+        <div class="glow-tags"><span class="tag">SaaS Platforms</span><span class="tag">API Dev</span><span class="tag">Cloud Deploy</span></div>
+      </div>
+    </div>
+    <div class="glow-card">
+      <div class="glow-inner">
+        <span class="glow-icon">🎬</span>
+        <div class="glow-title">Video, Content &amp; SEO/AEO/GEO</div>
+        <div class="glow-desc">Content built to rank in Google, AI answers, and voice. Video production, compounding SEO.</div>
+        <div class="glow-tags"><span class="tag">Video Production</span><span class="tag">AEO / GEO</span><span class="tag">SEO Content</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ OPTION 6 ══ -->
+<div class="section">
+  <div class="section-label">Option 6 — Tab Switcher Panel</div>
+  <div class="section-desc">Left column: compact icon + title tabs. Click to activate. Right panel: full detail view with description, tags, and CTA. Gold active state. Tight layout, depth on demand.</div>
+  <div class="tab-layout">
+    <div class="tab-list">
+      <div class="tab-item active" data-tab="0"><div class="tab-item-icon">🌐</div><div class="tab-item-title">Web Dev &amp; Apps</div></div>
+      <div class="tab-item" data-tab="1"><div class="tab-item-icon">🤖</div><div class="tab-item-title">AI Automation</div></div>
+      <div class="tab-item" data-tab="2"><div class="tab-item-icon">🎨</div><div class="tab-item-title">Design &amp; Branding</div></div>
+      <div class="tab-item" data-tab="3"><div class="tab-item-icon">📈</div><div class="tab-item-title">Digital Marketing</div></div>
+      <div class="tab-item" data-tab="4"><div class="tab-item-icon">⚙️</div><div class="tab-item-title">Software Dev</div></div>
+      <div class="tab-item" data-tab="5"><div class="tab-item-icon">🎬</div><div class="tab-item-title">Video &amp; Content</div></div>
+    </div>
+    <div class="tab-panel active" data-panel="0">
+      <div class="tab-panel-icon">🌐</div>
+      <div class="tab-panel-title">Web Development &amp; Apps</div>
+      <div class="tab-panel-desc">Lead-focused digital properties built to convert visitors. Responsive UI/UX, app development, SEO and CRO in tandem — traffic and conversions together.</div>
+      <div class="tab-panel-tags"><span class="tag">React / Next.js</span><span class="tag">iOS &amp; Android</span><span class="tag">Core Web Vitals</span><span class="tag">CRO</span></div>
+      <a href="#" class="tab-panel-cta">Learn More</a>
+    </div>
+    <div class="tab-panel" data-panel="1">
+      <div class="tab-panel-icon">🤖</div>
+      <div class="tab-panel-title">AI Automation &amp; Systems</div>
+      <div class="tab-panel-desc">Your leads get followed up automatically. Your team stops doing repetitive work. Zapier, Make, ActiveCampaign — live in 5 days.</div>
+      <div class="tab-panel-tags"><span class="tag">AI Chatbots</span><span class="tag">Zapier / Make</span><span class="tag">CRM Automation</span><span class="tag">5-Day Deploy</span></div>
+      <a href="#" class="tab-panel-cta">Learn More</a>
+    </div>
+    <div class="tab-panel" data-panel="2">
+      <div class="tab-panel-icon">🎨</div>
+      <div class="tab-panel-title">Graphic Design &amp; Branding</div>
+      <div class="tab-panel-desc">Visual identity that communicates expertise before a word is read. Full branding, Adobe CC production, UI/UX design, motion graphics, and brand strategy.</div>
+      <div class="tab-panel-tags"><span class="tag">Adobe CC</span><span class="tag">Brand Identity</span><span class="tag">Motion Graphics</span><span class="tag">UI/UX</span></div>
+      <a href="#" class="tab-panel-cta">Learn More</a>
+    </div>
+    <div class="tab-panel" data-panel="3">
+      <div class="tab-panel-icon">📈</div>
+      <div class="tab-panel-title">Digital Marketing &amp; Growth</div>
+      <div class="tab-panel-desc">More organic traffic. Higher search rankings. 3x more qualified leads. AI-powered content systems, email automation, paid campaigns on Google and Meta.</div>
+      <div class="tab-panel-tags"><span class="tag">SEO / AEO / GEO</span><span class="tag">Paid Ads</span><span class="tag">ActiveCampaign</span><span class="tag">Lead Generation</span></div>
+      <a href="#" class="tab-panel-cta">Learn More</a>
+    </div>
+    <div class="tab-panel" data-panel="4">
+      <div class="tab-panel-icon">⚙️</div>
+      <div class="tab-panel-title">Software &amp; Product Dev</div>
+      <div class="tab-panel-desc">Full-stack products from internal tools to SaaS platforms. Web apps, admin dashboards, mobile builds, API development, and database architecture — 0 to 1.</div>
+      <div class="tab-panel-tags"><span class="tag">SaaS Platforms</span><span class="tag">Web Apps</span><span class="tag">API Development</span><span class="tag">Cloud Deploy</span></div>
+      <a href="#" class="tab-panel-cta">Learn More</a>
+    </div>
+    <div class="tab-panel" data-panel="5">
+      <div class="tab-panel-icon">🎬</div>
+      <div class="tab-panel-title">Video, Content &amp; SEO/AEO/GEO</div>
+      <div class="tab-panel-desc">Content built to rank in Google, AI-generated answers, and voice search. Video production, explainer films, blog writing, SEO content that compounds over time.</div>
+      <div class="tab-panel-tags"><span class="tag">Video Production</span><span class="tag">AEO / GEO</span><span class="tag">Blog / SEO Content</span><span class="tag">Explainer Films</span></div>
+      <a href="#" class="tab-panel-cta">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Spotlight glow — mouse tracking */
+document.querySelectorAll('.spot-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+});
+
+/* Accordion */
+document.querySelectorAll('.accord-card').forEach(card => {
+  card.querySelector('.accord-head').addEventListener('click', () => {
+    card.classList.toggle('open');
+  });
+});
+
+/* Tab switcher */
+const tabItems = document.querySelectorAll('.tab-item');
+const tabPanels = document.querySelectorAll('.tab-panel');
+tabItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const idx = item.dataset.tab;
+    tabItems.forEach(i => i.classList.remove('active'));
+    tabPanels.forEach(p => p.classList.remove('active'));
+    item.classList.add('active');
+    document.querySelector('.tab-panel[data-panel="' + idx + '"]').classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

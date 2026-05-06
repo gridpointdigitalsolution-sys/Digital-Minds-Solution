@@ -1,0 +1,1385 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Digital Minds Solutions. the agency built from a specific frustration. Two founders, one integrated team, real results across 9 countries.">
+<title>About Us. Digital Minds Solutions</title>
+<link rel="icon" type="image/png" href="../ASSETS/logo/favicon.png (512x512px).png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================ TOKENS */
+:root {
+  --deep-space:#08101E;--klein-blue:#002FA7;--amber-gold:#E5A820;
+  --cobalt-shade:#243B6E;--muted-blue:#B8CBE8;--muted-ink:#3A4F7A;
+  --card-dark:#0D1826;--card-border:#1E3055;--light-bg:#F4F7FF;
+  --light-card:#FFFFFF;--light-border:#C5D3F0;--white:#FFFFFF;--mild-gold:#FBF5E4;--mild-gold-card:#F5E9C6;
+  --font-head:'Plus Jakarta Sans',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --r-sm:6px;--r-md:12px;--r-lg:20px;--r-xl:32px;
+  --container:1280px;--sp:120px;--nav-h:72px;
+}
+/* ============================================================ RESET */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--deep-space);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.7}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}ul{list-style:none}button{cursor:pointer;border:none;background:none;font:inherit}
+
+/* ============================================================ UTILS */
+.container{max-width:var(--container);margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 20px}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:20px}
+.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px}
+.h1{font-family:var(--font-head);font-size:clamp(38px,5vw,72px);font-weight:800;line-height:1.08;letter-spacing:-.025em}
+.h2{font-family:var(--font-head);font-size:clamp(28px,3vw,48px);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+.h3{font-family:var(--font-head);font-size:clamp(18px,1.8vw,24px);font-weight:700;line-height:1.3}
+.body-lg{font-size:clamp(16px,1.2vw,19px);line-height:1.75;color:var(--muted-blue)}
+.btn-gold{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--amber-gold);font-family:var(--font-head);font-size:15px;font-weight:700;padding:14px 28px;border-radius:var(--r-md,8px);border:2px solid var(--amber-gold);white-space:nowrap;transition:color .4s;z-index:0;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-gold:hover{color:var(--deep-space,#08101E)}
+.btn-gold:hover::before{left:0}
+
+
+.btn-ghost{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:var(--font-head);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--r-md,8px);border:1.5px solid rgba(255,255,255,.55);transition:color .35s,border-color .35s;z-index:0;overflow:hidden}
+.btn-ghost::after{content:'';position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-ghost:hover{color:#08101E;border-color:#fff}
+.btn-ghost:hover::after{transform:scaleX(1)}
+
+
+.btn-ghost-dark{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--deep-space,#08101E);font-family:var(--font-head);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--r-md,8px);border:1.5px solid rgba(8,16,30,.45);transition:color .35s,border-color .35s;z-index:0;overflow:hidden}
+.btn-ghost-dark::after{content:'';position:absolute;inset:0;background:var(--deep-space,#08101E);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-ghost-dark:hover{color:#fff;border-color:var(--deep-space,#08101E)}
+.btn-ghost-dark:hover::after{transform:scaleX(1)}
+.gs{opacity:0;transform:translateY(36px)}
+
+/* ============================================================ NAV */
+#navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+#navbar.scrolled{background:rgba(8,16,30,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--card-border)}
+.nav-inner{max-width:var(--container);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 40px}
+.nav-logo img{height:52px;width:auto}
+.nav-links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.nav-links a{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--muted-blue);padding:8px 16px;border-radius:var(--r-sm);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;position:relative;border:none;padding:8px 14px;box-shadow:0 4px 14px rgba(228,174,11,.35)}
+.nav-links a.active::after{display:none}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang-switcher{position:relative}
+.lang-btn{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--muted-blue);padding:7px 12px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;gap:6px;transition:color .2s,border-color .2s}
+.lang-btn:hover{color:var(--white);border-color:var(--muted-blue)}
+.lang-btn svg{width:12px;height:12px;transition:transform .2s}
+.lang-switcher.open .lang-btn svg{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--card-dark);border:1px solid var(--card-border);border-radius:var(--r-md);overflow:hidden;min-width:140px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s ease}
+.lang-switcher.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:block;width:100%;text-align:left;font-family:var(--font-head);font-size:13px;font-weight:600;padding:10px 16px;color:var(--muted-blue);transition:background .15s,color .15s}
+.lang-menu button:hover,.lang-menu button.active{background:rgba(255,255,255,.06);color:var(--white)}
+.theme-toggle{width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);transition:color .2s,border-color .2s,background .2s}
+.theme-toggle:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+.theme-toggle svg{width:18px;height:18px}
+.icon-sun{display:none}
+[data-theme="light"] .icon-moon{display:none}[data-theme="light"] .icon-sun{display:block}
+.nav-hamburger{display:none;width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.nav-hamburger span{display:block;width:18px;height:2px;background:var(--muted-blue);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;top:var(--nav-h);background:var(--deep-space);padding:40px 24px;opacity:0;visibility:hidden;transform:translateX(100%);transition:all .35s cubic-bezier(.16,1,.3,1);z-index:999;overflow-y:auto}
+.mobile-menu.open{opacity:1;visibility:visible;transform:none}
+.mobile-menu .nav-links{display:flex;flex-direction:column;align-items:flex-start;gap:4px;justify-content:flex-start}
+.mobile-menu .nav-links a{font-size:22px;padding:12px 0;width:100%}
+.mobile-menu .m-ctas{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.mobile-menu .m-ctas .btn-gold,.mobile-menu .m-ctas 
+
+
+@media(max-width:900px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-inner{padding:0 20px}}
+
+/* ============================================================ ABOUT HERO */
+#about-hero{
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;align-items:center;
+  padding-top:calc(var(--nav-h) + 100px);
+  padding-bottom:100px;
+  position:relative;overflow:hidden;
+}
+.hero-bg-grad{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 70% 20%, rgba(0,47,167,.22) 0%, transparent 65%),
+              radial-gradient(ellipse 50% 60% at 20% 80%, rgba(36,59,110,.18) 0%, transparent 60%);
+}
+.hero-bg-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--card-border) 1px,transparent 1px),linear-gradient(90deg,var(--card-border) 1px,transparent 1px);
+  background-size:60px 60px;opacity:.25;
+}
+.about-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-hero-text .eyebrow{margin-bottom:24px}
+.about-hero-text .h1{color:var(--white);margin-bottom:28px}
+.about-hero-text .h1 em{font-style:normal;color:var(--amber-gold)}
+.about-hero-text .body-lg{margin-bottom:40px;max-width:520px}
+.about-hero-text .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.about-hero-founders{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.founder-hero-card{
+  background:var(--card-dark);border:1px solid var(--card-border);
+  border-radius:var(--r-xl);overflow:hidden;
+  transition:border-color .3s,transform .3s;
+}
+.founder-hero-card:hover{border-color:var(--cobalt-shade);transform:translateY(-6px)}
+.founder-hero-img{aspect-ratio:2/3;overflow:hidden}
+.founder-hero-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.founder-hero-card:hover .founder-hero-img img{transform:scale(1.04)}
+.founder-hero-info{padding:20px}
+.founder-hero-name{font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--white);margin-bottom:4px}
+.founder-hero-role{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--amber-gold);letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:900px){
+  #about-hero{padding-top:calc(var(--nav-h) + 48px);padding-bottom:64px;align-items:flex-start;min-height:unset}
+  .about-hero-inner{grid-template-columns:1fr;gap:40px}
+  .about-hero-founders{grid-template-columns:1fr 1fr}
+  .founder-hero-img{aspect-ratio:3/4}
+}
+@media(max-width:500px){
+  .about-hero-founders{grid-template-columns:1fr 1fr}
+  .founder-hero-img{aspect-ratio:4/5}
+}
+
+/* ============================================================ ORIGIN STORY */
+#origin{padding:var(--sp) 0;background:var(--card-dark);border-top:1px solid var(--card-border)}
+.origin-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start}
+.origin-label{
+  position:sticky;top:calc(var(--nav-h) + 40px);
+}
+.origin-label .eyebrow{margin-bottom:24px}
+.origin-label .h2{color:var(--white);margin-bottom:20px}
+.origin-label p{color:var(--muted-blue);font-size:15px;line-height:1.7}
+.origin-text{display:flex;flex-direction:column;gap:0}
+.origin-para{
+  padding:40px 0;border-bottom:1px solid var(--card-border);
+  font-size:clamp(17px,1.3vw,21px);line-height:1.75;color:var(--muted-blue);
+}
+.origin-para:first-child{padding-top:0}
+.origin-para:last-child{border-bottom:none;padding-bottom:0}
+.origin-para strong{color:var(--white);font-weight:600}
+.origin-pull{
+  font-family:var(--font-head);font-size:clamp(22px,2vw,30px);font-weight:800;
+  color:var(--white);line-height:1.3;letter-spacing:-.02em;
+  border-left:4px solid var(--amber-gold);padding-left:24px;margin:8px 0 16px;
+}
+@media(max-width:900px){.origin-grid{grid-template-columns:1fr;gap:48px}.origin-label{position:static}}
+
+/* ============================================================ EXPERIENCE TIMELINE */
+#experience{
+  padding:var(--sp) 0;
+  background:var(--deep-space);
+  border-top:1px solid var(--card-border);
+}
+.exp-header{max-width:680px;margin:0 auto 96px;text-align:center}
+.exp-header .eyebrow{justify-content:center;color:var(--amber-gold)}
+.exp-header .eyebrow::before{display:none}
+.exp-header .h2{color:var(--white);margin-bottom:16px}
+.exp-subhead{color:var(--muted-blue);font-size:18px;line-height:1.65}
+
+.exp-timeline{
+  position:relative;
+  max-width:900px;margin:0 auto;
+}
+/* vertical spine */
+.exp-timeline::before{
+  content:'';position:absolute;
+  left:120px;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--card-border) 8%,var(--card-border) 92%,transparent);
+}
+
+.exp-item{
+  display:grid;grid-template-columns:120px 1fr;
+  gap:0 40px;margin-bottom:64px;position:relative;
+}
+.exp-item:last-child{margin-bottom:0}
+
+.exp-year-col{
+  display:flex;flex-direction:column;align-items:flex-end;
+  padding-top:6px;
+}
+.exp-year{
+  font-family:var(--font-head);font-size:13px;font-weight:800;
+  color:var(--muted-ink);letter-spacing:.08em;
+  transition:color .3s;
+}
+.exp-item:hover .exp-year{color:var(--amber-gold)}
+.exp-year-line{flex:1;width:1px;background:transparent;margin-top:12px}
+
+.exp-card{
+  background:var(--card-dark);
+  border:1px solid var(--card-border);
+  border-radius:var(--r-xl);
+  padding:36px 40px;
+  position:relative;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+}
+.exp-card:hover{
+  border-color:var(--cobalt-shade);
+  transform:translateX(6px);
+  box-shadow:0 16px 48px rgba(0,0,0,.3);
+}
+/* connector arrow */
+.exp-card::before{
+  content:'';position:absolute;
+  left:-9px;top:28px;
+  width:16px;height:16px;
+  border-left:1px solid var(--card-border);
+  border-bottom:1px solid var(--card-border);
+  background:var(--card-dark);
+  transform:rotate(45deg);
+  transition:border-color .3s,background .3s;
+}
+.exp-card:hover::before{border-color:var(--cobalt-shade);background:var(--card-dark)}
+
+.exp-dot{
+  position:absolute;
+  left:-57px;top:28px;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--card-border);
+  border:2px solid var(--deep-space);
+  transition:background .3s,transform .3s;
+}
+.exp-item:hover .exp-dot{background:var(--amber-gold);transform:scale(1.3)}
+.exp-dot--active{
+  background:var(--amber-gold);
+  box-shadow:0 0 0 4px rgba(229,168,32,.2),0 0 16px rgba(229,168,32,.35);
+  animation:activePulse 2.5s ease infinite;
+}
+@keyframes activePulse{
+  0%,100%{box-shadow:0 0 0 4px rgba(229,168,32,.2),0 0 16px rgba(229,168,32,.3)}
+  50%{box-shadow:0 0 0 8px rgba(229,168,32,.12),0 0 24px rgba(229,168,32,.5)}
+}
+
+.exp-phase{
+  font-family:var(--font-head);font-size:11px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--amber-gold);margin-bottom:10px;
+}
+.exp-title{
+  font-family:var(--font-head);font-size:clamp(17px,1.6vw,21px);font-weight:800;
+  color:var(--white);line-height:1.3;margin-bottom:14px;
+}
+.exp-desc{
+  font-size:15px;line-height:1.7;color:var(--muted-blue);margin-bottom:20px;
+}
+.exp-metric{
+  font-family:var(--font-head);font-size:13px;font-weight:700;
+  color:var(--amber-gold);
+  background:rgba(229,168,32,.08);
+  border:1px solid rgba(229,168,32,.2);
+  border-radius:var(--r-sm);padding:10px 16px;
+  margin-bottom:20px;
+}
+.exp-metric-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  margin-bottom:20px;
+}
+.exp-metric-item{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--card-border);
+  border-radius:var(--r-md);padding:14px 10px;
+  text-align:center;
+}
+.exp-metric-val{
+  display:block;
+  font-family:var(--font-head);font-size:22px;font-weight:800;
+  color:var(--amber-gold);line-height:1;margin-bottom:4px;
+}
+.exp-metric-lab{
+  font-family:var(--font-head);font-size:11px;font-weight:600;
+  color:var(--muted-blue);letter-spacing:.06em;text-transform:uppercase;
+}
+.exp-tags{display:flex;flex-wrap:wrap;gap:8px}
+.exp-tag{
+  font-family:var(--font-head);font-size:11px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 12px;border-radius:99px;
+  background:rgba(0,47,167,.14);color:var(--muted-blue);
+  border:1px solid var(--card-border);
+}
+.exp-tag--gold{
+  background:rgba(229,168,32,.12);color:var(--amber-gold);
+  border-color:rgba(229,168,32,.25);
+}
+.exp-card--current{
+  border-color:rgba(229,168,32,.3);
+  background:linear-gradient(135deg,var(--card-dark) 60%,rgba(229,168,32,.04) 100%);
+}
+.exp-card--current::after{
+  content:'Active';
+  position:absolute;top:20px;right:20px;
+  font-family:var(--font-head);font-size:10px;font-weight:800;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--amber-gold);padding:4px 12px;border-radius:99px;
+  background:rgba(229,168,32,.12);border:1px solid rgba(229,168,32,.25);
+}
+
+@media(max-width:900px){
+  .exp-timeline::before{left:80px}
+  .exp-item{grid-template-columns:80px 1fr;gap:0 24px}
+  .exp-dot{left:-37px}
+  .exp-metric-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .exp-timeline::before{display:none}
+  .exp-item{grid-template-columns:1fr;gap:0}
+  .exp-year-col{flex-direction:row;align-items:center;gap:12px;margin-bottom:12px}
+  .exp-year-line{display:none}
+  .exp-year{font-size:12px}
+  .exp-dot{position:static;margin-right:4px;flex-shrink:0}
+  .exp-card{padding:24px}
+  .exp-card::before{display:none}
+  .exp-metric-grid{grid-template-columns:repeat(2,1fr)}
+  .exp-header{margin-bottom:56px}
+}
+
+/* ============================================================ WHAT MAKES US DIFFERENT */
+#different{padding:var(--sp) 0;background:var(--deep-space)}
+.different-header{text-align:center;margin-bottom:72px}
+.different-header .h2{color:var(--white)}
+.different-header p{color:var(--muted-blue);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.diff-card{
+  background:var(--card-dark);border:1px solid var(--card-border);
+  border-radius:var(--r-xl);padding:36px 32px;
+  transition:border-color .3s,transform .3s;
+  position:relative;overflow:hidden;
+}
+.diff-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--klein-blue),var(--amber-gold));
+  transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.diff-card:hover::after{transform:scaleX(1)}
+.diff-card:hover{border-color:var(--cobalt-shade);transform:translateY(-4px)}
+.diff-num{
+  font-family:var(--font-head);font-size:48px;font-weight:800;
+  color:var(--card-border);line-height:1;margin-bottom:20px;
+}
+.diff-card .h3{color:var(--white);margin-bottom:12px}
+.diff-card p{color:var(--muted-blue);font-size:15px;line-height:1.65}
+.diff-highlight{color:var(--amber-gold);font-weight:600}
+@media(max-width:900px){.diff-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.diff-grid{grid-template-columns:1fr}}
+
+/* ============================================================ TRACK RECORD */
+#track-record{padding:var(--sp) 0;background:var(--card-dark);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border)}
+.track-header{text-align:center;margin-bottom:72px}
+.track-header .eyebrow{justify-content:center}
+.track-header .eyebrow::before{display:none}
+.track-header .h2{color:var(--white)}
+.track-header p{color:var(--muted-blue);margin-top:12px}
+.track-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:64px}
+.track-stat{
+  background:var(--deep-space);border:1px solid var(--card-border);
+  border-radius:var(--r-xl);padding:40px 28px;text-align:center;
+}
+.track-stat-val{
+  font-family:var(--font-head);font-size:clamp(36px,4vw,56px);font-weight:800;
+  color:var(--amber-gold);line-height:1;margin-bottom:10px;
+}
+.track-stat-label{
+  font-family:var(--font-head);font-size:13px;font-weight:600;
+  color:var(--muted-blue);letter-spacing:.06em;text-transform:uppercase;
+}
+.track-industries{margin-top:0}
+.track-industries-title{
+  font-family:var(--font-head);font-size:13px;font-weight:700;
+  color:var(--muted-blue);letter-spacing:.14em;text-transform:uppercase;
+  text-align:center;margin-bottom:24px;
+}
+.industry-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.industry-pill{
+  font-family:var(--font-head);font-size:13px;font-weight:600;
+  color:var(--muted-blue);padding:8px 18px;border-radius:99px;
+  background:rgba(255,255,255,.04);border:1px solid var(--card-border);
+  transition:color .2s,border-color .2s,background .2s;
+}
+.industry-pill:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.07)}
+.track-countries{margin-top:48px;text-align:center}
+.countries-label{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--muted-blue);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+.country-list{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.country-tag{
+  font-family:var(--font-head);font-size:14px;font-weight:700;
+  color:var(--white);padding:8px 20px;border-radius:var(--r-md);
+  background:var(--cobalt-shade);border:1px solid var(--card-border);
+}
+@media(max-width:900px){.track-stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.track-stats{grid-template-columns:1fr 1fr}}
+
+/* ============================================================ VALUES */
+#values{padding:var(--sp) 0;background:var(--deep-space)}
+.values-header{margin-bottom:72px}
+.values-header .eyebrow{color:var(--amber-gold)}
+.values-header .eyebrow::before{background:var(--amber-gold)}
+.values-header .h2{color:var(--white)}
+.values-header p{color:var(--muted-blue);margin-top:16px;max-width:480px;font-size:17px}
+.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--card-border);border-radius:var(--r-xl);overflow:hidden}
+.value-item{
+  background:var(--card-dark);padding:48px 40px;
+  transition:background .2s;
+}
+.value-item:hover{background:rgba(0,47,167,.1)}
+.value-icon{font-size:32px;margin-bottom:20px}
+.value-item .h3{color:var(--white);margin-bottom:12px}
+.value-item p{color:var(--muted-blue);font-size:15px;line-height:1.65}
+@media(max-width:700px){.values-grid{grid-template-columns:1fr}}
+
+/* ============================================================ CTA STRIP */
+#about-cta{padding:var(--sp) 0;background:var(--deep-space);text-align:center;position:relative;overflow:hidden}
+#about-cta::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,47,167,.18) 0%,transparent 70%);pointer-events:none}
+.about-cta-inner{position:relative;z-index:1;max-width:660px;margin:0 auto}
+.about-cta-inner .h2{color:var(--white);margin-bottom:20px}
+.about-cta-inner p{color:var(--muted-blue);font-size:18px;margin-bottom:40px}
+.about-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ============================================================ FOOTER */
+#footer{background:var(--card-dark);border-top:1px solid var(--card-border);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand img{height:32px;margin-bottom:16px}
+.footer-brand p{font-size:14px;color:var(--muted-blue);line-height:1.65;max-width:280px}
+.footer-col-title{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:20px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{font-size:14px;color:var(--muted-blue);transition:color .2s}
+.footer-col ul a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:32px;border-top:1px solid var(--card-border)}
+.footer-bottom p,.footer-bottom a{font-size:13px;color:var(--muted-blue)}
+.footer-bottom a:hover{color:var(--white)}
+.social-link{width:36px;height:36px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);font-size:14px;transition:color .2s,border-color .2s,background .2s}
+.social-link:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+
+/* ============================================================ WHATSAPP */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 12px 40px rgba(37,211,102,.55)}
+.wa-float svg{width:28px;height:28px;fill:white}
+.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%) translateX(8px);background:var(--card-dark);border:1px solid var(--card-border);color:var(--white);border-radius:var(--r-md);padding:8px 14px;font-family:var(--font-head);font-size:13px;font-weight:600;white-space:nowrap;pointer-events:none;opacity:0;transition:all .2s ease}
+.wa-float:hover .wa-tooltip{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* ============================================================ LIGHT OVERRIDES */
+[data-theme="light"] #about-hero{background:var(--light-bg)}
+[data-theme="light"] .about-hero-text .h1{color:var(--deep-space)}
+[data-theme="light"] .about-hero-text .body-lg{color:var(--muted-ink)}
+[data-theme="light"] .hero-bg-grad{background:radial-gradient(ellipse 60% 80% at 70% 20%,rgba(0,47,167,.08) 0%,transparent 65%)}
+[data-theme="light"] .hero-bg-grid{background-image:linear-gradient(var(--light-border) 1px,transparent 1px),linear-gradient(90deg,var(--light-border) 1px,transparent 1px);opacity:.6}
+[data-theme="light"] .founder-hero-card{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .founder-hero-name{color:var(--deep-space)}
+[data-theme="light"] #origin{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .origin-label .h2{color:var(--deep-space)}
+[data-theme="light"] .origin-label p{color:var(--muted-ink)}
+[data-theme="light"] .origin-para{color:var(--muted-ink);border-color:var(--light-border)}
+[data-theme="light"] .origin-para strong{color:var(--deep-space)}
+[data-theme="light"] .origin-pull{color:var(--deep-space)}
+[data-theme="light"] #different{background:var(--light-bg)}
+[data-theme="light"] .different-header .h2{color:var(--deep-space)}
+[data-theme="light"] .different-header p{color:var(--muted-ink)}
+[data-theme="light"] .diff-card{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .diff-num{color:var(--light-border)}
+[data-theme="light"] .diff-card .h3{color:var(--deep-space)}
+[data-theme="light"] .diff-card p{color:var(--muted-ink)}
+[data-theme="light"] #track-record{background:var(--light-bg);border-color:var(--light-border)}
+[data-theme="light"] .track-header .h2{color:var(--deep-space)}
+[data-theme="light"] .track-header p{color:var(--muted-ink)}
+[data-theme="light"] .track-stat{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .track-stat-label{color:var(--muted-ink)}
+[data-theme="light"] .industry-pill{color:var(--muted-ink);border-color:var(--light-border);background:var(--white)}
+[data-theme="light"] .industry-pill:hover{color:var(--deep-space);border-color:var(--muted-ink);background:var(--light-bg)}
+[data-theme="light"] .country-tag{background:rgba(0,47,167,.1);color:var(--klein-blue);border-color:rgba(0,47,167,.2)}
+[data-theme="light"] #about-cta{background:var(--light-bg)}
+[data-theme="light"] .about-cta-inner .h2{color:var(--deep-space)}
+[data-theme="light"] .about-cta-inner p{color:var(--muted-ink)}
+[data-theme="light"] #footer{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .footer-col-title{color:var(--deep-space)}
+[data-theme="light"] .footer-col ul a,.footer-bottom p,.footer-bottom a{color:var(--muted-ink)}
+[data-theme="light"] .footer-col ul a:hover{color:var(--deep-space)}
+[data-theme="light"] .footer-bottom{border-color:var(--light-border)}
+[data-theme="light"] .social-link{border-color:var(--light-border);color:var(--muted-ink)}
+[data-theme="light"] .social-link:hover{color:var(--deep-space);border-color:var(--muted-ink);background:rgba(0,0,0,.04)}
+[data-theme="light"] #navbar.scrolled{background:rgba(244,247,255,.92)}
+[data-theme="light"] .nav-links a{color:var(--muted-ink)}
+[data-theme="light"] .nav-links a:hover{color:var(--deep-space);background:rgba(0,0,0,.05)}
+[data-theme="light"] .nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;border:none;box-shadow:0 4px 14px rgba(228,174,11,.25)}
+[data-theme="light"] .lang-btn,[data-theme="light"] .theme-toggle{color:var(--muted-ink);border-color:var(--light-border)}
+[data-theme="light"] .lang-btn:hover,[data-theme="light"] .theme-toggle:hover{color:var(--deep-space);border-color:var(--muted-ink);background:rgba(0,0,0,.05)}
+[data-theme="light"] .lang-menu{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .lang-menu button{color:var(--muted-ink)}
+[data-theme="light"] .lang-menu button:hover{background:var(--light-bg);color:var(--deep-space)}
+
+/* COOKIE CONSENT */
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;z-index:1100;background:rgba(13,24,38,.97);border-top:1px solid #1E3055;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);padding:20px 0;}
+#cookieBanner.visible{transform:none}
+.cookie-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
+.cookie-text{flex:1;min-width:260px}
+.cookie-text p{font-size:14px;color:#B8CBE8;line-height:1.6}
+.cookie-text strong{color:#fff}
+.cookie-text a{color:#E5A820;text-decoration:underline;text-underline-offset:3px}
+.cookie-btns{display:flex;gap:12px;flex-shrink:0}
+.cookie-accept{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;padding:10px 22px;border-radius:10px;background:#E5A820;color:#08101E;transition:background .2s,transform .2s;cursor:pointer;border:none;}
+.cookie-accept:hover{background:#f0b820;transform:translateY(-1px)}
+.cookie-decline{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;padding:10px 22px;border-radius:10px;background:transparent;color:#B8CBE8;border:1px solid #1E3055;transition:border-color .2s,color .2s;cursor:pointer;}
+.cookie-decline:hover{border-color:#B8CBE8;color:#fff}
+@media(max-width:600px){.cookie-inner{padding:0 20px;gap:16px}.cookie-btns{width:100%}.cookie-accept,.cookie-decline{flex:1;text-align:center}}
+
+/* ============================================================
+   CARD STACK — WHY WE EXIST (#origin)
+   ============================================================ */
+.origin-para{
+  position:sticky;
+  padding:40px 48px !important;
+  border:1px solid var(--card-border) !important;
+  border-bottom:1px solid var(--card-border) !important;
+  border-radius:20px;
+  background:var(--deep-space);
+  margin-bottom:20px;
+  box-shadow:0 8px 40px rgba(0,0,0,.35);
+  will-change:transform;
+  transform-origin:50% 0;
+  transition:box-shadow .3s ease;
+}
+.origin-para:first-child{padding-top:40px !important;}
+.origin-para:last-child{border-bottom:1px solid var(--card-border) !important;padding-bottom:40px !important;margin-bottom:0;}
+.origin-para:nth-child(1){top:calc(var(--nav-h) + 16px);z-index:1;}
+.origin-para:nth-child(2){top:calc(var(--nav-h) + 24px);z-index:2;}
+.origin-para:nth-child(3){top:calc(var(--nav-h) + 32px);z-index:3;}
+.origin-para:nth-child(4){top:calc(var(--nav-h) + 40px);z-index:4;}
+.origin-para:nth-child(5){top:calc(var(--nav-h) + 48px);z-index:5;}
+[data-theme="light"] .origin-para{background:var(--white);border-color:var(--light-border) !important;}
+
+/* ============================================================
+   CARD STACK — OUR JOURNEY (#experience)
+   ============================================================ */
+.exp-timeline::before{display:none;}
+.exp-item{
+  position:sticky;
+  margin-bottom:20px !important;
+  will-change:transform;
+  transform-origin:50% 0;
+}
+.exp-item:last-child{margin-bottom:0 !important;}
+.exp-item:nth-child(1){top:calc(var(--nav-h) + 16px);z-index:1;}
+.exp-item:nth-child(2){top:calc(var(--nav-h) + 24px);z-index:2;}
+.exp-item:nth-child(3){top:calc(var(--nav-h) + 32px);z-index:3;}
+.exp-item:nth-child(4){top:calc(var(--nav-h) + 40px);z-index:4;}
+.exp-item:nth-child(5){top:calc(var(--nav-h) + 48px);z-index:5;}
+.exp-item:nth-child(6){top:calc(var(--nav-h) + 56px);z-index:6;}
+/* remove horizontal translateX on hover — conflicts with sticky */
+.exp-card:hover{transform:none !important;}
+
+@media(max-width:768px){
+  .origin-para{position:static !important;padding:28px 24px !important;margin-bottom:16px;}
+  .exp-item{position:static !important;margin-bottom:16px !important;}
+}
+
+
+/* LIGHT THEME — UNIVERSAL READABILITY OVERRIDES */
+[data-theme="light"]{--deep-space:#08101E;--white:#FFFFFF;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--muted-blue:#3A4F7A;--muted-ink:#3A4F7A;--card-dark:#FFFFFF;--card-border:#C5D3F0}
+[data-theme="light"] body{background:#F4F7FF;color:#08101E}
+[data-theme="light"] section{background:#F4F7FF}
+[data-theme="light"] section:nth-of-type(even){background:#FFFFFF}
+[data-theme="light"] h1,[data-theme="light"] h2,[data-theme="light"] h3,[data-theme="light"] h4,[data-theme="light"] h5,[data-theme="light"] h6,[data-theme="light"] .h1,[data-theme="light"] .h2,[data-theme="light"] .h3,[data-theme="light"] .h4{color:#08101E}
+[data-theme="light"] p,[data-theme="light"] li,[data-theme="light"] td,[data-theme="light"] label,[data-theme="light"] .body-lg{color:#3A4F7A}
+[data-theme="light"] .work-card,[data-theme="light"] .case-card,[data-theme="light"] .team-card,[data-theme="light"] .deliverable,[data-theme="light"] .value-item,[data-theme="light"] .insight-card,[data-theme="light"] .svc-card,[data-theme="light"] .pillar-card,[data-theme="light"] .seo-card,[data-theme="light"] .pricing-card{background:#FFFFFF !important;border-color:#C5D3F0 !important}
+[data-theme="light"] .work-card h3,[data-theme="light"] .case-card h3,[data-theme="light"] .team-card h3,[data-theme="light"] .deliverable .h4,[data-theme="light"] .value-item h3,[data-theme="light"] .insight-card h3,[data-theme="light"] .svc-card h3,[data-theme="light"] .pillar-card h3{color:#08101E}
+[data-theme="light"] .work-card p,[data-theme="light"] .case-card p,[data-theme="light"] .team-card p,[data-theme="light"] .deliverable p,[data-theme="light"] .value-item p,[data-theme="light"] .insight-card p{color:#3A4F7A}
+[data-theme="light"] .nav-logo img{filter:brightness(.2) contrast(1.4)}
+[data-theme="light"] #footer,[data-theme="light"] footer{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .footer-brand p,[data-theme="light"] .footer-col ul a,[data-theme="light"] .footer-bottom p{color:#3A4F7A}
+[data-theme="light"] .footer-col-title{color:#08101E}
+[data-theme="light"] .footer-bottom{border-color:#C5D3F0}
+[data-theme="light"] .social-link{border-color:#C5D3F0;color:#3A4F7A}
+[data-theme="light"] .social-link:hover{color:#08101E;border-color:#3A4F7A;background:#F4F7FF}
+[data-theme="light"] 
+
+
+[data-theme="light"] 
+[data-theme="light"] .tool-chip,[data-theme="light"] .s-nav-pill{background:#FFFFFF;color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .eyebrow{color:#E5A820}
+[data-theme="light"] input,[data-theme="light"] textarea,[data-theme="light"] select{background:#FFFFFF;color:#08101E;border-color:#C5D3F0}
+[data-theme="light"] input::placeholder,[data-theme="light"] textarea::placeholder{color:#8FA0BF}
+[data-theme="light"] .lang-menu,[data-theme="light"] .lang-dropdown{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .lang-menu button,[data-theme="light"] .lang-option{color:#3A4F7A}
+[data-theme="light"] .lang-menu button:hover,[data-theme="light"] .lang-option:hover{background:#F4F7FF;color:#08101E}
+[data-theme="light"] .pillar-num{color:#C5D3F0}
+[data-theme="light"] .wg-block{background:rgba(229,168,32,.05);border-color:rgba(229,168,32,.25)}
+[data-theme="light"] .wg-item{color:#3A4F7A}
+[data-theme="light"] .pfaq-q{color:#08101E}
+[data-theme="light"] .pfaq-a,[data-theme="light"] .pfaq-icon{color:#3A4F7A}
+[data-theme="light"] .seo-name{color:#08101E}
+[data-theme="light"] .seo-desc,[data-theme="light"] .seo-bullet{color:#3A4F7A}
+[data-theme="light"] #cookieBanner{background:rgba(255,255,255,.97);border-color:#C5D3F0}
+[data-theme="light"] .cookie-text p{color:#3A4F7A}
+[data-theme="light"] .cookie-text strong{color:#08101E}
+[data-theme="light"] .cookie-decline{color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .cookie-decline:hover{color:#08101E;border-color:#3A4F7A}
+
+@media(max-width:900px){.nav-right 
+
+
+.nav-logo{flex-shrink:0}.nav-logo img{height:52px;width:auto}}
+
+/* Nav CTA: same line as menu, at far right edge, Option 5 styling */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px;right:20px;z-index:1100;font-weight:800!important;font-size:13px!important;padding:10px 18px!important;letter-spacing:.02em;background:transparent!important;color:var(--amber-gold,#E5A820)!important;border:2px solid var(--amber-gold,#E5A820)!important;border-radius:8px!important;overflow:hidden;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(229,168,32,.18);transition:color .4s}
+/* Reserve right space in non-scrolled nav so menu items dont fall under CTA */
+#navbar:not(.scrolled) .nav-inner{padding-right:170px!important}
+.nav-right .btn-gold::before,.nav-actions .nav-cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold,#E5A820);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{color:#08101E!important}
+.nav-right .btn-gold:hover::before,.nav-actions .nav-cta:hover::before{left:0}
+/* Hide CTA when nav scrolled (pill state) — user requested no clutter on scroll */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important;transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
+.nav-right .btn-gold,.nav-actions .nav-cta{transition:opacity .3s ease,visibility .3s ease,transform .3s ease,color .4s ease}
+@media(max-width:1180px){
+  .nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}
+  #navbar:not(.scrolled) .nav-inner{padding-right:40px!important}
+}
+
+/* ========================================================
+   UNIFIED BUTTON SYSTEM — Option 2 (White Ghost Slide) ONLY
+   Overrides every old btn-gold/blue/ghost/ghost-dark + nav CTA
+   ======================================================== */
+.btn-gold,.btn-blue,.btn-ghost,.btn-ghost-dark,.nav-right .btn-gold,.nav-actions .nav-cta{
+  position:relative!important;display:inline-flex!important;align-items:center!important;gap:8px!important;
+  background:transparent!important;color:#fff!important;
+  font-family:var(--font-head)!important;font-size:15px!important;font-weight:700!important;letter-spacing:.02em!important;
+  padding:14px 28px!important;border-radius:8px!important;
+  border:1.5px solid rgba(255,255,255,.55)!important;
+  transition:color .35s ease,border-color .35s ease!important;
+  z-index:0;overflow:hidden!important;text-decoration:none!important;
+  box-shadow:none!important;
+}
+.btn-gold::before,.btn-blue::before,.btn-ghost::before,.btn-ghost-dark::before,.nav-right .btn-gold::before,.nav-actions .nav-cta::before{display:none!important}
+.btn-gold::after,.btn-blue::after,.btn-ghost::after,.btn-ghost-dark::after,.nav-right .btn-gold::after,.nav-actions .nav-cta::after{
+  content:''!important;position:absolute!important;inset:0!important;
+  background:#fff!important;
+  transform:scaleX(0)!important;transform-origin:left!important;
+  transition:transform .35s cubic-bezier(.4,0,.2,1)!important;
+  z-index:-1!important;
+}
+.btn-gold:hover,.btn-blue:hover,.btn-ghost:hover,.btn-ghost-dark:hover,.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{
+  color:#08101E!important;border-color:#fff!important;
+}
+.btn-gold:hover::after,.btn-blue:hover::after,.btn-ghost:hover::after,.btn-ghost-dark:hover::after,.nav-right .btn-gold:hover::after,.nav-actions .nav-cta:hover::after{
+  transform:scaleX(1)!important;
+}
+/* Keep nav CTA fixed positioning */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px!important;right:20px!important;z-index:1100!important;font-size:13px!important;font-weight:800!important;padding:10px 18px!important}
+/* Hide nav CTA when scrolled */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important}
+/* Hide nav CTA on narrow viewports */
+@media(max-width:1180px){.nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}#navbar:not(.scrolled) .nav-inner{padding-right:40px!important}}
+.founder-hero-card{cursor:pointer}
+.founder-read-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:7px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#E5A820;background:rgba(229,168,32,.08);border:1.5px solid rgba(229,168,32,.35);border-radius:6px;cursor:pointer;transition:background .25s,border-color .25s,gap .2s}
+.founder-read-btn:hover{background:rgba(229,168,32,.18);border-color:#E5A820;gap:10px}
+.founder-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;z-index:9800;opacity:0;pointer-events:none;transition:opacity .3s;padding:24px}
+.founder-modal-overlay.open{opacity:1;pointer-events:auto}
+.founder-modal{background:#0D1826;border:1px solid #1E3055;border-radius:20px;max-width:700px;width:100%;overflow:hidden;position:relative;display:grid;grid-template-columns:220px 1fr;transform:translateY(24px) scale(.97);transition:transform .4s cubic-bezier(.16,1,.3,1);max-height:90vh;overflow-y:auto}
+.founder-modal-overlay.open .founder-modal{transform:translateY(0) scale(1)}
+.fmodal-photo{overflow:hidden;min-height:320px}
+.fmodal-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.fmodal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);cursor:pointer;font-size:22px;line-height:1;color:#fff;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2;font-family:sans-serif}
+.fmodal-close:hover{background:rgba(229,168,32,.3);border-color:#E5A820}
+.fmodal-body{padding:40px 36px;display:flex;flex-direction:column;gap:14px;overflow-y:auto}
+.fmodal-role{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E5A820}
+.fmodal-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.1}
+.fmodal-bio p{color:#B8CBE8;font-size:14px;line-height:1.75;margin-bottom:10px}
+.fmodal-bio p:last-child{margin-bottom:0}
+.fmodal-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.fmodal-tag{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;border-radius:99px;background:rgba(229,168,32,.1);color:#E5A820;border:1px solid rgba(229,168,32,.25)}
+@media(max-width:620px){.founder-modal{grid-template-columns:1fr}.fmodal-photo{min-height:220px;max-height:260px}.fmodal-body{padding:28px 22px}.fmodal-name{font-size:21px}}
+</style>
+<!-- DMS:OG -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digitalmindssolutions.com/about">
+<meta property="og:title" content="About Digital Minds Solutions. Houston Digital Agency">
+<meta property="og:description" content="15+ years experience. Two founders. One team. No outsourcing. Web, AI, design, marketing, and software built by the same people every time.">
+<meta property="og:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Digital Minds Solutions">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DigitalMindsSol">
+<meta name="twitter:title" content="About Digital Minds Solutions. Houston Digital Agency">
+<meta name="twitter:description" content="15+ years experience. Two founders. One team. No outsourcing. Web, AI, design, marketing, and software built by the same people every time.">
+<meta name="twitter:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<link rel="canonical" href="https://digitalmindssolutions.com/about">
+<!-- /DMS:OG -->
+  <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="../ASSETS/logo/logo-main.svg.png" alt="Digital Minds Solutions"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" id="langBtn"><span id="langCurrent">EN</span><svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="lang-menu" id="langMenu">
+          <button class="active" data-lang="en">English</button>
+          <button data-lang="es">Español</button>
+          <button data-lang="fr">Français</button>
+          <button data-lang="it">Italiano</button>
+          <button data-lang="pt">Português</button>
+        </div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank" rel="noopener">Book a Free Call</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="m-ctas">
+    <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Book a Free Discovery Call</a>
+    <a href="https://wa.me/447426427646" class="btn-ghost" target="_blank">WhatsApp Us Directly →</a>
+  </div>
+</div>
+
+<!-- ============================================================ ABOUT HERO -->
+<section id="about-hero">
+  <div class="hero-bg-grad"></div>
+  <div class="hero-bg-grid"></div>
+  <div class="container">
+    <div class="about-hero-inner">
+      <div class="about-hero-text">
+        <div class="eyebrow gs">Our Story</div>
+        <h1 class="h1 gs">The agency built from<br>a <em>specific</em><br>frustration.</h1>
+        <p class="body-lg gs">Two founders. One team. No handoffs. No outsourcing. No agencies that disappear after the invoice. Just the work, and the numbers that prove it.</p>
+        <div class="hero-btns gs">
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank" rel="noopener">Book a Free Discovery Call</a>
+          <a href="work.html" class="btn-ghost">See Our Work →</a>
+        </div>
+      </div>
+      <div class="about-hero-founders gs">
+        <div class="founder-hero-card" data-founder="1" role="button" tabindex="0" aria-label="Read Churchill Bracknell's full bio">
+          <div class="founder-hero-img">
+            <img src="../ASSETS/team/founder1 Mr Churchill Bracknell.jpg.png" alt="Churchill Bracknell — Co-Founder, Digital Minds Solutions" loading="eager">
+          </div>
+          <div class="founder-hero-info">
+            <div class="founder-hero-name">Churchill Bracknell</div>
+            <div class="founder-hero-role">Co-Founder &amp; Technical Director</div>
+            <button class="founder-read-btn" data-founder="1">Read Bio <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+        <div class="founder-hero-card" data-founder="2" role="button" tabindex="0" aria-label="Read Phillip Akin's full bio">
+          <div class="founder-hero-img">
+            <img src="../ASSETS/team/founder2 Mr Philips Akin Phili.jpg.png" alt="Phillip Akin — Co-Founder, Digital Minds Solutions" loading="eager">
+          </div>
+          <div class="founder-hero-info">
+            <div class="founder-hero-name">Phillip Akin</div>
+            <div class="founder-hero-role">Co-Founder &amp; Strategy Director</div>
+            <button class="founder-read-btn" data-founder="2">Read Bio <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ORIGIN STORY -->
+<section id="origin">
+  <div class="container">
+    <div class="origin-grid">
+      <div class="origin-label">
+        <div class="eyebrow gs">Why We Exist</div>
+        <h2 class="h2 gs">In their<br>own words.</h2>
+        <p class="gs">This is the exact story, unedited. The reason DMS exists is the same reason it works for every client.</p>
+      </div>
+      <div class="origin-text">
+        <div class="origin-para gs">
+          Digital Minds Solutions came from watching good businesses lose to worse ones. Not because they had a bad product. Not because they weren't working hard enough. <strong>Nobody could find them.</strong> Nobody trusted what they saw when they did. Nothing on the digital side was pulling in the same direction.
+        </div>
+        <div class="origin-para gs">
+          <div class="origin-pull">"Website, brand, marketing - all pointing in different directions."</div>
+          The agencies they hired to fix it were expensive. They were slow. And they were <strong>largely absent once the invoice was paid.</strong>
+        </div>
+        <div class="origin-para gs">
+          We'd lived a version of this ourselves. Building something. Pulling a digital presence together from different corners. Realising the whole system made it harder than it had to be. <strong>So we started doing it ourselves instead.</strong>
+        </div>
+        <div class="origin-para gs">
+          What surprised us wasn't that it worked. It was <strong>how fast it worked.</strong> Things agencies quoted three months for were done in weeks. Manual processes that ate hours every day were automated in days.
+        </div>
+        <div class="origin-para gs">
+          <div class="origin-pull">"The moment you watch a business owner get that time back, and then see the leads start coming in, you stop wondering whether this is worth doing."</div>
+          We started Digital Minds Solutions because the gap was real and we had the skills to close it. That is still the whole reason.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ EXPERIENCE TIMELINE -->
+<section id="experience">
+  <div class="container">
+    <div class="exp-header">
+      <div class="eyebrow gs">Our Journey</div>
+      <h2 class="h2 gs">15+ years of building<br>what actually works.</h2>
+      <p class="exp-subhead gs">Every milestone below is a lesson learned. A system refined. A result delivered. This is the record.</p>
+    </div>
+    <div class="exp-timeline">
+
+      <div class="exp-item gs">
+        <div class="exp-year-col">
+          <div class="exp-year">2009</div>
+          <div class="exp-year-line"></div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-dot"></div>
+          <div class="exp-phase">The Beginning</div>
+          <h3 class="exp-title">Started with one frustration and a blank page.</h3>
+          <p class="exp-desc">Churchill Bracknell and Phillip Akin began working with small businesses struggling to be found online. Not as an agency. As problem solvers. The tools were basic. The results were real. The approach stuck.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Web Design</span>
+            <span class="exp-tag">Local SEO</span>
+            <span class="exp-tag">UK Market</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item gs">
+        <div class="exp-year-col">
+          <div class="exp-year">2012</div>
+          <div class="exp-year-line"></div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-dot"></div>
+          <div class="exp-phase">First Scale</div>
+          <h3 class="exp-title">Grew from 3 clients to 30. Refined the system.</h3>
+          <p class="exp-desc">Word spread fast when results were measurable. We expanded into paid media, email marketing, and CRO. The lesson was simple. Every channel worked better when run as a single connected system.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Paid Media</span>
+            <span class="exp-tag">Email Marketing</span>
+            <span class="exp-tag">CRO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item gs">
+        <div class="exp-year-col">
+          <div class="exp-year">2015</div>
+          <div class="exp-year-line"></div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-dot"></div>
+          <div class="exp-phase">Going Global</div>
+          <h3 class="exp-title">International clients across 5 countries.</h3>
+          <p class="exp-desc">From the UK to the UAE, Australia to South Africa, the DMS approach translated across markets because the fundamentals never changed. Clear positioning. Measurable outcomes. No excuses. Barceló Hotel Group became one of our flagship clients.</p>
+          <div class="exp-metric">+1,190% Search Impressions. Barceló Hotel Group</div>
+          <div class="exp-tags">
+            <span class="exp-tag">International</span>
+            <span class="exp-tag">Hospitality</span>
+            <span class="exp-tag">Enterprise SEO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item gs">
+        <div class="exp-year-col">
+          <div class="exp-year">2019</div>
+          <div class="exp-year-line"></div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-dot"></div>
+          <div class="exp-phase">System Thinking</div>
+          <h3 class="exp-title">Built the integrated model. Brand, web, marketing, automation as one.</h3>
+          <p class="exp-desc">We stopped working on individual channels and started building complete systems. Website, brand, content, paid, SEO, CRM, all designed to work together. Every new client got the full stack from day one. Results doubled.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Full-Stack</span>
+            <span class="exp-tag">CRM Automation</span>
+            <span class="exp-tag">Brand Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item gs">
+        <div class="exp-year-col">
+          <div class="exp-year">2022</div>
+          <div class="exp-year-line"></div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-dot"></div>
+          <div class="exp-phase">AI Integration</div>
+          <h3 class="exp-title">Built AI into the infrastructure, not just the pitch.</h3>
+          <p class="exp-desc">When AI tools became viable, DMS moved fast. Chatbots live in 5 days. Automated lead qualification. Content pipelines. Proposal generation. Not sold as a feature. Built into every engagement so clients get the output of a 20-person team.</p>
+          <div class="exp-metric">AI chatbot live in 5 days. Full CRM automation in 3 weeks.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">AI Systems</span>
+            <span class="exp-tag">Automation</span>
+            <span class="exp-tag">Lead Qualification</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item gs">
+        <div class="exp-year-col">
+          <div class="exp-year">2024</div>
+          <div class="exp-year-line"></div>
+        </div>
+        <div class="exp-card exp-card--current">
+          <div class="exp-dot exp-dot--active"></div>
+          <div class="exp-phase">Present Day</div>
+          <h3 class="exp-title">Houston, TX headquarters. 9 countries. 100+ projects. Still building.</h3>
+          <p class="exp-desc">DMS is now a Houston-based agency with clients across 9 countries and a track record that spans every industry. The mission is unchanged. Build the complete digital system for serious businesses. Stay until the numbers prove it works.</p>
+          <div class="exp-metric-grid">
+            <div class="exp-metric-item"><span class="exp-metric-val">100+</span><span class="exp-metric-lab">Projects Delivered</span></div>
+            <div class="exp-metric-item"><span class="exp-metric-val">85+</span><span class="exp-metric-lab">Clients Served</span></div>
+            <div class="exp-metric-item"><span class="exp-metric-val">9</span><span class="exp-metric-lab">Countries</span></div>
+            <div class="exp-metric-item"><span class="exp-metric-val">8k+</span><span class="exp-metric-lab">Leads Generated</span></div>
+          </div>
+          <div class="exp-tags">
+            <span class="exp-tag exp-tag--gold">Houston, TX</span>
+            <span class="exp-tag exp-tag--gold">United Kingdom</span>
+            <span class="exp-tag exp-tag--gold">Active Now</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end exp-timeline -->
+  </div>
+</section>
+
+<!-- ============================================================ WHAT MAKES US DIFFERENT -->
+<section id="different">
+  <div class="container">
+    <div class="different-header">
+      <div class="eyebrow gs" style="justify-content:center"><span style="display:inline-block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px;margin-right:8px"></span>No Outsourcing. One Team.</div>
+      <h2 class="h2 gs">What makes Digital Minds Solutions<br>different from every other agency.</h2>
+      <p class="gs">Most businesses end up hiring five different people for five different digital problems. Those people never talk to each other. We treat everything as one system. Because that is what it is.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card gs">
+        <div class="diff-num">01</div>
+        <h3 class="h3">One Integrated System</h3>
+        <p>Brand, website, marketing, and automation, all built to talk to each other. <span class="diff-highlight">Not five vendors. One team.</span> Every piece connected from day one.</p>
+      </div>
+      <div class="diff-card gs">
+        <div class="diff-num">02</div>
+        <h3 class="h3">AI Is Infrastructure, Not a Feature</h3>
+        <p>Chatbots that qualify leads overnight. Follow-ups that go out before you open your inbox. Content pipelines that produce without anyone sitting down to write. <span class="diff-highlight">AI is how the work runs.</span></p>
+      </div>
+      <div class="diff-card gs">
+        <div class="diff-num">03</div>
+        <h3 class="h3">Speed Other Agencies Quote Months For</h3>
+        <p>Things agencies quote three months for, we deliver in weeks. <span class="diff-highlight">AI chatbot live in 5 days. Full CRM in 3 weeks.</span> No delays. No runaround. No absent account managers.</p>
+      </div>
+      <div class="diff-card gs">
+        <div class="diff-num">04</div>
+        <h3 class="h3">The Output of a 20-Person Team</h3>
+        <p>Clients get scale without the headcount. Web development, AI systems, design, video, marketing, software. <span class="diff-highlight">All in-house. All connected. All accountable to the same result.</span></p>
+      </div>
+      <div class="diff-card gs">
+        <div class="diff-num">05</div>
+        <h3 class="h3">Results Are the Closer</h3>
+        <p>Every section ends with proof. A metric. A case study. A stat. <span class="diff-highlight">+1,190% search impressions. +800% landing page conversions. +400% qualified leads.</span> Real numbers from real clients.</p>
+      </div>
+      <div class="diff-card gs">
+        <div class="diff-num">06</div>
+        <h3 class="h3">We Stay After Launch</h3>
+        <p>The agencies who disappear after the invoice is paid? Not here. <span class="diff-highlight">We stay. Tracking, testing, improving</span> until the numbers prove the system is working for your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TRACK RECORD -->
+<section id="track-record">
+  <div class="container">
+    <div class="track-header">
+      <div class="eyebrow gs">Track Record</div>
+      <h2 class="h2 gs">15+ years. 9 countries.<br>Real results across every industry.</h2>
+      <p class="gs">Numbers that prove the system works. Not just for one type of business, but across every sector we have touched.</p>
+    </div>
+    <div class="track-stats">
+      <div class="track-stat gs">
+        <div class="track-stat-val">15+</div>
+        <div class="track-stat-label">Years Operating</div>
+      </div>
+      <div class="track-stat gs">
+        <div class="track-stat-val">100+</div>
+        <div class="track-stat-label">Projects Delivered</div>
+      </div>
+      <div class="track-stat gs">
+        <div class="track-stat-val">85+</div>
+        <div class="track-stat-label">Clients Served</div>
+      </div>
+      <div class="track-stat gs">
+        <div class="track-stat-val">8,000+</div>
+        <div class="track-stat-label">Leads Generated</div>
+      </div>
+    </div>
+    <div class="track-industries gs">
+      <div class="track-industries-title">Industries served</div>
+      <div class="industry-pills">
+        <span class="industry-pill">Luxury Decor &amp; Ecommerce</span>
+        <span class="industry-pill">Residential Roofing</span>
+        <span class="industry-pill">HealthTech</span>
+        <span class="industry-pill">AED / Medical Ecommerce</span>
+        <span class="industry-pill">Healthcare Navigation</span>
+        <span class="industry-pill">Kitchenware &amp; Bakeware</span>
+        <span class="industry-pill">Online Education</span>
+        <span class="industry-pill">Youth Gymnastics</span>
+        <span class="industry-pill">Calisthenics &amp; Fitness</span>
+        <span class="industry-pill">Luxury Tailoring</span>
+        <span class="industry-pill">Global Hospitality</span>
+        <span class="industry-pill">Travel &amp; Tourism</span>
+      </div>
+    </div>
+    <div class="track-countries gs">
+      <div class="countries-label">Countries we've delivered results in</div>
+      <div class="country-list">
+        <span class="country-tag">🇺🇸 United States</span>
+        <span class="country-tag">🇬🇧 United Kingdom</span>
+        <span class="country-tag">🇦🇪 UAE</span>
+        <span class="country-tag">🇨🇦 Canada</span>
+        <span class="country-tag">🇦🇺 Australia</span>
+        <span class="country-tag">🇿🇦 South Africa</span>
+        <span class="country-tag">🇸🇰 Slovakia</span>
+        <span class="country-tag">🇷🇺 Russia</span>
+        <span class="country-tag">🌍 Middle East</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ VALUES -->
+<section id="values">
+  <div class="container">
+    <div class="values-header">
+      <div class="eyebrow gs">How We Work</div>
+      <h2 class="h2 gs">Four principles that<br>govern everything we build.</h2>
+      <p class="gs">Not a mission statement written for a pitch deck. These are the actual rules we hold every project to.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-item gs">
+        <div class="value-icon">🎯</div>
+        <h3 class="h3">Lead with the client's outcome.</h3>
+        <p>"You get X." Not "We do X." Every brief, every headline, every deliverable starts with what changes for the person on the other side of the work.</p>
+      </div>
+      <div class="value-item gs">
+        <div class="value-icon">📊</div>
+        <h3 class="h3">Use specific tools and specific timelines.</h3>
+        <p>"Zapier and Make automation live in 5 days" beats "fast automation setup." Vague promises are how bad agencies hide. We put numbers and tools in writing.</p>
+      </div>
+      <div class="value-item gs">
+        <div class="value-icon">⚡</div>
+        <h3 class="h3">Speed is a competitive advantage.</h3>
+        <p>The faster a business owner gets results, the faster they can reinvest and grow. We build systems that produce quickly. And keep producing after we leave.</p>
+      </div>
+      <div class="value-item gs">
+        <div class="value-icon">🔒</div>
+        <h3 class="h3">No outsourcing. Ever.</h3>
+        <p>Every line of code, every design decision, every automation build is done by the same team you spoke to on the first call. One team. No handoffs. No strangers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA -->
+<section id="about-cta">
+  <div class="container">
+    <div class="about-cta-inner">
+      <div class="eyebrow gs" style="justify-content:center"><span style="display:inline-block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px;margin-right:8px"></span>Work With Us</div>
+      <h2 class="h2 gs">The gap is still real.<br>We still have the skills<br>to close it.</h2>
+      <p class="gs">Book a free 30-minute discovery call. No commitment. No pitch deck. Just a clear plan for what changes in your business and what it takes to get there.</p>
+      <div class="about-cta-btns gs">
+        <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank" rel="noopener">
+          Book a Free Discovery Call
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Digital%20Minds%20Solutions" class="btn-ghost" target="_blank" rel="noopener">WhatsApp Us Directly →</a>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:var(--muted-blue);font-family:var(--font-head);font-weight:600">Response within 24hrs · No commitment required · Free 30-min call</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../ASSETS/logo/logo-white.svg.png" alt="Digital Minds Solutions">
+        <p>Web development. AI automation. Branding. Marketing. Software. One team. No handoffs. Real results.</p>
+        <div style="display:flex;gap:12px;margin-top:20px">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Instagram">ig</a>
+          <a href="https://youtu.be/96FyvCDcxRA" class="social-link" aria-label="YouTube" target="_blank">▶</a>
+          <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="service-web.html">Web Development</a></li>
+          <li><a href="service-ai.html">AI Automation</a></li>
+          <li><a href="service-design.html">Graphic Design</a></li>
+          <li><a href="service-marketing.html">Digital Marketing</a></li>
+          <li><a href="service-software.html">Software Dev</a></li>
+          <li><a href="service-seo.html">SEO / AEO / GEO / CRO</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Get In Touch</div>
+        <ul>
+          <li><a href="https://cal.com/digitalminds-fx51uj" target="_blank">Book a Discovery Call</a></li>
+          <li><a href="https://wa.me/447426427646" target="_blank">WhatsApp Us Directly</a></li>
+          <li><a href="mailto:digitalmindss01@gmail.com">digitalmindss01@gmail.com</a></li>
+          <li><a href="tel:+447426427646">+44 7426 427646</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Digital Minds Solutions. All rights reserved. US-registered company.</p>
+      <p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- COOKIE CONSENT -->
+<div id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <p><strong>We use cookies</strong> to improve your experience, analyse traffic, and personalise content. Click "Accept" to consent to cookies. You may decline non-essential cookies. Read our <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+    <div class="cookie-btns">
+      <button id="cookieDecline" class="cookie-decline">Decline</button>
+      <button id="cookieAccept" class="cookie-accept">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Digital%20Minds%20Solutions" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div class="wa-tooltip">WhatsApp us directly</div>
+</a>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  /* THEME */
+  const root=document.documentElement,saved=localStorage.getItem('dms-theme'),preferred=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+  root.setAttribute('data-theme',saved||preferred);
+  document.getElementById('themeToggle').addEventListener('click',()=>{
+    const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);localStorage.setItem('dms-theme',next);
+  });
+  /* NAV SCROLL */
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+  /* HAMBURGER */
+  const hb=document.getElementById('navHamburger'),mm=document.getElementById('mobileMenu');
+  hb.addEventListener('click',()=>{hb.classList.toggle('active');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('active');mm.classList.remove('open');document.body.style.overflow='';}));
+  /* LANG SWITCHER */
+  const ls=document.getElementById('langSwitcher'),lb=document.getElementById('langBtn'),lc=document.getElementById('langCurrent'),lm=document.getElementById('langMenu');
+  lb.addEventListener('click',e=>{e.stopPropagation();ls.classList.toggle('open');});
+  document.addEventListener('click',()=>ls.classList.remove('open'));
+  lm.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+    lc.textContent={en:'EN',es:'ES',fr:'FR',it:'IT',pt:'PT'}[btn.dataset.lang];
+    lm.querySelectorAll('button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');ls.classList.remove('open');
+  }));
+  /* GSAP SCROLL ANIMATIONS */
+  gsap.registerPlugin(ScrollTrigger);
+  /* Hero items animate immediately */
+  gsap.utils.toArray('#about-hero .gs').forEach((el,i)=>{
+    gsap.fromTo(el,{opacity:0,y:30},{opacity:1,y:0,duration:.8,ease:'power2.out',delay:.1+i*.15});
+  });
+  /* All other .gs elements on scroll */
+  gsap.utils.toArray('.gs:not(#about-hero .gs)').forEach(el=>{
+    gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:.75,ease:'power2.out',
+      scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}
+    });
+  });
+})();
+
+  /* COOKIE CONSENT */
+  (function(){
+    var COOKIE_KEY='dms_cookie_consent';
+    var banner=document.getElementById('cookieBanner');
+    if(!banner)return;
+    if(!localStorage.getItem(COOKIE_KEY)){setTimeout(function(){banner.classList.add('visible')},1400);}
+    document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'accepted');banner.classList.remove('visible');});
+    document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'declined');banner.classList.remove('visible');});
+  })();
+</script>
+
+<!-- CAL.COM POPUP EMBED -->
+<script type="text/javascript">
+(function(C,A,L){
+  let p=function(a,ar){a.q.push(ar)};
+  let d=C.document;
+  C.Cal=C.Cal||function(){
+    let cal=C.Cal;let ar=arguments;
+    if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}
+    if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];
+      if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,[L,namespace,ar[2]])}
+      else p(cal,[L,ar[1]]);return}
+    p(cal,ar)
+  }
+})(window,"https://app.cal.com/embed/embed.js","init");
+Cal("init",{origin:"https://cal.com"});
+Cal("ui",{theme:"dark",styles:{branding:{brandColor:"#002FA7"}},hideEventTypeDetails:false,layout:"month_view"});
+document.querySelectorAll("a[href="https://cal.com/digitalminds-fx51uj"]").forEach(function(el){
+  if(!el.closest("footer")){
+    el.addEventListener("click",function(e){e.preventDefault();Cal("modal",{calLink:"digitalminds-fx51uj",config:{layout:"month_view"}});});
+  }
+});
+<\/script>
+<!-- DMS:LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digitalmindssolutions.com/#organization",
+      "name": "Digital Minds Solutions",
+      "url": "https://digitalmindssolutions.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalmindssolutions.com/assets/logo/logo-white.svg.png"
+      },
+      "description": "Web development, AI automation, branding, digital marketing, and software. One team. No outsourcing. Real results.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Houston",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+44-7426-427646",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "digitalmindss01@gmail.com",
+          "contactType": "sales"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/digital-minds-solutions",
+        "https://www.instagram.com/digitalminds_solution"
+      ]
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://digitalmindssolutions.com/about#webpage",
+      "url": "https://digitalmindssolutions.com/about",
+      "name": "About Digital Minds Solutions",
+      "isPartOf": {
+        "@id": "https://digitalmindssolutions.com/#website"
+      },
+      "description": "15+ years experience. Two founders. One team. No outsourcing."
+    }
+  ]
+}
+</script>
+<!-- /DMS:LD -->
+  <script src="neural-vortex.js"></script>
+  <script>
+  /* === DMS CARD STACK — About Page === */
+  (function () {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    function setupStack(selector) {
+      var cards = gsap.utils.toArray(selector);
+      var n = cards.length;
+      if (n < 2) return;
+
+      cards.slice(0, -1).forEach(function (card, i) {
+        /* Each card scales toward a minimum based on its position.
+           First card (i=0) scales most; penultimate card scales least. */
+        var targetScale = 0.84 + (i * (0.14 / Math.max(n - 2, 1)));
+
+        gsap.to(card, {
+          scale: targetScale,
+          transformOrigin: '50% 0',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: cards[i + 1],   /* triggered when NEXT card enters */
+            start:   'top 88%',
+            end:     'top 14%',
+            scrub:   0.6,
+          }
+        });
+      });
+    }
+
+    /* Run after brief delay to let sticky layout settle */
+    setTimeout(function () {
+      setupStack('#origin .origin-para');
+      setupStack('#experience .exp-item');
+      ScrollTrigger.refresh();
+    }, 150);
+  }());
+  </script>
+  <script src="scroll-top.js"></script>
+  <script src="footer-marquee.js"></script>
+
+<div id="founderModal" class="founder-modal-overlay" aria-hidden="true">
+  <div class="founder-modal" role="dialog" aria-modal="true">
+    <button class="fmodal-close" id="fmodalClose" aria-label="Close bio">&#215;</button>
+    <div class="fmodal-photo"><img id="fmodalImg" src="" alt="" loading="lazy"></div>
+    <div class="fmodal-body">
+      <div class="fmodal-role" id="fmodalRole"></div>
+      <div class="fmodal-name" id="fmodalName"></div>
+      <div class="fmodal-bio" id="fmodalBio"></div>
+      <div class="fmodal-tags" id="fmodalTags"></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var founders={'1':{img:'../ASSETS/team/founder1 Mr Churchill Bracknell.jpg.png',name:'Churchill Bracknell',role:'Co-Founder & Technical Director · Houston, TX',bio:['Churchill Bracknell brings over 15 years of hands-on experience across web development, cybersecurity, software engineering, app development, and digital marketing. His technical range covers full-stack development, application security, complex software architecture, and performance-focused UI/UX — built through real projects across industries and continents.','He has worked alongside researchers and academics from MIT, applying rigorous engineering thinking to commercial digital problems. His career has covered companies across multiple industries and continents, and he has received multiple industry awards for his technical contributions.','At Digital Minds Solutions, Churchill leads the technical direction across every service — web builds, AI automation systems, software projects, and digital infrastructure. If something is being built, he ensures it is built to last, built to perform, and built to win.'],tags:['Web & App Development','Cybersecurity','Software Engineering','AI Systems','Digital Marketing','MIT Collaboration','15+ Years','Houston, TX']},'2':{img:'../ASSETS/team/founder2 Mr Philips Akin Phili.jpg.png',name:'Phillip Akin',role:'Co-Founder & Strategy Director · Houston, TX',bio:['Phillip Akin is a business strategist with over 25 years of experience advising companies on growth, marketing, and competitive positioning. Based in Houston, Texas, he has worked with organisations at every stage of development — from early-stage businesses to established companies rethinking how they compete in a digital-first world.','His expertise covers business strategy, digital marketing, content creation, brand positioning, and computer analysis. He treats them as one system — aligned to revenue, not activity metrics.','At Digital Minds Solutions, Phillip shapes how client businesses are positioned in the market and how the agency\'s work connects to real commercial outcomes.'],tags:['Business Strategy','Digital Marketing','Content Creation','Brand Positioning','Computer Analysis','25+ Years','Houston, TX']}};
+  var overlay=document.getElementById('founderModal'),fImg=document.getElementById('fmodalImg'),fRole=document.getElementById('fmodalRole'),fName=document.getElementById('fmodalName'),fBio=document.getElementById('fmodalBio'),fTags=document.getElementById('fmodalTags'),fClose=document.getElementById('fmodalClose');
+  function open(id){var f=founders[id];if(!f)return;fImg.src=f.img;fImg.alt=f.name;fRole.textContent=f.role;fName.textContent=f.name;fBio.innerHTML=f.bio.map(function(p){return'<p>'+p+'</p>';}).join('');fTags.innerHTML=f.tags.map(function(t){return'<span class="fmodal-tag">'+t+'</span>';}).join('');overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  document.querySelectorAll('[data-founder]').forEach(function(el){el.addEventListener('click',function(){open(el.dataset.founder);});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(el.dataset.founder);}});});
+  fClose.addEventListener('click',close);overlay.addEventListener('click',function(e){if(e.target===overlay)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+
+</body>
+</html>

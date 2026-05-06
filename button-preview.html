@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMS Button Options — Pick One</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #08101E;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    color: #B8CBE8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding: 60px 24px;
+    min-height: 100vh;
+  }
+  h1 { color: #fff; font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; text-align: center; }
+  h1 span { color: #E5A820; }
+  .card {
+    background: #0D1826;
+    border: 1px solid #1E3055;
+    border-radius: 16px;
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .card-label {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #B8CBE8;
+    opacity: .6;
+  }
+  .card-title { font-size: 1.1rem; font-weight: 700; color: #fff; }
+  .card-desc { font-size: .85rem; color: #B8CBE8; text-align: center; opacity: .8; }
+
+  /* ================================================
+     OPTION 1 — Neon Glow Pulse
+  ================================================ */
+  .btn-opt1 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 34px;
+    background: #002FA7;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .3s ease;
+    text-decoration: none;
+  }
+  .btn-opt1::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #002FA7, #E5A820, #002FA7);
+    background-size: 300% 300%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .3s ease;
+    animation: gradientRotate 3s linear infinite;
+  }
+  .btn-opt1:hover::before { opacity: 1; }
+  .btn-opt1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(0,47,167,.7), 0 0 48px rgba(0,47,167,.35);
+  }
+  @keyframes gradientRotate {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ================================================
+     OPTION 2 — Shimmer Sweep
+  ================================================ */
+  .btn-opt2 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 34px;
+    background: #002FA7;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+    text-decoration: none;
+  }
+  .btn-opt2::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -120%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255,255,255,0) 30%,
+      rgba(255,255,255,.35) 50%,
+      rgba(255,255,255,0) 70%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+    transition: left .55s cubic-bezier(.16,1,.3,1);
+  }
+  .btn-opt2:hover::after { left: 140%; }
+  .btn-opt2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,47,167,.5);
+  }
+
+  /* ================================================
+     OPTION 3 — Border Trace (SVG stroke draw)
+  ================================================ */
+  .btn-opt3-wrap {
+    position: relative;
+    display: inline-block;
+    padding: 2px;
+  }
+  .btn-opt3-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+  }
+  .btn-opt3-svg rect {
+    fill: none;
+    stroke: #E5A820;
+    stroke-width: 2;
+    rx: 8;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    transition: stroke-dashoffset .7s cubic-bezier(.16,1,.3,1);
+    border-radius: 8px;
+  }
+  .btn-opt3-wrap:hover .btn-opt3-svg rect { stroke-dashoffset: 0; }
+  .btn-opt3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 34px;
+    background: transparent;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    border: 1px solid rgba(184,203,232,.25);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .25s ease, color .25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-opt3-wrap:hover .btn-opt3 {
+    background: rgba(0,47,167,.15);
+  }
+
+  /* ================================================
+     OPTION 4 — Magnetic Hover Lift
+  ================================================ */
+  .btn-opt4 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 34px;
+    background: linear-gradient(135deg, #002FA7 0%, #1a3fc7 100%);
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      transform .28s cubic-bezier(.34,1.56,.64,1),
+      box-shadow .28s ease,
+      background .28s ease;
+    box-shadow: 0 4px 16px rgba(0,47,167,.35);
+  }
+  .btn-opt4:hover {
+    transform: translateY(-5px) scale(1.025);
+    box-shadow:
+      0 12px 40px rgba(0,47,167,.6),
+      0 4px 12px rgba(0,47,167,.4),
+      inset 0 1px 0 rgba(255,255,255,.15);
+    background: linear-gradient(135deg, #0039cc 0%, #2255e0 100%);
+  }
+  .btn-opt4:active { transform: translateY(-2px) scale(1.01); }
+
+  /* ================================================
+     OPTION 5 — Particle Burst (CSS only sparks)
+  ================================================ */
+  .btn-opt5-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .btn-opt5 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 34px;
+    background: #002FA7;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: visible;
+    transition: transform .2s ease, box-shadow .2s ease;
+    text-decoration: none;
+    z-index: 1;
+  }
+  .btn-opt5:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,47,167,.5); }
+  /* Spark particles */
+  .spark {
+    position: absolute;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0);
+  }
+  .btn-opt5-wrap:hover .spark { animation: burst .6s cubic-bezier(.16,1,.3,1) forwards; }
+  .spark:nth-child(1)  { top:50%; left:50%; background:#E5A820; animation-delay:.00s; --tx:-60px; --ty:-50px; }
+  .spark:nth-child(2)  { top:50%; left:50%; background:#fff;    animation-delay:.04s; --tx: 60px; --ty:-50px; }
+  .spark:nth-child(3)  { top:50%; left:50%; background:#E5A820; animation-delay:.08s; --tx:-70px; --ty: 10px; }
+  .spark:nth-child(4)  { top:50%; left:50%; background:#fff;    animation-delay:.02s; --tx: 70px; --ty: 10px; }
+  .spark:nth-child(5)  { top:50%; left:50%; background:#E5A820; animation-delay:.06s; --tx:  0px; --ty:-70px; }
+  .spark:nth-child(6)  { top:50%; left:50%; background:#fff;    animation-delay:.10s; --tx:  0px; --ty: 60px; }
+  .spark:nth-child(7)  { top:50%; left:50%; background:#002FA7; animation-delay:.03s; --tx:-45px; --ty: 55px; }
+  .spark:nth-child(8)  { top:50%; left:50%; background:#E5A820; animation-delay:.07s; --tx: 45px; --ty: 55px; }
+  @keyframes burst {
+    0%   { opacity:1; transform: scale(1) translate(0,0); }
+    80%  { opacity:.6; }
+    100% { opacity:0; transform: scale(0) translate(var(--tx), var(--ty)); }
+  }
+
+  /* Arrow SVG shared */
+  .arrow { display:inline-block; width:16px; height:16px; flex-shrink:0; }
+</style>
+  <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+
+<h1>DMS Button Options — <span>Pick One</span></h1>
+
+<!-- OPTION 1 -->
+<div class="card">
+  <span class="card-label">Option 1</span>
+  <span class="card-title">Neon Glow Pulse</span>
+  <span class="card-desc">Animated gradient border traces around button on hover. Klein Blue glow radiates outward. Premium tech-brand feel.</span>
+  <a href="#" class="btn-opt1">
+    Book a Free Call
+    <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<!-- OPTION 2 -->
+<div class="card">
+  <span class="card-label">Option 2</span>
+  <span class="card-title">Shimmer Sweep</span>
+  <span class="card-desc">Light streak sweeps diagonally across button on hover. Stripe / Linear quality. Clean, confident, not overdone.</span>
+  <a href="#" class="btn-opt2">
+    Book a Free Call
+    <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<!-- OPTION 3 -->
+<div class="card">
+  <span class="card-label">Option 3</span>
+  <span class="card-title">Border Trace</span>
+  <span class="card-desc">Amber Gold border draws itself around the button on hover using SVG stroke animation. Ghost button base, dramatic reveal.</span>
+  <div class="btn-opt3-wrap">
+    <svg class="btn-opt3-svg" viewBox="0 0 200 52" preserveAspectRatio="none">
+      <rect x="1" y="1" width="198" height="50" rx="8"/>
+    </svg>
+    <a href="#" class="btn-opt3">
+      Book a Free Call
+      <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- OPTION 4 -->
+<div class="card">
+  <span class="card-label">Option 4</span>
+  <span class="card-title">Magnetic Hover Lift</span>
+  <span class="card-desc">Button lifts with springy overshoot and deep shadow bloom on hover. Tactile, physical feel. Best primary CTA.</span>
+  <a href="#" class="btn-opt4">
+    Book a Free Call
+    <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<!-- OPTION 5 -->
+<div class="card">
+  <span class="card-label">Option 5</span>
+  <span class="card-title">Particle Burst</span>
+  <span class="card-desc">Amber Gold + white sparks burst out from button on hover. Eye-catching, high energy. Best used on single hero CTA.</span>
+  <div class="btn-opt5-wrap">
+    <span class="spark"></span><span class="spark"></span>
+    <span class="spark"></span><span class="spark"></span>
+    <span class="spark"></span><span class="spark"></span>
+    <span class="spark"></span><span class="spark"></span>
+    <a href="#" class="btn-opt5">
+      Book a Free Call
+      <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+  <script src="scroll-top.js"></script>
+  <script src="footer-marquee.js"></script>
+</body>
+</html>

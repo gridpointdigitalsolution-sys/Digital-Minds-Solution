@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gravity DXB case study. Digital Minds Solutions. How we doubled conversions for Dubai's leading calisthenics and functional fitness gym.">
+<title>Gravity DXB Case Study. Digital Minds Solutions</title>
+<link rel="icon" type="image/png" href="../ASSETS/logo/favicon.png (512x512px).png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--deep-space:#08101E;--klein-blue:#002FA7;--amber-gold:#E5A820;--cobalt-shade:#243B6E;--muted-blue:#B8CBE8;--muted-ink:#3A4F7A;--card-dark:#0D1826;--card-border:#1E3055;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--white:#FFFFFF;--accent:#E5A820;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'Inter',sans-serif;--r-sm:6px;--r-md:12px;--r-lg:20px;--r-xl:32px;--container:1280px;--nav-h:72px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--deep-space);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.7}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}ul{list-style:none}button{cursor:pointer;border:none;background:none;font:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 20px}}
+.h2{font-family:var(--font-head);font-size:clamp(28px,3vw,48px);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:20px}
+.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px}
+.btn-gold{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--amber-gold);font-family:var(--font-head);font-size:15px;font-weight:700;padding:14px 28px;border-radius:var(--r-md,8px);border:2px solid var(--amber-gold);white-space:nowrap;transition:color .4s;z-index:0;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-gold:hover{color:var(--deep-space,#08101E)}
+.btn-gold:hover::before{left:0}
+
+
+.btn-ghost{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:var(--font-head);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--r-md,8px);border:1.5px solid rgba(255,255,255,.55);transition:color .35s,border-color .35s;z-index:0;overflow:hidden}
+.btn-ghost::after{content:'';position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-ghost:hover{color:#08101E;border-color:#fff}
+.btn-ghost:hover::after{transform:scaleX(1)}
+
+
+.gs{opacity:0;transform:translateY(36px)}
+/* NAV */
+#navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+#navbar.scrolled{background:rgba(8,16,30,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--card-border)}
+.nav-inner{max-width:var(--container);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 40px}
+.nav-logo img{height:52px;width:auto}
+.nav-links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.nav-links a{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--muted-blue);padding:8px 16px;border-radius:var(--r-sm);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;position:relative;border:none;padding:8px 14px;box-shadow:0 4px 14px rgba(228,174,11,.35)}
+.nav-links a.active::after{display:none}
+.nav-right{display:flex;align-items:center;gap:12px}
+.theme-toggle{width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);transition:color .2s,border-color .2s,background .2s}
+.theme-toggle:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+.theme-toggle svg{width:18px;height:18px}
+.icon-sun{display:none}
+[data-theme="light"] .icon-moon{display:none}[data-theme="light"] .icon-sun{display:block}
+.nav-hamburger{display:none;width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.nav-hamburger span{display:block;width:18px;height:2px;background:var(--muted-blue);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;top:var(--nav-h);background:var(--deep-space);padding:40px 24px;opacity:0;visibility:hidden;transform:translateX(100%);transition:all .35s cubic-bezier(.16,1,.3,1);z-index:999;overflow-y:auto}
+.mobile-menu.open{opacity:1;visibility:visible;transform:none}
+.mobile-menu .nav-links{display:flex;flex-direction:column;align-items:flex-start;gap:4px;justify-content:flex-start}
+.mobile-menu .nav-links a{font-size:22px;padding:12px 0;width:100%}
+.mobile-menu .m-ctas{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.mobile-menu .m-ctas .btn-gold,.mobile-menu .m-ctas 
+
+
+@media(max-width:900px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-inner{padding:0 20px}}
+/* HERO */
+#cs-hero{position:relative;min-height:80vh;display:flex;align-items:flex-end;padding-bottom:80px;padding-top:calc(var(--nav-h) + 60px);overflow:hidden}
+.cs-hero-img{position:absolute;inset:0;z-index:0}
+.cs-hero-img img{width:100%;height:100%;object-fit:cover;opacity:.32}
+.cs-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(8,16,30,.97) 0%,rgba(8,16,30,.72) 55%,rgba(229,168,32,.18) 100%)}
+.cs-hero-bottom{position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(to bottom,transparent,var(--deep-space));z-index:2}
+.cs-hero-content{position:relative;z-index:3;max-width:860px}
+.cs-breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:13px;font-weight:600;color:var(--muted-blue);margin-bottom:24px}
+.cs-breadcrumb a{color:var(--muted-blue);transition:color .2s}
+.cs-breadcrumb a:hover{color:var(--white)}
+.cs-breadcrumb span{color:var(--card-border)}
+.cs-industry{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:20px;padding:6px 14px;border-radius:99px;background:rgba(229,168,32,.1);border:1px solid rgba(229,168,32,.25)}
+.cs-hero-h1{font-family:var(--font-head);font-size:clamp(26px,3.8vw,52px);font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--white);margin-bottom:32px}
+.cs-hero-meta{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.cs-meta-item{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:13px;font-weight:600;color:var(--muted-blue)}
+.cs-meta-dot{width:4px;height:4px;background:var(--amber-gold);border-radius:50%;flex-shrink:0}
+@media(max-width:768px){#cs-hero{min-height:unset;padding-top:calc(var(--nav-h) + 40px);padding-bottom:60px;align-items:flex-start}.cs-hero-h1{font-size:clamp(22px,7vw,34px)}}
+/* METRICS */
+#cs-metrics{padding:80px 0;background:var(--card-dark);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border)}
+.cs-metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--card-border);border-radius:var(--r-xl);overflow:hidden}
+.cs-metric{background:var(--card-dark);padding:48px 32px;text-align:center;transition:background .2s}
+.cs-metric:hover{background:rgba(255,255,255,.02)}
+.cs-metric-val{font-family:var(--font-head);font-size:clamp(32px,4vw,60px);font-weight:800;line-height:1;margin-bottom:10px;color:var(--amber-gold)}
+.cs-metric-lab{font-family:var(--font-head);font-size:13px;font-weight:600;color:var(--muted-blue);letter-spacing:.06em;text-transform:uppercase;line-height:1.4}
+@media(max-width:768px){.cs-metrics-grid{grid-template-columns:repeat(2,1fr)}.cs-metric{padding:32px 20px}}
+@media(max-width:480px){.cs-metric{padding:24px 14px}.cs-metric-val{font-size:clamp(22px,6vw,36px)}.cs-metric-lab{font-size:11px}}
+/* OVERVIEW */
+#cs-overview{padding:96px 0;background:var(--deep-space)}
+.cs-overview-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start}
+.cs-overview-label{position:sticky;top:calc(var(--nav-h) + 40px)}
+.cs-section-label{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.cs-section-label::before{content:'';display:block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px}
+.cs-overview-label .h2{color:var(--white);margin-bottom:20px;font-size:clamp(22px,2.2vw,34px)}
+.cs-overview-label p{color:var(--muted-blue);font-size:15px;line-height:1.7}
+.cs-overview-content{display:flex;flex-direction:column;gap:40px}
+.cs-block-title{font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--white);margin-bottom:12px}
+.cs-block-text{color:var(--muted-blue);font-size:16px;line-height:1.75}
+.cs-services-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.cs-service-chip{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:99px;background:rgba(0,47,167,.15);color:var(--muted-blue);border:1px solid var(--card-border);transition:color .2s,border-color .2s,background .2s}
+.cs-service-chip:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(0,47,167,.25)}
+@media(max-width:900px){.cs-overview-grid{grid-template-columns:1fr;gap:48px}.cs-overview-label{position:static}}
+/* GALLERY */
+#cs-gallery{padding:80px 0;background:var(--card-dark);border-top:1px solid var(--card-border)}
+.cs-gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-radius:var(--r-xl);overflow:hidden}
+.cs-gallery-img{aspect-ratio:16/10;overflow:hidden}
+.cs-gallery-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.cs-gallery-img:hover img{transform:scale(1.04)}
+@media(max-width:640px){.cs-gallery-grid{grid-template-columns:1fr}}
+/* TESTIMONIAL */
+#cs-testimonial{padding:96px 0;background:var(--deep-space);text-align:center}
+.cs-quote-wrap{max-width:800px;margin:0 auto}
+.cs-quote-mark{font-family:Georgia,serif;font-size:96px;line-height:.6;color:var(--amber-gold);opacity:.35;margin-bottom:16px;display:block}
+.cs-quote-text{font-family:var(--font-head);font-size:clamp(18px,2vw,26px);font-weight:700;line-height:1.55;color:var(--white);margin-bottom:32px}
+.cs-quote-author{font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--amber-gold);letter-spacing:.1em;text-transform:uppercase}
+.cs-quote-divider{width:64px;height:2px;background:linear-gradient(90deg,var(--klein-blue),var(--amber-gold));border-radius:2px;margin:20px auto 0}
+/* CASE NAV */
+#cs-case-nav{padding:48px 0;background:var(--card-dark);border-top:1px solid var(--card-border)}
+.cs-nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.cs-nav-btn{display:flex;align-items:center;gap:12px;font-family:var(--font-head);padding:16px 24px;border-radius:var(--r-md);border:1px solid var(--card-border);transition:border-color .2s,background .2s,transform .2s}
+.cs-nav-btn:hover{border-color:var(--muted-blue);background:rgba(255,255,255,.04);transform:translateY(-2px)}
+.cs-nav-btn small{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-blue)}
+.cs-nav-btn strong{display:block;font-size:15px;color:var(--white);margin-top:2px}
+.cs-nav-arrow{font-size:20px;color:var(--amber-gold)}
+.cs-nav-btn--right{text-align:right}
+.cs-nav-all{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--muted-blue);padding:12px 20px;border-radius:var(--r-md);border:1px solid var(--card-border);transition:color .2s,border-color .2s}
+.cs-nav-all:hover{color:var(--white);border-color:var(--muted-blue)}
+/* CTA */
+#cs-cta{padding:120px 0;background:var(--deep-space);text-align:center;position:relative;overflow:hidden}
+#cs-cta::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,47,167,.16) 0%,transparent 70%);pointer-events:none}
+.cs-cta-inner{position:relative;z-index:1;max-width:620px;margin:0 auto}
+.cs-cta-inner .h2{color:var(--white);margin-bottom:16px}
+.cs-cta-inner p{color:var(--muted-blue);font-size:18px;margin-bottom:40px;line-height:1.65}
+.cs-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+/* FOOTER */
+#footer{background:var(--card-dark);border-top:1px solid var(--card-border);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand img{height:32px;margin-bottom:16px}
+.footer-brand p{font-size:14px;color:var(--muted-blue);line-height:1.65;max-width:280px}
+.footer-col-title{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:20px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{font-size:14px;color:var(--muted-blue);transition:color .2s}
+.footer-col ul a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:32px;border-top:1px solid var(--card-border)}
+.footer-bottom p,.footer-bottom a{font-size:13px;color:var(--muted-blue)}
+.footer-bottom a:hover{color:var(--white)}
+.social-link{width:36px;height:36px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);font-size:14px;transition:color .2s,border-color .2s,background .2s}
+.social-link:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:white}
+/* COOKIE */
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;z-index:1100;background:rgba(13,24,38,.97);border-top:1px solid #1E3055;backdrop-filter:blur(16px);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);padding:20px 0}
+#cookieBanner.visible{transform:none}
+.cookie-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.cookie-text{flex:1;min-width:260px}
+.cookie-text p{font-size:14px;color:#B8CBE8;line-height:1.6}
+.cookie-text strong{color:#fff}
+.cookie-text a{color:#E5A820;text-decoration:underline;text-underline-offset:3px}
+.cookie-btns{display:flex;gap:12px;flex-shrink:0}
+.cookie-accept{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;padding:10px 22px;border-radius:10px;background:#E5A820;color:#08101E;cursor:pointer;border:none}
+.cookie-decline{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;padding:10px 22px;border-radius:10px;background:transparent;color:#B8CBE8;border:1px solid #1E3055;cursor:pointer}
+/* LIGHT */
+[data-theme="light"] body{background:var(--light-bg);color:var(--deep-space)}
+[data-theme="light"] #navbar.scrolled{background:rgba(244,247,255,.92)}
+[data-theme="light"] .nav-links a{color:var(--muted-ink)}
+[data-theme="light"] #cs-overview{background:var(--light-bg)}
+[data-theme="light"] .cs-block-text{color:var(--muted-ink)}
+[data-theme="light"] .cs-overview-label .h2{color:var(--deep-space)}
+[data-theme="light"] #cs-cta{background:var(--light-bg)}
+[data-theme="light"] .cs-cta-inner .h2{color:var(--deep-space)}
+[data-theme="light"] .cs-quote-text{color:var(--deep-space)}
+[data-theme="light"] #cs-testimonial{background:var(--light-bg)}
+[data-theme="light"] #footer{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .footer-col ul a,[data-theme="light"] .footer-brand p,[data-theme="light"] .footer-bottom p,[data-theme="light"] .footer-bottom a{color:var(--muted-ink)}
+
+@media(max-width:900px){.nav-right 
+
+
+.nav-logo{flex-shrink:0}.nav-logo img{height:52px;width:auto}}
+
+/* Nav CTA: same line as menu, at far right edge, Option 5 styling */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px;right:20px;z-index:1100;font-weight:800!important;font-size:13px!important;padding:10px 18px!important;letter-spacing:.02em;background:transparent!important;color:var(--amber-gold,#E5A820)!important;border:2px solid var(--amber-gold,#E5A820)!important;border-radius:8px!important;overflow:hidden;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(229,168,32,.18);transition:color .4s}
+/* Reserve right space in non-scrolled nav so menu items dont fall under CTA */
+#navbar:not(.scrolled) .nav-inner{padding-right:170px!important}
+.nav-right .btn-gold::before,.nav-actions .nav-cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold,#E5A820);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{color:#08101E!important}
+.nav-right .btn-gold:hover::before,.nav-actions .nav-cta:hover::before{left:0}
+/* Hide CTA when nav scrolled (pill state) — user requested no clutter on scroll */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important;transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
+.nav-right .btn-gold,.nav-actions .nav-cta{transition:opacity .3s ease,visibility .3s ease,transform .3s ease,color .4s ease}
+@media(max-width:1180px){
+  .nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}
+  #navbar:not(.scrolled) .nav-inner{padding-right:40px!important}
+}
+
+/* ========================================================
+   UNIFIED BUTTON SYSTEM — Option 2 (White Ghost Slide) ONLY
+   Overrides every old btn-gold/blue/ghost/ghost-dark + nav CTA
+   ======================================================== */
+.btn-gold,.btn-blue,.btn-ghost,.btn-ghost-dark,.nav-right .btn-gold,.nav-actions .nav-cta{
+  position:relative!important;display:inline-flex!important;align-items:center!important;gap:8px!important;
+  background:transparent!important;color:#fff!important;
+  font-family:var(--font-head)!important;font-size:15px!important;font-weight:700!important;letter-spacing:.02em!important;
+  padding:14px 28px!important;border-radius:8px!important;
+  border:1.5px solid rgba(255,255,255,.55)!important;
+  transition:color .35s ease,border-color .35s ease!important;
+  z-index:0;overflow:hidden!important;text-decoration:none!important;
+  box-shadow:none!important;
+}
+.btn-gold::before,.btn-blue::before,.btn-ghost::before,.btn-ghost-dark::before,.nav-right .btn-gold::before,.nav-actions .nav-cta::before{display:none!important}
+.btn-gold::after,.btn-blue::after,.btn-ghost::after,.btn-ghost-dark::after,.nav-right .btn-gold::after,.nav-actions .nav-cta::after{
+  content:''!important;position:absolute!important;inset:0!important;
+  background:#fff!important;
+  transform:scaleX(0)!important;transform-origin:left!important;
+  transition:transform .35s cubic-bezier(.4,0,.2,1)!important;
+  z-index:-1!important;
+}
+.btn-gold:hover,.btn-blue:hover,.btn-ghost:hover,.btn-ghost-dark:hover,.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{
+  color:#08101E!important;border-color:#fff!important;
+}
+.btn-gold:hover::after,.btn-blue:hover::after,.btn-ghost:hover::after,.btn-ghost-dark:hover::after,.nav-right .btn-gold:hover::after,.nav-actions .nav-cta:hover::after{
+  transform:scaleX(1)!important;
+}
+/* Keep nav CTA fixed positioning */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px!important;right:20px!important;z-index:1100!important;font-size:13px!important;font-weight:800!important;padding:10px 18px!important}
+/* Hide nav CTA when scrolled */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important}
+/* Hide nav CTA on narrow viewports */
+@media(max-width:1180px){.nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}#navbar:not(.scrolled) .nav-inner{padding-right:40px!important}}
+</style>
+<!-- DMS:OG -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://digitalmindssolutions.com/case-gravity">
+<meta property="og:title" content="Gravity DXB Case Study. Digital Minds Solutions">
+<meta property="og:description" content="+230% search impressions, +200% landing conversions, +100% qualified leads for Gravity DXB.">
+<meta property="og:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Digital Minds Solutions">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DigitalMindsSol">
+<meta name="twitter:title" content="Gravity DXB Case Study. Digital Minds Solutions">
+<meta name="twitter:description" content="+230% search impressions, +200% landing conversions, +100% qualified leads for Gravity DXB.">
+<meta name="twitter:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<link rel="canonical" href="https://digitalmindssolutions.com/case-gravity">
+<!-- /DMS:OG -->
+  <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="../ASSETS/logo/logo-white.svg.png" alt="Digital Minds Solutions"></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+      <a href="work.html" class="active">Work</a><a href="pricing.html">Pricing</a>
+      <a href="insights.html">Insights</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank" rel="noopener" style="padding:10px 20px;font-size:13px">Book a Call</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+    <a href="work.html">Work</a><a href="pricing.html">Pricing</a><a href="insights.html">Insights</a><a href="contact.html">Contact</a>
+  </div>
+  <div class="m-ctas">
+    <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Book a Free Discovery Call</a>
+    <a href="https://wa.me/447426427646" class="btn-ghost" target="_blank">WhatsApp Us Directly</a>
+  </div>
+</div>
+
+<section id="cs-hero">
+  <div class="cs-hero-img"><img src="../ASSETS/case-studies/Gravity/Gravity (1).jpg" alt="Gravity DXB" loading="eager"></div>
+  <div class="cs-hero-overlay"></div>
+  <div class="cs-hero-bottom"></div>
+  <div class="cs-hero-content container">
+    <div class="cs-breadcrumb gs">
+      <a href="index.html">Home</a><span>/</span>
+      <a href="work.html">Our Work</a><span>/</span>
+      <span style="color:var(--white)">Gravity DXB</span>
+    </div>
+    <div class="cs-industry gs">Calisthenics · HYROX · Parkour · Dubai</div>
+    <h1 class="cs-hero-h1 gs">How we doubled conversions for Dubai's leading calisthenics and functional fitness gym.</h1>
+    <div class="cs-hero-meta gs">
+      <div class="cs-meta-item"><div class="cs-meta-dot"></div>🇦🇪 Dubai, UAE</div>
+      <div class="cs-meta-item"><div class="cs-meta-dot"></div>Fitness & Calisthenics</div>
+      <div class="cs-meta-item"><div class="cs-meta-dot"></div><a href="https://gravitydxb.com" target="_blank" rel="noopener" style="color:var(--muted-blue);transition:color .2s">gravitydxb.com &#8599;</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="cs-metrics">
+  <div class="container">
+    <div class="cs-metrics-grid">
+      <div class="cs-metric gs"><div class="cs-metric-val">+230%</div><div class="cs-metric-lab">Search Impressions</div></div>
+      <div class="cs-metric gs"><div class="cs-metric-val">+200%</div><div class="cs-metric-lab">Landing Conversions</div></div>
+      <div class="cs-metric gs"><div class="cs-metric-val">+100%</div><div class="cs-metric-lab">Qualified Leads</div></div>
+      <div class="cs-metric gs"><div class="cs-metric-val">Dubai</div><div class="cs-metric-lab">Market Leader</div></div></div>
+  </div>
+</section>
+
+<section id="cs-overview">
+  <div class="container">
+    <div class="cs-overview-grid">
+      <div class="cs-overview-label">
+        <div class="cs-section-label gs">Case Study</div>
+        <h2 class="h2 gs">Gravity DXB</h2>
+        <p class="gs">Fitness & Calisthenics &middot; 🇦🇪 Dubai, UAE</p>
+      </div>
+      <div class="cs-overview-content">
+        <div class="gs"><div class="cs-block-title">The Challenge</div><p class="cs-block-text">Gravity DXB runs three serious disciplines under one roof in Dubai: calisthenics, HYROX training, and parkour. The website was not communicating the depth of the offer. Trial bookings were not converting. SEO was not reaching the high-intent fitness audience the gym was built for.</p></div>
+        <div class="gs"><div class="cs-block-title">Our Approach</div><p class="cs-block-text">Discipline-specific landing pages built around what each audience actually wants. Trial booking flows stripped of friction. Email automation to follow up enquiries and convert trials into memberships. SEO targeting functional fitness queries in Dubai. Content that positioned Gravity DXB as the serious training environment it is.</p></div>
+        <div class="gs"><div class="cs-block-title">Services Delivered</div><div class="cs-services-chips"><span class="cs-service-chip">Website Dev</span><span class="cs-service-chip">Landing Pages</span><span class="cs-service-chip">Content</span><span class="cs-service-chip">Digital Marketing</span><span class="cs-service-chip">Email Automation</span><span class="cs-service-chip">AEO</span><span class="cs-service-chip">SEO</span><span class="cs-service-chip">CRO</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cs-gallery">
+  <div class="container">
+    <div class="cs-gallery-grid">
+      <div class="cs-gallery-img gs"><img src="../ASSETS/case-studies/Gravity/Gravity (1).jpg" alt="Gravity DXB — image 1" loading="lazy"></div>
+      <div class="cs-gallery-img gs"><img src="../ASSETS/case-studies/Gravity/Gravity (2).jpg" alt="Gravity DXB — image 2" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="cs-testimonial">
+  <div class="container">
+    <div class="cs-quote-wrap">
+      <span class="cs-quote-mark gs">&ldquo;</span>
+      <p class="cs-quote-text gs">The team improved our content, landing page flow, SEO, and trial booking journey. The result helped more visitors understand our offer and take action.</p>
+      <div class="cs-quote-author gs">&mdash; Gravity DXB</div>
+      <div class="cs-quote-divider gs"></div>
+    </div>
+  </div>
+</section>
+
+<section id="cs-case-nav">
+  <div class="container">
+    <div class="cs-nav-inner">
+      <a href="case-quantum-health.html" class="cs-nav-btn"><span class="cs-nav-arrow">&larr;</span><span><small>Previous</small><strong>Quantum Health</strong></span></a>
+      <a href="work.html" class="cs-nav-all">All Case Studies &#8599;</a>
+      <a href="case-santoba.html" class="cs-nav-btn cs-nav-btn--right"><span><small>Next Case Study</small><strong>Santoba Tailors</strong></span><span class="cs-nav-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="cs-cta">
+  <div class="container">
+    <div class="cs-cta-inner">
+      <div class="eyebrow gs" style="justify-content:center">Your Turn</div>
+      <h2 class="h2 gs">Want results like Gravity DXB?</h2>
+      <p class="gs">Book a free 30-minute call. We will show you exactly what we would build for your business. No pitch deck, no pressure.</p>
+      <div class="cs-cta-btns gs">
+        <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank" rel="noopener">Book a Free Discovery Call &rarr;</a>
+        <a href="https://wa.me/447426427646" class="btn-ghost" target="_blank" rel="noopener">WhatsApp Us &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="../ASSETS/logo/logo-white.svg.png" alt="Digital Minds Solutions"><p>Web development, AI automation, branding, marketing, and software. One team. No handoffs. Real results.</p><div style="display:flex;gap:12px;margin-top:20px"><a href="#" class="social-link">in</a><a href="#" class="social-link">ig</a><a href="https://youtu.be/96FyvCDcxRA" class="social-link" target="_blank">&#9654;</a><a href="#" class="social-link">&#120143;</a></div></div>
+      <div class="footer-col"><div class="footer-col-title">Services</div><ul><li><a href="services.html">Web Development</a></li><li><a href="services.html">AI Automation</a></li><li><a href="services.html">Digital Marketing</a></li><li><a href="services.html">SEO / AEO / GEO / CRO</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Company</div><ul><li><a href="about.html">About Us</a></li><li><a href="work.html">Our Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Get In Touch</div><ul><li><a href="https://cal.com/digitalminds-fx51uj" target="_blank">Book a Discovery Call</a></li><li><a href="https://wa.me/447426427646" target="_blank">WhatsApp Us</a></li><li><a href="mailto:digitalmindss01@gmail.com">digitalmindss01@gmail.com</a></li><li><a href="tel:+447426427646">+44 7426 427646</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Digital Minds Solutions. All rights reserved.</p><p><a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms of Service</a></p></div>
+  </div>
+</footer>
+
+<div id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-inner">
+    <div class="cookie-text"><p><strong>We use cookies</strong> to improve your experience. Read our <a href="privacy.html">Privacy Policy</a>.</p></div>
+    <div class="cookie-btns"><button id="cookieDecline" class="cookie-decline">Decline</button><button id="cookieAccept" class="cookie-accept">Accept All</button></div>
+  </div>
+</div>
+
+<a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Digital%20Minds%20Solutions" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  const root=document.documentElement,saved=localStorage.getItem('dms-theme'),preferred=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';
+  root.setAttribute('data-theme',saved||preferred);
+  document.getElementById('themeToggle').addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);localStorage.setItem('dms-theme',n);});
+  const nb=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+  const hb=document.getElementById('navHamburger'),mm=document.getElementById('mobileMenu');
+  hb.addEventListener('click',()=>{hb.classList.toggle('active');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('active');mm.classList.remove('open');document.body.style.overflow=''}));
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('#cs-hero .gs').forEach((el,i)=>gsap.fromTo(el,{opacity:0,y:24},{opacity:1,y:0,duration:.75,ease:'power2.out',delay:.1+i*.13}));
+  gsap.utils.toArray('.gs:not(#cs-hero .gs)').forEach(el=>gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:.75,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}}));
+  (function(){var k='dms_cookie_consent',b=document.getElementById('cookieBanner');if(!b)return;if(!localStorage.getItem(k))setTimeout(()=>b.classList.add('visible'),1200);document.getElementById('cookieAccept').addEventListener('click',()=>{localStorage.setItem(k,'accepted');b.classList.remove('visible');});document.getElementById('cookieDecline').addEventListener('click',()=>{localStorage.setItem(k,'declined');b.classList.remove('visible');});})();
+  (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement('script')).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const ns=ar[1];api.q=api.q||[];if(typeof ns==='string'){cal.ns[ns]=cal.ns[ns]||api;p(cal.ns[ns],ar);p(cal,[L,ns,ar[2]])}else p(cal,[L,ar[1]]);return}p(cal,ar)}})(window,'https://app.cal.com/embed/embed.js','init');
+  Cal('init',{origin:'https://cal.com'});Cal('ui',{theme:'dark',styles:{branding:{brandColor:'#002FA7'}},hideEventTypeDetails:false,layout:'month_view'});
+  document.querySelectorAll('a[href="https://cal.com/digitalminds-fx51uj"]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();Cal('modal',{calLink:'digitalminds-fx51uj',config:{layout:'month_view'}})}));
+})();
+</script>
+<!-- DMS:LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digitalmindssolutions.com/#organization",
+      "name": "Digital Minds Solutions",
+      "url": "https://digitalmindssolutions.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalmindssolutions.com/assets/logo/logo-white.svg.png"
+      },
+      "description": "Web development, AI automation, branding, digital marketing, and software. One team. No outsourcing. Real results.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Houston",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+44-7426-427646",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "digitalmindss01@gmail.com",
+          "contactType": "sales"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/digital-minds-solutions",
+        "https://www.instagram.com/digitalminds_solution"
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://digitalmindssolutions.com/case-gravity#article",
+      "headline": "Gravity DXB \u2014 Digital Minds Solutions Case Study",
+      "description": "+230% search impressions, +200% landing conversions, +100% qualified leads for Gravity DXB.",
+      "publisher": {
+        "@id": "https://digitalmindssolutions.com/#organization"
+      },
+      "url": "https://digitalmindssolutions.com/case-gravity",
+      "datePublished": "2026-05-03",
+      "dateModified": "2026-05-03",
+      "author": {
+        "@id": "https://digitalmindssolutions.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://digitalmindssolutions.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Our Work",
+          "item": "https://digitalmindssolutions.com/work"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Gravity DXB",
+          "item": "https://digitalmindssolutions.com/case-gravity"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- /DMS:LD -->
+  <script src="neural-vortex.js"></script>
+  <script src="scroll-top.js"></script>
+  <script src="footer-marquee.js"></script>
+</body>
+</html>

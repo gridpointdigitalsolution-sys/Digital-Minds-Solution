@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Testimonial Options — Pick One</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#08101E;font-family:'Plus Jakarta Sans',sans-serif;color:#fff;padding:64px 40px 120px}
+h1{font-size:26px;font-weight:800;text-align:center;margin-bottom:8px}
+.sub{color:#6b7a99;font-size:14px;text-align:center;margin-bottom:72px}
+.opt{margin-bottom:100px}
+.opt-tag{color:#E5A820;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:4px}
+.opt-name{font-size:19px;font-weight:800;margin-bottom:6px}
+.opt-desc{color:#7a93b8;font-size:13px;line-height:1.65;margin-bottom:36px;max-width:640px}
+.divider{border:none;border-top:1px solid #1e2d4d;margin:100px 0}
+.stars{color:#E5A820;font-size:13px;letter-spacing:2px}
+
+/* ══════════════════════════════
+   OPTION 1 — Vertical Scroll Columns
+   Pattern from 21st.dev testimonial-v2
+══════════════════════════════ */
+.v-cols{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  height:500px;overflow:hidden;
+  mask-image:linear-gradient(to bottom,transparent,black 14%,black 86%,transparent);
+  -webkit-mask-image:linear-gradient(to bottom,transparent,black 14%,black 86%,transparent);
+}
+.v-col{overflow:hidden}
+.v-inner{display:flex;flex-direction:column;gap:16px}
+.v-inner.s1{animation:up 20s linear infinite}
+.v-inner.s2{animation:up 27s linear infinite}
+.v-inner.s3{animation:up 23s linear infinite}
+.v-cols:hover .v-inner{animation-play-state:paused}
+@keyframes up{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+
+.vc{background:#0d1829;border:1px solid #1e2d4d;border-radius:14px;padding:22px 24px;flex-shrink:0}
+.vc .stars{display:block;margin-bottom:10px}
+.vc blockquote{font-size:13.5px;color:#c8d8f0;line-height:1.65;font-style:normal;margin-bottom:16px}
+.vc .au{display:flex;align-items:center;gap:10px}
+.vc .av{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid #1e2d4d;flex-shrink:0}
+.vc .nm{font-size:12.5px;font-weight:700}
+.vc .rl{font-size:11px;color:#6b7a99;margin-top:1px}
+
+/* ══════════════════════════════
+   OPTION 2 — Dual Horizontal Marquee
+   Pattern from 21st.dev marquee card
+══════════════════════════════ */
+.h-marquee{display:flex;flex-direction:column;gap:16px;overflow:hidden}
+.hm-row{
+  overflow:hidden;
+  mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);
+  -webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);
+}
+.hm-inner{display:flex;gap:16px;width:max-content}
+.hm-inner.left{animation:go-l 35s linear infinite}
+.hm-inner.right{animation:go-r 35s linear infinite}
+.h-marquee:hover .hm-inner{animation-play-state:paused}
+@keyframes go-l{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes go-r{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+
+.hc{background:#0d1829;border:1px solid #1e2d4d;border-radius:12px;padding:20px 22px;width:310px;flex-shrink:0}
+.hc-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.hc-av{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.hc-nm{font-size:13px;font-weight:700}
+.hc-rl{font-size:11px;color:#6b7a99;margin-top:1px}
+.hc p{font-size:13px;color:#c8d8f0;line-height:1.6}
+.hc .stars{display:block;margin-top:12px;font-size:12px}
+
+/* ══════════════════════════════
+   OPTION 3 — Photo Portrait Overlay
+   Pattern from 21st.dev image card grid
+══════════════════════════════ */
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pc{
+  border-radius:16px;overflow:hidden;position:relative;height:400px;
+  transition:transform .35s ease,box-shadow .35s ease;cursor:default;
+}
+.pc:hover{transform:translateY(-8px);box-shadow:0 32px 64px rgba(0,0,0,.7)}
+.pc img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s ease}
+.pc:hover img{transform:scale(1.06)}
+.pc .ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,16,30,.97) 0%,rgba(8,16,30,.55) 45%,rgba(8,16,30,.1) 100%);
+}
+.pc .pcont{position:absolute;bottom:0;left:0;right:0;padding:24px}
+.pc .pqm{font-size:36px;font-weight:900;color:#E5A820;line-height:1;display:block;margin-bottom:4px}
+.pc blockquote{font-size:13px;color:#ddeeff;line-height:1.6;font-style:normal;margin-bottom:14px}
+.pc .pnm{font-size:13px;font-weight:700}
+.pc .prl{font-size:11px;color:#E5A820;margin-top:2px}
+.pc .stars{display:block;margin-bottom:8px;font-size:12px}
+
+/* ══════════════════════════════
+   OPTION 4 — Wide Auto-Sliding Cards
+   Pattern from 21st.dev sliding-testimonial
+══════════════════════════════ */
+.slide-wrap{
+  overflow:hidden;
+  mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);
+  -webkit-mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);
+}
+.slide-track{display:flex;gap:20px;width:max-content;animation:slide-l 50s linear infinite}
+.slide-wrap:hover .slide-track{animation-play-state:paused}
+@keyframes slide-l{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.sc{
+  width:500px;flex-shrink:0;
+  background:#0d1829;border:1px solid #1e2d4d;border-radius:16px;
+  padding:36px 40px;border-left:3px solid #E5A820;
+}
+.sc .sqm{font-size:64px;font-weight:900;color:#E5A820;line-height:.9;display:block;margin-bottom:14px}
+.sc blockquote{font-size:17px;font-weight:500;color:#e0ecff;line-height:1.6;font-style:normal;margin-bottom:28px}
+.sc .sau{display:flex;align-items:center;gap:14px}
+.sc .sav{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #E5A820;flex-shrink:0}
+.sc .snm{font-size:14px;font-weight:700}
+.sc .srl{font-size:12px;color:#6b7a99;margin-top:2px}
+.sc .stars{display:block;margin-top:4px;font-size:12px}
+
+/* ══════════════════════════════
+   OPTION 5 — Results-First Stat Cards
+   Original concept: metric + quote proof
+══════════════════════════════ */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sg-feat{
+  grid-column:1/-1;
+  background:linear-gradient(135deg,#0f1e38 0%,#0d1829 100%);
+  border:1px solid #2a3d60;border-radius:20px;
+  padding:52px 60px;display:flex;align-items:center;gap:64px;
+  position:relative;overflow:hidden;
+}
+.sg-feat::before{
+  content:'';position:absolute;right:-80px;top:-80px;
+  width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(229,168,32,.12),transparent 65%);
+}
+.sg-feat .big-metric{flex-shrink:0;text-align:center}
+.sg-feat .big-num{
+  font-size:80px;font-weight:900;
+  background:linear-gradient(135deg,#f0c040,#d4870a);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;line-height:1;display:block;
+}
+.sg-feat .metric-label{font-size:13px;color:#8ba5c8;font-weight:600;letter-spacing:.06em;margin-top:4px}
+.sg-feat .feat-div{width:1px;height:100px;background:#1e2d4d;flex-shrink:0}
+.sg-feat blockquote{font-size:20px;font-weight:600;color:#fff;line-height:1.5;font-style:normal;flex:1}
+.sg-feat .feat-au{margin-top:20px;display:flex;align-items:center;gap:12px}
+.sg-feat .feat-av{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #E5A820;flex-shrink:0}
+.sg-feat .feat-nm{font-size:14px;font-weight:700}
+.sg-feat .feat-rl{font-size:12px;color:#E5A820;margin-top:2px}
+.sg-feat .feat-right{display:flex;flex-direction:column}
+
+.stat-card{
+  background:#0d1829;border:1px solid #1e2d4d;border-radius:16px;
+  padding:28px 28px 24px;position:relative;overflow:hidden;
+}
+.stat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#f0c040,#d4870a)}
+.stat-card .sc-num{
+  font-size:42px;font-weight:900;
+  background:linear-gradient(135deg,#f0c040,#d4870a);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;line-height:1;display:block;margin-bottom:6px;
+}
+.stat-card .sc-label{font-size:11px;color:#8ba5c8;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;display:block;border-bottom:1px solid #1e2d4d;padding-bottom:14px}
+.stat-card blockquote{font-size:13px;color:#c8d8f0;line-height:1.65;font-style:normal;margin-bottom:18px}
+.stat-card .sc-au{display:flex;align-items:center;gap:10px}
+.stat-card .sc-av{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #1e2d4d;flex-shrink:0}
+.stat-card .sc-nm{font-size:12.5px;font-weight:700}
+.stat-card .sc-rl{font-size:11px;color:#6b7a99;margin-top:1px}
+</style>
+</head>
+<body>
+<h1>Testimonial Options — Pick One</h1>
+<p class="sub">5 designs from 21st.dev adapted to DMS brand. Hover any section to pause animations. Reply with 1, 2, 3, 4, or 5 — nothing gets implemented until you pick.</p>
+
+
+<!-- ══════════ OPTION 1 ══════════ -->
+<div class="opt">
+  <div class="opt-tag">Option 1</div>
+  <div class="opt-name">Vertical Scroll Columns</div>
+  <div class="opt-desc">Three columns of cards scrolling upward at different speeds with fade masks. Infinite loop, pauses on hover. Seen on Linear, Lottie, shadcn — premium always-on social proof wall.</div>
+
+  <div class="v-cols">
+    <div class="v-col"><div class="v-inner s1">
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"DMS helped us rank on page 1 of Google in just 3 months. Their SEO strategy is unlike anything we had tried before."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Marcus O.</div><div class="rl">CEO, TechForward Ltd</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Website traffic tripled after they rebuilt our site. Responsive, professional, and they genuinely care about results."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Amina K.</div><div class="rl">Founder, BrightLeaf Studio</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"We needed a brand identity fast. DMS delivered a complete brand kit in one week — logo, colors, everything."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">James R.</div><div class="rl">MD, Premier Clinic Group</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"DMS helped us rank on page 1 of Google in just 3 months. Their SEO strategy is unlike anything we had tried before."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Marcus O.</div><div class="rl">CEO, TechForward Ltd</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Website traffic tripled after they rebuilt our site. Responsive, professional, and they genuinely care about results."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Amina K.</div><div class="rl">Founder, BrightLeaf Studio</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"We needed a brand identity fast. DMS delivered a complete brand kit in one week — logo, colors, everything."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">James R.</div><div class="rl">MD, Premier Clinic Group</div></div></div></div>
+    </div></div>
+    <div class="v-col"><div class="v-inner s2">
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Their AI automations saved our team 15 hours per week. The ROI was visible within the first 30 days of going live."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Chioma E.</div><div class="rl">COO, Nexus Commerce</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Best digital agency we have worked with. Clear communication, transparent pricing, and results that show up in the data."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Dave T.</div><div class="rl">Marketing Director, Growth Signal</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"The new website doubled our conversion rate. DMS understood our audience better than we did after years in business."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Rachel M.</div><div class="rl">CMO, Apex Ventures</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Their AI automations saved our team 15 hours per week. The ROI was visible within the first 30 days of going live."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Chioma E.</div><div class="rl">COO, Nexus Commerce</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Best digital agency we have worked with. Clear communication, transparent pricing, and results that show up in the data."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Dave T.</div><div class="rl">Marketing Director, Growth Signal</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"The new website doubled our conversion rate. DMS understood our audience better than we did after years in business."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Rachel M.</div><div class="rl">CMO, Apex Ventures</div></div></div></div>
+    </div></div>
+    <div class="v-col"><div class="v-inner s3">
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Social media content quality went through the roof. Real engagement, real followers, real leads flowing in every week."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Oluwaseun A.</div><div class="rl">Founder, Naira Digital</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"DMS understood our brand vision immediately. The identity they created feels exactly like us — powerful, clean, unmistakable."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Daniel B.</div><div class="rl">CTO, StackMind</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Leads come to us now instead of us chasing them. Their SEO results showed up in under 60 days — no exaggeration."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Linda F.</div><div class="rl">Owner, Prestige Beauty Co.</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Social media content quality went through the roof. Real engagement, real followers, real leads flowing in every week."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Oluwaseun A.</div><div class="rl">Founder, Naira Digital</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"DMS understood our brand vision immediately. The identity they created feels exactly like us — powerful, clean, unmistakable."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Daniel B.</div><div class="rl">CTO, StackMind</div></div></div></div>
+      <div class="vc"><span class="stars">★★★★★</span><blockquote>"Leads come to us now instead of us chasing them. Their SEO results showed up in under 60 days — no exaggeration."</blockquote><div class="au"><img class="av" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="nm">Linda F.</div><div class="rl">Owner, Prestige Beauty Co.</div></div></div></div>
+    </div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ══════════ OPTION 2 ══════════ -->
+<div class="opt">
+  <div class="opt-tag">Option 2</div>
+  <div class="opt-name">Dual Horizontal Marquee</div>
+  <div class="opt-desc">Two rows scrolling in opposite directions with fade masks on both sides. Pauses on hover. Directly from 21st.dev marquee pattern. Very modern, very high-agency, no static layout — everything moves.</div>
+
+  <div class="h-marquee">
+    <div class="hm-row"><div class="hm-inner left">
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Marcus O.</div><div class="hc-rl">CEO, TechForward Ltd</div></div></div><p>"DMS helped us rank on page 1 of Google in just 3 months. Incredible strategy."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Amina K.</div><div class="hc-rl">Founder, BrightLeaf Studio</div></div></div><p>"Traffic tripled. Responsive, professional, and they genuinely care about our growth."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Chioma E.</div><div class="hc-rl">COO, Nexus Commerce</div></div></div><p>"AI automations saved 15 hours a week. ROI was clear within 30 days of launch."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Dave T.</div><div class="hc-rl">Marketing Director, Growth Signal</div></div></div><p>"Best agency we have worked with. Clear communication, zero surprises, real results."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Rachel M.</div><div class="hc-rl">CMO, Apex Ventures</div></div></div><p>"New website doubled conversions. DMS understood our audience better than we did."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Marcus O.</div><div class="hc-rl">CEO, TechForward Ltd</div></div></div><p>"DMS helped us rank on page 1 of Google in just 3 months. Incredible strategy."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Amina K.</div><div class="hc-rl">Founder, BrightLeaf Studio</div></div></div><p>"Traffic tripled. Responsive, professional, and they genuinely care about our growth."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Chioma E.</div><div class="hc-rl">COO, Nexus Commerce</div></div></div><p>"AI automations saved 15 hours a week. ROI was clear within 30 days of launch."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Dave T.</div><div class="hc-rl">Marketing Director, Growth Signal</div></div></div><p>"Best agency we have worked with. Clear communication, zero surprises, real results."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Rachel M.</div><div class="hc-rl">CMO, Apex Ventures</div></div></div><p>"New website doubled conversions. DMS understood our audience better than we did."</p><span class="stars">★★★★★</span></div>
+    </div></div>
+    <div class="hm-row"><div class="hm-inner right">
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">James R.</div><div class="hc-rl">MD, Premier Clinic Group</div></div></div><p>"Complete brand kit in one week. Professionalism and speed at every step of the way."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Oluwaseun A.</div><div class="hc-rl">Founder, Naira Digital</div></div></div><p>"Real engagement, real followers, real leads. Social content is on a completely different level."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Daniel B.</div><div class="hc-rl">CTO, StackMind</div></div></div><p>"The brand identity feels exactly like us. Powerful, clean, and completely unmistakable."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Linda F.</div><div class="hc-rl">Owner, Prestige Beauty Co.</div></div></div><p>"Leads come to us now. SEO results showed up in under 60 days — I tell everyone about them."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Kenneth A.</div><div class="hc-rl">Director, BlueStar Group</div></div></div><p>"Zero confusion, zero delays. DMS delivered ahead of schedule every single time."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">James R.</div><div class="hc-rl">MD, Premier Clinic Group</div></div></div><p>"Complete brand kit in one week. Professionalism and speed at every step of the way."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Oluwaseun A.</div><div class="hc-rl">Founder, Naira Digital</div></div></div><p>"Real engagement, real followers, real leads. Social content is on a completely different level."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Daniel B.</div><div class="hc-rl">CTO, StackMind</div></div></div><p>"The brand identity feels exactly like us. Powerful, clean, and completely unmistakable."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Linda F.</div><div class="hc-rl">Owner, Prestige Beauty Co.</div></div></div><p>"Leads come to us now. SEO results showed up in under 60 days — I tell everyone about them."</p><span class="stars">★★★★★</span></div>
+      <div class="hc"><div class="hc-head"><img class="hc-av" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="hc-nm">Kenneth A.</div><div class="hc-rl">Director, BlueStar Group</div></div></div><p>"Zero confusion, zero delays. DMS delivered ahead of schedule every single time."</p><span class="stars">★★★★★</span></div>
+    </div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ══════════ OPTION 3 ══════════ -->
+<div class="opt">
+  <div class="opt-tag">Option 3</div>
+  <div class="opt-name">Photo Portrait Overlay</div>
+  <div class="opt-desc">Full-height portrait cards with client photos. Dark gradient overlay from bottom with quote and name floating on top. Hover lifts card and scales photo. From 21st.dev image card pattern. Dramatic, editorial, high-end.</div>
+
+  <div class="photo-grid">
+    <div class="pc">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop&crop=face" alt="">
+      <div class="ov"></div>
+      <div class="pcont">
+        <span class="pqm">"</span>
+        <blockquote>"DMS helped us rank on page 1 of Google in just 3 months. Their SEO strategy is unlike anything we had tried before — it just works."</blockquote>
+        <span class="stars">★★★★★</span>
+        <div class="pnm" style="margin-top:8px">Marcus O.</div>
+        <div class="prl">CEO, TechForward Ltd</div>
+      </div>
+    </div>
+    <div class="pc">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop&crop=face" alt="">
+      <div class="ov"></div>
+      <div class="pcont">
+        <span class="pqm">"</span>
+        <blockquote>"Best digital agency we have worked with. Clear communication, zero surprises, and results that actually show up in the numbers."</blockquote>
+        <span class="stars">★★★★★</span>
+        <div class="pnm" style="margin-top:8px">Amina K.</div>
+        <div class="prl">Founder, BrightLeaf Studio</div>
+      </div>
+    </div>
+    <div class="pc">
+      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=800&fit=crop&crop=face" alt="">
+      <div class="ov"></div>
+      <div class="pcont">
+        <span class="pqm">"</span>
+        <blockquote>"The new website doubled our conversion rate. DMS understood our audience better than we did after years in the market."</blockquote>
+        <span class="stars">★★★★★</span>
+        <div class="pnm" style="margin-top:8px">James R.</div>
+        <div class="prl">MD, Premier Clinic Group</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ══════════ OPTION 4 ══════════ -->
+<div class="opt">
+  <div class="opt-tag">Option 4</div>
+  <div class="opt-name">Wide Auto-Sliding Cards</div>
+  <div class="opt-desc">Large 500px cards with a bold gold quote mark and full quote text. Auto-scrolls horizontally, pauses on hover, fades at edges. From 21st.dev sliding testimonial. Commanding, editorial, makes every quote feel important.</div>
+
+  <div class="slide-wrap">
+    <div class="slide-track">
+      <div class="sc"><span class="sqm">"</span><blockquote>"DMS helped us rank on page 1 of Google in just 3 months. Their SEO strategy is unlike anything we had tried before — data-driven, precise, and it just works."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Marcus O.</div><div class="srl">CEO, TechForward Ltd</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"Their AI automations saved our team 15 hours per week. The return on investment was visible within 30 days of launch. We will never go back."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Chioma E.</div><div class="srl">COO, Nexus Commerce</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"The new website doubled our conversion rate. The DMS team understood our audience better than we did after years in the market. Outstanding work."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Rachel M.</div><div class="srl">CMO, Apex Ventures</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"Social media content quality went through the roof. Real engagement, real followers, real leads flowing in every single week now."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Oluwaseun A.</div><div class="srl">Founder, Naira Digital</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"DMS understood our brand vision immediately. The identity they created feels exactly like us — powerful, clean, and completely unmistakable in our market."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Daniel B.</div><div class="srl">CTO, StackMind</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"Leads come to us now instead of us chasing them. Their SEO work speaks entirely for itself — results showed up in under 60 days. I recommend them to everyone."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Linda F.</div><div class="srl">Owner, Prestige Beauty Co.</div><span class="stars">★★★★★</span></div></div></div>
+      <!-- duplicates for seamless loop -->
+      <div class="sc"><span class="sqm">"</span><blockquote>"DMS helped us rank on page 1 of Google in just 3 months. Their SEO strategy is unlike anything we had tried before — data-driven, precise, and it just works."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Marcus O.</div><div class="srl">CEO, TechForward Ltd</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"Their AI automations saved our team 15 hours per week. The return on investment was visible within 30 days of launch. We will never go back."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Chioma E.</div><div class="srl">COO, Nexus Commerce</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"The new website doubled our conversion rate. The DMS team understood our audience better than we did after years in the market. Outstanding work."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Rachel M.</div><div class="srl">CMO, Apex Ventures</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"Social media content quality went through the roof. Real engagement, real followers, real leads flowing in every single week now."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Oluwaseun A.</div><div class="srl">Founder, Naira Digital</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"DMS understood our brand vision immediately. The identity they created feels exactly like us — powerful, clean, and completely unmistakable in our market."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Daniel B.</div><div class="srl">CTO, StackMind</div><span class="stars">★★★★★</span></div></div></div>
+      <div class="sc"><span class="sqm">"</span><blockquote>"Leads come to us now instead of us chasing them. Their SEO work speaks entirely for itself — results showed up in under 60 days. I recommend them to everyone."</blockquote><div class="sau"><img class="sav" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="snm">Linda F.</div><div class="srl">Owner, Prestige Beauty Co.</div><span class="stars">★★★★★</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ══════════ OPTION 5 ══════════ -->
+<div class="opt">
+  <div class="opt-tag">Option 5</div>
+  <div class="opt-name">Results-First Stat Cards</div>
+  <div class="opt-desc">Leads with the outcome — large gold metric, then the client quote that backs it up. One oversized featured card spanning full width, three stat cards below. For a digital agency this is the most persuasive format: proof before words.</div>
+
+  <div class="stat-grid">
+    <div class="sg-feat">
+      <div class="big-metric">
+        <span class="big-num">3x</span>
+        <div class="metric-label">Traffic Growth</div>
+      </div>
+      <div class="feat-div"></div>
+      <div class="feat-right">
+        <blockquote>"Website traffic tripled after DMS rebuilt our site. They did not just deliver a beautiful design — they built a growth machine that keeps compounding month after month."</blockquote>
+        <div class="feat-au">
+          <img class="feat-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="">
+          <div><div class="feat-nm">Amina K.</div><div class="feat-rl">Founder, BrightLeaf Studio</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="sc-num">+300%</span>
+      <span class="sc-label">Organic Search Visibility</span>
+      <blockquote>"We went from invisible online to page 1 of Google in 90 days. Their SEO team is disciplined, transparent, and genuinely excellent at what they do."</blockquote>
+      <div class="sc-au"><img class="sc-av" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="sc-nm">Marcus O.</div><div class="sc-rl">CEO, TechForward Ltd</div></div></div>
+    </div>
+    <div class="stat-card">
+      <span class="sc-num">2x</span>
+      <span class="sc-label">Conversion Rate</span>
+      <blockquote>"The new website doubled our conversion rate. DMS understood our customers better than we did and built exactly what they needed to say yes."</blockquote>
+      <div class="sc-au"><img class="sc-av" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="sc-nm">Rachel M.</div><div class="sc-rl">CMO, Apex Ventures</div></div></div>
+    </div>
+    <div class="stat-card">
+      <span class="sc-num">15hrs</span>
+      <span class="sc-label">Saved Per Week</span>
+      <blockquote>"Their AI automations cut 15 hours of manual work from our weekly schedule. The ROI was undeniable within the first month of going live."</blockquote>
+      <div class="sc-au"><img class="sc-av" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="sc-nm">Chioma E.</div><div class="sc-rl">COO, Nexus Commerce</div></div></div>
+    </div>
+  </div>
+</div>
+
+
+<hr class="divider">
+
+<!-- ══════════ OPTION 6 ══════════ -->
+<div class="opt">
+  <div class="opt-tag">Option 6</div>
+  <div class="opt-name">Animated Spotlight Rotator</div>
+  <div class="opt-desc">One testimonial at a time, full-width. Photo stack on the left (multiple images layered, top one fades in). Quote + name on the right. Auto-advances every 5 seconds. Arrow controls. From 21st.dev animated testimonials pattern. Minimal, premium, focused — each client gets a moment.</div>
+
+  <div class="spotlight-wrap" id="spotlight">
+    <div class="sp-left">
+      <div class="sp-stack" id="sp-stack">
+        <img class="sp-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=face" alt="" style="--r:3deg">
+        <img class="sp-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face" alt="" style="--r:-4deg">
+        <img class="sp-img" src="https://images.unsplash.com/photo-1473649085228-583485e6e4d7?w=400&h=500&fit=crop&crop=face" alt="" style="--r:2deg">
+        <img class="sp-img sp-active" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=face" alt="" style="--r:0deg">
+      </div>
+    </div>
+    <div class="sp-right">
+      <div class="sp-content" id="sp-content">
+        <div class="sp-stars">★★★★★</div>
+        <blockquote class="sp-quote" id="sp-quote">"Website traffic tripled after DMS rebuilt our site. They did not just deliver a beautiful design — they built a growth machine that keeps compounding month after month."</blockquote>
+        <div class="sp-name" id="sp-name">Amina K.</div>
+        <div class="sp-role" id="sp-role">Founder, BrightLeaf Studio</div>
+      </div>
+      <div class="sp-controls">
+        <button class="sp-btn" id="sp-prev" aria-label="Previous">&#8592;</button>
+        <div class="sp-dots" id="sp-dots">
+          <button class="sp-dot" data-i="0"></button>
+          <button class="sp-dot" data-i="1"></button>
+          <button class="sp-dot sp-dot-active" data-i="2"></button>
+          <button class="sp-dot" data-i="3"></button>
+        </div>
+        <button class="sp-btn" id="sp-next" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ══════════ OPTION 7 ══════════ -->
+<div class="opt">
+  <div class="opt-tag">Option 7</div>
+  <div class="opt-name">Asymmetric Bento Grid</div>
+  <div class="opt-desc">No animation — pure editorial layout. One large featured card spanning 2 columns and 2 rows on the left (long quote, gold accent border). Three smaller cards filling the right. From the 21st.dev Tailus bento grid pattern. Used by Stripe, Linear, Vercel. The layout itself signals quality.</div>
+
+  <div class="bento7">
+    <div class="b7-feat">
+      <div class="b7-feat-top">
+        <div class="b7-qm">"</div>
+        <div class="b7-stars">★★★★★</div>
+      </div>
+      <blockquote class="b7-quote">"Website traffic tripled after DMS rebuilt our site. They did not just deliver a beautiful design — they built an actual growth machine. Month after month the numbers keep going up. I tell everyone I know in business to call Digital Minds Solution first."</blockquote>
+      <div class="b7-author">
+        <img class="b7-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="">
+        <div>
+          <div class="b7-nm">Amina K.</div>
+          <div class="b7-rl">Founder, BrightLeaf Studio</div>
+        </div>
+      </div>
+    </div>
+    <div class="b7-wide">
+      <div class="b7-stars-sm">★★★★★</div>
+      <blockquote class="b7-wq">"DMS helped us rank on page 1 of Google in just 3 months. Their SEO strategy is data-driven, transparent, and unlike anything we had tried before. Results that actually show up in revenue."</blockquote>
+      <div class="b7-wau">
+        <img class="b7-wav" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="">
+        <div><div class="b7-wnm">Marcus O.</div><div class="b7-wrl">CEO, TechForward Ltd</div></div>
+      </div>
+    </div>
+    <div class="b7-mini">
+      <div class="b7-stars-sm">★★★★★</div>
+      <blockquote class="b7-mq">"Their AI automations saved our team 15 hours per week. The ROI was visible in the first month. I wish we had found them sooner."</blockquote>
+      <div class="b7-mau"><img class="b7-mav" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="b7-mnm">Chioma E.</div><div class="b7-mrl">COO, Nexus Commerce</div></div></div>
+    </div>
+    <div class="b7-mini">
+      <div class="b7-stars-sm">★★★★★</div>
+      <blockquote class="b7-mq">"The new website doubled our conversion rate. DMS understood our customers better than we did. Outstanding work from start to finish."</blockquote>
+      <div class="b7-mau"><img class="b7-mav" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt=""><div><div class="b7-mnm">Rachel M.</div><div class="b7-mrl">CMO, Apex Ventures</div></div></div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ══ OPTION 6 — Spotlight Rotator ══ */
+.spotlight-wrap{
+  display:grid;grid-template-columns:340px 1fr;gap:60px;
+  align-items:center;min-height:420px;
+}
+.sp-left{position:relative;width:340px;height:420px}
+.sp-stack{position:relative;width:100%;height:100%}
+.sp-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:top;border-radius:20px;
+  opacity:0;transform:rotate(var(--r,0deg));
+  transition:opacity .6s ease,transform .6s ease;
+}
+.sp-img.sp-active{opacity:1;transform:rotate(0deg)}
+.sp-right{display:flex;flex-direction:column;gap:32px}
+.sp-content{transition:opacity .4s ease}
+.sp-content.fading{opacity:0}
+.sp-stars{color:#E5A820;font-size:18px;letter-spacing:3px;margin-bottom:16px}
+.sp-quote{
+  font-size:22px;font-weight:600;line-height:1.55;
+  color:#fff;font-style:normal;margin-bottom:24px;
+}
+.sp-name{font-size:16px;font-weight:800;color:#fff}
+.sp-role{font-size:13px;color:#E5A820;margin-top:3px}
+.sp-controls{display:flex;align-items:center;gap:20px}
+.sp-btn{
+  width:44px;height:44px;border-radius:50%;
+  background:transparent;border:1.5px solid rgba(255,255,255,.3);
+  color:#fff;font-size:18px;cursor:pointer;
+  transition:background .25s,border-color .25s;
+  display:flex;align-items:center;justify-content:center;
+}
+.sp-btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6)}
+.sp-dots{display:flex;gap:8px}
+.sp-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,.25);border:none;cursor:pointer;
+  transition:background .25s,width .3s;padding:0;
+}
+.sp-dot.sp-dot-active{background:#E5A820;width:24px;border-radius:4px}
+
+/* ══ OPTION 7 — Asymmetric Bento ══ */
+.bento7{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:16px;
+}
+.b7-feat{
+  grid-column:1/3;grid-row:1/3;
+  background:#0d1829;border:1px solid #E5A820;border-radius:20px;
+  padding:40px 44px;display:flex;flex-direction:column;gap:0;
+  position:relative;overflow:hidden;
+}
+.b7-feat::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,#f0c040,#d4870a);
+}
+.b7-feat-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.b7-qm{font-size:64px;font-weight:900;color:#E5A820;line-height:.8}
+.b7-stars{color:#E5A820;font-size:16px;letter-spacing:2px}
+.b7-quote{font-size:18px;font-weight:500;color:#e0ecff;line-height:1.6;font-style:normal;flex:1;margin-bottom:28px}
+.b7-author{display:flex;align-items:center;gap:14px;margin-top:auto}
+.b7-av{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #E5A820;flex-shrink:0}
+.b7-nm{font-size:15px;font-weight:700}
+.b7-rl{font-size:12px;color:#E5A820;margin-top:2px}
+
+.b7-wide{
+  grid-column:3;grid-row:1;
+  background:#0d1829;border:1px solid #1e2d4d;border-radius:16px;
+  padding:28px;
+}
+.b7-stars-sm{color:#E5A820;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.b7-wq{font-size:14px;color:#c8d8f0;line-height:1.65;font-style:normal;margin-bottom:18px}
+.b7-wau{display:flex;align-items:center;gap:10px}
+.b7-wav{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid #1e2d4d;flex-shrink:0}
+.b7-wnm{font-size:13px;font-weight:700}
+.b7-wrl{font-size:11px;color:#6b7a99;margin-top:1px}
+
+.b7-mini{
+  grid-column:auto;grid-row:2;
+  background:#0d1829;border:1px solid #1e2d4d;border-radius:16px;
+  padding:24px;
+}
+.b7-mq{font-size:13px;color:#c8d8f0;line-height:1.65;font-style:normal;margin-bottom:16px}
+.b7-mau{display:flex;align-items:center;gap:10px}
+.b7-mav{width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid #1e2d4d;flex-shrink:0}
+.b7-mnm{font-size:12.5px;font-weight:700}
+.b7-mrl{font-size:11px;color:#6b7a99;margin-top:1px}
+</style>
+
+<script>
+(function(){
+  var data = [
+    {
+      img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face',
+      quote:'"DMS helped us rank on page 1 of Google in just 3 months. Their SEO strategy is unlike anything we had tried before — data-driven, precise, and it just works."',
+      name:'Marcus O.',role:'CEO, TechForward Ltd'
+    },
+    {
+      img:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face',
+      quote:'"Their AI automations saved our team 15 hours per week. The ROI was visible within 30 days of launch. We will never go back to doing it the old way."',
+      name:'Chioma E.',role:'COO, Nexus Commerce'
+    },
+    {
+      img:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop&crop=face',
+      quote:'"Website traffic tripled after DMS rebuilt our site. They did not just deliver a beautiful design — they built a growth machine that keeps compounding month after month."',
+      name:'Amina K.',role:'Founder, BrightLeaf Studio'
+    },
+    {
+      img:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop&crop=face',
+      quote:'"The new website doubled our conversion rate. DMS understood our audience better than we did after years in the market. Outstanding work from start to finish."',
+      name:'Rachel M.',role:'CMO, Apex Ventures'
+    }
+  ];
+  var current = 2;
+  var imgs = document.querySelectorAll('#sp-stack .sp-img');
+  var dots = document.querySelectorAll('#sp-dots .sp-dot');
+  var quoteEl = document.getElementById('sp-quote');
+  var nameEl = document.getElementById('sp-name');
+  var roleEl = document.getElementById('sp-role');
+  var content = document.getElementById('sp-content');
+
+  function go(i){
+    imgs[current].classList.remove('sp-active');
+    dots[current].classList.remove('sp-dot-active');
+    current = (i + data.length) % data.length;
+    imgs[current].classList.add('sp-active');
+    dots[current].classList.add('sp-dot-active');
+    content.classList.add('fading');
+    setTimeout(function(){
+      quoteEl.textContent = data[current].quote;
+      nameEl.textContent = data[current].name;
+      roleEl.textContent = data[current].role;
+      content.classList.remove('fading');
+    }, 220);
+  }
+
+  document.getElementById('sp-prev').addEventListener('click',function(){go(current-1)});
+  document.getElementById('sp-next').addEventListener('click',function(){go(current+1)});
+  dots.forEach(function(d){d.addEventListener('click',function(){go(parseInt(d.dataset.i))})});
+
+  var timer = setInterval(function(){go(current+1)},5000);
+  document.getElementById('spotlight').addEventListener('mouseenter',function(){clearInterval(timer)});
+  document.getElementById('spotlight').addEventListener('mouseleave',function(){timer=setInterval(function(){go(current+1)},5000)});
+})();
+</script>
+
+</body>
+</html>

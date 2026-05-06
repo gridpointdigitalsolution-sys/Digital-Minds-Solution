@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMS Pricing Options — Pick One</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --deep-space:#08101E;--klein-blue:#002FA7;--amber-gold:#E5A820;
+  --cobalt:#243B6E;--card-dark:#0D1826;--card-border:#1E3055;
+  --muted-blue:#B8CBE8;--white:#fff;
+  --font:'Plus Jakarta Sans',sans-serif;
+}
+body{background:#04080F;font-family:var(--font);color:#fff;padding:60px 24px 120px;display:flex;flex-direction:column;align-items:center;gap:120px}
+h1{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;text-align:center;color:#fff;margin-bottom:-80px}
+h1 span{color:#E5A820}
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E5A820;text-align:center;margin-bottom:24px}
+.section-title{font-size:1.1rem;font-weight:700;color:#fff;text-align:center;margin-bottom:40px}
+.demo{width:100%;max-width:1200px}
+
+/* ═══════════════════════════════════════════════════════
+   OPTION 1 — Glassmorphism Spotlight Cards
+══════════════════════════════════════════════════════════ */
+.opt1-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.opt1-card{
+  position:relative;
+  background:rgba(13,24,38,.7);
+  border:1px solid rgba(30,48,85,.8);
+  border-radius:20px;
+  padding:36px 28px;
+  backdrop-filter:blur(20px);
+  overflow:hidden;
+  transition:border-color .3s,box-shadow .3s;
+  cursor:default;
+}
+.opt1-card::before{
+  content:'';
+  position:absolute;
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(0,47,167,.35) 0%,transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  opacity:0;
+  transition:opacity .4s;
+}
+.opt1-card:hover::before{opacity:1}
+.opt1-card:hover{border-color:rgba(0,47,167,.5);box-shadow:0 0 0 1px rgba(0,47,167,.2),0 24px 60px rgba(0,0,0,.4)}
+.opt1-card.gold:hover::before{background:radial-gradient(circle,rgba(229,168,32,.3) 0%,transparent 70%)}
+.opt1-card.gold:hover{border-color:rgba(229,168,32,.4);box-shadow:0 0 0 1px rgba(229,168,32,.15),0 24px 60px rgba(0,0,0,.4)}
+.opt1-tier{font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#B8CBE8;opacity:.6;margin-bottom:16px}
+.opt1-name{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:6px}
+.opt1-from{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B8CBE8;opacity:.6;margin-top:20px}
+.opt1-price{font-size:2.8rem;font-weight:800;letter-spacing:-.04em;color:#fff;line-height:1}
+.opt1-custom{font-size:1.4rem;font-weight:800;color:#E5A820;line-height:1.2;margin-top:4px}
+.opt1-desc{font-size:.82rem;line-height:1.6;color:#B8CBE8;opacity:.8;margin-top:16px}
+.opt1-btn{
+  display:block;width:100%;margin-top:28px;
+  padding:12px 0;
+  border:1px solid rgba(30,48,85,.9);
+  border-radius:10px;
+  background:transparent;
+  color:#B8CBE8;font-size:.85rem;font-weight:700;
+  text-align:center;cursor:pointer;
+  transition:border-color .25s,color .25s,background .25s;
+}
+.opt1-card:hover .opt1-btn{border-color:rgba(0,47,167,.5);color:#fff;background:rgba(0,47,167,.12)}
+.opt1-card.gold:hover .opt1-btn{border-color:rgba(229,168,32,.5);color:#fff;background:rgba(229,168,32,.1)}
+.opt1-divider{width:40px;height:2px;background:rgba(30,48,85,1);border-radius:2px;margin:20px 0}
+
+/* ═══════════════════════════════════════════════════════
+   OPTION 2 — Linear / Stripe Horizontal Rows
+══════════════════════════════════════════════════════════ */
+.opt2-wrap{
+  background:var(--card-dark);
+  border:1px solid var(--card-border);
+  border-radius:20px;
+  overflow:hidden;
+}
+.opt2-row{
+  display:grid;
+  grid-template-columns:180px 180px 1fr auto;
+  align-items:center;
+  gap:32px;
+  padding:32px 40px;
+  border-bottom:1px solid rgba(30,48,85,.6);
+  position:relative;
+  transition:background .25s;
+  cursor:default;
+}
+.opt2-row:last-child{border-bottom:none}
+.opt2-row::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,47,167,.06);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.opt2-row:hover::before{transform:scaleX(1)}
+.opt2-num{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B8CBE8;opacity:.5}
+.opt2-name{font-size:1.2rem;font-weight:800;color:#fff}
+.opt2-price-col{display:flex;flex-direction:column;gap:2px}
+.opt2-from-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B8CBE8;opacity:.5}
+.opt2-price{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:#fff}
+.opt2-custom-price{font-size:1.1rem;font-weight:800;color:#E5A820}
+.opt2-desc{font-size:.83rem;line-height:1.6;color:#B8CBE8;opacity:.75;position:relative;z-index:1}
+.opt2-btn{
+  position:relative;z-index:1;
+  white-space:nowrap;padding:10px 22px;
+  border:1px solid rgba(30,48,85,.9);
+  border-radius:8px;background:transparent;
+  color:#B8CBE8;font-size:.82rem;font-weight:700;cursor:pointer;
+  transition:border-color .25s,color .25s;
+  font-family:var(--font);
+}
+.opt2-row:hover .opt2-btn{border-color:rgba(0,47,167,.6);color:#fff}
+
+/* ═══════════════════════════════════════════════════════
+   OPTION 3 — Giant Number Accent Border Cards
+══════════════════════════════════════════════════════════ */
+.opt3-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.opt3-card{
+  padding:40px 28px;
+  border-radius:16px;
+  background:var(--card-dark);
+  border:1px solid var(--card-border);
+  border-left:3px solid var(--card-border);
+  position:relative;
+  cursor:default;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
+}
+.opt3-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.opt3-card.c1{border-left-color:#B8CBE8}
+.opt3-card.c2{border-left-color:#002FA7}
+.opt3-card.c3{border-left-color:#E5A820}
+.opt3-card.c4{border-left-color:transparent;border-image:linear-gradient(to bottom,#002FA7,#E5A820) 1}
+.opt3-tier-num{
+  font-size:4.5rem;font-weight:800;letter-spacing:-.06em;line-height:1;
+  opacity:.08;color:#fff;margin-bottom:-16px;
+}
+.opt3-name{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:8px}
+.opt3-from-sm{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B8CBE8;opacity:.5;margin-top:20px;display:block}
+.opt3-bignum{font-size:3rem;font-weight:800;letter-spacing:-.05em;color:#fff;line-height:1}
+.opt3-custom-big{font-size:1.6rem;font-weight:800;color:#E5A820;line-height:1.2}
+.opt3-desc{font-size:.8rem;line-height:1.6;color:#B8CBE8;opacity:.75;margin-top:14px}
+.opt3-btn{
+  display:block;width:100%;margin-top:24px;
+  padding:11px 0;border-radius:8px;
+  background:transparent;border:1px solid rgba(30,48,85,.9);
+  color:#B8CBE8;font-size:.82rem;font-weight:700;
+  text-align:center;cursor:pointer;font-family:var(--font);
+  transition:all .25s;
+}
+.opt3-card:hover .opt3-btn{background:rgba(0,47,167,.15);border-color:rgba(0,47,167,.5);color:#fff}
+.opt3-card.c3:hover .opt3-btn{background:rgba(229,168,32,.1);border-color:rgba(229,168,32,.4);color:#fff}
+
+/* ═══════════════════════════════════════════════════════
+   OPTION 4 — Bento Grid with Tilt Depth
+══════════════════════════════════════════════════════════ */
+.opt4-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1.4fr;
+  grid-template-rows:auto auto;
+  gap:16px;
+}
+.opt4-card{
+  background:var(--card-dark);
+  border:1px solid var(--card-border);
+  border-radius:20px;
+  padding:36px;
+  cursor:default;
+  transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s, border-color .3s;
+  transform-style:preserve-3d;
+}
+.opt4-card:hover{transform:perspective(800px) rotateY(-3deg) rotateX(2deg) translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.45);border-color:rgba(0,47,167,.4)}
+.opt4-card.span2{grid-column:1 / 3}
+.opt4-card.tall{grid-row:1 / 3;border-color:rgba(229,168,32,.25)}
+.opt4-card.tall:hover{border-color:rgba(229,168,32,.5);transform:perspective(800px) rotateY(3deg) rotateX(2deg) translateY(-4px)}
+.opt4-card.wide{grid-column:1 / 4;display:flex;align-items:center;justify-content:space-between;gap:40px;background:linear-gradient(135deg,rgba(0,47,167,.12) 0%,rgba(229,168,32,.06) 100%);border-color:rgba(229,168,32,.2)}
+.opt4-tier{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B8CBE8;opacity:.5;margin-bottom:12px}
+.opt4-name{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:4px}
+.opt4-from{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B8CBE8;opacity:.5;margin-top:16px;display:block}
+.opt4-price{font-size:2.2rem;font-weight:800;letter-spacing:-.04em;color:#fff;line-height:1}
+.opt4-custom{font-size:1.4rem;font-weight:800;color:#E5A820}
+.opt4-desc{font-size:.8rem;line-height:1.6;color:#B8CBE8;opacity:.75;margin-top:12px}
+.opt4-btn{
+  display:inline-block;margin-top:20px;
+  padding:10px 20px;border-radius:8px;
+  background:transparent;border:1px solid rgba(30,48,85,.9);
+  color:#B8CBE8;font-size:.8rem;font-weight:700;cursor:pointer;font-family:var(--font);
+  transition:all .25s;
+}
+.opt4-card:hover .opt4-btn{background:rgba(0,47,167,.15);border-color:rgba(0,47,167,.5);color:#fff}
+.opt4-card.tall:hover .opt4-btn{background:rgba(229,168,32,.1);border-color:rgba(229,168,32,.4);color:#fff}
+.opt4-wide-left h3{font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:8px}
+.opt4-wide-left p{font-size:.85rem;color:#B8CBE8;opacity:.8;max-width:500px;line-height:1.6}
+.opt4-wide-right{display:flex;flex-direction:column;align-items:flex-end;gap:16px;flex-shrink:0}
+.opt4-stars{display:flex;gap:4px;color:#E5A820;font-size:14px}
+
+/* ═══════════════════════════════════════════════════════
+   OPTION 5 — Numbered Accordion / Editorial Rows
+══════════════════════════════════════════════════════════ */
+.opt5-wrap{width:100%}
+.opt5-item{
+  border-top:1px solid rgba(30,48,85,.7);
+  overflow:hidden;
+  cursor:default;
+}
+.opt5-item:last-child{border-bottom:1px solid rgba(30,48,85,.7)}
+.opt5-head{
+  display:grid;
+  grid-template-columns:80px 1fr 200px 180px;
+  align-items:center;
+  gap:32px;
+  padding:28px 0;
+  transition:padding .3s;
+}
+.opt5-item:hover .opt5-head{padding:32px 0}
+.opt5-num{
+  font-size:3.5rem;font-weight:800;letter-spacing:-.06em;
+  color:rgba(255,255,255,.08);line-height:1;
+  transition:color .3s;
+}
+.opt5-item:hover .opt5-num{color:rgba(229,168,32,.18)}
+.opt5-name{font-size:1.6rem;font-weight:800;color:#fff}
+.opt5-price-col{text-align:right}
+.opt5-from-sm{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B8CBE8;opacity:.5;display:block;margin-bottom:2px}
+.opt5-price{font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+.opt5-custom{font-size:1rem;font-weight:800;color:#E5A820}
+.opt5-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .45s cubic-bezier(.16,1,.3,1);
+  padding-left:112px;
+}
+.opt5-item:hover .opt5-body{max-height:200px}
+.opt5-inner{padding-bottom:28px;display:flex;align-items:flex-end;gap:32px}
+.opt5-desc{font-size:.88rem;line-height:1.7;color:#B8CBE8;opacity:.8;max-width:600px}
+.opt5-btn{
+  flex-shrink:0;padding:12px 28px;
+  border-radius:8px;background:transparent;
+  border:1px solid rgba(30,48,85,.9);
+  color:#B8CBE8;font-size:.85rem;font-weight:700;cursor:pointer;font-family:var(--font);
+  white-space:nowrap;
+  transition:all .25s;
+}
+.opt5-item:hover .opt5-btn{background:rgba(0,47,167,.15);border-color:rgba(0,47,167,.5);color:#fff}
+.opt5-item:last-child:hover .opt5-btn{background:rgba(229,168,32,.1);border-color:rgba(229,168,32,.4);color:#fff}
+
+/* ═══════════════════════════════════════════════════════
+   SHARED
+══════════════════════════════════════════════════════════ */
+.option-wrap{width:100%;max-width:1200px}
+.option-header{text-align:center;margin-bottom:32px}
+.option-num{font-size:.7rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#E5A820;margin-bottom:8px}
+.option-name{font-size:1.25rem;font-weight:800;color:#fff}
+.option-desc{font-size:.82rem;color:#B8CBE8;opacity:.7;margin-top:4px}
+.separator{width:100%;max-width:1200px;height:1px;background:rgba(30,48,85,.5)}
+</style>
+</head>
+<body>
+
+<h1>DMS Pricing — <span>Pick a Style</span></h1>
+
+<!-- ═════════════════════════════════ OPTION 1 ═════════ -->
+<div class="option-wrap">
+  <div class="option-header">
+    <div class="option-num">Option 1</div>
+    <div class="option-name">Glassmorphism Spotlight Cards</div>
+    <div class="option-desc">Frosted glass cards · cursor glow on hover · Vercel / Supabase quality</div>
+  </div>
+  <div class="opt1-grid">
+    <div class="opt1-card">
+      <div class="opt1-tier">Tier 1</div>
+      <div class="opt1-name">Optimise</div>
+      <div class="opt1-divider"></div>
+      <div class="opt1-from">From</div>
+      <div class="opt1-price">$2,000</div>
+      <div class="opt1-desc">Focused improvement on one high-leverage channel. Fast results, no rebuild required.</div>
+      <button class="opt1-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt1-card">
+      <div class="opt1-tier">Tier 2</div>
+      <div class="opt1-name">Grow</div>
+      <div class="opt1-divider"></div>
+      <div class="opt1-from">From</div>
+      <div class="opt1-price">$5,000</div>
+      <div class="opt1-desc">Multi-channel growth infrastructure. Systematise lead generation and scale acquisition.</div>
+      <button class="opt1-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt1-card">
+      <div class="opt1-tier">Tier 3</div>
+      <div class="opt1-name">Transform</div>
+      <div class="opt1-divider"></div>
+      <div class="opt1-from">From</div>
+      <div class="opt1-price">$12,000</div>
+      <div class="opt1-desc">Complete digital engine rebuild. Chosen by ambitious brands ready to dominate their category.</div>
+      <button class="opt1-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt1-card gold">
+      <div class="opt1-tier">Tier 4</div>
+      <div class="opt1-name">Custom Build</div>
+      <div class="opt1-divider"></div>
+      <div class="opt1-custom">Custom Quote</div>
+      <div class="opt1-desc">Enterprise-scale infrastructure, bespoke software, or a full venture launch. No template, no ceiling.</div>
+      <button class="opt1-btn">Request a Custom Quote →</button>
+    </div>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ═════════════════════════════════ OPTION 2 ═════════ -->
+<div class="option-wrap">
+  <div class="option-header">
+    <div class="option-num">Option 2</div>
+    <div class="option-name">Linear / Stripe Horizontal Rows</div>
+    <div class="option-desc">Full-width rows · slide-in highlight on hover · ultra-minimal Stripe quality</div>
+  </div>
+  <div class="opt2-wrap">
+    <div class="opt2-row">
+      <div>
+        <div class="opt2-num">Tier 01</div>
+        <div class="opt2-name">Optimise</div>
+      </div>
+      <div class="opt2-price-col">
+        <span class="opt2-from-label">From</span>
+        <div class="opt2-price">$2,000</div>
+      </div>
+      <div class="opt2-desc">Focused improvement on one high-leverage channel. Fast results, no full rebuild required.</div>
+      <button class="opt2-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt2-row">
+      <div>
+        <div class="opt2-num">Tier 02</div>
+        <div class="opt2-name">Grow</div>
+      </div>
+      <div class="opt2-price-col">
+        <span class="opt2-from-label">From</span>
+        <div class="opt2-price">$5,000</div>
+      </div>
+      <div class="opt2-desc">Multi-channel growth infrastructure. Systematise lead generation and scale paid acquisition.</div>
+      <button class="opt2-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt2-row">
+      <div>
+        <div class="opt2-num">Tier 03</div>
+        <div class="opt2-name">Transform</div>
+      </div>
+      <div class="opt2-price-col">
+        <span class="opt2-from-label">From</span>
+        <div class="opt2-price">$12,000</div>
+      </div>
+      <div class="opt2-desc">Complete digital engine rebuild. For ambitious brands ready to dominate their category.</div>
+      <button class="opt2-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt2-row">
+      <div>
+        <div class="opt2-num">Tier 04</div>
+        <div class="opt2-name">Custom Build</div>
+      </div>
+      <div class="opt2-price-col">
+        <span class="opt2-from-label">&nbsp;</span>
+        <div class="opt2-custom-price">Custom Quote</div>
+      </div>
+      <div class="opt2-desc">Enterprise infrastructure, bespoke software, or a full venture launch. Scoped to your exact requirements.</div>
+      <button class="opt2-btn">Request a Custom Quote →</button>
+    </div>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ═════════════════════════════════ OPTION 3 ═════════ -->
+<div class="option-wrap">
+  <div class="option-header">
+    <div class="option-num">Option 3</div>
+    <div class="option-name">Giant Number Cards with Accent Borders</div>
+    <div class="option-desc">Ghost tier numbers behind price · colored left border per tier · bold editorial feel</div>
+  </div>
+  <div class="opt3-grid">
+    <div class="opt3-card c1">
+      <div class="opt3-tier-num">01</div>
+      <div class="opt3-name">Optimise</div>
+      <span class="opt3-from-sm">From</span>
+      <div class="opt3-bignum">$2,000</div>
+      <div class="opt3-desc">Focused improvement on one high-leverage channel. Fast results, no rebuild required.</div>
+      <button class="opt3-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt3-card c2">
+      <div class="opt3-tier-num">02</div>
+      <div class="opt3-name">Grow</div>
+      <span class="opt3-from-sm">From</span>
+      <div class="opt3-bignum">$5,000</div>
+      <div class="opt3-desc">Multi-channel growth infrastructure. Systematise lead generation and scale acquisition.</div>
+      <button class="opt3-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt3-card c3">
+      <div class="opt3-tier-num">03</div>
+      <div class="opt3-name">Transform</div>
+      <span class="opt3-from-sm">From</span>
+      <div class="opt3-bignum">$12,000</div>
+      <div class="opt3-desc">Complete digital engine rebuild. For ambitious brands ready to dominate their category.</div>
+      <button class="opt3-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt3-card c4">
+      <div class="opt3-tier-num">04</div>
+      <div class="opt3-name">Custom Build</div>
+      <span class="opt3-from-sm">&nbsp;</span>
+      <div class="opt3-custom-big">Custom Quote</div>
+      <div class="opt3-desc">Enterprise infrastructure or full venture launch. No template, no ceiling, no surprises.</div>
+      <button class="opt3-btn">Request a Custom Quote →</button>
+    </div>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ═════════════════════════════════ OPTION 4 ═════════ -->
+<div class="option-wrap">
+  <div class="option-header">
+    <div class="option-num">Option 4</div>
+    <div class="option-name">Bento Grid with 3D Tilt Depth</div>
+    <div class="option-desc">Irregular bento layout · perspective tilt on hover · Transform spans full height</div>
+  </div>
+  <div class="opt4-grid">
+    <div class="opt4-card">
+      <div class="opt4-tier">Tier 01</div>
+      <div class="opt4-name">Optimise</div>
+      <div class="opt4-desc">Focused improvement on one high-leverage channel. Fast results.</div>
+      <span class="opt4-from">From</span>
+      <div class="opt4-price">$2,000</div>
+      <button class="opt4-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt4-card">
+      <div class="opt4-tier">Tier 02</div>
+      <div class="opt4-name">Grow</div>
+      <div class="opt4-desc">Multi-channel growth infrastructure. Systematise lead generation.</div>
+      <span class="opt4-from">From</span>
+      <div class="opt4-price">$5,000</div>
+      <button class="opt4-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt4-card tall">
+      <div class="opt4-tier">Tier 03</div>
+      <div class="opt4-name">Transform</div>
+      <div class="opt4-desc">Complete digital engine rebuild. For ambitious brands ready to dominate their category across every channel.</div>
+      <span class="opt4-from">From</span>
+      <div class="opt4-price">$12,000</div>
+      <button class="opt4-btn">Book a Discovery Call →</button>
+    </div>
+    <div class="opt4-card wide">
+      <div class="opt4-wide-left">
+        <h3>Custom Build</h3>
+        <p>Enterprise-scale infrastructure, bespoke software, or a full venture from zero. No template, no ceiling. Every scope is built around your specific requirements, timelines, and growth goals.</p>
+      </div>
+      <div class="opt4-wide-right">
+        <div class="opt4-custom">Custom Quote</div>
+        <button class="opt4-btn">Request a Custom Quote →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- ═════════════════════════════════ OPTION 5 ═════════ -->
+<div class="option-wrap">
+  <div class="option-header">
+    <div class="option-num">Option 5</div>
+    <div class="option-name">Numbered Editorial Accordion</div>
+    <div class="option-desc">Ghost numbers · hover to expand description · magazine / Pentagram agency quality</div>
+  </div>
+  <div class="opt5-wrap">
+    <div class="opt5-item">
+      <div class="opt5-head">
+        <div class="opt5-num">01</div>
+        <div class="opt5-name">Optimise</div>
+        <div class="opt5-price-col">
+          <span class="opt5-from-sm">From</span>
+          <div class="opt5-price">$2,000</div>
+        </div>
+        <div></div>
+      </div>
+      <div class="opt5-body">
+        <div class="opt5-inner">
+          <div class="opt5-desc">Focused improvement on one high-leverage channel. Ideal for businesses already generating revenue who need a measurable performance uplift fast.</div>
+          <button class="opt5-btn">Book a Discovery Call →</button>
+        </div>
+      </div>
+    </div>
+    <div class="opt5-item">
+      <div class="opt5-head">
+        <div class="opt5-num">02</div>
+        <div class="opt5-name">Grow</div>
+        <div class="opt5-price-col">
+          <span class="opt5-from-sm">From</span>
+          <div class="opt5-price">$5,000</div>
+        </div>
+        <div></div>
+      </div>
+      <div class="opt5-body">
+        <div class="opt5-inner">
+          <div class="opt5-desc">Multi-channel growth infrastructure for businesses ready to systematise lead generation and scale paid acquisition across Google, Meta, and organic search.</div>
+          <button class="opt5-btn">Book a Discovery Call →</button>
+        </div>
+      </div>
+    </div>
+    <div class="opt5-item">
+      <div class="opt5-head">
+        <div class="opt5-num">03</div>
+        <div class="opt5-name">Transform</div>
+        <div class="opt5-price-col">
+          <span class="opt5-from-sm">From</span>
+          <div class="opt5-price">$12,000</div>
+        </div>
+        <div></div>
+      </div>
+      <div class="opt5-body">
+        <div class="opt5-inner">
+          <div class="opt5-desc">The complete digital engine rebuild. Chosen by ambitious brands ready to dominate their category across every channel — brand, web, AI, marketing, all connected.</div>
+          <button class="opt5-btn">Book a Discovery Call →</button>
+        </div>
+      </div>
+    </div>
+    <div class="opt5-item">
+      <div class="opt5-head">
+        <div class="opt5-num">04</div>
+        <div class="opt5-name">Custom Build</div>
+        <div class="opt5-price-col">
+          <span class="opt5-from-sm">&nbsp;</span>
+          <div class="opt5-custom">Custom Quote</div>
+        </div>
+        <div></div>
+      </div>
+      <div class="opt5-body">
+        <div class="opt5-inner">
+          <div class="opt5-desc">Enterprise infrastructure, bespoke SaaS, or a full venture launch from zero. Every scope is built to your exact requirements, timelines, and growth goals. No template, no ceiling.</div>
+          <button class="opt5-btn">Request a Custom Quote →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

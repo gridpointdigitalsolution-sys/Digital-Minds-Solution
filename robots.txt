@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or utility paths (none currently, but placeholder for future)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.claude/
+
+# Sitemap location
+Sitemap: https://digitalmindssolutions.com/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 10

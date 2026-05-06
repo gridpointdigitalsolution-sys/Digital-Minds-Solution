@@ -1,0 +1,932 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digital Minds Solutions case studies. 12 real clients, real results, real numbers. From +1,190% search impressions (Barceló) to +400% search impressions (Kitchen Supply Wholesale).">
+<title>Our Work. Digital Minds Solutions</title>
+<link rel="icon" type="image/png" href="../ASSETS/logo/favicon.png (512x512px).png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--deep-space:#08101E;--klein-blue:#002FA7;--amber-gold:#E5A820;--cobalt-shade:#243B6E;--muted-blue:#B8CBE8;--muted-ink:#3A4F7A;--card-dark:#0D1826;--card-border:#1E3055;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--white:#FFFFFF;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'Inter',sans-serif;--r-sm:6px;--r-md:12px;--r-lg:20px;--r-xl:32px;--container:1280px;--sp:120px;--nav-h:72px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--deep-space);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.7}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}ul{list-style:none}button{cursor:pointer;border:none;background:none;font:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 20px}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:20px}
+.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px}
+.h1{font-family:var(--font-head);font-size:clamp(36px,4.5vw,68px);font-weight:800;line-height:1.08;letter-spacing:-.025em}
+.h2{font-family:var(--font-head);font-size:clamp(26px,3vw,44px);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+.h3{font-family:var(--font-head);font-size:clamp(20px,2vw,28px);font-weight:800;line-height:1.2}
+.btn-gold{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--amber-gold);font-family:var(--font-head);font-size:15px;font-weight:700;padding:14px 28px;border-radius:var(--r-md,8px);border:2px solid var(--amber-gold);white-space:nowrap;transition:color .4s;z-index:0;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-gold:hover{color:var(--deep-space,#08101E)}
+.btn-gold:hover::before{left:0}
+
+
+.btn-ghost{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:var(--font-head);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--r-md,8px);border:1.5px solid rgba(255,255,255,.55);transition:color .35s,border-color .35s;z-index:0;overflow:hidden}
+.btn-ghost::after{content:'';position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-ghost:hover{color:#08101E;border-color:#fff}
+.btn-ghost:hover::after{transform:scaleX(1)}
+
+
+.gs{opacity:0;transform:translateY(36px)}
+
+/* NAV — same pattern */
+#navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+#navbar.scrolled{background:rgba(8,16,30,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--card-border)}
+.nav-inner{max-width:var(--container);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 40px}
+.nav-logo img{height:52px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.nav-links a{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--muted-blue);padding:8px 16px;border-radius:var(--r-sm);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;position:relative;border:none;padding:8px 14px;box-shadow:0 4px 14px rgba(228,174,11,.35)}
+.nav-links a.active::after{display:none}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang-switcher{position:relative}
+.lang-btn{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--muted-blue);padding:7px 12px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;gap:6px;transition:color .2s,border-color .2s}
+.lang-btn:hover{color:var(--white);border-color:var(--muted-blue)}
+.lang-btn svg{width:12px;height:12px;transition:transform .2s}
+.lang-switcher.open .lang-btn svg{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100%+8px);right:0;background:var(--card-dark);border:1px solid var(--card-border);border-radius:var(--r-md);overflow:hidden;min-width:140px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s}
+.lang-switcher.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:block;width:100%;text-align:left;font-family:var(--font-head);font-size:13px;font-weight:600;padding:10px 16px;color:var(--muted-blue);transition:background .15s,color .15s}
+.lang-menu button:hover,.lang-menu button.active{background:rgba(255,255,255,.06);color:var(--white)}
+.theme-toggle{width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);transition:color .2s,border-color .2s,background .2s}
+.theme-toggle:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+.theme-toggle svg{width:18px;height:18px}
+.icon-sun{display:none}[data-theme="light"] .icon-moon{display:none}[data-theme="light"] .icon-sun{display:block}
+.nav-hamburger{display:none;width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.nav-hamburger span{display:block;width:18px;height:2px;background:var(--muted-blue);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;top:var(--nav-h);background:var(--deep-space);padding:40px 24px;opacity:0;visibility:hidden;transform:translateX(100%);transition:all .35s cubic-bezier(.16,1,.3,1);z-index:999;overflow-y:auto}
+.mobile-menu.open{opacity:1;visibility:visible;transform:none}
+.mobile-menu .nav-links{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.mobile-menu .nav-links a{font-size:22px;padding:12px 0;width:100%}
+.mobile-menu .m-ctas{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+@media(max-width:900px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-inner{padding:0 20px}}
+[data-theme="light"] #navbar.scrolled{background:rgba(244,247,255,.92)}
+[data-theme="light"] .nav-links a{color:var(--muted-ink)}
+[data-theme="light"] .nav-links a:hover{color:var(--deep-space);background:rgba(0,0,0,.05)}
+[data-theme="light"] .nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;border:none;box-shadow:0 4px 14px rgba(228,174,11,.25)}
+[data-theme="light"] .lang-btn,[data-theme="light"] .theme-toggle{color:var(--muted-ink);border-color:var(--light-border)}
+[data-theme="light"] .lang-btn:hover,[data-theme="light"] .theme-toggle:hover{color:var(--deep-space);border-color:var(--muted-ink);background:rgba(0,0,0,.05)}
+[data-theme="light"] .lang-menu{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .lang-menu button{color:var(--muted-ink)}
+
+/* WORK HERO */
+#work-hero{padding:calc(var(--nav-h) + 160px) 0 80px;position:relative;overflow:hidden}
+.work-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 90% 20%,rgba(0,47,167,.18) 0%,transparent 65%)}
+.work-hero-inner{position:relative;z-index:1;max-width:720px}
+.work-hero-inner .h1{color:var(--white);margin-bottom:24px}
+.work-hero-inner .h1 span{color:var(--amber-gold)}
+.work-hero-inner p{font-size:19px;color:var(--muted-blue);margin-bottom:40px}
+.work-hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+/* Filters */
+.work-filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{font-family:var(--font-head);font-size:13px;font-weight:600;padding:8px 18px;border-radius:99px;border:1px solid var(--card-border);color:var(--muted-blue);cursor:pointer;transition:all .2s;background:transparent}
+.filter-btn:hover,.filter-btn.active{background:var(--klein-blue);border-color:var(--klein-blue);color:var(--white)}
+
+/* CASE GRID */
+#cases{padding:var(--sp) 0;background:var(--deep-space)}
+.cases-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--card-border);border-radius:var(--r-xl);overflow:hidden}
+.case-card{
+  background:var(--card-dark);position:relative;
+  overflow:hidden;cursor:pointer;
+}
+.case-card.span-2{grid-column:1/-1}
+.case-img-wrap{overflow:hidden}
+.case-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1),filter .4s;filter:brightness(.65) saturate(.9)}
+.case-card.span-2 .case-img-wrap{height:520px}
+.case-card:not(.span-2) .case-img-wrap{height:380px}
+.case-card:hover .case-img-wrap img{transform:scale(1.05);filter:brightness(.45) saturate(1.1)}
+.case-info{padding:32px 36px 36px}
+.case-industry-tag{
+  display:inline-block;font-family:var(--font-head);font-size:11px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--amber-gold);
+  margin-bottom:10px;
+}
+.case-card .h3{color:var(--white);margin-bottom:8px}
+.case-url{font-family:var(--font-head);font-size:13px;color:var(--muted-blue);margin-bottom:16px}
+.case-work-done{font-size:14px;color:var(--muted-blue);margin-bottom:20px;line-height:1.55}
+.case-results{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.result-chip{
+  font-family:var(--font-head);font-size:12px;font-weight:700;
+  padding:5px 14px;border-radius:99px;
+  background:rgba(229,168,32,.15);color:var(--amber-gold);
+  border:1px solid rgba(229,168,32,.3);
+}
+.case-testimonial{
+  background:rgba(255,255,255,.03);border:1px solid var(--card-border);
+  border-radius:var(--r-md);padding:18px 20px;margin-bottom:20px;
+  font-size:14px;color:var(--muted-blue);line-height:1.6;font-style:italic;
+  position:relative;
+}
+.case-testimonial::before{content:'\201C';font-family:Georgia,serif;font-size:36px;line-height:1;color:var(--cobalt-shade);position:absolute;top:-6px;left:14px}
+.case-testimonial-author{font-style:normal;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--amber-gold);margin-top:10px}
+.case-cta{display:flex;gap:10px}
+.case-visit{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--muted-blue);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+.case-visit:hover{color:var(--white)}
+@media(max-width:800px){.cases-wrapper{grid-template-columns:1fr}.case-card.span-2{grid-column:1}.case-card.span-2 .case-img-wrap{height:280px}.case-card:not(.span-2) .case-img-wrap{height:240px}.case-info{padding:24px 20px 28px}}
+
+/* RESULTS SUMMARY */
+#results-summary{padding:80px 0;background:var(--card-dark);border-top:1px solid var(--card-border)}
+.rs-header{text-align:center;margin-bottom:48px}
+.rs-header .h2{color:var(--white);margin-bottom:12px}
+.rs-header p{color:var(--muted-blue)}
+.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.rs-item{background:var(--deep-space);border:1px solid var(--card-border);border-radius:var(--r-xl);padding:32px 24px;text-align:center}
+.rs-val{font-family:var(--font-head);font-size:clamp(32px,3.5vw,48px);font-weight:800;color:var(--amber-gold);line-height:1;margin-bottom:8px}
+.rs-label{font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--muted-blue);letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:800px){.rs-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* WORK CTA */
+#work-cta{padding:var(--sp) 0;background:var(--deep-space);text-align:center;position:relative;overflow:hidden}
+#work-cta::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,47,167,.18) 0%,transparent 70%);pointer-events:none}
+.work-cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.work-cta-inner .h2{color:var(--white);margin-bottom:20px}
+.work-cta-inner p{color:var(--muted-blue);font-size:18px;margin-bottom:40px}
+.work-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* LIGHT THEME */
+[data-theme="light"] #work-hero,[data-theme="light"] #cases,[data-theme="light"] #work-cta{background:var(--light-bg)}
+[data-theme="light"] .work-hero-bg{background:radial-gradient(ellipse 60% 70% at 90% 20%,rgba(0,47,167,.07) 0%,transparent 65%)}
+[data-theme="light"] .work-hero-inner .h1{color:var(--deep-space)}
+[data-theme="light"] .work-hero-inner p{color:var(--muted-ink)}
+[data-theme="light"] .filter-btn{color:var(--muted-ink);border-color:var(--light-border)}
+[data-theme="light"] .filter-btn:hover,.filter-btn.active{background:var(--klein-blue);border-color:var(--klein-blue);color:var(--white)}
+[data-theme="light"] .cases-wrapper{background:var(--light-border)}
+[data-theme="light"] .case-card{background:var(--white)}
+[data-theme="light"] .case-card .h3{color:var(--deep-space)}
+[data-theme="light"] .case-url{color:var(--muted-ink)}
+[data-theme="light"] .case-work-done{color:var(--muted-ink)}
+[data-theme="light"] .case-testimonial{background:var(--light-bg);border-color:var(--light-border)}
+[data-theme="light"] .case-testimonial{color:var(--muted-ink)}
+[data-theme="light"] .case-visit{color:var(--muted-ink)}
+[data-theme="light"] .case-visit:hover{color:var(--deep-space)}
+[data-theme="light"] #results-summary{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .rs-header .h2{color:var(--deep-space)}
+[data-theme="light"] .rs-header p{color:var(--muted-ink)}
+[data-theme="light"] .rs-item{background:var(--light-bg);border-color:var(--light-border)}
+[data-theme="light"] .rs-label{color:var(--muted-ink)}
+[data-theme="light"] .work-cta-inner .h2{color:var(--deep-space)}
+[data-theme="light"] .work-cta-inner p{color:var(--muted-ink)}
+[data-theme="light"] #work-cta::before{background:radial-gradient(circle,rgba(0,47,167,.06) 0%,transparent 70%)}
+
+/* FOOTER */
+#footer{background:var(--card-dark);border-top:1px solid var(--card-border);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand img{height:32px;margin-bottom:16px}
+.footer-brand p{font-size:14px;color:var(--muted-blue);line-height:1.65;max-width:280px}
+.footer-col-title{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:20px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{font-size:14px;color:var(--muted-blue);transition:color .2s}
+.footer-col ul a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:32px;border-top:1px solid var(--card-border)}
+.footer-bottom p,.footer-bottom a{font-size:13px;color:var(--muted-blue)}
+.footer-bottom a:hover{color:var(--white)}
+.social-link{width:36px;height:36px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);font-size:14px;transition:color .2s,border-color .2s,background .2s}
+.social-link:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+[data-theme="light"] #footer{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .footer-col-title{color:var(--deep-space)}
+[data-theme="light"] .footer-col ul a{color:var(--muted-ink)}
+[data-theme="light"] .footer-col ul a:hover{color:var(--deep-space)}
+[data-theme="light"] .footer-bottom{border-color:var(--light-border)}
+[data-theme="light"] .footer-bottom p,[data-theme="light"] .footer-bottom a{color:var(--muted-ink)}
+[data-theme="light"] .social-link{border-color:var(--light-border);color:var(--muted-ink)}
+
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.4);transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:white}
+.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%) translateX(8px);background:var(--card-dark);border:1px solid var(--card-border);color:var(--white);border-radius:var(--r-md);padding:8px 14px;font-family:var(--font-head);font-size:13px;font-weight:600;white-space:nowrap;pointer-events:none;opacity:0;transition:all .2s}
+.wa-float:hover .wa-tooltip{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* COOKIE CONSENT */
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;z-index:1100;background:rgba(13,24,38,.97);border-top:1px solid #1E3055;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);padding:20px 0;}
+#cookieBanner.visible{transform:none}
+.cookie-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
+.cookie-text{flex:1;min-width:260px}
+.cookie-text p{font-size:14px;color:#B8CBE8;line-height:1.6}
+.cookie-text strong{color:#fff}
+.cookie-text a{color:#E5A820;text-decoration:underline;text-underline-offset:3px}
+.cookie-btns{display:flex;gap:12px;flex-shrink:0}
+.cookie-accept{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;padding:10px 22px;border-radius:10px;background:#E5A820;color:#08101E;transition:background .2s,transform .2s;cursor:pointer;border:none;}
+.cookie-accept:hover{background:#f0b820;transform:translateY(-1px)}
+.cookie-decline{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;padding:10px 22px;border-radius:10px;background:transparent;color:#B8CBE8;border:1px solid #1E3055;transition:border-color .2s,color .2s;cursor:pointer;}
+.cookie-decline:hover{border-color:#B8CBE8;color:#fff}
+@media(max-width:600px){.cookie-inner{padding:0 20px;gap:16px}.cookie-btns{width:100%}.cookie-accept,.cookie-decline{flex:1;text-align:center}}
+
+
+/* LIGHT THEME — UNIVERSAL READABILITY OVERRIDES */
+[data-theme="light"]{--deep-space:#08101E;--white:#FFFFFF;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--muted-blue:#3A4F7A;--muted-ink:#3A4F7A;--card-dark:#FFFFFF;--card-border:#C5D3F0}
+[data-theme="light"] body{background:#F4F7FF;color:#08101E}
+[data-theme="light"] section{background:#F4F7FF}
+[data-theme="light"] section:nth-of-type(even){background:#FFFFFF}
+[data-theme="light"] h1,[data-theme="light"] h2,[data-theme="light"] h3,[data-theme="light"] h4,[data-theme="light"] h5,[data-theme="light"] h6,[data-theme="light"] .h1,[data-theme="light"] .h2,[data-theme="light"] .h3,[data-theme="light"] .h4{color:#08101E}
+[data-theme="light"] p,[data-theme="light"] li,[data-theme="light"] td,[data-theme="light"] label,[data-theme="light"] .body-lg{color:#3A4F7A}
+[data-theme="light"] .work-card,[data-theme="light"] .case-card,[data-theme="light"] .team-card,[data-theme="light"] .deliverable,[data-theme="light"] .value-item,[data-theme="light"] .insight-card,[data-theme="light"] .svc-card,[data-theme="light"] .pillar-card,[data-theme="light"] .seo-card,[data-theme="light"] .pricing-card{background:#FFFFFF !important;border-color:#C5D3F0 !important}
+[data-theme="light"] .work-card h3,[data-theme="light"] .case-card h3,[data-theme="light"] .team-card h3,[data-theme="light"] .deliverable .h4,[data-theme="light"] .value-item h3,[data-theme="light"] .insight-card h3,[data-theme="light"] .svc-card h3,[data-theme="light"] .pillar-card h3{color:#08101E}
+[data-theme="light"] .work-card p,[data-theme="light"] .case-card p,[data-theme="light"] .team-card p,[data-theme="light"] .deliverable p,[data-theme="light"] .value-item p,[data-theme="light"] .insight-card p{color:#3A4F7A}
+[data-theme="light"] .nav-logo img{filter:brightness(.2) contrast(1.4)}
+[data-theme="light"] #footer,[data-theme="light"] footer{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .footer-brand p,[data-theme="light"] .footer-col ul a,[data-theme="light"] .footer-bottom p{color:#3A4F7A}
+[data-theme="light"] .footer-col-title{color:#08101E}
+[data-theme="light"] .footer-bottom{border-color:#C5D3F0}
+[data-theme="light"] .social-link{border-color:#C5D3F0;color:#3A4F7A}
+[data-theme="light"] .social-link:hover{color:#08101E;border-color:#3A4F7A;background:#F4F7FF}
+[data-theme="light"] 
+
+
+[data-theme="light"] 
+[data-theme="light"] .tool-chip,[data-theme="light"] .s-nav-pill{background:#FFFFFF;color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .eyebrow{color:#E5A820}
+[data-theme="light"] input,[data-theme="light"] textarea,[data-theme="light"] select{background:#FFFFFF;color:#08101E;border-color:#C5D3F0}
+[data-theme="light"] input::placeholder,[data-theme="light"] textarea::placeholder{color:#8FA0BF}
+[data-theme="light"] .lang-menu,[data-theme="light"] .lang-dropdown{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .lang-menu button,[data-theme="light"] .lang-option{color:#3A4F7A}
+[data-theme="light"] .lang-menu button:hover,[data-theme="light"] .lang-option:hover{background:#F4F7FF;color:#08101E}
+[data-theme="light"] .pillar-num{color:#C5D3F0}
+[data-theme="light"] .wg-block{background:rgba(229,168,32,.05);border-color:rgba(229,168,32,.25)}
+[data-theme="light"] .wg-item{color:#3A4F7A}
+[data-theme="light"] .pfaq-q{color:#08101E}
+[data-theme="light"] .pfaq-a,[data-theme="light"] .pfaq-icon{color:#3A4F7A}
+[data-theme="light"] .seo-name{color:#08101E}
+[data-theme="light"] .seo-desc,[data-theme="light"] .seo-bullet{color:#3A4F7A}
+[data-theme="light"] #cookieBanner{background:rgba(255,255,255,.97);border-color:#C5D3F0}
+[data-theme="light"] .cookie-text p{color:#3A4F7A}
+[data-theme="light"] .cookie-text strong{color:#08101E}
+[data-theme="light"] .cookie-decline{color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .cookie-decline:hover{color:#08101E;border-color:#3A4F7A}
+
+@media(max-width:900px){.nav-right 
+
+
+.nav-logo{flex-shrink:0}.nav-logo img{height:52px;width:auto}}
+
+/* Nav CTA: same line as menu, at far right edge, Option 5 styling */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px;right:20px;z-index:1100;font-weight:800!important;font-size:13px!important;padding:10px 18px!important;letter-spacing:.02em;background:transparent!important;color:var(--amber-gold,#E5A820)!important;border:2px solid var(--amber-gold,#E5A820)!important;border-radius:8px!important;overflow:hidden;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(229,168,32,.18);transition:color .4s}
+/* Reserve right space in non-scrolled nav so menu items dont fall under CTA */
+#navbar:not(.scrolled) .nav-inner{padding-right:170px!important}
+.nav-right .btn-gold::before,.nav-actions .nav-cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold,#E5A820);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{color:#08101E!important}
+.nav-right .btn-gold:hover::before,.nav-actions .nav-cta:hover::before{left:0}
+/* Hide CTA when nav scrolled (pill state) — user requested no clutter on scroll */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important;transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
+.nav-right .btn-gold,.nav-actions .nav-cta{transition:opacity .3s ease,visibility .3s ease,transform .3s ease,color .4s ease}
+@media(max-width:1180px){
+  .nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}
+  #navbar:not(.scrolled) .nav-inner{padding-right:40px!important}
+}
+
+/* ========================================================
+   UNIFIED BUTTON SYSTEM — Option 2 (White Ghost Slide) ONLY
+   Overrides every old btn-gold/blue/ghost/ghost-dark + nav CTA
+   ======================================================== */
+.btn-gold,.btn-blue,.btn-ghost,.btn-ghost-dark,.nav-right .btn-gold,.nav-actions .nav-cta{
+  position:relative!important;display:inline-flex!important;align-items:center!important;gap:8px!important;
+  background:transparent!important;color:#fff!important;
+  font-family:var(--font-head)!important;font-size:15px!important;font-weight:700!important;letter-spacing:.02em!important;
+  padding:14px 28px!important;border-radius:8px!important;
+  border:1.5px solid rgba(255,255,255,.55)!important;
+  transition:color .35s ease,border-color .35s ease!important;
+  z-index:0;overflow:hidden!important;text-decoration:none!important;
+  box-shadow:none!important;
+}
+.btn-gold::before,.btn-blue::before,.btn-ghost::before,.btn-ghost-dark::before,.nav-right .btn-gold::before,.nav-actions .nav-cta::before{display:none!important}
+.btn-gold::after,.btn-blue::after,.btn-ghost::after,.btn-ghost-dark::after,.nav-right .btn-gold::after,.nav-actions .nav-cta::after{
+  content:''!important;position:absolute!important;inset:0!important;
+  background:#fff!important;
+  transform:scaleX(0)!important;transform-origin:left!important;
+  transition:transform .35s cubic-bezier(.4,0,.2,1)!important;
+  z-index:-1!important;
+}
+.btn-gold:hover,.btn-blue:hover,.btn-ghost:hover,.btn-ghost-dark:hover,.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{
+  color:#08101E!important;border-color:#fff!important;
+}
+.btn-gold:hover::after,.btn-blue:hover::after,.btn-ghost:hover::after,.btn-ghost-dark:hover::after,.nav-right .btn-gold:hover::after,.nav-actions .nav-cta:hover::after{
+  transform:scaleX(1)!important;
+}
+/* Keep nav CTA fixed positioning */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px!important;right:20px!important;z-index:1100!important;font-size:13px!important;font-weight:800!important;padding:10px 18px!important}
+/* Hide nav CTA when scrolled */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important}
+/* Hide nav CTA on narrow viewports */
+@media(max-width:1180px){.nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}#navbar:not(.scrolled) .nav-inner{padding-right:40px!important}}
+</style>
+<!-- DMS:OG -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digitalmindssolutions.com/work">
+<meta property="og:title" content="Our Work. 12 Real Clients, Real Results | Digital Minds Solutions">
+<meta property="og:description" content="12 named case studies. +1,190% search impressions (Barceló). +800% landing page conversions. +400% qualified leads. No vanity metrics.">
+<meta property="og:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Digital Minds Solutions">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DigitalMindsSol">
+<meta name="twitter:title" content="Our Work. 12 Real Clients, Real Results | Digital Minds Solutions">
+<meta name="twitter:description" content="12 named case studies. +1,190% search impressions (Barceló). +800% landing page conversions. +400% qualified leads. No vanity metrics.">
+<meta name="twitter:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<link rel="canonical" href="https://digitalmindssolutions.com/work">
+<!-- /DMS:OG -->
+  <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="../ASSETS/logo/logo-main.svg.png" alt="Digital Minds Solutions"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="work.html" class="active">Work</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher" id="langSwitcher"><button class="lang-btn" id="langBtn"><span id="langCurrent">EN</span><svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="lang-menu" id="langMenu"><button class="active" data-lang="en">English</button><button data-lang="es">Español</button><button data-lang="fr">Français</button><button data-lang="it">Italiano</button><button data-lang="pt">Português</button></div></div>
+      <button class="theme-toggle" id="themeToggle"><svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Book a Free Call</a>
+      <button class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <div class="m-ctas"><a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Book a Free Discovery Call</a>
+<!-- COOKIE CONSENT -->
+<div id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <p><strong>We use cookies</strong> to improve your experience, analyse traffic, and personalise content. Click "Accept" to consent to cookies. You may decline non-essential cookies. Read our <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+    <div class="cookie-btns">
+      <button id="cookieDecline" class="cookie-decline">Decline</button>
+      <button id="cookieAccept" class="cookie-accept">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/447426427646" class="btn-ghost" target="_blank">WhatsApp Us →</a></div>
+</div>
+
+<!-- WORK HERO -->
+<section id="work-hero">
+  <div class="work-hero-bg"></div>
+  <div class="container">
+    <div class="work-hero-inner">
+      <div class="eyebrow gs">Case Studies</div>
+      <h1 class="h1 gs">12 real clients.<br><span>Real results.</span><br>Real numbers.</h1>
+      <p class="gs">Before and after. No vanity metrics. Every result here is from a named client, a real project, and a measurable outcome. This is what "no outsourcing, one team" produces.</p>
+      <div class="work-hero-btns gs">
+        <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Get Similar Results →</a>
+        <a href="services.html" class="btn-ghost">See What We Build →</a>
+      </div>
+      <div class="work-filters gs">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+        <button class="filter-btn" data-filter="ecommerce">Ecommerce</button>
+        <button class="filter-btn" data-filter="healthtech">HealthTech</button>
+        <button class="filter-btn" data-filter="education">Education</button>
+        <button class="filter-btn" data-filter="fitness">Fitness</button>
+        <button class="filter-btn" data-filter="local">Local Business</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases">
+  <div class="container">
+    <div class="cases-wrapper">
+
+      <!-- 1. Barceló Hotel Group — FLAGSHIP SPAN 2 -->
+      <div class="case-card span-2 gs" data-cat="hospitality">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Barceló Hotel/Barceló Hotel (1).jpg" alt="Barceló Hotel Group" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">⭐ Flagship · Global Hospitality · 180 Hotels · 31 Countries</div>
+          <h3 class="h3">Barceló Hotel Group</h3>
+          <div class="case-url">barcelo.com/en-ww</div>
+          <div class="case-work-done">Website &amp; ecommerce dev · App development · Landing pages · Content &amp; blog · Social media · Digital marketing · Email automation · Cybersecurity · AEO · SEO · CRO</div>
+          <div class="case-results">
+            <span class="result-chip">+1,190% Search Impressions</span>
+            <span class="result-chip">+800% Landing Page Conversions</span>
+            <span class="result-chip">+400% Qualified Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "Managing a large hospitality website means every detail matters. From browsing hotels to completing a booking. The work improved our website flow, landing pages, content, search visibility, automation, and conversion journey."
+            <div class="case-testimonial-author">. Barceló Hotel Group</div>
+          </div>
+          <div class="case-cta">
+            <a href="case-barcelo.html" class="btn-gold">View Case Study →</a>
+            <a href="https://cal.com/digitalminds-fx51uj" class="btn-ghost" target="_blank">Get Similar Results</a>
+            <a href="https://barcelo.com" class="case-visit" target="_blank" rel="noopener">Visit Site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Mercury Holidays — FLAGSHIP SPAN 2 -->
+      <div class="case-card span-2 gs" data-cat="hospitality">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Mercury Holidays/Mercury Holidays (1).jpg" alt="Mercury Holidays" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">⭐ Flagship · Travel &amp; Hospitality</div>
+          <h3 class="h3">Mercury Holidays</h3>
+          <div class="case-url">mercuryholidays.co.uk</div>
+          <div class="case-work-done">Website &amp; ecommerce dev · App development · Landing pages · Content &amp; blog · Social media · Digital marketing · Email automation · Cybersecurity · AEO · SEO · CRO</div>
+          <div class="case-results">
+            <span class="result-chip">+900% Search Impressions</span>
+            <span class="result-chip">+450% Landing Page Conversions</span>
+            <span class="result-chip">+300% Qualified Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "We wanted customers to move through destinations, travel options, and booking steps with less friction. The improvements to our website, content, SEO, landing pages, and automation created a smoother journey."
+            <div class="case-testimonial-author">. Mercury Holidays</div>
+          </div>
+          <div class="case-cta">
+            <a href="case-mercury.html" class="btn-gold">View Case Study →</a>
+            <a href="https://cal.com/digitalminds-fx51uj" class="btn-ghost" target="_blank">Get Similar Results</a>
+            <a href="https://mercuryholidays.co.uk" class="case-visit" target="_blank" rel="noopener">Visit Site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Kitchen Supply Wholesale -->
+      <div class="case-card gs" data-cat="ecommerce">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Kitchen Supply/Kitchen Supply (1).jpg" alt="Kitchen Supply Wholesale" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">Kitchenware · Ecommerce</div>
+          <h3 class="h3">Kitchen Supply Wholesale</h3>
+          <div class="case-url">kitchensupplywholesale.com</div>
+          <div class="case-work-done">Website dev · Content · Digital marketing · Ecommerce · AEO · SEO · CRO</div>
+          <div class="case-results">
+            <span class="result-chip">+400% Search Impressions</span>
+            <span class="result-chip">+240% Organic Clicks</span>
+            <span class="result-chip">+70% Organic Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "The biggest improvement was how much easier the store became to browse. Product categories, content, search visibility, and the buying flow all felt more organised."
+            <div class="case-testimonial-author">. Kitchen Supply Wholesale</div>
+          </div>
+          <div class="case-cta"><a href="case-kitchen-supply.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+      <!-- 4. Defib Supplies -->
+      <div class="case-card gs" data-cat="ecommerce">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Defib Supplies/Defib Supplies (1).jpg" alt="Defib Supplies" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">AED / Medical Ecommerce</div>
+          <h3 class="h3">Defib Supplies</h3>
+          <div class="case-url">defibsupplies.co.uk</div>
+          <div class="case-work-done">Website dev · Content writing · Ecommerce dev · Digital marketing</div>
+          <div class="case-results">
+            <span class="result-chip">+280% Search Impressions</span>
+            <span class="result-chip">+59% Organic Clicks</span>
+            <span class="result-chip">+64% Organic Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "The improvements to our website, content, ecommerce structure, and marketing helped customers find products faster and buy with more confidence."
+            <div class="case-testimonial-author">. Defib Supplies</div>
+          </div>
+          <div class="case-cta"><a href="case-defib.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+      <!-- 5. Gymnastika UAE -->
+      <div class="case-card gs" data-cat="fitness">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Gymnastika/Gymnastika (1).jpg" alt="Gymnastika UAE" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">Youth Sports · Dubai &amp; Abu Dhabi</div>
+          <h3 class="h3">Gymnastika UAE</h3>
+          <div class="case-url">gymnastikauae.com</div>
+          <div class="case-work-done">Website &amp; landing page dev · Content · Digital marketing · Email automation · AEO · SEO · CRO</div>
+          <div class="case-results">
+            <span class="result-chip">+330% Search Impressions</span>
+            <span class="result-chip">+280% Landing Conversions</span>
+            <span class="result-chip">+170% Qualified Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "Parents needed a clearer way to understand our classes, locations, coaches, and trial sessions. The new website and landing page work made that journey much smoother."
+            <div class="case-testimonial-author">. Gymnastika UAE</div>
+          </div>
+          <div class="case-cta"><a href="case-gymnastika.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+      <!-- 6. My Education Online -->
+      <div class="case-card gs" data-cat="education">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/MEO/MEO (1).jpg" alt="My Education Online" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">Online Education · iGCSE &amp; A-Level</div>
+          <h3 class="h3">My Education Online (MEO)</h3>
+          <div class="case-url">myeducationonline.co.uk</div>
+          <div class="case-work-done">Website &amp; landing pages · Content · Digital marketing · Paid ads · Email automation · Workflow automation · Cybersecurity · AEO · SEO · CRO</div>
+          <div class="case-results">
+            <span class="result-chip">+300% Search Impressions</span>
+            <span class="result-chip">+200% Landing Page Conversions</span>
+            <span class="result-chip">+100% Qualified Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "The landing pages, website content, paid ads, and automation worked together far better than before. We received stronger enquiries and spent less time chasing follow-ups by hand."
+            <div class="case-testimonial-author">. My Education Online</div>
+          </div>
+          <div class="case-cta"><a href="case-meo.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+      <!-- 7. MyMedQ -->
+      <div class="case-card gs" data-cat="healthtech">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/MyMedQ/ MyMedQ (1).jpg" alt="MyMedQ" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">HealthTech · Patient Queue Management</div>
+          <h3 class="h3">MyMedQ</h3>
+          <div class="case-url">mymedq.in</div>
+          <div class="case-work-done">Website design &amp; dev · App development · Content · Digital marketing</div>
+          <div class="case-results">
+            <span class="result-chip">+350% Search Impressions</span>
+            <span class="result-chip">+50% Organic Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "Digital Minds Solution turned a complex platform into a clearer digital experience. We are pleased with the stronger visibility and the higher quality of interest we now receive."
+            <div class="case-testimonial-author">. MyMedQ</div>
+          </div>
+          <div class="case-cta"><a href="case-mymedq.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+      <!-- 8. Quantum Health -->
+      <div class="case-card gs" data-cat="healthtech">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Quantum Health/Quantum Health (1).jpg" alt="Quantum Health" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">Healthcare Navigation &amp; Benefits</div>
+          <h3 class="h3">Quantum Health</h3>
+          <div class="case-url">quantum-health.com</div>
+          <div class="case-work-done">Website design &amp; dev · Content · SEO · CRO · AEO · Digital marketing</div>
+          <div class="case-results">
+            <span class="result-chip">+320% Search Impressions</span>
+            <span class="result-chip">+46% Organic Clicks</span>
+            <span class="result-chip">+44% Organic Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "The work on our website, content, SEO, and enquiry journey made our offer easier to understand and more direct for visitors. Engagement improved. The digital experience felt more trusted."
+            <div class="case-testimonial-author">. Quantum Health</div>
+          </div>
+          <div class="case-cta"><a href="case-quantum-health.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+      <!-- 9. Gravity DXB -->
+      <div class="case-card gs" data-cat="fitness">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Gravity/Gravity (1).jpg" alt="Gravity DXB" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">Calisthenics · HYROX · Parkour · Dubai</div>
+          <h3 class="h3">Gravity DXB</h3>
+          <div class="case-url">gravitydxb.com</div>
+          <div class="case-work-done">Website &amp; landing pages · Content · Digital marketing · Email automation · AEO · SEO · CRO</div>
+          <div class="case-results">
+            <span class="result-chip">+230% Search Impressions</span>
+            <span class="result-chip">+200% Landing Conversions</span>
+            <span class="result-chip">+100% Qualified Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "The team improved our content, landing page flow, SEO, and trial booking journey. More visitors understood our offer and took action."
+            <div class="case-testimonial-author">. Gravity DXB</div>
+          </div>
+          <div class="case-cta"><a href="case-gravity.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+      <!-- 10. Santoba Tailors -->
+      <div class="case-card gs" data-cat="local">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Santoba Tailors/Santoba Tailors (1).jpg" alt="Santoba Tailors" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">Luxury Tailoring · Dubai</div>
+          <h3 class="h3">Santoba Tailors</h3>
+          <div class="case-url">santobatailors.ae</div>
+          <div class="case-work-done">Website &amp; landing pages · Content · Digital marketing · Email automation · AEO · SEO · CRO</div>
+          <div class="case-results">
+            <span class="result-chip">+350% Search Impressions</span>
+            <span class="result-chip">+150% Landing Conversions</span>
+            <span class="result-chip">+100% Qualified Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "The improvements gave us a more polished online presence. Clearer service pages. A stronger enquiry path. Clients now find it easier to understand our offer and reach out with confidence."
+            <div class="case-testimonial-author">. Santoba Tailors</div>
+          </div>
+          <div class="case-cta"><a href="case-santoba.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+      <!-- 11. Look Family Exteriors -->
+      <div class="case-card gs" data-cat="local">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Look Family/Look Family (1).jpg" alt="Look Family Exteriors" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">Residential Roofing · Local SEO</div>
+          <h3 class="h3">Look Family Exteriors</h3>
+          <div class="case-url">lookfamilyexteriors.net</div>
+          <div class="case-work-done">Local SEO · Content strategy · On-page SEO · Technical SEO</div>
+          <div class="case-results">
+            <span class="result-chip">+280% Search Impressions</span>
+            <span class="result-chip">+57% Search Rankings</span>
+            <span class="result-chip">+20% Organic Leads</span>
+          </div>
+          <div class="case-testimonial">
+            "Our service pages became clearer. Our local SEO improved. The website started working harder for lead generation. The rise in enquiries showed the strategy was focused on real business results."
+            <div class="case-testimonial-author">. Look Family Exteriors</div>
+          </div>
+          <div class="case-cta"><a href="case-look-family.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+      <!-- 12. Christopher Radko -->
+      <div class="case-card gs" data-cat="ecommerce">
+        <div class="case-img-wrap"><img src="../ASSETS/case-studies/Christopher Radko/Christopher Radko (1).jpg" alt="Christopher Radko" loading="lazy"></div>
+        <div class="case-info">
+          <div class="case-industry-tag">Luxury Holiday Decor · Ecommerce</div>
+          <h3 class="h3">Christopher Radko</h3>
+          <div class="case-url">christopherradko.com</div>
+          <div class="case-work-done">Website rebrand · SEO · Google Merchant Center optimisation</div>
+          <div class="case-results">
+            <span class="result-chip">+57% Search Rankings</span>
+            <span class="result-chip">+34% Organic Traffic</span>
+            <span class="result-chip">+22% Conversion Rate</span>
+          </div>
+          <div class="case-testimonial">
+            "Our website now sits much closer to the quality of our brand. The team improved the design, product structure, SEO, and Google Merchant setup in a way that made the shopping experience cleaner."
+            <div class="case-testimonial-author">. Christopher Radko</div>
+          </div>
+          <div class="case-cta"><a href="case-christopher-radko.html" class="btn-gold">View Case Study →</a><a href="https://cal.com/digitalminds-fx51uj" class="case-visit" target="_blank">Get Similar Results ↗</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS SUMMARY -->
+<section id="results-summary">
+  <div class="container">
+    <div class="rs-header">
+      <h2 class="h2 gs">The numbers across all 12 case studies.</h2>
+      <p class="gs">Aggregated results from real clients. Not averages. The actual peaks that prove what is possible.</p>
+    </div>
+    <div class="rs-grid">
+      <div class="rs-item gs"><div class="rs-val">+1,190%</div><div class="rs-label">Peak Search Impression Increase</div></div>
+      <div class="rs-item gs"><div class="rs-val">+800%</div><div class="rs-label">Peak Landing Page Conversion Lift</div></div>
+      <div class="rs-item gs"><div class="rs-val">+400%</div><div class="rs-label">Peak Qualified Lead Growth</div></div>
+      <div class="rs-item gs"><div class="rs-val">12</div><div class="rs-label">Named Clients · All Real Results</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK CTA -->
+<section id="work-cta">
+  <div class="container">
+    <div class="work-cta-inner">
+      <div class="eyebrow gs" style="justify-content:center"><span style="display:inline-block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px;margin-right:8px"></span>Your Turn</div>
+      <h2 class="h2 gs">Ready to be the next<br>case study?</h2>
+      <p class="gs">Book a free 30-minute call. We will map your current gaps, identify the fastest path to results, and show you exactly what we would build for your business.</p>
+      <div class="work-cta-btns gs">
+        <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank" rel="noopener">Book a Free Discovery Call →</a>
+        <a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20discuss%20results%20like%20your%20case%20studies" class="btn-ghost" target="_blank" rel="noopener">WhatsApp Us Directly</a>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:var(--muted-blue);font-family:var(--font-head);font-weight:600">Response within 24hrs · No commitment · Free 30-min discovery call</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="../ASSETS/logo/logo-white.svg.png" alt="Digital Minds Solutions"><p>Web development. AI automation. Branding. Marketing. Software. One team. No handoffs. Real results.</p><div style="display:flex;gap:12px;margin-top:20px"><a href="#" class="social-link">in</a><a href="#" class="social-link">ig</a><a href="https://youtu.be/96FyvCDcxRA" class="social-link" target="_blank">▶</a><a href="#" class="social-link">𝕏</a></div></div>
+      <div class="footer-col"><div class="footer-col-title">Services</div><ul><li><a href="service-web.html">Web Development</a></li><li><a href="service-ai.html">AI Automation</a></li><li><a href="service-design.html">Graphic Design</a></li><li><a href="service-marketing.html">Digital Marketing</a></li><li><a href="service-software.html">Software Dev</a></li><li><a href="service-seo.html">SEO / AEO / GEO / CRO</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Company</div><ul><li><a href="about.html">About Us</a></li><li><a href="work.html">Our Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Get In Touch</div><ul><li><a href="https://cal.com/digitalminds-fx51uj" target="_blank">Book a Discovery Call</a></li><li><a href="https://wa.me/447426427646" target="_blank">WhatsApp Us</a></li><li><a href="mailto:digitalmindss01@gmail.com">digitalmindss01@gmail.com</a></li><li><a href="tel:+447426427646">+44 7426 427646</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Digital Minds Solutions. All rights reserved. US-registered company.</p><p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Digital%20Minds%20Solutions" class="wa-float" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div class="wa-tooltip">WhatsApp us directly</div>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  const root=document.documentElement,saved=localStorage.getItem('dms-theme'),preferred=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+  root.setAttribute('data-theme',saved||preferred);
+  document.getElementById('themeToggle').addEventListener('click',()=>{const next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);localStorage.setItem('dms-theme',next);});
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+  const hb=document.getElementById('navHamburger'),mm=document.getElementById('mobileMenu');
+  hb.addEventListener('click',()=>{hb.classList.toggle('active');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('active');mm.classList.remove('open');document.body.style.overflow='';}));
+  const ls=document.getElementById('langSwitcher'),lb=document.getElementById('langBtn'),lc=document.getElementById('langCurrent'),lm=document.getElementById('langMenu');
+  lb.addEventListener('click',e=>{e.stopPropagation();ls.classList.toggle('open');});
+  document.addEventListener('click',()=>ls.classList.remove('open'));
+  lm.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{lc.textContent={en:'EN',es:'ES',fr:'FR',it:'IT',pt:'PT'}[btn.dataset.lang];lm.querySelectorAll('button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');ls.classList.remove('open');}));
+  /* FILTER */
+  const filterBtns=document.querySelectorAll('.filter-btn');
+  const cards=document.querySelectorAll('.case-card[data-cat]');
+  filterBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+      const f=btn.dataset.filter;
+      cards.forEach(c=>{
+        const show=f==='all'||c.dataset.cat===f;
+        c.style.opacity=show?'1':'0.25';c.style.pointerEvents=show?'':'none';
+      });
+    });
+  });
+  /* GSAP */
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('#work-hero .gs').forEach((el,i)=>{gsap.fromTo(el,{opacity:0,y:30},{opacity:1,y:0,duration:.8,ease:'power2.out',delay:.1+i*.15});});
+  gsap.utils.toArray('.gs:not(#work-hero .gs)').forEach(el=>{
+    gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:.75,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});
+  });
+})();
+
+  /* COOKIE CONSENT */
+  (function(){
+    var COOKIE_KEY='dms_cookie_consent';
+    var banner=document.getElementById('cookieBanner');
+    if(!banner)return;
+    if(!localStorage.getItem(COOKIE_KEY)){setTimeout(function(){banner.classList.add('visible')},1400);}
+    document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'accepted');banner.classList.remove('visible');});
+    document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'declined');banner.classList.remove('visible');});
+  })();
+</script>
+
+<!-- CAL.COM POPUP EMBED -->
+<script type="text/javascript">
+(function(C,A,L){
+  let p=function(a,ar){a.q.push(ar)};
+  let d=C.document;
+  C.Cal=C.Cal||function(){
+    let cal=C.Cal;let ar=arguments;
+    if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}
+    if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];
+      if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,[L,namespace,ar[2]])}
+      else p(cal,[L,ar[1]]);return}
+    p(cal,ar)
+  }
+})(window,"https://app.cal.com/embed/embed.js","init");
+Cal("init",{origin:"https://cal.com"});
+Cal("ui",{theme:"dark",styles:{branding:{brandColor:"#002FA7"}},hideEventTypeDetails:false,layout:"month_view"});
+document.querySelectorAll("a[href="https://cal.com/digitalminds-fx51uj"]").forEach(function(el){
+  if(!el.closest("footer")){
+    el.addEventListener("click",function(e){e.preventDefault();Cal("modal",{calLink:"digitalminds-fx51uj",config:{layout:"month_view"}});});
+  }
+});
+<\/script>
+<!-- DMS:LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digitalmindssolutions.com/#organization",
+      "name": "Digital Minds Solutions",
+      "url": "https://digitalmindssolutions.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalmindssolutions.com/assets/logo/logo-white.svg.png"
+      },
+      "description": "Web development, AI automation, branding, digital marketing, and software. One team. No outsourcing. Real results.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Houston",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+44-7426-427646",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "digitalmindss01@gmail.com",
+          "contactType": "sales"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/digital-minds-solutions",
+        "https://www.instagram.com/digitalminds_solution"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://digitalmindssolutions.com/work#webpage",
+      "url": "https://digitalmindssolutions.com/work",
+      "name": "Case Studies \u2014 Digital Minds Solutions",
+      "isPartOf": {
+        "@id": "https://digitalmindssolutions.com/#website"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Digital Minds Solutions Case Studies",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Barcel\u00f3 Hotel Group",
+          "url": "https://digitalmindssolutions.com/case-barcelo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mercury Holidays",
+          "url": "https://digitalmindssolutions.com/case-mercury"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Kitchen Supply Wholesale",
+          "url": "https://digitalmindssolutions.com/case-kitchen-supply"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Defib Supplies",
+          "url": "https://digitalmindssolutions.com/case-defib"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Gymnastika UAE",
+          "url": "https://digitalmindssolutions.com/case-gymnastika"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "My Education Online",
+          "url": "https://digitalmindssolutions.com/case-meo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "MyMedQ",
+          "url": "https://digitalmindssolutions.com/case-mymedq"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Quantum Health",
+          "url": "https://digitalmindssolutions.com/case-quantum-health"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Gravity DXB",
+          "url": "https://digitalmindssolutions.com/case-gravity"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Santoba Tailors",
+          "url": "https://digitalmindssolutions.com/case-santoba"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Look Family Exteriors",
+          "url": "https://digitalmindssolutions.com/case-look-family"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Christopher Radko",
+          "url": "https://digitalmindssolutions.com/case-christopher-radko"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- /DMS:LD -->
+  <script src="neural-vortex.js"></script>
+  <script src="scroll-top.js"></script>
+  <script src="footer-marquee.js"></script>
+
+
+</body>
+</html>

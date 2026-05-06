@@ -1,0 +1,759 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Digital Minds Solutions. Book a free 30-minute discovery call, WhatsApp us directly, or send a message. Response within 24 hours. Houston, Texas, USA.">
+<title>Contact. Digital Minds Solutions</title>
+<link rel="icon" type="image/png" href="../ASSETS/logo/favicon.png (512x512px).png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--deep-space:#08101E;--klein-blue:#002FA7;--amber-gold:#E5A820;--cobalt-shade:#243B6E;--muted-blue:#B8CBE8;--muted-ink:#3A4F7A;--card-dark:#0D1826;--card-border:#1E3055;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--white:#FFFFFF;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'Inter',sans-serif;--r-sm:6px;--r-md:12px;--r-lg:20px;--r-xl:32px;--container:1280px;--sp:120px;--nav-h:72px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--deep-space);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.7}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}ul{list-style:none}button{cursor:pointer;border:none;background:none;font:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 20px}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:20px}
+.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px}
+.h1{font-family:var(--font-head);font-size:clamp(36px,4.5vw,64px);font-weight:800;line-height:1.08;letter-spacing:-.025em}
+.h2{font-family:var(--font-head);font-size:clamp(24px,3vw,40px);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+.h3{font-family:var(--font-head);font-size:clamp(18px,1.8vw,22px);font-weight:700;line-height:1.3}
+.btn-gold{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--amber-gold);font-family:var(--font-head);font-size:15px;font-weight:700;padding:14px 28px;border-radius:var(--r-md,8px);border:2px solid var(--amber-gold);white-space:nowrap;transition:color .4s;z-index:0;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-gold:hover{color:var(--deep-space,#08101E)}
+.btn-gold:hover::before{left:0}
+
+
+.btn-ghost{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:var(--font-head);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--r-md,8px);border:1.5px solid rgba(255,255,255,.55);transition:color .35s,border-color .35s;z-index:0;overflow:hidden}
+.btn-ghost::after{content:'';position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-ghost:hover{color:#08101E;border-color:#fff}
+.btn-ghost:hover::after{transform:scaleX(1)}
+
+
+.gs{opacity:0;transform:translateY(36px)}
+
+/* NAV */
+#navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+#navbar.scrolled{background:rgba(8,16,30,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--card-border)}
+.nav-inner{max-width:var(--container);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 40px}
+.nav-logo img{height:52px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.nav-links a{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--muted-blue);padding:8px 16px;border-radius:var(--r-sm);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;position:relative;border:none;padding:8px 14px;box-shadow:0 4px 14px rgba(228,174,11,.35)}
+.nav-links a.active::after{display:none}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang-switcher{position:relative}
+.lang-btn{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--muted-blue);padding:7px 12px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;gap:6px;transition:color .2s,border-color .2s}
+.lang-btn:hover{color:var(--white);border-color:var(--muted-blue)}
+.lang-btn svg{width:12px;height:12px;transition:transform .2s}
+.lang-switcher.open .lang-btn svg{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100%+8px);right:0;background:var(--card-dark);border:1px solid var(--card-border);border-radius:var(--r-md);overflow:hidden;min-width:140px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s}
+.lang-switcher.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:block;width:100%;text-align:left;font-family:var(--font-head);font-size:13px;font-weight:600;padding:10px 16px;color:var(--muted-blue);transition:background .15s,color .15s}
+.lang-menu button:hover,.lang-menu button.active{background:rgba(255,255,255,.06);color:var(--white)}
+.theme-toggle{width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);transition:color .2s,border-color .2s,background .2s}
+.theme-toggle:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+.theme-toggle svg{width:18px;height:18px}
+.icon-sun{display:none}[data-theme="light"] .icon-moon{display:none}[data-theme="light"] .icon-sun{display:block}
+.nav-hamburger{display:none;width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.nav-hamburger span{display:block;width:18px;height:2px;background:var(--muted-blue);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;top:var(--nav-h);background:var(--deep-space);padding:40px 24px;opacity:0;visibility:hidden;transform:translateX(100%);transition:all .35s cubic-bezier(.16,1,.3,1);z-index:999;overflow-y:auto}
+.mobile-menu.open{opacity:1;visibility:visible;transform:none}
+.mobile-menu .nav-links{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.mobile-menu .nav-links a{font-size:22px;padding:12px 0;width:100%}
+.mobile-menu .m-ctas{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+@media(max-width:900px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-inner{padding:0 20px}}
+[data-theme="light"] #navbar.scrolled{background:rgba(244,247,255,.92)}
+[data-theme="light"] .nav-links a{color:var(--muted-ink)}
+[data-theme="light"] .nav-links a:hover{color:var(--deep-space);background:rgba(0,0,0,.05)}
+[data-theme="light"] .nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;border:none;box-shadow:0 4px 14px rgba(228,174,11,.25)}
+[data-theme="light"] .lang-btn,[data-theme="light"] .theme-toggle{color:var(--muted-ink);border-color:var(--light-border)}
+[data-theme="light"] .lang-btn:hover,[data-theme="light"] .theme-toggle:hover{color:var(--deep-space);border-color:var(--muted-ink);background:rgba(0,0,0,.05)}
+[data-theme="light"] .lang-menu{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .lang-menu button{color:var(--muted-ink)}
+
+/* CONTACT HERO */
+#contact-hero{padding:calc(var(--nav-h) + 160px) 0 80px;background:var(--deep-space);position:relative;overflow:hidden;text-align:center}
+#contact-hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,47,167,.18) 0%,transparent 70%);pointer-events:none}
+.contact-hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.contact-hero-inner .h1{color:var(--white);margin-bottom:20px}
+.contact-hero-inner .h1 span{color:var(--amber-gold)}
+.contact-hero-inner p{font-size:19px;color:var(--muted-blue);margin-bottom:16px}
+.response-note{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--amber-gold);background:rgba(229,168,32,.1);border:1px solid rgba(229,168,32,.25);padding:8px 18px;border-radius:99px}
+.response-dot{width:7px;height:7px;background:#22c55e;border-radius:50%;animation:blink 2s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* CONTACT GRID */
+#contact-main{padding:var(--sp) 0;background:var(--card-dark);border-top:1px solid var(--card-border)}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+
+/* LEFT — CHANNELS */
+.contact-channels{display:flex;flex-direction:column;gap:16px}
+.channel-card{
+  background:var(--deep-space);border:1px solid var(--card-border);
+  border-radius:var(--r-xl);padding:36px 32px;
+  transition:border-color .3s,transform .3s;
+  display:flex;flex-direction:column;gap:20px;
+}
+.channel-card.featured{border-color:var(--amber-gold);background:rgba(229,168,32,.05)}
+.channel-card:hover{border-color:var(--cobalt-shade);transform:translateY(-3px)}
+.channel-card.featured:hover{border-color:var(--amber-gold)}
+.channel-icon{font-size:32px;margin-bottom:4px}
+.channel-label{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:6px}
+.channel-card .h3{color:var(--white);margin-bottom:8px}
+.channel-desc{font-size:15px;color:var(--muted-blue);line-height:1.6;margin-bottom:4px}
+.channel-detail{font-family:var(--font-head);font-size:14px;font-weight:600;color:var(--muted-blue);display:flex;align-items:center;gap:8px}
+.channel-badge{font-family:var(--font-head);font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;background:rgba(34,197,94,.12);color:#22c55e;border:1px solid rgba(34,197,94,.25)}
+
+/* RIGHT — FORM */
+.contact-form-wrap{position:sticky;top:calc(var(--nav-h) + 32px)}
+.contact-form-card{background:var(--deep-space);border:1px solid var(--card-border);border-radius:var(--r-xl);padding:40px 36px}
+.contact-form-card .h3{color:var(--white);margin-bottom:8px}
+.contact-form-card .form-sub{color:var(--muted-blue);font-size:15px;margin-bottom:32px}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--muted-blue);margin-bottom:8px;letter-spacing:.04em}
+.form-input,.form-select,.form-textarea{
+  display:block;width:100%;
+  background:var(--card-dark);border:1px solid var(--card-border);
+  border-radius:var(--r-md);
+  padding:14px 18px;
+  font-family:var(--font-body);font-size:15px;color:var(--white);
+  transition:border-color .2s,box-shadow .2s;
+  outline:none;
+}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--muted-blue);opacity:.6}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--klein-blue);box-shadow:0 0 0 3px rgba(0,47,167,.18)}
+.form-select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23B8CBE8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:12px;padding-right:44px}
+.form-select option{background:var(--card-dark);color:var(--white)}
+.form-textarea{resize:vertical;min-height:120px;line-height:1.6}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit{width:100%;background:var(--amber-gold);color:var(--deep-space);font-family:var(--font-head);font-size:16px;font-weight:800;padding:18px 32px;border-radius:var(--r-md);border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(229,168,32,.4)}
+.form-note{font-size:12px;color:var(--muted-blue);text-align:center;margin-top:14px;font-family:var(--font-head);font-weight:600}
+.form-success{display:none;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);border-radius:var(--r-lg);padding:32px;text-align:center}
+.form-success.show{display:block}
+.form-success-icon{font-size:40px;margin-bottom:16px}
+.form-success h4{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--white);margin-bottom:8px}
+.form-success p{color:var(--muted-blue);font-size:15px}
+@media(max-width:900px){.contact-layout{grid-template-columns:1fr;gap:48px}.contact-form-wrap{position:static}.form-row{grid-template-columns:1fr}}
+
+/* TRUST STRIP */
+#trust-strip{padding:64px 0;background:var(--deep-space);border-top:1px solid var(--card-border)}
+.trust-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px}
+.trust-fact{display:flex;align-items:center;gap:16px}
+.trust-fact-icon{font-size:28px}
+.trust-fact-text strong{display:block;font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--white)}
+.trust-fact-text span{font-size:14px;color:var(--muted-blue)}
+
+/* LIGHT THEME */
+[data-theme="light"] #contact-hero,[data-theme="light"] #trust-strip{background:var(--light-bg)}
+[data-theme="light"] #contact-hero::before{background:radial-gradient(circle,rgba(0,47,167,.07) 0%,transparent 70%)}
+[data-theme="light"] .contact-hero-inner .h1{color:var(--deep-space)}
+[data-theme="light"] .contact-hero-inner p{color:var(--muted-ink)}
+[data-theme="light"] #contact-main{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .channel-card{background:var(--light-bg);border-color:var(--light-border)}
+[data-theme="light"] .channel-card.featured{background:rgba(229,168,32,.04);border-color:var(--amber-gold)}
+[data-theme="light"] .channel-card .h3{color:var(--deep-space)}
+[data-theme="light"] .channel-desc{color:var(--muted-ink)}
+[data-theme="light"] .channel-detail{color:var(--muted-ink)}
+[data-theme="light"] .contact-form-card{background:var(--light-bg);border-color:var(--light-border)}
+[data-theme="light"] .contact-form-card .h3{color:var(--deep-space)}
+[data-theme="light"] .contact-form-card .form-sub{color:var(--muted-ink)}
+[data-theme="light"] .form-label{color:var(--muted-ink)}
+[data-theme="light"] .form-input,[data-theme="light"] .form-select,[data-theme="light"] .form-textarea{background:var(--white);border-color:var(--light-border);color:var(--deep-space)}
+[data-theme="light"] .form-input::placeholder,[data-theme="light"] .form-textarea::placeholder{color:var(--muted-ink)}
+[data-theme="light"] .form-note{color:var(--muted-ink)}
+[data-theme="light"] .trust-fact-text strong{color:var(--deep-space)}
+[data-theme="light"] .trust-fact-text span{color:var(--muted-ink)}
+
+/* FOOTER */
+#footer{background:var(--card-dark);border-top:1px solid var(--card-border);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand img{height:32px;margin-bottom:16px}
+.footer-brand p{font-size:14px;color:var(--muted-blue);line-height:1.65;max-width:280px}
+.footer-col-title{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:20px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{font-size:14px;color:var(--muted-blue);transition:color .2s}
+.footer-col ul a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:32px;border-top:1px solid var(--card-border)}
+.footer-bottom p,.footer-bottom a{font-size:13px;color:var(--muted-blue)}
+.footer-bottom a:hover{color:var(--white)}
+.social-link{width:36px;height:36px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);font-size:14px;transition:color .2s,border-color .2s,background .2s}
+.social-link:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+[data-theme="light"] #footer{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .footer-col-title{color:var(--deep-space)}
+[data-theme="light"] .footer-col ul a{color:var(--muted-ink)}
+[data-theme="light"] .footer-col ul a:hover{color:var(--deep-space)}
+[data-theme="light"] .footer-bottom{border-color:var(--light-border)}
+[data-theme="light"] .footer-bottom p,[data-theme="light"] .footer-bottom a{color:var(--muted-ink)}
+[data-theme="light"] .social-link{border-color:var(--light-border);color:var(--muted-ink)}
+
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.4);transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:white}
+.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%) translateX(8px);background:var(--card-dark);border:1px solid var(--card-border);color:var(--white);border-radius:var(--r-md);padding:8px 14px;font-family:var(--font-head);font-size:13px;font-weight:600;white-space:nowrap;pointer-events:none;opacity:0;transition:all .2s}
+.wa-float:hover .wa-tooltip{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* COOKIE CONSENT */
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;z-index:1100;background:rgba(13,24,38,.97);border-top:1px solid #1E3055;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);padding:20px 0;}
+#cookieBanner.visible{transform:none}
+.cookie-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
+.cookie-text{flex:1;min-width:260px}
+.cookie-text p{font-size:14px;color:#B8CBE8;line-height:1.6}
+.cookie-text strong{color:#fff}
+.cookie-text a{color:#E5A820;text-decoration:underline;text-underline-offset:3px}
+.cookie-btns{display:flex;gap:12px;flex-shrink:0}
+.cookie-accept{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;padding:10px 22px;border-radius:10px;background:#E5A820;color:#08101E;transition:background .2s,transform .2s;cursor:pointer;border:none;}
+.cookie-accept:hover{background:#f0b820;transform:translateY(-1px)}
+.cookie-decline{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;padding:10px 22px;border-radius:10px;background:transparent;color:#B8CBE8;border:1px solid #1E3055;transition:border-color .2s,color .2s;cursor:pointer;}
+.cookie-decline:hover{border-color:#B8CBE8;color:#fff}
+@media(max-width:600px){.cookie-inner{padding:0 20px;gap:16px}.cookie-btns{width:100%}.cookie-accept,.cookie-decline{flex:1;text-align:center}}
+
+
+/* LIGHT THEME — UNIVERSAL READABILITY OVERRIDES */
+[data-theme="light"]{--deep-space:#08101E;--white:#FFFFFF;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--muted-blue:#3A4F7A;--muted-ink:#3A4F7A;--card-dark:#FFFFFF;--card-border:#C5D3F0}
+[data-theme="light"] body{background:#F4F7FF;color:#08101E}
+[data-theme="light"] section{background:#F4F7FF}
+[data-theme="light"] section:nth-of-type(even){background:#FFFFFF}
+[data-theme="light"] h1,[data-theme="light"] h2,[data-theme="light"] h3,[data-theme="light"] h4,[data-theme="light"] h5,[data-theme="light"] h6,[data-theme="light"] .h1,[data-theme="light"] .h2,[data-theme="light"] .h3,[data-theme="light"] .h4{color:#08101E}
+[data-theme="light"] p,[data-theme="light"] li,[data-theme="light"] td,[data-theme="light"] label,[data-theme="light"] .body-lg{color:#3A4F7A}
+[data-theme="light"] .work-card,[data-theme="light"] .case-card,[data-theme="light"] .team-card,[data-theme="light"] .deliverable,[data-theme="light"] .value-item,[data-theme="light"] .insight-card,[data-theme="light"] .svc-card,[data-theme="light"] .pillar-card,[data-theme="light"] .seo-card,[data-theme="light"] .pricing-card{background:#FFFFFF !important;border-color:#C5D3F0 !important}
+[data-theme="light"] .work-card h3,[data-theme="light"] .case-card h3,[data-theme="light"] .team-card h3,[data-theme="light"] .deliverable .h4,[data-theme="light"] .value-item h3,[data-theme="light"] .insight-card h3,[data-theme="light"] .svc-card h3,[data-theme="light"] .pillar-card h3{color:#08101E}
+[data-theme="light"] .work-card p,[data-theme="light"] .case-card p,[data-theme="light"] .team-card p,[data-theme="light"] .deliverable p,[data-theme="light"] .value-item p,[data-theme="light"] .insight-card p{color:#3A4F7A}
+[data-theme="light"] .nav-logo img{filter:brightness(.2) contrast(1.4)}
+[data-theme="light"] #footer,[data-theme="light"] footer{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .footer-brand p,[data-theme="light"] .footer-col ul a,[data-theme="light"] .footer-bottom p{color:#3A4F7A}
+[data-theme="light"] .footer-col-title{color:#08101E}
+[data-theme="light"] .footer-bottom{border-color:#C5D3F0}
+[data-theme="light"] .social-link{border-color:#C5D3F0;color:#3A4F7A}
+[data-theme="light"] .social-link:hover{color:#08101E;border-color:#3A4F7A;background:#F4F7FF}
+[data-theme="light"] 
+
+
+[data-theme="light"] 
+[data-theme="light"] .tool-chip,[data-theme="light"] .s-nav-pill{background:#FFFFFF;color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .eyebrow{color:#E5A820}
+[data-theme="light"] input,[data-theme="light"] textarea,[data-theme="light"] select{background:#FFFFFF;color:#08101E;border-color:#C5D3F0}
+[data-theme="light"] input::placeholder,[data-theme="light"] textarea::placeholder{color:#8FA0BF}
+[data-theme="light"] .lang-menu,[data-theme="light"] .lang-dropdown{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .lang-menu button,[data-theme="light"] .lang-option{color:#3A4F7A}
+[data-theme="light"] .lang-menu button:hover,[data-theme="light"] .lang-option:hover{background:#F4F7FF;color:#08101E}
+[data-theme="light"] .pillar-num{color:#C5D3F0}
+[data-theme="light"] .wg-block{background:rgba(229,168,32,.05);border-color:rgba(229,168,32,.25)}
+[data-theme="light"] .wg-item{color:#3A4F7A}
+[data-theme="light"] .pfaq-q{color:#08101E}
+[data-theme="light"] .pfaq-a,[data-theme="light"] .pfaq-icon{color:#3A4F7A}
+[data-theme="light"] .seo-name{color:#08101E}
+[data-theme="light"] .seo-desc,[data-theme="light"] .seo-bullet{color:#3A4F7A}
+[data-theme="light"] #cookieBanner{background:rgba(255,255,255,.97);border-color:#C5D3F0}
+[data-theme="light"] .cookie-text p{color:#3A4F7A}
+[data-theme="light"] .cookie-text strong{color:#08101E}
+[data-theme="light"] .cookie-decline{color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .cookie-decline:hover{color:#08101E;border-color:#3A4F7A}
+
+@media(max-width:900px){.nav-right 
+
+
+.nav-logo{flex-shrink:0}.nav-logo img{height:52px;width:auto}}
+
+/* Nav CTA: same line as menu, at far right edge, Option 5 styling */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px;right:20px;z-index:1100;font-weight:800!important;font-size:13px!important;padding:10px 18px!important;letter-spacing:.02em;background:transparent!important;color:var(--amber-gold,#E5A820)!important;border:2px solid var(--amber-gold,#E5A820)!important;border-radius:8px!important;overflow:hidden;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(229,168,32,.18);transition:color .4s}
+/* Reserve right space in non-scrolled nav so menu items dont fall under CTA */
+#navbar:not(.scrolled) .nav-inner{padding-right:170px!important}
+.nav-right .btn-gold::before,.nav-actions .nav-cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold,#E5A820);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{color:#08101E!important}
+.nav-right .btn-gold:hover::before,.nav-actions .nav-cta:hover::before{left:0}
+/* Hide CTA when nav scrolled (pill state) — user requested no clutter on scroll */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important;transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
+.nav-right .btn-gold,.nav-actions .nav-cta{transition:opacity .3s ease,visibility .3s ease,transform .3s ease,color .4s ease}
+@media(max-width:1180px){
+  .nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}
+  #navbar:not(.scrolled) .nav-inner{padding-right:40px!important}
+}
+
+/* ========================================================
+   UNIFIED BUTTON SYSTEM — Option 2 (White Ghost Slide) ONLY
+   Overrides every old btn-gold/blue/ghost/ghost-dark + nav CTA
+   ======================================================== */
+.btn-gold,.btn-blue,.btn-ghost,.btn-ghost-dark,.nav-right .btn-gold,.nav-actions .nav-cta{
+  position:relative!important;display:inline-flex!important;align-items:center!important;gap:8px!important;
+  background:transparent!important;color:#fff!important;
+  font-family:var(--font-head)!important;font-size:15px!important;font-weight:700!important;letter-spacing:.02em!important;
+  padding:14px 28px!important;border-radius:8px!important;
+  border:1.5px solid rgba(255,255,255,.55)!important;
+  transition:color .35s ease,border-color .35s ease!important;
+  z-index:0;overflow:hidden!important;text-decoration:none!important;
+  box-shadow:none!important;
+}
+.btn-gold::before,.btn-blue::before,.btn-ghost::before,.btn-ghost-dark::before,.nav-right .btn-gold::before,.nav-actions .nav-cta::before{display:none!important}
+.btn-gold::after,.btn-blue::after,.btn-ghost::after,.btn-ghost-dark::after,.nav-right .btn-gold::after,.nav-actions .nav-cta::after{
+  content:''!important;position:absolute!important;inset:0!important;
+  background:#fff!important;
+  transform:scaleX(0)!important;transform-origin:left!important;
+  transition:transform .35s cubic-bezier(.4,0,.2,1)!important;
+  z-index:-1!important;
+}
+.btn-gold:hover,.btn-blue:hover,.btn-ghost:hover,.btn-ghost-dark:hover,.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{
+  color:#08101E!important;border-color:#fff!important;
+}
+.btn-gold:hover::after,.btn-blue:hover::after,.btn-ghost:hover::after,.btn-ghost-dark:hover::after,.nav-right .btn-gold:hover::after,.nav-actions .nav-cta:hover::after{
+  transform:scaleX(1)!important;
+}
+/* Keep nav CTA fixed positioning */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px!important;right:20px!important;z-index:1100!important;font-size:13px!important;font-weight:800!important;padding:10px 18px!important}
+/* Hide nav CTA when scrolled */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important}
+/* Hide nav CTA on narrow viewports */
+@media(max-width:1180px){.nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}#navbar:not(.scrolled) .nav-inner{padding-right:40px!important}}
+</style>
+<!-- DMS:OG -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digitalmindssolutions.com/contact">
+<meta property="og:title" content="Contact Digital Minds Solutions. Book a Free Discovery Call">
+<meta property="og:description" content="Book a free 30-minute discovery call. WhatsApp us directly. Response within 24 hours. Houston, Texas USA. No commitment required.">
+<meta property="og:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Digital Minds Solutions">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DigitalMindsSol">
+<meta name="twitter:title" content="Contact Digital Minds Solutions. Book a Free Discovery Call">
+<meta name="twitter:description" content="Book a free 30-minute discovery call. WhatsApp us directly. Response within 24 hours. Houston, Texas USA. No commitment required.">
+<meta name="twitter:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<link rel="canonical" href="https://digitalmindssolutions.com/contact">
+<!-- /DMS:OG -->
+  <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="../ASSETS/logo/logo-main.svg.png" alt="Digital Minds Solutions"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher" id="langSwitcher"><button class="lang-btn" id="langBtn"><span id="langCurrent">EN</span><svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="lang-menu" id="langMenu"><button class="active" data-lang="en">English</button><button data-lang="es">Español</button><button data-lang="fr">Français</button><button data-lang="it">Italiano</button><button data-lang="pt">Português</button></div></div>
+      <button class="theme-toggle" id="themeToggle"><svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" style="width:auto;padding:10px 20px" target="_blank">Book a Free Call</a>
+      <button class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html" class="active">Contact</a></li></ul>
+  <div class="m-ctas"><a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Book a Free Discovery Call</a>
+<!-- COOKIE CONSENT -->
+<div id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <p><strong>We use cookies</strong> to improve your experience, analyse traffic, and personalise content. By clicking "Accept”, you consent to our use of cookies. You may decline non-essential cookies. Read our <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+    <div class="cookie-btns">
+      <button id="cookieDecline" class="cookie-decline">Decline</button>
+      <button id="cookieAccept" class="cookie-accept">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/447426427646" class="btn-ghost" target="_blank">WhatsApp Us →</a></div>
+</div>
+
+<!-- CONTACT HERO -->
+<section id="contact-hero">
+  <div class="container">
+    <div class="contact-hero-inner">
+      <div class="eyebrow gs" style="justify-content:center">Let's Talk</div>
+      <h1 class="h1 gs">Three ways to<br>start. <span>Pick one.</span></h1>
+      <p class="gs">Book a call, WhatsApp us directly, or send a message. All three get to the same place. a clear plan for your business and what it takes to get there.</p>
+      <div class="response-note gs"><span class="response-dot"></span> Response within 24hrs · No commitment required</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT MAIN -->
+<section id="contact-main">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- LEFT — Channels -->
+      <div class="contact-channels">
+
+        <!-- Channel 1 — Cal.com -->
+        <div class="channel-card featured gs">
+          <div>
+            <div class="channel-icon">📅</div>
+            <div class="channel-label">Most Popular</div>
+            <h3 class="h3">Book a Free Discovery Call</h3>
+            <p class="channel-desc">30 minutes. We map your goals, gaps, budget, and timeline. You leave with a clear picture of exactly what changes and what it costs. No pitch deck, no pressure.</p>
+          </div>
+          <div>
+            <div class="channel-detail"><span>🔗</span> cal.com/digitalminds-fx51uj <span class="channel-badge">Free</span></div>
+          </div>
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank" rel="noopener">
+            Book Your Free Call →
+          </a>
+        </div>
+
+        <!-- Channel 2 — WhatsApp -->
+        <div class="channel-card gs">
+          <div>
+            <div class="channel-icon">💬</div>
+            <div class="channel-label">WhatsApp Us Directly</div>
+            <h3 class="h3">Message Us on WhatsApp</h3>
+            <p class="channel-desc">Got a quick question? Want to share your brief before booking? WhatsApp is the fastest way to reach us directly. no forms, no queues, no bots.</p>
+          </div>
+          <div class="channel-detail"><span>📱</span> +44 7426 427646 <span class="channel-badge" style="background:rgba(37,211,102,.12);color:#22c55e;border-color:rgba(37,211,102,.25)">Usually under 2 hrs</span></div>
+          <a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Digital%20Minds%20Solutions" class="btn-ghost" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Open WhatsApp →
+          </a>
+        </div>
+
+        <!-- Channel 3 — Email -->
+        <div class="channel-card gs">
+          <div>
+            <div class="channel-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+            <div class="channel-label">Email</div>
+            <h3 class="h3">Send a Direct Email</h3>
+            <p class="channel-desc">Prefer email? Send your brief, questions, or proposal request directly to our inbox. We respond to every message within 24 hours.</p>
+          </div>
+          <div class="channel-detail"><span>📧</span> digitalmindss01@gmail.com</div>
+          <a href="mailto:digitalmindss01@gmail.com?subject=Project%20Enquiry%20—%20Digital%20Minds%20Solutions" class="btn-ghost">
+            Send an Email →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT — Form -->
+      <div class="contact-form-wrap gs">
+        <div class="contact-form-card">
+          <h3 class="h3">Send us a message</h3>
+          <p class="form-sub">We'll review your message and respond within 24 hours with a clear next step.</p>
+
+          <div id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="firstName">First Name *</label>
+                <input class="form-input" type="text" id="firstName" name="firstName" placeholder="Churchill" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lastName">Last Name *</label>
+                <input class="form-input" type="text" id="lastName" name="lastName" placeholder="Bracknell" required autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address *</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="company">Company / Website</label>
+              <input class="form-input" type="text" id="company" name="company" placeholder="Acme Corp or acmecorp.com" autocomplete="organization">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="service">What are you interested in? *</label>
+              <select class="form-select" id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="web">Web Development &amp; Apps</option>
+                <option value="ai">AI Automation &amp; Systems</option>
+                <option value="design">Graphic Design &amp; Branding</option>
+                <option value="marketing">Digital Marketing &amp; Growth</option>
+                <option value="software">Software &amp; Product Development</option>
+                <option value="video">Video, Content &amp; SEO/AEO/GEO</option>
+                <option value="full">Full-Service Package</option>
+                <option value="other">Not sure yet. let's talk</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="budget">Approximate Budget</label>
+              <select class="form-select" id="budget" name="budget">
+                <option value="" disabled selected>Select a range</option>
+                <option value="under2k">Under $2,500</option>
+                <option value="2k-5k">$2,500 – $5,000 (Optimise)</option>
+                <option value="5k-12k">$5,000 – $12,000 (Grow)</option>
+                <option value="12k-25k">$12,000 – $25,000 (Transform)</option>
+                <option value="25k+">$25,000+ (Build)</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Tell us about your project *</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="What's your current situation? What results do you need? What's your timeline?" required rows="5"></textarea>
+            </div>
+            <button type="button" class="form-submit" id="formSubmit">
+              Send Message
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="form-note">No commitment required. Response within 24hrs. We never share your information.</p>
+            <!-- Honeypot anti-spam — hidden from real users -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">✅</div>
+            <h4>Message sent. We'll be in touch.</h4>
+            <p>We've received your message and will respond within 24 hours with a clear next step. In the meantime, feel free to <a href="https://wa.me/447426427646" style="color:var(--amber-gold)" target="_blank">WhatsApp us directly</a>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INLINE BOOKING EMBED -->
+<section id="booking-embed" style="background:var(--card-dark);padding:80px 0;border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border)">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 48px">
+      <span class="eyebrow" style="color:var(--amber-gold)">Book Directly</span>
+      <h2 class="h2" style="color:var(--white);margin-bottom:12px">Pick a Time That Works for You</h2>
+      <p style="color:var(--muted-blue);font-size:17px;line-height:1.65">30 minutes. No pitch. Just a clear conversation about your goals, your gaps, and what we'd do about them.</p>
+    </div>
+    <div id="my-cal-inline" style="width:100%;min-height:600px;border-radius:16px;overflow:hidden;border:1px solid var(--card-border)"></div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section id="trust-strip">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-fact gs">
+        <div class="trust-fact-icon">⚡</div>
+        <div class="trust-fact-text">
+          <strong>Response within 24hrs</strong>
+          <span>Every message gets a real reply</span>
+        </div>
+      </div>
+      <div class="trust-fact gs">
+        <div class="trust-fact-icon">🔒</div>
+        <div class="trust-fact-text">
+          <strong>No outsourcing. Ever.</strong>
+          <span>One team handles everything</span>
+        </div>
+      </div>
+      <div class="trust-fact gs">
+        <div class="trust-fact-icon">🎯</div>
+        <div class="trust-fact-text">
+          <strong>Free 30-min discovery call</strong>
+          <span>No commitment, no pitch deck</span>
+        </div>
+      </div>
+      <div class="trust-fact gs">
+        <div class="trust-fact-icon">🌍</div>
+        <div class="trust-fact-text">
+          <strong>9 Countries served</strong>
+          <span>US · UK · UAE · Canada · Australia &amp; more</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="../ASSETS/logo/logo-white.svg.png" alt="Digital Minds Solutions"><p>Web development, AI automation, branding, marketing, and software. One team. No handoffs. Real results.</p><div style="display:flex;gap:12px;margin-top:20px"><a href="#" class="social-link">in</a><a href="#" class="social-link">ig</a><a href="https://youtu.be/96FyvCDcxRA" class="social-link" target="_blank">▶</a><a href="#" class="social-link">𝕏</a></div></div>
+      <div class="footer-col"><div class="footer-col-title">Services</div><ul><li><a href="service-web.html">Web Development</a></li><li><a href="service-ai.html">AI Automation</a></li><li><a href="service-design.html">Graphic Design</a></li><li><a href="service-marketing.html">Digital Marketing</a></li><li><a href="service-software.html">Software Dev</a></li><li><a href="service-seo.html">SEO / AEO / GEO / CRO</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Company</div><ul><li><a href="about.html">About Us</a></li><li><a href="work.html">Our Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Get In Touch</div><ul><li><a href="https://cal.com/digitalminds-fx51uj" target="_blank">Book a Discovery Call</a></li><li><a href="https://wa.me/447426427646" target="_blank">WhatsApp Us</a></li><li><a href="mailto:digitalmindss01@gmail.com">digitalmindss01@gmail.com</a></li><li><a href="tel:+447426427646">+44 7426 427646</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Digital Minds Solutions. All rights reserved. US-registered company.</p><p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Digital%20Minds%20Solutions" class="wa-float" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div class="wa-tooltip">WhatsApp us directly</div>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  const root=document.documentElement,saved=localStorage.getItem('dms-theme'),preferred=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+  root.setAttribute('data-theme',saved||preferred);
+  document.getElementById('themeToggle').addEventListener('click',()=>{const next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);localStorage.setItem('dms-theme',next);});
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+  const hb=document.getElementById('navHamburger'),mm=document.getElementById('mobileMenu');
+  hb.addEventListener('click',()=>{hb.classList.toggle('active');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('active');mm.classList.remove('open');document.body.style.overflow='';}));
+  const ls=document.getElementById('langSwitcher'),lb=document.getElementById('langBtn'),lc=document.getElementById('langCurrent'),lm=document.getElementById('langMenu');
+  lb.addEventListener('click',e=>{e.stopPropagation();ls.classList.toggle('open');});
+  document.addEventListener('click',()=>ls.classList.remove('open'));
+  lm.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{lc.textContent={en:'EN',es:'ES',fr:'FR',it:'IT',pt:'PT'}[btn.dataset.lang];lm.querySelectorAll('button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');ls.classList.remove('open');}));
+  /* FORM SUBMIT — FormSubmit AJAX (formsubmit.co) */
+  document.getElementById('formSubmit').addEventListener('click', async () => {
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName  = document.getElementById('lastName').value.trim();
+    const email     = document.getElementById('email').value.trim();
+    const company   = document.getElementById('company').value.trim();
+    const service   = document.getElementById('service').value;
+    const budget    = document.getElementById('budget').value;
+    const message   = document.getElementById('message').value.trim();
+
+    if (!firstName || !email || !service || !message) {
+      alert('Please fill in all required fields before submitting.');
+      return;
+    }
+
+    const btn     = document.getElementById('formSubmit');
+    const origHTML = btn.innerHTML;
+    btn.disabled  = true;
+    btn.innerHTML = 'Sending…';
+
+    const fd = new FormData();
+    fd.append('First Name',  firstName);
+    fd.append('Last Name',   lastName);
+    fd.append('Email',       email);
+    fd.append('Company',     company || 'Not provided');
+    fd.append('Service',     service);
+    fd.append('Budget',      budget || 'Not specified');
+    fd.append('Message',     message);
+    fd.append('_subject',    'New Project Enquiry — ' + firstName + ' ' + lastName);
+    fd.append('_template',   'table');
+    fd.append('_captcha',    'false');
+    fd.append('_honey',      '');
+
+    try {
+      const res  = await fetch('https://formsubmit.co/ajax/digitalmindss01@gmail.com', {
+        method: 'POST',
+        body:   fd,
+        headers: { 'Accept': 'application/json' }
+      });
+      const json = await res.json();
+
+      if (json.success === 'true' || json.success === true) {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+      } else {
+        throw new Error('FormSubmit returned failure');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = origHTML;
+      alert('Message failed to send. Please WhatsApp us directly or email digitalmindss01@gmail.com');
+    }
+  });
+  /* GSAP */
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('#contact-hero .gs').forEach((el,i)=>{gsap.fromTo(el,{opacity:0,y:30},{opacity:1,y:0,duration:.8,ease:'power2.out',delay:.1+i*.15});});
+  gsap.utils.toArray('.gs:not(#contact-hero .gs)').forEach(el=>{
+    gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:.75,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});
+  });
+})();
+
+  /* COOKIE CONSENT */
+  (function(){
+    var COOKIE_KEY='dms_cookie_consent';
+    var banner=document.getElementById('cookieBanner');
+    if(!banner)return;
+    if(!localStorage.getItem(COOKIE_KEY)){setTimeout(function(){banner.classList.add('visible')},1400);}
+    document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'accepted');banner.classList.remove('visible');});
+    document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'declined');banner.classList.remove('visible');});
+  })();
+</script>
+<!-- CAL.COM EMBED -->
+<script type="text/javascript">
+(function(C,A,L){
+  let p=function(a,ar){a.q.push(ar)};
+  let d=C.document;
+  C.Cal=C.Cal||function(){
+    let cal=C.Cal;let ar=arguments;
+    if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}
+    if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];
+      if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,[L,namespace,ar[2]])}
+      else p(cal,[L,ar[1]]);return}
+    p(cal,ar)
+  }
+})(window,"https://app.cal.com/embed/embed.js","init");
+Cal("init",{origin:"https://cal.com"});
+Cal("inline",{
+  elementOrSelector:"#my-cal-inline",
+  calLink:"digitalminds-fx51uj",
+  layout:"month_view"
+});
+Cal("ui",{
+  theme:"dark",
+  styles:{branding:{brandColor:"#002FA7"}},
+  hideEventTypeDetails:false,
+  layout:"month_view"
+});
+</script>
+<!-- DMS:LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digitalmindssolutions.com/#organization",
+      "name": "Digital Minds Solutions",
+      "url": "https://digitalmindssolutions.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalmindssolutions.com/assets/logo/logo-white.svg.png"
+      },
+      "description": "Web development, AI automation, branding, digital marketing, and software. One team. No outsourcing. Real results.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Houston",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+44-7426-427646",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "digitalmindss01@gmail.com",
+          "contactType": "sales"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/digital-minds-solutions",
+        "https://www.instagram.com/digitalminds_solution"
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://digitalmindssolutions.com/contact#webpage",
+      "url": "https://digitalmindssolutions.com/contact",
+      "name": "Contact \u2014 Digital Minds Solutions",
+      "isPartOf": {
+        "@id": "https://digitalmindssolutions.com/#website"
+      }
+    }
+  ]
+}
+</script>
+<!-- /DMS:LD -->
+  <script src="neural-vortex.js"></script>
+  <script src="scroll-top.js"></script>
+  <script src="footer-marquee.js"></script>
+
+
+</body>
+</html>

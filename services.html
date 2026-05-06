@@ -1,0 +1,1224 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digital Minds Solutions services. Web development, AI automation, branding, digital marketing, software development, video production, SEO, AEO, GEO, and CRO. One team. No outsourcing.">
+<title>Services. Digital Minds Solutions</title>
+<link rel="icon" type="image/png" href="../ASSETS/logo/favicon.png (512x512px).png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--deep-space:#08101E;--klein-blue:#002FA7;--amber-gold:#E5A820;--cobalt-shade:#243B6E;--muted-blue:#B8CBE8;--muted-ink:#3A4F7A;--card-dark:#0D1826;--card-border:#1E3055;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--white:#FFFFFF;--mild-gold:#FBF5E4;--mild-gold-card:#F5E9C6;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'Inter',sans-serif;--font-code:'Fira Code',monospace;--r-sm:6px;--r-md:12px;--r-lg:20px;--r-xl:32px;--container:1280px;--sp:120px;--nav-h:72px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--deep-space);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.7}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}ul{list-style:none}button{cursor:pointer;border:none;background:none;font:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 20px}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:20px}
+.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px}
+.eyebrow-blue{color:var(--klein-blue)}.eyebrow-blue::before{background:var(--klein-blue)}
+.h1{font-family:var(--font-head);font-size:clamp(36px,4.5vw,68px);font-weight:800;line-height:1.08;letter-spacing:-.025em}
+.h2{font-family:var(--font-head);font-size:clamp(26px,3vw,44px);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+.h3{font-family:var(--font-head);font-size:clamp(18px,1.8vw,22px);font-weight:700;line-height:1.3}
+.h4{font-family:var(--font-head);font-size:16px;font-weight:700;line-height:1.3}
+.body-lg{font-size:clamp(16px,1.2vw,19px);line-height:1.75;color:var(--muted-blue)}
+.btn-gold{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--amber-gold);font-family:var(--font-head);font-size:15px;font-weight:700;padding:14px 28px;border-radius:var(--r-md,8px);border:2px solid var(--amber-gold);white-space:nowrap;transition:color .4s;z-index:0;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-gold:hover{color:var(--deep-space,#08101E)}
+.btn-gold:hover::before{left:0}
+
+
+.btn-ghost{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:var(--font-head);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--r-md,8px);border:1.5px solid rgba(255,255,255,.55);transition:color .35s,border-color .35s;z-index:0;overflow:hidden}
+.btn-ghost::after{content:'';position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-ghost:hover{color:#08101E;border-color:#fff}
+.btn-ghost:hover::after{transform:scaleX(1)}
+
+
+.btn-blue{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--amber-gold);font-family:var(--font-head);font-size:15px;font-weight:700;padding:14px 28px;border-radius:var(--r-md,8px);border:2px solid var(--amber-gold);white-space:nowrap;transition:color .4s;z-index:0;overflow:hidden}
+.btn-blue::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-blue:hover{color:var(--deep-space,#08101E)}
+.btn-blue:hover::before{left:0}
+.btn-ghost-dark{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--deep-space,#08101E);font-family:var(--font-head);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--r-md,8px);border:1.5px solid rgba(8,16,30,.45);transition:color .35s,border-color .35s;z-index:0;overflow:hidden}
+.btn-ghost-dark::after{content:'';position:absolute;inset:0;background:var(--deep-space,#08101E);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-ghost-dark:hover{color:#fff;border-color:var(--deep-space,#08101E)}
+.btn-ghost-dark:hover::after{transform:scaleX(1)}
+.gs{opacity:0;transform:translateY(36px)}
+
+/* NAV */
+#navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+#navbar.scrolled{background:rgba(8,16,30,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--card-border)}
+.nav-inner{max-width:var(--container);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 40px}
+.nav-logo img{height:52px;width:auto}
+.nav-links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.nav-links a{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--muted-blue);padding:8px 16px;border-radius:var(--r-sm);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;position:relative;border:none;padding:8px 14px;box-shadow:0 4px 14px rgba(228,174,11,.35)}
+.nav-links a.active::after{display:none}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang-switcher{position:relative}
+.lang-btn{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--muted-blue);padding:7px 12px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;gap:6px;transition:color .2s,border-color .2s}
+.lang-btn:hover{color:var(--white);border-color:var(--muted-blue)}
+.lang-btn svg{width:12px;height:12px;transition:transform .2s}
+.lang-switcher.open .lang-btn svg{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100%+8px);right:0;background:var(--card-dark);border:1px solid var(--card-border);border-radius:var(--r-md);overflow:hidden;min-width:140px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .2s}
+.lang-switcher.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:block;width:100%;text-align:left;font-family:var(--font-head);font-size:13px;font-weight:600;padding:10px 16px;color:var(--muted-blue);transition:background .15s,color .15s}
+.lang-menu button:hover,.lang-menu button.active{background:rgba(255,255,255,.06);color:var(--white)}
+.theme-toggle{width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);transition:color .2s,border-color .2s,background .2s}
+.theme-toggle:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+.theme-toggle svg{width:18px;height:18px}
+.icon-sun{display:none}[data-theme="light"] .icon-moon{display:none}[data-theme="light"] .icon-sun{display:block}
+.nav-hamburger{display:none;width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.nav-hamburger span{display:block;width:18px;height:2px;background:var(--muted-blue);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;top:var(--nav-h);background:var(--deep-space);padding:40px 24px;opacity:0;visibility:hidden;transform:translateX(100%);transition:all .35s cubic-bezier(.16,1,.3,1);z-index:999;overflow-y:auto}
+.mobile-menu.open{opacity:1;visibility:visible;transform:none}
+.mobile-menu .nav-links{display:flex;flex-direction:column;align-items:flex-start;gap:4px;justify-content:flex-start}
+.mobile-menu .nav-links a{font-size:22px;padding:12px 0;width:100%}
+.mobile-menu .m-ctas{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+@media(max-width:900px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-inner{padding:0 20px}}
+
+/* SERVICES HERO */
+#services-hero{padding:calc(var(--nav-h) + 100px) 0 80px;background:var(--deep-space);position:relative;overflow:hidden}
+.services-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 30%,rgba(0,47,167,.2) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(36,59,110,.15) 0%,transparent 60%)}
+.services-hero-inner{position:relative;z-index:1;max-width:780px}
+.services-hero-inner .h1{color:var(--white);margin-bottom:24px}
+.services-hero-inner .h1 span{color:var(--amber-gold)}
+.services-hero-inner .body-lg{margin-bottom:40px;max-width:580px}
+.services-hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.services-nav{display:flex;gap:8px;flex-wrap:wrap}
+.s-nav-pill{font-family:var(--font-head);font-size:13px;font-weight:600;padding:8px 18px;border-radius:99px;border:1px solid var(--card-border);color:var(--muted-blue);transition:all .2s;cursor:pointer}
+.s-nav-pill:hover,.s-nav-pill.active{background:var(--klein-blue);border-color:var(--klein-blue);color:var(--white)}
+
+/* SERVICE PILLAR SECTIONS */
+.pillar-section{padding:var(--sp) 0;scroll-margin-top:calc(var(--nav-h) + 20px)}
+.pillar-section:nth-child(odd){background:var(--deep-space)}
+.pillar-section:nth-child(even){background:var(--card-dark);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border)}
+.pillar-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start}
+.pillar-grid.reverse{direction:rtl}
+.pillar-grid.reverse>*{direction:ltr}
+.pillar-label{position:sticky;top:calc(var(--nav-h) + 40px)}
+.pillar-num{font-family:var(--font-head);font-size:72px;font-weight:800;color:var(--card-border);line-height:1;margin-bottom:8px}
+.pillar-label .eyebrow{margin-bottom:12px}
+.pillar-label .h2{color:var(--white);margin-bottom:16px}
+.pillar-label .body-lg{margin-bottom:28px}
+.pillar-label .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.pillar-label .tool-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.tool-chip{font-family:var(--font-code);font-size:11px;font-weight:400;padding:4px 12px;border-radius:var(--r-sm);background:rgba(0,47,167,.15);color:var(--muted-blue);border:1px solid var(--card-border)}
+.pillar-deliverables{display:flex;flex-direction:column;gap:12px}
+.deliverable{background:rgba(255,255,255,.03);border:1px solid var(--card-border);border-radius:var(--r-lg);padding:24px 28px;transition:border-color .2s,background .2s}
+.deliverable:hover{border-color:var(--cobalt-shade);background:rgba(0,47,167,.05)}
+.deliverable-head{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.d-icon{width:36px;height:36px;border-radius:10px;background:rgba(0,47,167,.18);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.deliverable .h4{color:var(--white)}
+.deliverable p{font-size:14px;color:var(--muted-blue);line-height:1.6;padding-left:50px}
+.speed-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-gold);background:rgba(229,168,32,.12);border:1px solid rgba(229,168,32,.3);padding:4px 12px;border-radius:99px;margin-left:auto;flex-shrink:0}
+@media(max-width:1000px){.pillar-grid{grid-template-columns:1fr;gap:48px}.pillar-grid.reverse{direction:ltr}.pillar-label{position:static}}
+@media(max-width:768px){.pillar-num{font-size:48px}}
+
+/* SEO STACK */
+#seo{padding:var(--sp) 0;background:var(--deep-space)}
+.seo-header{text-align:center;margin-bottom:72px}
+.seo-header .h2{color:var(--white)}
+.seo-header p{color:var(--muted-blue);margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto}
+.seo-stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.seo-card{background:var(--card-dark);border:1px solid var(--card-border);border-radius:var(--r-xl);padding:36px 28px;text-align:center;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+.seo-card:hover{transform:translateY(-5px);border-color:var(--cobalt-shade)}
+.seo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--r-xl) var(--r-xl) 0 0}
+.seo-card:nth-child(1)::before{background:var(--klein-blue)}
+.seo-card:nth-child(2)::before{background:var(--amber-gold)}
+.seo-card:nth-child(3)::before{background:#8b5cf6}
+.seo-card:nth-child(4)::before{background:#10b981}
+.seo-abbr{font-family:var(--font-head);font-size:40px;font-weight:800;margin-bottom:12px}
+.seo-card:nth-child(1) .seo-abbr{color:var(--klein-blue)}
+.seo-card:nth-child(2) .seo-abbr{color:var(--amber-gold)}
+.seo-card:nth-child(3) .seo-abbr{color:#8b5cf6}
+.seo-card:nth-child(4) .seo-abbr{color:#10b981}
+.seo-name{font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--white);margin-bottom:12px}
+.seo-desc{font-size:13px;color:var(--muted-blue);line-height:1.6;margin-bottom:20px}
+.seo-bullets{text-align:left;display:flex;flex-direction:column;gap:6px}
+.seo-bullet{font-size:12px;color:var(--muted-blue);display:flex;align-items:flex-start;gap:8px}
+.seo-bullet::before{content:'→';color:var(--amber-gold);flex-shrink:0;font-weight:700}
+@media(max-width:900px){.seo-stack{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.seo-stack{grid-template-columns:1fr}}
+
+/* LIGHT SECTIONS */
+#services-cta{padding:var(--sp) 0;background:var(--deep-space);text-align:center}
+.services-cta-inner{max-width:640px;margin:0 auto}
+.services-cta-inner .h2{color:var(--white);margin-bottom:20px}
+.services-cta-inner p{color:var(--muted-blue);margin-bottom:40px;font-size:18px;font-weight:500}
+.services-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.services-cta-inner .eyebrow-blue{justify-content:center;margin-bottom:16px}
+.services-cta-inner .eyebrow-blue::before{display:none}
+
+/* LIGHT THEME */
+[data-theme="light"] #services-hero{background:var(--light-bg)}
+[data-theme="light"] .services-hero-bg{background:radial-gradient(ellipse 70% 60% at 80% 30%,rgba(0,47,167,.08) 0%,transparent 65%)}
+[data-theme="light"] .services-hero-inner .h1{color:var(--deep-space)}
+[data-theme="light"] .services-hero-inner .body-lg{color:var(--muted-ink)}
+[data-theme="light"] .s-nav-pill{color:var(--muted-ink);border-color:var(--light-border)}
+[data-theme="light"] .s-nav-pill:hover,.s-nav-pill.active{background:var(--klein-blue);border-color:var(--klein-blue);color:var(--white)}
+[data-theme="light"] .pillar-section:nth-child(odd){background:var(--light-bg)}
+[data-theme="light"] .pillar-section:nth-child(even){background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .pillar-num{color:var(--light-border)}
+[data-theme="light"] .pillar-label .h2{color:var(--deep-space)}
+[data-theme="light"] .pillar-label .body-lg{color:var(--muted-ink)}
+[data-theme="light"] .deliverable{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .deliverable:hover{background:var(--light-bg);border-color:var(--klein-blue)}
+[data-theme="light"] .deliverable .h4{color:var(--deep-space)}
+[data-theme="light"] .deliverable p{color:var(--muted-ink)}
+[data-theme="light"] .tool-chip{background:rgba(0,47,167,.06);color:var(--muted-ink);border-color:var(--light-border)}
+[data-theme="light"] #seo{background:var(--white)}
+[data-theme="light"] .seo-header .h2{color:var(--deep-space)}
+[data-theme="light"] .seo-header p{color:var(--muted-ink)}
+[data-theme="light"] .seo-card{background:var(--light-bg);border-color:var(--light-border)}
+[data-theme="light"] .seo-name{color:var(--deep-space)}
+[data-theme="light"] .seo-desc{color:var(--muted-ink)}
+[data-theme="light"] .seo-bullet{color:var(--muted-ink)}
+[data-theme="light"] #navbar.scrolled{background:rgba(244,247,255,.92)}
+[data-theme="light"] .nav-links a{color:var(--muted-ink)}
+[data-theme="light"] .nav-links a:hover{color:var(--deep-space);background:rgba(0,0,0,.05)}
+[data-theme="light"] .nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;border:none;box-shadow:0 4px 14px rgba(228,174,11,.25)}
+[data-theme="light"] .lang-btn,[data-theme="light"] .theme-toggle{color:var(--muted-ink);border-color:var(--light-border)}
+[data-theme="light"] .lang-btn:hover,[data-theme="light"] .theme-toggle:hover{color:var(--deep-space);border-color:var(--muted-ink);background:rgba(0,0,0,.05)}
+[data-theme="light"] .lang-menu{background:var(--white);border-color:var(--light-border)}
+[data-theme="light"] .lang-menu button{color:var(--muted-ink)}
+
+/* FOOTER */
+#footer{background:var(--card-dark);border-top:1px solid var(--card-border);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand img{height:32px;margin-bottom:16px}
+.footer-brand p{font-size:14px;color:var(--muted-blue);line-height:1.65;max-width:280px}
+.footer-col-title{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:20px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{font-size:14px;color:var(--muted-blue);transition:color .2s}
+.footer-col ul a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:32px;border-top:1px solid var(--card-border)}
+.footer-bottom p,.footer-bottom a{font-size:13px;color:var(--muted-blue)}
+.footer-bottom a:hover{color:var(--white)}
+.social-link{width:36px;height:36px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);font-size:14px;transition:color .2s,border-color .2s,background .2s}
+.social-link:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+[data-theme="light"] #footer{background:var(--white);border-color:var(--light-border)}
+
+/* WHAT YOU GET */
+.wg-block{margin-top:28px;background:rgba(229,168,32,.06);border:1px solid rgba(229,168,32,.2);border-radius:var(--r-lg);padding:20px 24px}
+.wg-block-label{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.wg-block-label::before{content:'';display:block;width:16px;height:1px;background:var(--amber-gold)}
+.wg-list{display:flex;flex-direction:column;gap:9px}
+.wg-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted-blue);line-height:1.5}
+.wg-item::before{content:'✓';color:var(--amber-gold);font-weight:800;flex-shrink:0;font-family:var(--font-head);font-size:12px;margin-top:2px}
+[data-theme="light"] .wg-block{background:rgba(229,168,32,.04);border-color:rgba(229,168,32,.25)}
+[data-theme="light"] .wg-item{color:var(--muted-ink)}
+
+/* PILLAR MINI FAQ */
+.pillar-faq{margin-top:16px;border-top:1px solid var(--card-border);padding-top:4px}
+.pillar-faq-label{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-blue);padding:16px 0 4px}
+.pfaq-item{border-bottom:1px solid rgba(30,48,85,.5)}
+.pfaq-q{font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--white);padding:16px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s;line-height:1.4}
+.pfaq-q:hover{color:var(--amber-gold)}
+.pfaq-icon{font-size:18px;color:var(--muted-blue);transition:transform .3s,color .3s;flex-shrink:0;line-height:1;font-weight:300}
+.pfaq-item.open .pfaq-icon{transform:rotate(45deg);color:var(--amber-gold)}
+.pfaq-a{font-size:13px;color:var(--muted-blue);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.16,1,.3,1),padding .35s}
+.pfaq-item.open .pfaq-a{max-height:200px;padding-bottom:18px}
+[data-theme="light"] .pfaq-q{color:var(--deep-space)}
+[data-theme="light"] .pfaq-a{color:var(--muted-ink)}
+[data-theme="light"] .pfaq-icon{color:var(--muted-ink)}
+[data-theme="light"] .footer-col-title{color:var(--deep-space)}
+[data-theme="light"] .footer-col ul a{color:var(--muted-ink)}
+[data-theme="light"] .footer-col ul a:hover{color:var(--deep-space)}
+[data-theme="light"] .footer-bottom{border-color:var(--light-border)}
+[data-theme="light"] .footer-bottom p,[data-theme="light"] .footer-bottom a{color:var(--muted-ink)}
+[data-theme="light"] .social-link{border-color:var(--light-border);color:var(--muted-ink)}
+
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:white}
+.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%) translateX(8px);background:var(--card-dark);border:1px solid var(--card-border);color:var(--white);border-radius:var(--r-md);padding:8px 14px;font-family:var(--font-head);font-size:13px;font-weight:600;white-space:nowrap;pointer-events:none;opacity:0;transition:all .2s}
+.wa-float:hover .wa-tooltip{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* COOKIE CONSENT */
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;z-index:1100;background:rgba(13,24,38,.97);border-top:1px solid #1E3055;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);padding:20px 0;}
+#cookieBanner.visible{transform:none}
+.cookie-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
+.cookie-text{flex:1;min-width:260px}
+.cookie-text p{font-size:14px;color:#B8CBE8;line-height:1.6}
+.cookie-text strong{color:#fff}
+.cookie-text a{color:#E5A820;text-decoration:underline;text-underline-offset:3px}
+.cookie-btns{display:flex;gap:12px;flex-shrink:0}
+.cookie-accept{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;padding:10px 22px;border-radius:10px;background:#E5A820;color:#08101E;transition:background .2s,transform .2s;cursor:pointer;border:none;}
+.cookie-accept:hover{background:#f0b820;transform:translateY(-1px)}
+.cookie-decline{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;padding:10px 22px;border-radius:10px;background:transparent;color:#B8CBE8;border:1px solid #1E3055;transition:border-color .2s,color .2s;cursor:pointer;}
+.cookie-decline:hover{border-color:#B8CBE8;color:#fff}
+@media(max-width:600px){.cookie-inner{padding:0 20px;gap:16px}.cookie-btns{width:100%}.cookie-accept,.cookie-decline{flex:1;text-align:center}}
+
+
+/* LIGHT THEME — UNIVERSAL READABILITY OVERRIDES */
+[data-theme="light"]{--deep-space:#08101E;--white:#FFFFFF;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--muted-blue:#3A4F7A;--muted-ink:#3A4F7A;--card-dark:#FFFFFF;--card-border:#C5D3F0}
+[data-theme="light"] body{background:#F4F7FF;color:#08101E}
+[data-theme="light"] section{background:#F4F7FF}
+[data-theme="light"] section:nth-of-type(even){background:#FFFFFF}
+[data-theme="light"] h1,[data-theme="light"] h2,[data-theme="light"] h3,[data-theme="light"] h4,[data-theme="light"] h5,[data-theme="light"] h6,[data-theme="light"] .h1,[data-theme="light"] .h2,[data-theme="light"] .h3,[data-theme="light"] .h4{color:#08101E}
+[data-theme="light"] p,[data-theme="light"] li,[data-theme="light"] td,[data-theme="light"] label,[data-theme="light"] .body-lg{color:#3A4F7A}
+[data-theme="light"] .work-card,[data-theme="light"] .case-card,[data-theme="light"] .team-card,[data-theme="light"] .deliverable,[data-theme="light"] .value-item,[data-theme="light"] .insight-card,[data-theme="light"] .svc-card,[data-theme="light"] .pillar-card,[data-theme="light"] .seo-card,[data-theme="light"] .pricing-card{background:#FFFFFF !important;border-color:#C5D3F0 !important}
+[data-theme="light"] .work-card h3,[data-theme="light"] .case-card h3,[data-theme="light"] .team-card h3,[data-theme="light"] .deliverable .h4,[data-theme="light"] .value-item h3,[data-theme="light"] .insight-card h3,[data-theme="light"] .svc-card h3,[data-theme="light"] .pillar-card h3{color:#08101E}
+[data-theme="light"] .work-card p,[data-theme="light"] .case-card p,[data-theme="light"] .team-card p,[data-theme="light"] .deliverable p,[data-theme="light"] .value-item p,[data-theme="light"] .insight-card p{color:#3A4F7A}
+[data-theme="light"] .nav-logo img{filter:brightness(.2) contrast(1.4)}
+[data-theme="light"] #footer,[data-theme="light"] footer{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .footer-brand p,[data-theme="light"] .footer-col ul a,[data-theme="light"] .footer-bottom p{color:#3A4F7A}
+[data-theme="light"] .footer-col-title{color:#08101E}
+[data-theme="light"] .footer-bottom{border-color:#C5D3F0}
+[data-theme="light"] .social-link{border-color:#C5D3F0;color:#3A4F7A}
+[data-theme="light"] .social-link:hover{color:#08101E;border-color:#3A4F7A;background:#F4F7FF}
+[data-theme="light"] 
+
+
+[data-theme="light"] 
+[data-theme="light"] .tool-chip,[data-theme="light"] .s-nav-pill{background:#FFFFFF;color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .eyebrow{color:#E5A820}
+[data-theme="light"] input,[data-theme="light"] textarea,[data-theme="light"] select{background:#FFFFFF;color:#08101E;border-color:#C5D3F0}
+[data-theme="light"] input::placeholder,[data-theme="light"] textarea::placeholder{color:#8FA0BF}
+[data-theme="light"] .lang-menu,[data-theme="light"] .lang-dropdown{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .lang-menu button,[data-theme="light"] .lang-option{color:#3A4F7A}
+[data-theme="light"] .lang-menu button:hover,[data-theme="light"] .lang-option:hover{background:#F4F7FF;color:#08101E}
+[data-theme="light"] .pillar-num{color:#C5D3F0}
+[data-theme="light"] .wg-block{background:rgba(229,168,32,.05);border-color:rgba(229,168,32,.25)}
+[data-theme="light"] .wg-item{color:#3A4F7A}
+[data-theme="light"] .pfaq-q{color:#08101E}
+[data-theme="light"] .pfaq-a,[data-theme="light"] .pfaq-icon{color:#3A4F7A}
+[data-theme="light"] .seo-name{color:#08101E}
+[data-theme="light"] .seo-desc,[data-theme="light"] .seo-bullet{color:#3A4F7A}
+[data-theme="light"] #cookieBanner{background:rgba(255,255,255,.97);border-color:#C5D3F0}
+[data-theme="light"] .cookie-text p{color:#3A4F7A}
+[data-theme="light"] .cookie-text strong{color:#08101E}
+[data-theme="light"] .cookie-decline{color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .cookie-decline:hover{color:#08101E;border-color:#3A4F7A}
+
+@media(max-width:900px){.nav-right 
+
+
+.nav-logo{flex-shrink:0}.nav-logo img{height:52px;width:auto}}
+
+/* Nav CTA: same line as menu, at far right edge, Option 5 styling */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px;right:20px;z-index:1100;font-weight:800!important;font-size:13px!important;padding:10px 18px!important;letter-spacing:.02em;background:transparent!important;color:var(--amber-gold,#E5A820)!important;border:2px solid var(--amber-gold,#E5A820)!important;border-radius:8px!important;overflow:hidden;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(229,168,32,.18);transition:color .4s}
+/* Reserve right space in non-scrolled nav so menu items dont fall under CTA */
+#navbar:not(.scrolled) .nav-inner{padding-right:170px!important}
+.nav-right .btn-gold::before,.nav-actions .nav-cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold,#E5A820);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{color:#08101E!important}
+.nav-right .btn-gold:hover::before,.nav-actions .nav-cta:hover::before{left:0}
+/* Hide CTA when nav scrolled (pill state) — user requested no clutter on scroll */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important;transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
+.nav-right .btn-gold,.nav-actions .nav-cta{transition:opacity .3s ease,visibility .3s ease,transform .3s ease,color .4s ease}
+@media(max-width:1180px){
+  .nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}
+  #navbar:not(.scrolled) .nav-inner{padding-right:40px!important}
+}
+
+/* ========================================================
+   UNIFIED BUTTON SYSTEM — Option 2 (White Ghost Slide) ONLY
+   Overrides every old btn-gold/blue/ghost/ghost-dark + nav CTA
+   ======================================================== */
+.btn-gold,.btn-blue,.btn-ghost,.btn-ghost-dark,.nav-right .btn-gold,.nav-actions .nav-cta{
+  position:relative!important;display:inline-flex!important;align-items:center!important;gap:8px!important;
+  background:transparent!important;color:#fff!important;
+  font-family:var(--font-head)!important;font-size:15px!important;font-weight:700!important;letter-spacing:.02em!important;
+  padding:14px 28px!important;border-radius:8px!important;
+  border:1.5px solid rgba(255,255,255,.55)!important;
+  transition:color .35s ease,border-color .35s ease!important;
+  z-index:0;overflow:hidden!important;text-decoration:none!important;
+  box-shadow:none!important;
+}
+.btn-gold::before,.btn-blue::before,.btn-ghost::before,.btn-ghost-dark::before,.nav-right .btn-gold::before,.nav-actions .nav-cta::before{display:none!important}
+.btn-gold::after,.btn-blue::after,.btn-ghost::after,.btn-ghost-dark::after,.nav-right .btn-gold::after,.nav-actions .nav-cta::after{
+  content:''!important;position:absolute!important;inset:0!important;
+  background:#fff!important;
+  transform:scaleX(0)!important;transform-origin:left!important;
+  transition:transform .35s cubic-bezier(.4,0,.2,1)!important;
+  z-index:-1!important;
+}
+.btn-gold:hover,.btn-blue:hover,.btn-ghost:hover,.btn-ghost-dark:hover,.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{
+  color:#08101E!important;border-color:#fff!important;
+}
+.btn-gold:hover::after,.btn-blue:hover::after,.btn-ghost:hover::after,.btn-ghost-dark:hover::after,.nav-right .btn-gold:hover::after,.nav-actions .nav-cta:hover::after{
+  transform:scaleX(1)!important;
+}
+/* Keep nav CTA fixed positioning */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px!important;right:20px!important;z-index:1100!important;font-size:13px!important;font-weight:800!important;padding:10px 18px!important}
+/* Hide nav CTA when scrolled */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important}
+/* Hide nav CTA on narrow viewports */
+@media(max-width:1180px){.nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}#navbar:not(.scrolled) .nav-inner{padding-right:40px!important}}
+</style>
+<!-- DMS:OG -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digitalmindssolutions.com/services">
+<meta property="og:title" content="Services. Web, AI, Design, Marketing & Software | Digital Minds Solutions">
+<meta property="og:description" content="6 service pillars. One team. Web development, AI automation, graphic design, digital marketing, software development, SEO/AEO/GEO/CRO. No outsourcing.">
+<meta property="og:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Digital Minds Solutions">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DigitalMindsSol">
+<meta name="twitter:title" content="Services. Web, AI, Design, Marketing & Software | Digital Minds Solutions">
+<meta name="twitter:description" content="6 service pillars. One team. Web development, AI automation, graphic design, digital marketing, software development, SEO/AEO/GEO/CRO. No outsourcing.">
+<meta name="twitter:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<link rel="canonical" href="https://digitalmindssolutions.com/services">
+<!-- /DMS:OG -->
+  <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="../ASSETS/logo/logo-main.svg.png" alt="Digital Minds Solutions"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li><li><a href="services.html" class="active">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn" id="langBtn"><span id="langCurrent">EN</span><svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="lang-menu" id="langMenu"><button class="active" data-lang="en">English</button><button data-lang="es">Español</button><button data-lang="fr">Français</button><button data-lang="it">Italiano</button><button data-lang="pt">Português</button></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank" rel="noopener">Book a Free Call</a>
+      <button class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <div class="m-ctas"><a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Book a Free Discovery Call</a>
+<!-- COOKIE CONSENT -->
+<div id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <p><strong>We use cookies</strong> to improve your experience, analyse traffic, and personalise content. Click "Accept" to consent to cookies. You may decline non-essential cookies. Read our <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+    <div class="cookie-btns">
+      <button id="cookieDecline" class="cookie-decline">Decline</button>
+      <button id="cookieAccept" class="cookie-accept">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/447426427646" class="btn-ghost" target="_blank">WhatsApp Us →</a></div>
+</div>
+
+<!-- SERVICES HERO -->
+<section id="services-hero">
+  <div class="services-hero-bg"></div>
+  <div class="container">
+    <div class="services-hero-inner">
+      <div class="eyebrow gs">Everything Under One Roof</div>
+      <h1 class="h1 gs">Six pillars.<br>One team.<br><span>No outsourcing.</span></h1>
+      <p class="body-lg gs">Web development, AI automation, branding, marketing, software, and video. All in-house. All talking to each other. Lead generation, conversion rate, and industry authority built into every service.</p>
+      <div class="services-hero-btns gs">
+        <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank" rel="noopener">Book a Free Discovery Call</a>
+        <a href="work.html" class="btn-ghost">See Real Results →</a>
+      </div>
+      <div class="services-nav gs">
+        <a href="#web" class="s-nav-pill active">Web &amp; Apps</a>
+        <a href="#ai" class="s-nav-pill">AI Automation</a>
+        <a href="#design" class="s-nav-pill">Design &amp; Brand</a>
+        <a href="#marketing" class="s-nav-pill">Marketing</a>
+        <a href="#software" class="s-nav-pill">Software</a>
+        <a href="#video" class="s-nav-pill">Video &amp; Content</a>
+        <a href="#cyber" class="s-nav-pill">Cybersecurity</a>
+        <a href="#ops" class="s-nav-pill">Operations</a>
+        <a href="#seo" class="s-nav-pill">SEO / AEO / GEO / CRO</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR 1 — WEB -->
+<section class="pillar-section" id="web">
+  <div class="container">
+    <div class="pillar-grid">
+      <div class="pillar-label">
+        <div class="pillar-num">01</div>
+        <div class="eyebrow gs">Pillar One</div>
+        <h2 class="h2 gs">Web Development<br>&amp; App Solutions</h2>
+        <p class="body-lg gs">Lead-focused digital properties built to convert visitors. Not just look good. Your site starts ranking and generating leads from launch day.</p>
+        <div class="cta-row gs">
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Get a Free Proposal</a>
+          <a href="service-web.html" class="btn-ghost">Full Details →</a>
+        </div>
+        <div class="tool-chips gs">
+          <span class="tool-chip">React / Next.js</span><span class="tool-chip">HTML5 / CSS3</span>
+          <span class="tool-chip">Webflow</span><span class="tool-chip">WordPress</span>
+          <span class="tool-chip">iOS &amp; Android</span><span class="tool-chip">Core Web Vitals</span>
+        </div>
+        <div class="wg-block gs">
+          <div class="wg-block-label">What you get</div>
+          <div class="wg-list">
+            <div class="wg-item">Custom build tailored to your business goals</div>
+            <div class="wg-item">Responsive across desktop, tablet, and mobile</div>
+            <div class="wg-item">Fast load times and Core Web Vitals compliance</div>
+            <div class="wg-item">Lead-focused UI with data-informed decisions</div>
+            <div class="wg-item">Scalable foundation built for long-term growth</div>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-deliverables">
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🖥ï¸</div><div class="h4">Responsive Website Design &amp; Development</div></div>
+          <p>Full front-end builds. Pixel-precise UI. Mobile-first layouts. WCAG 2.2 AA accessibility. Performance scores above 90 on every device.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📱</div><div class="h4">App Development. iOS, Android &amp; Web</div></div>
+          <p>Native and cross-platform mobile apps built for real users. Function and UX first. App-store ready on delivery.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🎯</div><div class="h4">High-Converting Landing Pages</div><span class="speed-badge">↑ Conversion Rate</span></div>
+          <p>Single-purpose pages tied to specific offers, funnels, and paid campaigns. Built with A/B testing frameworks and heat-map-ready structure from day one.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">⚡</div><div class="h4">Speed, Core Web Vitals &amp; Technical SEO</div></div>
+          <p>Page speed optimisation, LCP/CLS fixes, structured data markup, and sitemap architecture. Every technical factor that affects how Google ranks your site.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🔬</div><div class="h4">Lead-Focused UI with Data &amp; AI Insights</div><span class="speed-badge">↑ Organic Leads</span></div>
+          <p>Designs built from behaviour analytics, heatmaps, and AI-generated user intent data. Every button placement, every headline, every CTA tested against real conversion data.</p>
+        </div>
+        <div class="pillar-faq gs">
+          <div class="pillar-faq-label">Common Questions</div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Can you improve an existing website instead of starting over?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. We can refine, rebuild, or expand what you already have. If your existing site has issues. outdated code, poor performance, weak design. we improve sections, refine the experience, or expand functionality. No unnecessary replacement. We keep what works and fix what doesn't.</div>
+          </div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Do you build with growth in mind?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. Scalable architecture means your system handles more clients, more traffic, and more complexity without falling apart. Projects are structured so they're easier to update, expand, and improve over time.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR 2 — AI -->
+<section class="pillar-section" id="ai">
+  <div class="container">
+    <div class="pillar-grid reverse">
+      <div class="pillar-label">
+        <div class="pillar-num">02</div>
+        <div class="eyebrow gs">Pillar Two</div>
+        <h2 class="h2 gs">AI Automation<br>&amp; Business Systems</h2>
+        <p class="body-lg gs">Your leads get followed up automatically. Your team stops doing repetitive manual work. Your business runs while you sleep. AI chatbot live in <strong style="color:var(--amber-gold)">5 days</strong>. Full CRM in <strong style="color:var(--amber-gold)">3 weeks</strong>.</p>
+        <div class="cta-row gs">
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Start Automating →</a>
+          <a href="service-ai.html" class="btn-ghost">Full Details →</a>
+        </div>
+        <div class="tool-chips gs">
+          <span class="tool-chip">Zapier</span><span class="tool-chip">Make</span>
+          <span class="tool-chip">ActiveCampaign</span><span class="tool-chip">HubSpot</span>
+          <span class="tool-chip">OpenAI / Claude</span><span class="tool-chip">Custom APIs</span>
+        </div>
+        <div class="wg-block gs">
+          <div class="wg-block-label">What you get</div>
+          <div class="wg-list">
+            <div class="wg-item">Clearer workflows and less manual work</div>
+            <div class="wg-item">Faster turnaround on every routine task</div>
+            <div class="wg-item">Better consistency across all your processes</div>
+            <div class="wg-item">Fewer bottlenecks slowing your team down</div>
+            <div class="wg-item">Scale without proportional hiring costs</div>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-deliverables">
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">💬</div><div class="h4">AI Chatbots for Sales &amp; Support</div><span class="speed-badge">Live in 5 Days</span></div>
+          <p>Trained on your services, pricing, and FAQs. Qualifies leads by budget, timeline, and project type 24/7. Escalates to WhatsApp when human contact is needed. Auto-logs every lead to CRM on capture.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🔄</div><div class="h4">CRM Automation: Lead Capture &amp; Follow-up</div><span class="speed-badge">3-Week CRM Setup</span></div>
+          <p>Automated sequences in ActiveCampaign or HubSpot. lead capture, email follow-up flows, lead scoring, and deal pipeline management. No manual chasing, no cold leads slipping through.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📅</div><div class="h4">Appointment Booking &amp; Scheduling Automation</div></div>
+          <p>Booking bots integrated with Cal.com or Calendly. Automated confirmations, reminders, and pre-call briefing forms. Every new booking syncs instantly to your workflow.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">⚡</div><div class="h4">Zapier, Make &amp; Custom API Automation</div><span class="speed-badge">No Outsourcing</span></div>
+          <p>Business processes mapped and rebuilt as scalable, automated systems. Manual tasks that swallow hours per day. automated in days. We build, test, and maintain every workflow in-house.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🧠</div><div class="h4">AI Prompt Engineering &amp; Content Workflows</div></div>
+          <p>AI-powered content pipelines that produce blog posts, social copy, ad variants, and email sequences without someone sitting down to write every week.</p>
+        </div>
+        <div class="pillar-faq gs">
+          <div class="pillar-faq-label">Common Questions</div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Do I need a large business to use automation?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">No. Small and growing businesses benefit most because automation saves time and removes pressure faster. A solo founder with 20 clients doesn't scale without help. Automation is that help.</div>
+          </div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Will automation make our business feel less personal?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Not when done right. Good automation handles the repetition so your team can focus on actual relationships. Response gets faster, follow-up gets consistent, communication improves. The human element gets stronger, not weaker.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR 3 — DESIGN -->
+<section class="pillar-section" id="design">
+  <div class="container">
+    <div class="pillar-grid">
+      <div class="pillar-label">
+        <div class="pillar-num">03</div>
+        <div class="eyebrow gs">Pillar Three</div>
+        <h2 class="h2 gs">Graphic Design<br>&amp; Visual Communication</h2>
+        <p class="body-lg gs">Visual identity that communicates expertise before a single word is read. Full branding, motion, UI/UX. all built in Adobe CC, all in-house.</p>
+        <div class="cta-row gs">
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Discuss Your Brand →</a>
+          <a href="service-design.html" class="btn-ghost">Full Details →</a>
+        </div>
+        <div class="tool-chips gs">
+          <span class="tool-chip">Adobe CC</span><span class="tool-chip">Photoshop</span>
+          <span class="tool-chip">Illustrator</span><span class="tool-chip">After Effects</span>
+          <span class="tool-chip">Premiere Pro</span><span class="tool-chip">Figma</span>
+        </div>
+        <div class="wg-block gs">
+          <div class="wg-block-label">What you get</div>
+          <div class="wg-list">
+            <div class="wg-item">Brand identity direction and complete visual system</div>
+            <div class="wg-item">Logo and graphic assets built for every format</div>
+            <div class="wg-item">Multi-channel consistency across digital and print</div>
+            <div class="wg-item">UI/UX design tested before development begins</div>
+            <div class="wg-item">Premium presentation that builds instant credibility</div>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-deliverables">
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🎨</div><div class="h4">Full Brand Identity &amp; Corporate Visual System</div></div>
+          <p>Logo, colour palette, typography system, brand guidelines, and rollout across every digital touchpoint. Built to work at any size, on any background, in any format.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🖼ï¸</div><div class="h4">3D Typography, Digital Art &amp; Illustrations</div></div>
+          <p>Premium poster design, digital illustrations, 3D type treatments, and visual storytelling systems that give your brand a distinctive look no template can replicate.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📐</div><div class="h4">UI/UX Design &amp; Interactive Prototyping</div></div>
+          <p>Full interface design for web and mobile. wireframes, hi-fi mockups, and interactive Figma prototypes. Every layout user-tested before development begins.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🏢</div><div class="h4">Brand Consultation, Strategy &amp; Rollout</div></div>
+          <p>Positioning, visual strategy, competitor analysis, and a multi-platform rollout plan. Your brand becomes a consistent, professional signal across every channel your clients touch.</p>
+        </div>
+        <div class="pillar-faq gs">
+          <div class="pillar-faq-label">Common Questions</div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Can you refresh an existing brand instead of starting from scratch?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. We can refine what you have and strengthen consistency, clarity, and overall presentation without complete redesign. We keep what's working and improve what isn't.</div>
+          </div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Why does design matter so much for service businesses?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Because people judge credibility quickly. Strong design says "I'm professional, I know what I'm doing, I'm worth trusting." Weak design works against you even if your actual work is excellent.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR 4 — MARKETING -->
+<section class="pillar-section" id="marketing">
+  <div class="container">
+    <div class="pillar-grid reverse">
+      <div class="pillar-label">
+        <div class="pillar-num">04</div>
+        <div class="eyebrow gs">Pillar Four</div>
+        <h2 class="h2 gs">Digital Marketing,<br>Automation &amp; Growth</h2>
+        <p class="body-lg gs">More organic traffic. Higher search rankings. 3x more qualified leads. AI-driven growth that compounds. not campaigns you restart every month.</p>
+        <div class="cta-row gs">
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Start Growing →</a>
+          <a href="service-marketing.html" class="btn-ghost">Full Details →</a>
+        </div>
+        <div class="tool-chips gs">
+          <span class="tool-chip">ActiveCampaign</span><span class="tool-chip">Google Ads</span>
+          <span class="tool-chip">Meta Ads</span><span class="tool-chip">LinkedIn</span>
+          <span class="tool-chip">TikTok Ads</span><span class="tool-chip">Google Analytics</span>
+        </div>
+        <div class="wg-block gs">
+          <div class="wg-block-label">What you get</div>
+          <div class="wg-list">
+            <div class="wg-item">Targeted growth strategy aligned with your goals</div>
+            <div class="wg-item">Better lead generation across organic and paid</div>
+            <div class="wg-item">Stronger conversion paths from traffic to clients</div>
+            <div class="wg-item">Performance-led optimization with real data</div>
+            <div class="wg-item">Marketing that compounds over time, not flat campaigns</div>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-deliverables">
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📈</div><div class="h4">AI-Powered Content Systems &amp; SEO Blog Automation</div><span class="speed-badge">↑ Organic Traffic</span></div>
+          <p>Keyword research, content briefs, AI-assisted writing, and SEO publishing pipelines that produce high-ranking content consistently. without weekly manual effort.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📧</div><div class="h4">Email Marketing &amp; Lead Nurture via ActiveCampaign</div></div>
+          <p>Welcome sequences, re-engagement flows, nurture campaigns, and broadcast emails. all automated, all tracked, and all built to reduce cost per acquisition over time.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📣</div><div class="h4">Social Media Strategy &amp; Content Planning</div></div>
+          <p>Platform-specific strategies for LinkedIn, Instagram, TikTok, and YouTube. Content calendars, engagement systems, and AI-assisted scheduling that keeps channels active without eating your week.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">💰</div><div class="h4">Paid Campaigns. Google, Meta, LinkedIn &amp; TikTok</div><span class="speed-badge">Measurable ROI</span></div>
+          <p>AI-assisted ad copy, creative production, audience targeting, and systematic A/B testing. Campaign tracking, performance analytics, and conversion reporting that prove every pound and dollar spent.</p>
+        </div>
+        <div class="pillar-faq gs">
+          <div class="pillar-faq-label">Common Questions</div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Can this help if our current marketing feels inconsistent?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. We audit what's happening, find what works, stop what doesn't, and build a focused strategy. Marketing improves. You see clearer results. Spend gets more efficient.</div>
+          </div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">How do you measure success?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Lead quality and quantity, conversion performance, cost per acquisition, revenue impact, and long-term authority building. We track what matters and adjust based on real data. not vanity metrics.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR 5 — SOFTWARE -->
+<section class="pillar-section" id="software">
+  <div class="container">
+    <div class="pillar-grid">
+      <div class="pillar-label">
+        <div class="pillar-num">05</div>
+        <div class="eyebrow gs">Pillar Five</div>
+        <h2 class="h2 gs">Software Development<br>&amp; Product Dev</h2>
+        <p class="body-lg gs">Full-stack software products from internal tools to SaaS platforms. scalable, fast, built to last. From concept to live: 0 to 1 execution.</p>
+        <div class="cta-row gs">
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Discuss Your Product →</a>
+          <a href="service-software.html" class="btn-ghost">Full Details →</a>
+        </div>
+        <div class="tool-chips gs">
+          <span class="tool-chip">React / Next.js</span><span class="tool-chip">Python</span>
+          <span class="tool-chip">Node.js</span><span class="tool-chip">PostgreSQL</span>
+          <span class="tool-chip">AWS / Cloud</span><span class="tool-chip">REST / GraphQL APIs</span>
+        </div>
+        <div class="wg-block gs">
+          <div class="wg-block-label">What you get</div>
+          <div class="wg-list">
+            <div class="wg-item">Custom software built exactly to your workflow</div>
+            <div class="wg-item">Mobile apps for iOS and Android, native or cross-platform</div>
+            <div class="wg-item">SaaS architecture from concept to paying users</div>
+            <div class="wg-item">Scalable APIs and cloud infrastructure from day one</div>
+            <div class="wg-item">Full product strategy, MVP build, and launch execution</div>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-deliverables">
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🖥ï¸</div><div class="h4">Web Apps, Admin Dashboards &amp; Internal Tools</div></div>
+          <p>Bespoke internal business tools, operations dashboards, and client portals. built exactly to your workflow, not adapted from a template that almost fits.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📱</div><div class="h4">Mobile Apps. iOS &amp; Android, Native &amp; Cross-Platform</div></div>
+          <p>Consumer apps, B2B tools, and utility apps. Native Swift/Kotlin or React Native cross-platform builds. whatever gets the best performance for your user base.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🚀</div><div class="h4">SaaS Platform Architecture &amp; Go-to-Market Launch</div></div>
+          <p>Product strategy, technical architecture, MVP build, and launch execution. We've taken products from idea to paying users. and we stay through the iteration cycles after.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🔌</div><div class="h4">API Development, Cloud Deployment &amp; Database Architecture</div></div>
+          <p>REST and GraphQL APIs, cloud infrastructure on AWS or GCP, database design, and CRM/BI dashboard builds. Scalable from day one. not rebuilt when you grow.</p>
+        </div>
+        <div class="pillar-faq gs">
+          <div class="pillar-faq-label">Common Questions</div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Do you take a product from idea all the way to launch?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. Product strategy, technical architecture, MVP build, and launch execution. all in-house. We've taken products from idea to paying users and stay through the iteration cycles after.</div>
+          </div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Can you build internal tools and dashboards?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. Bespoke operations dashboards and client portals built exactly to your workflow. not adapted from a template that almost fits. If your team needs it to work a specific way, we build it that way.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR 6 — VIDEO -->
+<section class="pillar-section" id="video">
+  <div class="container">
+    <div class="pillar-grid reverse">
+      <div class="pillar-label">
+        <div class="pillar-num">06</div>
+        <div class="eyebrow gs">Pillar Six</div>
+        <h2 class="h2 gs">Video Production,<br>Content &amp; Specialist Capabilities</h2>
+        <p class="body-lg gs">Complete creative production. video, copy, podcast, e-learning, and content strategy. Everything that powers your brand's voice across every channel.</p>
+        <div class="cta-row gs">
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Discuss Your Content →</a>
+          <a href="service-seo.html" class="btn-ghost">Full Details →</a>
+        </div>
+        <div class="tool-chips gs">
+          <span class="tool-chip">Premiere Pro</span><span class="tool-chip">After Effects</span>
+          <span class="tool-chip">DaVinci Resolve</span><span class="tool-chip">Runway ML</span>
+          <span class="tool-chip">Higgsfield</span><span class="tool-chip">CapCut</span>
+        </div>
+        <div class="wg-block gs">
+          <div class="wg-block-label">What you get</div>
+          <div class="wg-list">
+            <div class="wg-item">Promotional video strategy and professional production</div>
+            <div class="wg-item">Brand-aligned visual content that builds credibility</div>
+            <div class="wg-item">Videos ready for website, ads, social, and email</div>
+            <div class="wg-item">SEO-optimized long-form articles and case studies</div>
+            <div class="wg-item">Content calendar and publishing pipeline included</div>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-deliverables">
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🎬</div><div class="h4">Video Editing &amp; Motion Graphics</div></div>
+          <p>Premiere Pro, After Effects, and DaVinci Resolve for corporate films, product videos, explainer animations, and social short-form content. Motion graphics that make brands look like they spent more.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📝</div><div class="h4">Script Writing, Voice-Overs &amp; Podcast Editing</div></div>
+          <p>End-to-end audio production. scripting, recording direction, editing, and mastering. Podcasts launched and distributed across all major platforms.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">✍ï¸</div><div class="h4">Blog Writing, Long-Form Copy &amp; Content Strategy</div><span class="speed-badge">↑ Industry Authority</span></div>
+          <p>SEO-optimised articles, long-form guides, and case studies written to rank in search and establish your brand as the authority in your sector.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🎓</div><div class="h4">E-Learning Content &amp; Funnel Creation</div></div>
+          <p>Course content, LMS-ready modules, lead magnet funnels, and content calendar planning. Everything that turns knowledge into a system that generates leads on autopilot.</p>
+        </div>
+        <div class="pillar-faq gs">
+          <div class="pillar-faq-label">Common Questions</div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Can you help with the message as well as the visuals?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. We define what the video communicates, how to structure it for impact, and then produce it to a professional standard. The visuals support the message. not the other way around.</div>
+          </div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Where can we use the final videos?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Website, landing pages, social platforms, email campaigns, paid ads, presentations, and sales materials. Professional-quality content works across every channel you're on.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR 7 — CYBERSECURITY -->
+<section class="pillar-section" id="cyber">
+  <div class="container">
+    <div class="pillar-grid">
+      <div class="pillar-label">
+        <div class="pillar-num">07</div>
+        <div class="eyebrow gs">Pillar Seven</div>
+        <h2 class="h2 gs">Cybersecurity<br>&amp; Digital Protection</h2>
+        <p class="body-lg gs">Small businesses get targeted too. Most don't know it until it's too late. We help you strengthen your digital environment with practical measures that actually reduce risk.</p>
+        <div class="cta-row gs">
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Discuss Your Security →</a>
+          <a href="services.html" class="btn-ghost">All Services →</a>
+        </div>
+        <div class="tool-chips gs">
+          <span class="tool-chip">SSL / HTTPS</span><span class="tool-chip">2FA Systems</span>
+          <span class="tool-chip">Firewall Config</span><span class="tool-chip">Pen Testing</span>
+          <span class="tool-chip">Google Workspace Security</span><span class="tool-chip">Cloudflare</span>
+        </div>
+        <div class="wg-block gs">
+          <div class="wg-block-label">What you get</div>
+          <div class="wg-list">
+            <div class="wg-item">Security review and full vulnerability assessment</div>
+            <div class="wg-item">Protection across websites, email, devices, and cloud</div>
+            <div class="wg-item">Threat response plan so you know what to do if it happens</div>
+            <div class="wg-item">Ongoing monitoring as threats and systems change</div>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-deliverables">
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🔍</div><div class="h4">Security Review &amp; Vulnerability Assessment</div></div>
+          <p>Audit of your current digital setup. websites, email accounts, cloud tools, user access, and connected devices. We identify the gaps before someone else does.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🛡ï¸</div><div class="h4">Device &amp; Account Protection</div></div>
+          <p>Multi-factor authentication, access control policies, and zero-trust measures applied across every endpoint your business uses. Locks the doors that are most often left open.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🚨</div><div class="h4">Threat Response Planning</div></div>
+          <p>If something goes wrong, you have a clear plan. We build incident response protocols so your team knows exactly what to do. and recovers fast with minimal damage.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📡</div><div class="h4">Ongoing Security Monitoring &amp; Updates</div></div>
+          <p>Security is not a one-time setup. We provide ongoing monitoring, patch management, and regular reviews. keeping your environment protected as threats evolve.</p>
+        </div>
+        <div class="pillar-faq gs">
+          <div class="pillar-faq-label">Common Questions</div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Do small businesses really need cybersecurity?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. Small businesses are often easier targets because they have fewer defenses in place. Many are breached and don't find out for weeks. Practical security measures reduce your risk significantly without requiring a full IT department.</div>
+          </div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Is cybersecurity a one-time setup?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">No. Security needs regular updates, monitoring, and improvement as threats and your systems change. We provide ongoing support. not a one-time audit that's outdated six months later.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR 8 — BUSINESS SUPPORT -->
+<section class="pillar-section" id="ops">
+  <div class="container">
+    <div class="pillar-grid reverse">
+      <div class="pillar-label">
+        <div class="pillar-num">08</div>
+        <div class="eyebrow gs">Pillar Eight</div>
+        <h2 class="h2 gs">Business Support<br>&amp; Operations</h2>
+        <p class="body-lg gs">Good operations create stability. Stability creates room for growth. We help you build systems that work, workflows that don't waste time, and processes that actually scale.</p>
+        <div class="cta-row gs">
+          <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold" target="_blank">Improve Your Operations →</a>
+          <a href="services.html" class="btn-ghost">All Services →</a>
+        </div>
+        <div class="tool-chips gs">
+          <span class="tool-chip">Notion</span><span class="tool-chip">Asana</span>
+          <span class="tool-chip">Monday.com</span><span class="tool-chip">ClickUp</span>
+          <span class="tool-chip">Google Workspace</span><span class="tool-chip">SOP Frameworks</span>
+        </div>
+        <div class="wg-block gs">
+          <div class="wg-block-label">What you get</div>
+          <div class="wg-list">
+            <div class="wg-item">Clearer internal systems that your team actually uses</div>
+            <div class="wg-item">Fewer wasted hours on repeated manual tasks</div>
+            <div class="wg-item">Better team coordination and less confusion</div>
+            <div class="wg-item">Ability to scale without systems breaking under pressure</div>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-deliverables">
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">⚙ï¸</div><div class="h4">Workflow Improvement &amp; Bottleneck Removal</div></div>
+          <p>We review your existing processes, find what's slowing you down, and redesign for speed and clarity. No replacement unless necessary. We make what you have work better first.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📋</div><div class="h4">Process Documentation &amp; SOP Creation</div></div>
+          <p>Clear systems for recurring tasks, team responsibilities, and service delivery standards. So nothing depends on one person knowing everything. and onboarding new people takes days, not months.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">🤝</div><div class="h4">Support System Planning &amp; Team Coordination</div></div>
+          <p>Better communication structures, consistent client-facing systems, and team coordination frameworks that scale without breaking as you grow.</p>
+        </div>
+        <div class="deliverable gs">
+          <div class="deliverable-head"><div class="d-icon">📊</div><div class="h4">Scalable Operations Setup</div><span class="speed-badge">Built to Scale</span></div>
+          <p>Operations architecture built for where you're going, not just where you are. Handle more work, more clients, and more complexity. without proportional cost or hiring.</p>
+        </div>
+        <div class="pillar-faq gs">
+          <div class="pillar-faq-label">Common Questions</div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Can you improve our processes without replacing everything?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. We improve what is already working and fix the parts that are slowing you down. No unnecessary replacement. We make what you have work better before suggesting anything new.</div>
+          </div>
+          <div class="pfaq-item">
+            <div class="pfaq-q">Will this help us save time?<span class="pfaq-icon">+</span></div>
+            <div class="pfaq-a">Yes. Better systems reduce manual effort, confusion, duplicated work, and delays. This frees your team to focus on higher-value work and strategy instead of firefighting daily operations.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO / AEO / GEO / CRO STACK -->
+<section id="seo">
+  <div class="container">
+    <div class="seo-header">
+      <div class="eyebrow gs" style="justify-content:center;color:var(--amber-gold)"><span style="display:inline-block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px;margin-right:8px"></span>The 4-Layer Search Stack</div>
+      <h2 class="h2 gs">Outrank competitors.<br>Rank in AI answers.<br>Convert every visitor.</h2>
+      <p class="gs">While other agencies focus on just SEO, we run a full 4-layer system. Search, AI-Answer, Generative Engine, and Conversion Rate. all working together. This is what creates measurable ROI, not just rankings.</p>
+    </div>
+    <div class="seo-stack">
+      <div class="seo-card gs">
+        <div class="seo-abbr">SEO</div>
+        <div class="seo-name">Search Engine Optimisation</div>
+        <div class="seo-desc">Higher search rankings. More organic traffic. Outrank competitors on every term that matters to your business.</div>
+        <div class="seo-bullets">
+          <div class="seo-bullet">Technical SEO audit &amp; fixes</div>
+          <div class="seo-bullet">On-page optimisation</div>
+          <div class="seo-bullet">Keyword strategy &amp; content mapping</div>
+          <div class="seo-bullet">Local SEO &amp; Google Business</div>
+          <div class="seo-bullet">Link building &amp; authority signals</div>
+        </div>
+      </div>
+      <div class="seo-card gs">
+        <div class="seo-abbr">AEO</div>
+        <div class="seo-name">Answer Engine Optimisation</div>
+        <div class="seo-desc">Rank in featured snippets, Google's AI Overviews, and voice search answers. before a competitor even gets a click.</div>
+        <div class="seo-bullets">
+          <div class="seo-bullet">FAQ schema &amp; structured data</div>
+          <div class="seo-bullet">Featured snippet targeting</div>
+          <div class="seo-bullet">Google AI Overview optimisation</div>
+          <div class="seo-bullet">Voice search content strategy</div>
+          <div class="seo-bullet">People Also Ask domination</div>
+        </div>
+      </div>
+      <div class="seo-card gs">
+        <div class="seo-abbr">GEO</div>
+        <div class="seo-name">Generative Engine Optimisation</div>
+        <div class="seo-desc">Appear inside ChatGPT, Perplexity, Claude, Gemini, and other AI tools when users ask questions your business should answer.</div>
+        <div class="seo-bullets">
+          <div class="seo-bullet">AI citation optimisation</div>
+          <div class="seo-bullet">Perplexity &amp; ChatGPT visibility</div>
+          <div class="seo-bullet">Authority content for LLM training</div>
+          <div class="seo-bullet">Brand mention monitoring in AI</div>
+          <div class="seo-bullet">Generative search strategy</div>
+        </div>
+      </div>
+      <div class="seo-card gs">
+        <div class="seo-abbr">CRO</div>
+        <div class="seo-name">Conversion Rate Optimisation</div>
+        <div class="seo-desc">Turn more of your existing traffic into paying clients. Reduce cost per acquisition. Make every visitor count.</div>
+        <div class="seo-bullets">
+          <div class="seo-bullet">Landing page A/B testing</div>
+          <div class="seo-bullet">Heatmap &amp; session recording analysis</div>
+          <div class="seo-bullet">Funnel drop-off identification</div>
+          <div class="seo-bullet">CTA testing &amp; copy optimisation</div>
+          <div class="seo-bullet">3x more qualified leads</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES CTA -->
+<section id="services-cta">
+  <div class="container">
+    <div class="services-cta-inner">
+      <div class="eyebrow-blue gs" style="justify-content:center;display:inline-flex;gap:8px"><span style="display:inline-block;width:24px;height:2px;background:var(--klein-blue);border-radius:2px"></span>Get Started</div>
+      <h2 class="h2 gs">Not sure where to start?<br>That's what the call is for.</h2>
+      <p class="gs">Book a free 30-minute discovery call. We'll map your gaps, match the right services, and give you a specific proposal. no commitment required.</p>
+      <div class="services-cta-btns gs">
+        <a href="https://cal.com/digitalminds-fx51uj" class="btn-blue" target="_blank" rel="noopener">Book a Free Discovery Call →</a>
+        <a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20your%20services" class="btn-ghost" target="_blank" rel="noopener">WhatsApp Us Directly</a>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:var(--muted-ink);font-family:var(--font-head);font-weight:600">Response within 24hrs · No outsourcing · One team handles everything</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="../ASSETS/logo/logo-white.svg.png" alt="Digital Minds Solutions"><p>Web development, AI automation, branding, marketing, and software. One team. No handoffs. Real results.</p><div style="display:flex;gap:12px;margin-top:20px"><a href="#" class="social-link">in</a><a href="#" class="social-link">ig</a><a href="https://youtu.be/96FyvCDcxRA" class="social-link" target="_blank">▶</a><a href="#" class="social-link">𝕏</a></div></div>
+      <div class="footer-col"><div class="footer-col-title">Services</div><ul><li><a href="#web">Web Development</a></li><li><a href="#ai">AI Automation</a></li><li><a href="#design">Graphic Design</a></li><li><a href="#marketing">Digital Marketing</a></li><li><a href="#software">Software Dev</a></li><li><a href="#seo">SEO / AEO / GEO / CRO</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Company</div><ul><li><a href="about.html">About Us</a></li><li><a href="work.html">Our Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Get In Touch</div><ul><li><a href="https://cal.com/digitalminds-fx51uj" target="_blank">Book a Discovery Call</a></li><li><a href="https://wa.me/447426427646" target="_blank">WhatsApp Us</a></li><li><a href="mailto:digitalmindss01@gmail.com">digitalmindss01@gmail.com</a></li><li><a href="tel:+447426427646">+44 7426 427646</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Digital Minds Solutions. All rights reserved. US-registered company.</p><p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Digital%20Minds%20Solutions" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div class="wa-tooltip">WhatsApp us directly</div>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  const root=document.documentElement,saved=localStorage.getItem('dms-theme'),preferred=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+  root.setAttribute('data-theme',saved||preferred);
+  document.getElementById('themeToggle').addEventListener('click',()=>{const next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);localStorage.setItem('dms-theme',next);});
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+  const hb=document.getElementById('navHamburger'),mm=document.getElementById('mobileMenu');
+  hb.addEventListener('click',()=>{hb.classList.toggle('active');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('active');mm.classList.remove('open');document.body.style.overflow='';}));
+  const ls=document.getElementById('langSwitcher'),lb=document.getElementById('langBtn'),lc=document.getElementById('langCurrent'),lm=document.getElementById('langMenu');
+  lb.addEventListener('click',e=>{e.stopPropagation();ls.classList.toggle('open');});
+  document.addEventListener('click',()=>ls.classList.remove('open'));
+  lm.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{lc.textContent={en:'EN',es:'ES',fr:'FR',it:'IT',pt:'PT'}[btn.dataset.lang];lm.querySelectorAll('button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');ls.classList.remove('open');}));
+  /* Pillar mini FAQ accordion */
+  document.querySelectorAll('.pfaq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.closest('.pfaq-item');
+      const wasOpen=item.classList.contains('open');
+      item.closest('.pillar-faq').querySelectorAll('.pfaq-item').forEach(i=>i.classList.remove('open'));
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+  /* Scroll nav pills highlight */
+  const pillLinks=document.querySelectorAll('.s-nav-pill');
+  const sections=document.querySelectorAll('[id]');
+  window.addEventListener('scroll',()=>{
+    let cur='';
+    sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+    pillLinks.forEach(p=>{p.classList.toggle('active',p.getAttribute('href')==='#'+cur);});
+  },{passive:true});
+  /* GSAP */
+  gsap.registerPlugin(ScrollTrigger);
+  /* Hero items */
+  gsap.utils.toArray('#services-hero .gs').forEach((el,i)=>{gsap.fromTo(el,{opacity:0,y:30},{opacity:1,y:0,duration:.8,ease:'power2.out',delay:.1+i*.15});});
+  /* All other scroll elements */
+  gsap.utils.toArray('.gs:not(#services-hero .gs)').forEach(el=>{
+    gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:.75,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});
+  });
+})();
+
+  /* COOKIE CONSENT */
+  (function(){
+    var COOKIE_KEY='dms_cookie_consent';
+    var banner=document.getElementById('cookieBanner');
+    if(!banner)return;
+    if(!localStorage.getItem(COOKIE_KEY)){setTimeout(function(){banner.classList.add('visible')},1400);}
+    document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'accepted');banner.classList.remove('visible');});
+    document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'declined');banner.classList.remove('visible');});
+  })();
+</script>
+
+<!-- CAL.COM POPUP EMBED -->
+<script type="text/javascript">
+(function(C,A,L){
+  let p=function(a,ar){a.q.push(ar)};
+  let d=C.document;
+  C.Cal=C.Cal||function(){
+    let cal=C.Cal;let ar=arguments;
+    if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}
+    if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];
+      if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,[L,namespace,ar[2]])}
+      else p(cal,[L,ar[1]]);return}
+    p(cal,ar)
+  }
+})(window,"https://app.cal.com/embed/embed.js","init");
+Cal("init",{origin:"https://cal.com"});
+Cal("ui",{theme:"dark",styles:{branding:{brandColor:"#002FA7"}},hideEventTypeDetails:false,layout:"month_view"});
+document.querySelectorAll("a[href="https://cal.com/digitalminds-fx51uj"]").forEach(function(el){
+  if(!el.closest("footer")){
+    el.addEventListener("click",function(e){e.preventDefault();Cal("modal",{calLink:"digitalminds-fx51uj",config:{layout:"month_view"}});});
+  }
+});
+<\/script>
+<!-- DMS:LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digitalmindssolutions.com/#organization",
+      "name": "Digital Minds Solutions",
+      "url": "https://digitalmindssolutions.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalmindssolutions.com/assets/logo/logo-white.svg.png"
+      },
+      "description": "Web development, AI automation, branding, digital marketing, and software. One team. No outsourcing. Real results.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Houston",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+44-7426-427646",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "digitalmindss01@gmail.com",
+          "contactType": "sales"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/digital-minds-solutions",
+        "https://www.instagram.com/digitalminds_solution"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digitalmindssolutions.com/services#webpage",
+      "url": "https://digitalmindssolutions.com/services",
+      "name": "Services \u2014 Digital Minds Solutions",
+      "isPartOf": {
+        "@id": "https://digitalmindssolutions.com/#website"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Digital Minds Solutions Services",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Web Development & App Solutions",
+          "url": "https://digitalmindssolutions.com/service-web"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI Automation & Business Systems",
+          "url": "https://digitalmindssolutions.com/service-ai"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Graphic Design & Brand Identity",
+          "url": "https://digitalmindssolutions.com/service-design"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Digital Marketing & Growth",
+          "url": "https://digitalmindssolutions.com/service-marketing"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Software & Product Development",
+          "url": "https://digitalmindssolutions.com/service-software"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "SEO, AEO, GEO & CRO",
+          "url": "https://digitalmindssolutions.com/service-seo"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- /DMS:LD -->
+  <script src="neural-vortex.js"></script>
+  <script src="scroll-top.js"></script>
+  <script src="footer-marquee.js"></script>
+
+
+</body>
+</html>

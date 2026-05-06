@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy. Digital Minds Solution</title>
+  <meta name="description" content="Digital Minds Solution Privacy Policy. How we collect, use, and protect your personal data in compliance with CCPA, GDPR, and applicable US data protection law." />
+  <link rel="canonical" href="https://digitalminds.solutions/privacy" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --deep-space: #0A0E1A;
+      --klein-blue: #0047AB;
+      --amber-gold: #F5A623;
+      --card-dark:  #0F1624;
+      --card-border:#1E2D4D;
+      --muted-blue: #1B2A4A;
+      --muted-ink:  #6B7A99;
+      --light-bg:   #F4F6FA;
+      --light-card: #FFFFFF;
+      --light-border:#DDE3F0;
+      --bg:         var(--deep-space);
+      --surface:    var(--card-dark);
+      --border:     var(--card-border);
+      --text-primary:   #FFFFFF;
+      --text-secondary: var(--muted-ink);
+      --font-head: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --container: 1280px;
+    }
+    [data-theme="light"] { --bg: var(--light-bg); --surface: var(--light-card); --border: var(--light-border); --text-primary: #0A0E1A; --text-secondary: #4A5568; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text-primary); font-family: var(--font-body); font-size: 16px; line-height: 1.7; transition: background 0.3s, color 0.3s; }
+    a { color: var(--amber-gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Nav */
+    .nav { position: fixed; top:0; left:0; right:0; z-index:100; height:72px; display:flex; align-items:center; background:rgba(10,14,26,0.8); backdrop-filter:blur(20px); border-bottom:1px solid rgba(30,45,77,0.5); }
+    [data-theme="light"] .nav { background:rgba(244,246,250,0.9); border-bottom-color:var(--light-border); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; width:100%; max-width:var(--container); margin:0 auto; padding:0 48px; }
+    .nav-logo { font-family:var(--font-head); font-weight:800; font-size:18px; text-decoration:none; color:var(--text-primary); }
+    .nav-logo span { color:var(--klein-blue); }
+    .nav-logo em { color:var(--amber-gold); font-style:normal; }
+    .nav-back { font-family:var(--font-head); font-weight:600; font-size:13px; color:var(--text-secondary); display:flex; align-items:center; gap:6px; transition:color 0.2s; }
+    .nav-back:hover { color:var(--amber-gold); text-decoration:none; }
+    .theme-toggle { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:8px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+    .theme-icon { width:18px; height:18px; color:var(--text-primary); }
+    .icon-sun, .icon-moon { display:none; }
+    [data-theme="dark"] .icon-sun { display:block; }
+    [data-theme="light"] .icon-moon { display:block; }
+    @media (max-width:768px) { .nav-inner { padding:0 24px; } }
+
+    /* Layout */
+    .page-wrap { max-width:820px; margin:0 auto; padding:calc(72px + 80px) 48px 120px; }
+    @media (max-width:768px) { .page-wrap { padding: calc(72px + 48px) 24px 80px; } }
+
+    /* Hero */
+    .doc-hero { margin-bottom:64px; padding-bottom:48px; border-bottom:1px solid var(--border); }
+    .doc-eyebrow { font-family:monospace; font-size:11px; color:var(--amber-gold); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:16px; }
+    .doc-hero h1 { font-family:var(--font-head); font-weight:800; font-size:clamp(32px,5vw,52px); letter-spacing:-0.03em; line-height:1.1; margin-bottom:16px; }
+    .doc-meta { font-size:13px; color:var(--text-secondary); display:flex; gap:24px; flex-wrap:wrap; }
+    .doc-meta strong { color:var(--text-primary); }
+
+    /* TOC */
+    .toc { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:28px 32px; margin-bottom:56px; }
+    .toc h3 { font-family:var(--font-head); font-weight:700; font-size:14px; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-secondary); margin-bottom:16px; }
+    .toc ol { padding-left:20px; display:flex; flex-direction:column; gap:8px; }
+    .toc ol li a { font-size:14px; color:var(--amber-gold); }
+    .toc ol li a:hover { text-decoration:underline; }
+
+    /* Content */
+    .doc-content { display:flex; flex-direction:column; gap:48px; }
+    .doc-section { scroll-margin-top:100px; }
+    .doc-section h2 { font-family:var(--font-head); font-weight:800; font-size:22px; letter-spacing:-0.02em; margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+    .doc-section h3 { font-family:var(--font-head); font-weight:700; font-size:16px; margin:24px 0 10px; color:var(--text-primary); }
+    .doc-section p { font-size:15px; color:var(--text-secondary); margin-bottom:14px; }
+    .doc-section p:last-child { margin-bottom:0; }
+    .doc-section ul, .doc-section ol { padding-left:22px; display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+    .doc-section li { font-size:15px; color:var(--text-secondary); line-height:1.6; }
+    .doc-section a { color:var(--amber-gold); }
+    .highlight-box { background:rgba(245,166,35,0.08); border:1px solid rgba(245,166,35,0.25); border-radius:10px; padding:20px 24px; margin:20px 0; }
+    .highlight-box p { color:var(--text-primary) !important; font-weight:500; }
+
+    /* Footer */
+    .doc-footer { margin-top:80px; padding-top:40px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+    .doc-footer p { font-size:13px; color:var(--text-secondary); }
+    .doc-footer a { color:var(--amber-gold); font-weight:600; }
+  
+@media(max-width:900px){.nav-right .btn-gold{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--amber-gold);font-family:var(--font-head);font-size:15px;font-weight:700;padding:14px 28px;border-radius:var(--r-md,8px);border:2px solid var(--amber-gold);white-space:nowrap;transition:color .4s;z-index:0;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-gold:hover{color:var(--deep-space,#08101E)}
+.btn-gold:hover::before{left:0}.nav-logo{flex-shrink:0}.nav-logo img{height:52px;width:auto}}
+
+/* Nav CTA: same line as menu, at far right edge, Option 5 styling */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px;right:20px;z-index:1100;font-weight:800!important;font-size:13px!important;padding:10px 18px!important;letter-spacing:.02em;background:transparent!important;color:var(--amber-gold,#E5A820)!important;border:2px solid var(--amber-gold,#E5A820)!important;border-radius:8px!important;overflow:hidden;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(229,168,32,.18);transition:color .4s}
+/* Reserve right space in non-scrolled nav so menu items dont fall under CTA */
+#navbar:not(.scrolled) .nav-inner{padding-right:170px!important}
+.nav-right .btn-gold::before,.nav-actions .nav-cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold,#E5A820);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{color:#08101E!important}
+.nav-right .btn-gold:hover::before,.nav-actions .nav-cta:hover::before{left:0}
+/* Hide CTA when nav scrolled (pill state) — user requested no clutter on scroll */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important;transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
+.nav-right .btn-gold,.nav-actions .nav-cta{transition:opacity .3s ease,visibility .3s ease,transform .3s ease,color .4s ease}
+@media(max-width:1180px){
+  .nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}
+  #navbar:not(.scrolled) .nav-inner{padding-right:40px!important}
+}
+
+/* ========================================================
+   UNIFIED BUTTON SYSTEM — Option 2 (White Ghost Slide) ONLY
+   Overrides every old btn-gold/blue/ghost/ghost-dark + nav CTA
+   ======================================================== */
+.btn-gold,.btn-blue,.btn-ghost,.btn-ghost-dark,.nav-right .btn-gold,.nav-actions .nav-cta{
+  position:relative!important;display:inline-flex!important;align-items:center!important;gap:8px!important;
+  background:transparent!important;color:#fff!important;
+  font-family:var(--font-head)!important;font-size:15px!important;font-weight:700!important;letter-spacing:.02em!important;
+  padding:14px 28px!important;border-radius:8px!important;
+  border:1.5px solid rgba(255,255,255,.55)!important;
+  transition:color .35s ease,border-color .35s ease!important;
+  z-index:0;overflow:hidden!important;text-decoration:none!important;
+  box-shadow:none!important;
+}
+.btn-gold::before,.btn-blue::before,.btn-ghost::before,.btn-ghost-dark::before,.nav-right .btn-gold::before,.nav-actions .nav-cta::before{display:none!important}
+.btn-gold::after,.btn-blue::after,.btn-ghost::after,.btn-ghost-dark::after,.nav-right .btn-gold::after,.nav-actions .nav-cta::after{
+  content:''!important;position:absolute!important;inset:0!important;
+  background:#fff!important;
+  transform:scaleX(0)!important;transform-origin:left!important;
+  transition:transform .35s cubic-bezier(.4,0,.2,1)!important;
+  z-index:-1!important;
+}
+.btn-gold:hover,.btn-blue:hover,.btn-ghost:hover,.btn-ghost-dark:hover,.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{
+  color:#08101E!important;border-color:#fff!important;
+}
+.btn-gold:hover::after,.btn-blue:hover::after,.btn-ghost:hover::after,.btn-ghost-dark:hover::after,.nav-right .btn-gold:hover::after,.nav-actions .nav-cta:hover::after{
+  transform:scaleX(1)!important;
+}
+/* Keep nav CTA fixed positioning */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px!important;right:20px!important;z-index:1100!important;font-size:13px!important;font-weight:800!important;padding:10px 18px!important}
+/* Hide nav CTA when scrolled */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important}
+/* Hide nav CTA on narrow viewports */
+@media(max-width:1180px){.nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}#navbar:not(.scrolled) .nav-inner{padding-right:40px!important}}
+</style>
+<!-- DMS:OG -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digitalmindssolutions.com/privacy">
+<meta property="og:title" content="Privacy Policy. Digital Minds Solutions">
+<meta property="og:description" content="Privacy Policy for Digital Minds Solutions. GDPR and CCPA compliant. How we collect, use, and protect your data.">
+<meta property="og:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Digital Minds Solutions">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DigitalMindsSol">
+<meta name="twitter:title" content="Privacy Policy. Digital Minds Solutions">
+<meta name="twitter:description" content="Privacy Policy for Digital Minds Solutions. GDPR and CCPA compliant. How we collect, use, and protect your data.">
+<meta name="twitter:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<link rel="canonical" href="https://digitalmindssolutions.com/privacy">
+<!-- /DMS:OG -->
+  <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Digital<span>Minds</span><em>.</em></a>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a href="index.html" class="nav-back">← Back to site</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+
+    <div class="doc-hero">
+      <div class="doc-eyebrow">Legal document</div>
+      <h1>Privacy Policy</h1>
+      <div class="doc-meta">
+        <span><strong>Effective date:</strong> May 1, 2026</span>
+        <span><strong>Last updated:</strong> May 1, 2026</span>
+        <span><strong>Jurisdiction:</strong> Texas, USA</span>
+      </div>
+    </div>
+
+    <div class="toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#who-we-are">Who We Are</a></li>
+        <li><a href="#what-we-collect">Information We Collect</a></li>
+        <li><a href="#how-we-use">How We Use Your Information</a></li>
+        <li><a href="#sharing">Sharing Your Information</a></li>
+        <li><a href="#cookies">Cookies and Tracking</a></li>
+        <li><a href="#data-retention">Data Retention</a></li>
+        <li><a href="#your-rights">Your Privacy Rights</a></li>
+        <li><a href="#ccpa">California Privacy Rights (CCPA)</a></li>
+        <li><a href="#gdpr">EU / UK Data Subjects (GDPR)</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <div class="doc-content">
+
+      <div class="doc-section" id="who-we-are">
+        <h2>1. Who We Are</h2>
+        <p>Digital Minds Solution LLC ("DMS", "we", "us", or "our") is a digital marketing and web development agency headquartered in Houston, Texas, United States. We operate the website at <a href="https://digitalminds.solutions">digitalminds.solutions</a> and all subdomains thereof (the "Site").</p>
+        <p>For questions about this Privacy Policy or our data practices, please contact us at: <a href="mailto:GridpointDigitalSolution@gmail.com">GridpointDigitalSolution@gmail.com</a></p>
+      </div>
+
+      <div class="doc-section" id="what-we-collect">
+        <h2>2. Information We Collect</h2>
+        <h3>2.1 Information You Provide Directly</h3>
+        <p>We collect information you provide when you interact with us, including:</p>
+        <ul>
+          <li><strong>Contact form submissions:</strong> name, email address, company name, phone number, service interests, budget range, and message content.</li>
+          <li><strong>Newsletter sign-ups:</strong> name and email address.</li>
+          <li><strong>Booking requests:</strong> information collected when you book a strategy call via Cal.com, including your name, email, and any information you share in the booking form.</li>
+          <li><strong>Client communications:</strong> information exchanged during email, WhatsApp, or call communications.</li>
+        </ul>
+        <h3>2.2 Information Collected Automatically</h3>
+        <p>When you visit our Site, we automatically collect:</p>
+        <ul>
+          <li><strong>Log data:</strong> IP address, browser type and version, operating system, referring URLs, pages visited, and timestamps.</li>
+          <li><strong>Device information:</strong> device type, screen resolution, and general location (city/country level) derived from your IP address.</li>
+          <li><strong>Usage data:</strong> pages viewed, time spent on pages, links clicked, and navigation paths.</li>
+          <li><strong>Cookies and similar technologies:</strong> as described in Section 5 below.</li>
+        </ul>
+        <h3>2.3 Information from Third Parties</h3>
+        <p>We may receive information about you from third-party sources such as Google Analytics, Google Ads, Meta Business Suite, and LinkedIn Insight Tag when you interact with our advertisements or are referred to our Site from their platforms.</p>
+      </div>
+
+      <div class="doc-section" id="how-we-use">
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the information we collect for the following purposes:</p>
+        <ul>
+          <li><strong>To respond to enquiries:</strong> Processing and responding to contact form submissions and booking requests.</li>
+          <li><strong>To provide our services:</strong> Delivering digital marketing, web design, and related services to clients.</li>
+          <li><strong>To send marketing communications:</strong> Sending our weekly insights newsletter to subscribers who opt in. You can unsubscribe at any time using the link in any email we send.</li>
+          <li><strong>To analyse and improve our Site:</strong> Understanding how visitors use our Site so we can improve its content, performance, and user experience.</li>
+          <li><strong>To run advertising campaigns:</strong> Serving and measuring the performance of digital advertising on Google, Meta, and LinkedIn platforms.</li>
+          <li><strong>To comply with legal obligations:</strong> Meeting our obligations under applicable law, including retaining business records.</li>
+          <li><strong>To protect our rights:</strong> Detecting, preventing, and addressing fraud, security breaches, and other potentially prohibited or illegal activities.</li>
+        </ul>
+        <div class="highlight-box">
+          <p>We do not sell, rent, or trade your personal information to third parties for their own marketing purposes. Ever.</p>
+        </div>
+      </div>
+
+      <div class="doc-section" id="sharing">
+        <h2>4. Sharing Your Information</h2>
+        <p>We share your personal information only in the following circumstances:</p>
+        <h3>4.1 Service Providers</h3>
+        <p>We share information with trusted third-party service providers who assist us in operating our business. These providers are contractually obligated to protect your data and may not use it for their own purposes:</p>
+        <ul>
+          <li><strong>Google LLC</strong>. Analytics, advertising (Google Ads), and workspace tools (Gmail, Docs). Privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+          <li><strong>Meta Platforms, Inc.</strong>. Advertising services (Facebook, Instagram). Privacy policy: <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">facebook.com/privacy/policy</a></li>
+          <li><strong>Cal.com</strong>. Appointment scheduling. Privacy policy: <a href="https://cal.com/privacy" target="_blank" rel="noopener">cal.com/privacy</a></li>
+          <li><strong>WhatsApp LLC (Meta)</strong>. Business communication. Privacy policy: <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">whatsapp.com/legal/privacy-policy</a></li>
+        </ul>
+        <h3>4.2 Legal Requirements</h3>
+        <p>We may disclose your information if required to do so by law or in the good-faith belief that such action is necessary to comply with a legal obligation, protect and defend our rights or property, prevent or investigate possible wrongdoing in connection with our services, protect the personal safety of users of our services, or protect against legal liability.</p>
+        <h3>4.3 Business Transfers</h3>
+        <p>If Digital Minds Solution LLC is involved in a merger, acquisition, or asset sale, your personal information may be transferred. We will provide notice before your personal information is transferred and becomes subject to a different privacy policy.</p>
+      </div>
+
+      <div class="doc-section" id="cookies">
+        <h2>5. Cookies and Tracking Technologies</h2>
+        <p>We use cookies and similar tracking technologies to analyse Site usage and serve relevant advertising. The types of cookies we use are:</p>
+        <ul>
+          <li><strong>Strictly necessary cookies:</strong> Required for the Site to function. These cannot be opted out of.</li>
+          <li><strong>Analytics cookies:</strong> Google Analytics 4 cookies that help us understand how visitors interact with our Site. These use anonymised IP addresses and do not personally identify you.</li>
+          <li><strong>Advertising cookies:</strong> Google Ads, Meta Pixel, and LinkedIn Insight Tag cookies used to measure ad performance and serve relevant advertising to people who have visited our Site.</li>
+          <li><strong>Preference cookies:</strong> Cookies that remember your preferences such as your chosen colour theme (dark/light mode) and language setting.</li>
+        </ul>
+        <p>You can control cookies through your browser settings. Disabling cookies may affect your experience on our Site. You can also opt out of Google Analytics tracking by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+      </div>
+
+      <div class="doc-section" id="data-retention">
+        <h2>6. Data Retention</h2>
+        <p>We retain your personal information for as long as necessary to fulfil the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+        <ul>
+          <li><strong>Enquiry and contact data:</strong> Retained for up to 3 years after your last interaction with us.</li>
+          <li><strong>Newsletter subscriber data:</strong> Retained until you unsubscribe or request deletion.</li>
+          <li><strong>Client records:</strong> Retained for 7 years after the end of the business relationship in accordance with US tax and accounting requirements.</li>
+          <li><strong>Analytics data:</strong> Google Analytics data is retained for 26 months by default.</li>
+        </ul>
+        <p>When personal information is no longer required, we securely delete or anonymise it.</p>
+      </div>
+
+      <div class="doc-section" id="your-rights">
+        <h2>7. Your Privacy Rights</h2>
+        <p>Depending on your jurisdiction, you may have the following rights regarding your personal information:</p>
+        <ul>
+          <li><strong>Right to access:</strong> Request a copy of the personal information we hold about you.</li>
+          <li><strong>Right to correction:</strong> Request that we correct inaccurate or incomplete personal information.</li>
+          <li><strong>Right to deletion:</strong> Request that we delete your personal information, subject to certain exceptions.</li>
+          <li><strong>Right to opt out of marketing:</strong> Opt out of receiving marketing communications from us at any time by using the unsubscribe link in any email or contacting us directly.</li>
+          <li><strong>Right to data portability:</strong> Request your personal information in a structured, commonly used format.</li>
+          <li><strong>Right to object:</strong> Object to our processing of your personal information in certain circumstances.</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <a href="mailto:GridpointDigitalSolution@gmail.com">GridpointDigitalSolution@gmail.com</a>. We will respond to your request within 45 days. We may ask you to verify your identity before processing your request.</p>
+      </div>
+
+      <div class="doc-section" id="ccpa">
+        <h2>8. California Privacy Rights (CCPA / CPRA)</h2>
+        <p>If you are a California resident, the California Consumer Privacy Act (CCPA) as amended by the California Privacy Rights Act (CPRA) provides you with the following additional rights:</p>
+        <h3>8.1 Categories of Personal Information Collected</h3>
+        <p>In the past 12 months, we have collected the following categories of personal information: identifiers (name, email, IP address); commercial information (services enquired about, budget ranges); internet or other electronic network activity (browsing behaviour on our Site); geolocation data (city/country level only); and inferences drawn from the above.</p>
+        <h3>8.2 No Sale of Personal Information</h3>
+        <p>Digital Minds Solution LLC does not sell personal information as defined under the CCPA. We do share certain identifiers with advertising platforms (Google, Meta, LinkedIn) for targeted advertising purposes. You may opt out of this sharing by contacting us.</p>
+        <h3>8.3 Non-Discrimination</h3>
+        <p>We will not discriminate against you for exercising your CCPA rights. We will not deny you goods or services, charge you different prices, or provide a different level of service because you exercised your privacy rights.</p>
+        <h3>8.4 How to Submit a Request</h3>
+        <p>California residents may submit a verifiable consumer request by emailing <a href="mailto:GridpointDigitalSolution@gmail.com">GridpointDigitalSolution@gmail.com</a> with the subject line "CCPA Privacy Request". We will verify your identity and respond within 45 days, with a possible 45-day extension if needed.</p>
+      </div>
+
+      <div class="doc-section" id="gdpr">
+        <h2>9. EU / UK Data Subjects (GDPR)</h2>
+        <p>If you are located in the European Economic Area (EEA) or the United Kingdom, the following additional provisions apply to you under the General Data Protection Regulation (GDPR) and UK GDPR.</p>
+        <h3>9.1 Legal Basis for Processing</h3>
+        <p>We process your personal data on the following legal bases:</p>
+        <ul>
+          <li><strong>Legitimate interests:</strong> Operating our business, responding to enquiries, and analysing Site usage.</li>
+          <li><strong>Consent:</strong> Sending marketing emails and using non-essential cookies. You may withdraw consent at any time.</li>
+          <li><strong>Contract:</strong> Processing data necessary to deliver services to clients.</li>
+          <li><strong>Legal obligation:</strong> Retaining business records as required by law.</li>
+        </ul>
+        <h3>9.2 International Data Transfers</h3>
+        <p>Digital Minds Solution LLC is based in the United States. If you are located in the EEA or UK, your personal data will be transferred to and processed in the United States. We rely on Standard Contractual Clauses (SCCs) and other appropriate safeguards where applicable for such transfers.</p>
+        <h3>9.3 Right to Lodge a Complaint</h3>
+        <p>If you are an EU or UK resident, you have the right to lodge a complaint with your local data protection supervisory authority if you believe we have processed your personal data unlawfully.</p>
+      </div>
+
+      <div class="doc-section" id="security">
+        <h2>10. Security</h2>
+        <p>We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction. These measures include encrypted data transmission (HTTPS/TLS), access controls limiting who can access personal data, regular security reviews, and use of reputable third-party service providers with strong security practices.</p>
+        <p>However, no method of transmission over the internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
+      </div>
+
+      <div class="doc-section" id="children">
+        <h2>11. Children's Privacy</h2>
+        <p>Our Site and services are not directed to children under the age of 16. We do not knowingly collect personal information from children under 16. If you become aware that a child under 16 has provided us with personal information, please contact us and we will take steps to delete such information promptly.</p>
+      </div>
+
+      <div class="doc-section" id="changes">
+        <h2>12. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will update the "Last updated" date at the top of this page. We encourage you to review this Privacy Policy periodically.</p>
+        <p>Your continued use of our Site after any changes to this Privacy Policy constitutes your acceptance of the updated policy.</p>
+      </div>
+
+      <div class="doc-section" id="contact-us">
+        <h2>13. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+        <div class="highlight-box">
+          <p><strong>Digital Minds Solution LLC</strong><br />
+          Houston, Texas, United States<br />
+          Email: <a href="mailto:GridpointDigitalSolution@gmail.com">GridpointDigitalSolution@gmail.com</a><br />
+          WhatsApp: <a href="https://wa.me/447426427646" target="_blank" rel="noopener">+44 7426 427646</a></p>
+        </div>
+        <p>We aim to respond to all privacy enquiries within 5 business days.</p>
+      </div>
+
+    </div><!-- /doc-content -->
+
+    <div class="doc-footer">
+      <p>© 2026 Digital Minds Solution LLC. All rights reserved.</p>
+      <div style="display:flex;gap:24px;">
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="index.html">Back to Site</a>
+      </div>
+    </div>
+
+  </div><!-- /page-wrap -->
+
+  <script>
+    (function () {
+      const saved = localStorage.getItem('dms-theme');
+      const sys = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', saved || sys);
+    })();
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('dms-theme', next);
+    });
+  </script>
+<!-- DMS:LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "url": "https://digitalmindssolutions.com/privacy",
+  "@type": "WebPage",
+  "name": "Privacy Policy \u2014 Digital Minds Solutions",
+  "isPartOf": {
+    "@id": "https://digitalmindssolutions.com/#website"
+  }
+}
+</script>
+<!-- /DMS:LD -->
+  <script src="neural-vortex.js"></script>
+  <script src="scroll-top.js"></script>
+  <script src="footer-marquee.js"></script>
+</body>
+</html>

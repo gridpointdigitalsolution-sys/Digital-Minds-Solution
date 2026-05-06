@@ -1,0 +1,751 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI chatbots, CRM automation, lead follow-up systems, and workflow automation built by Digital Minds Solutions. Your business runs while you sleep.">
+<title>AI Automation & Business Systems. Digital Minds Solutions</title>
+<link rel="icon" type="image/png" href="../ASSETS/logo/favicon.png (512x512px).png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--deep-space:#08101E;--klein-blue:#002FA7;--amber-gold:#E5A820;--cobalt-shade:#243B6E;--muted-blue:#B8CBE8;--muted-ink:#3A4F7A;--card-dark:#0D1826;--card-border:#1E3055;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--white:#FFFFFF;--accent:#002FA7;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'Inter',sans-serif;--r-sm:6px;--r-md:12px;--r-lg:20px;--r-xl:32px;--container:1280px;--nav-h:72px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--deep-space);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.7}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}ul{list-style:none}button{cursor:pointer;border:none;background:none;font:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 20px}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:20px}
+.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--amber-gold);border-radius:2px}
+.h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,52px);font-weight:800;line-height:1.1;letter-spacing:-.025em}
+.h3{font-family:var(--font-head);font-size:clamp(18px,1.8vw,24px);font-weight:700;line-height:1.25}
+.h4{font-family:var(--font-head);font-size:16px;font-weight:700;line-height:1.3}
+.btn-gold{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--amber-gold);font-family:var(--font-head);font-size:15px;font-weight:700;padding:14px 28px;border-radius:var(--r-md,8px);border:2px solid var(--amber-gold);white-space:nowrap;transition:color .4s;z-index:0;overflow:hidden}
+.btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-gold:hover{color:var(--deep-space,#08101E)}
+.btn-gold:hover::before{left:0}
+
+
+.btn-ghost{position:relative;display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:var(--font-head);font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--r-md,8px);border:1.5px solid rgba(255,255,255,.55);transition:color .35s,border-color .35s;z-index:0;overflow:hidden}
+.btn-ghost::after{content:'';position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1}
+.btn-ghost:hover{color:#08101E;border-color:#fff}
+.btn-ghost:hover::after{transform:scaleX(1)}
+
+
+.gs{opacity:0;transform:translateY(36px)}
+/* NAV */
+#navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+#navbar.scrolled{background:rgba(8,16,30,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--card-border)}
+.nav-inner{max-width:var(--container);margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:0 40px}
+.nav-logo img{height:52px;width:auto}
+.nav-links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.nav-links a{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--muted-blue);padding:8px 16px;border-radius:var(--r-sm);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.nav-links a.active{background:#e4ae0b;color:#1a1a1a;font-weight:700;border-radius:10px;position:relative;border:none;padding:8px 14px;box-shadow:0 4px 14px rgba(228,174,11,.35)}
+.nav-links a.active::after{display:none}
+.nav-right{display:flex;align-items:center;gap:12px}
+.theme-toggle{width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);transition:color .2s,border-color .2s,background .2s}
+.theme-toggle:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+.theme-toggle svg{width:18px;height:18px}
+.icon-sun{display:none}[data-theme="light"] .icon-moon{display:none}[data-theme="light"] .icon-sun{display:block}
+.nav-hamburger{display:none;width:38px;height:38px;border-radius:var(--r-sm);border:1px solid var(--card-border);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.nav-hamburger span{display:block;width:18px;height:2px;background:var(--muted-blue);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;top:var(--nav-h);background:var(--deep-space);padding:40px 24px;opacity:0;visibility:hidden;transform:translateX(100%);transition:all .35s cubic-bezier(.16,1,.3,1);z-index:999;overflow-y:auto}
+.mobile-menu.open{opacity:1;visibility:visible;transform:none}
+.mobile-menu .nav-links{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.mobile-menu .nav-links a{font-size:22px;padding:12px 0;width:100%}
+.mobile-menu .m-ctas{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+@media(max-width:900px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-inner{padding:0 20px}}
+/* HERO */
+#sv-hero{position:relative;min-height:80vh;display:flex;align-items:flex-end;padding-bottom:80px;padding-top:calc(var(--nav-h) + 100px);overflow:hidden}
+.sv-hero-img{position:absolute;inset:0;z-index:0}
+.sv-hero-img img{width:100%;height:100%;object-fit:cover;opacity:.22}
+.sv-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(8,16,30,.98) 0%,rgba(8,16,30,.75) 55%,rgba(0,47,167,.15) 100%)}
+.sv-hero-bottom{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to bottom,transparent,var(--deep-space));z-index:2}
+.sv-hero-content{position:relative;z-index:3;max-width:900px}
+.sv-breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:13px;font-weight:600;color:var(--muted-blue);margin-bottom:24px}
+.sv-breadcrumb a{color:var(--muted-blue);transition:color .2s}
+.sv-breadcrumb a:hover{color:var(--white)}
+.sv-breadcrumb span{color:var(--card-border)}
+.sv-num{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:12px;opacity:.7}
+.sv-hero-h1{font-family:var(--font-head);font-size:clamp(34px,5vw,72px);font-weight:800;line-height:1.06;letter-spacing:-.03em;color:var(--white);margin-bottom:28px}
+.sv-hero-h1 span{color:var(--amber-gold)}
+.sv-hero-sub{font-size:clamp(16px,1.4vw,20px);color:var(--muted-blue);max-width:640px;margin-bottom:36px;line-height:1.7}
+.sv-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.sv-tools{display:flex;gap:8px;flex-wrap:wrap}
+.sv-tool-chip{font-family:var(--font-head);font-size:12px;font-weight:600;padding:6px 14px;border-radius:99px;background:rgba(255,255,255,.05);border:1px solid var(--card-border);color:var(--muted-blue)}
+@media(max-width:768px){#sv-hero{min-height:unset;padding-top:calc(var(--nav-h) + 32px);padding-bottom:48px;align-items:flex-start}.sv-hero-h1{font-size:clamp(28px,8vw,42px)}.sv-hero-ctas{flex-direction:column;gap:10px}}
+/* DELIVERABLES */
+#sv-deliverables{padding:96px 0;background:var(--card-dark);border-top:1px solid var(--card-border)}
+.sv-del-header{text-align:center;max-width:640px;margin:0 auto 64px}
+.sv-del-header .h2{color:var(--white);margin-bottom:16px}
+.sv-del-header p{color:var(--muted-blue);font-size:17px}
+.sv-del-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--card-border);border-radius:var(--r-xl);overflow:hidden}
+.sv-del-item{background:var(--card-dark);padding:40px 36px;transition:background .2s}
+.sv-del-item:hover{background:rgba(255,255,255,.02)}
+.sv-del-icon{font-size:28px;margin-bottom:16px}
+.sv-del-title{font-family:var(--font-head);font-size:17px;font-weight:700;color:var(--white);margin-bottom:10px}
+.sv-del-desc{font-size:15px;color:var(--muted-blue);line-height:1.65}
+@media(max-width:700px){.sv-del-grid{grid-template-columns:1fr}.sv-del-item{padding:28px 24px}}
+/* PROCESS */
+#sv-process{padding:96px 0;background:var(--deep-space)}
+.sv-process-header{max-width:540px;margin-bottom:64px}
+.sv-process-header .h2{color:var(--white);margin-bottom:16px}
+.sv-process-header p{color:var(--muted-blue);font-size:17px}
+.sv-process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.sv-process-grid::before{content:'';position:absolute;top:32px;left:calc(12.5%);right:calc(12.5%);height:1px;background:linear-gradient(to right,transparent,var(--card-border) 15%,var(--card-border) 85%,transparent);z-index:0}
+.sv-step{position:relative;z-index:1;padding:0 24px;text-align:center}
+.sv-step-dot{width:64px;height:64px;border-radius:50%;background:var(--card-dark);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--amber-gold)}
+.sv-step-phase{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-gold);margin-bottom:8px}
+.sv-step-title{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px}
+.sv-step-desc{font-size:14px;color:var(--muted-blue);line-height:1.6}
+@media(max-width:768px){.sv-process-grid{grid-template-columns:1fr;gap:32px}.sv-process-grid::before{display:none}.sv-step{padding:0;text-align:left;display:grid;grid-template-columns:64px 1fr;gap:0 24px;align-items:start}.sv-step-dot{margin:0}.sv-step-phase,.sv-step-title,.sv-step-desc{grid-column:2}}
+/* RESULTS */
+#sv-results{padding:80px 0;background:var(--card-dark);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border)}
+.sv-results-header{text-align:center;max-width:540px;margin:0 auto 48px}
+.sv-results-header .h2{color:var(--white);margin-bottom:12px}
+.sv-results-header p{color:var(--muted-blue)}
+.sv-results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sv-result-card{background:var(--deep-space);border:1px solid var(--card-border);border-radius:var(--r-xl);padding:40px 32px;text-align:center;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.sv-result-card:hover{border-color:rgba(229,168,32,.4);transform:translateY(-4px)}
+.sv-result-card::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(0,47,167,.08) 0%,transparent 70%);pointer-events:none}
+.sv-result-val{font-family:var(--font-head);font-size:clamp(36px,4vw,56px);font-weight:800;color:var(--amber-gold);line-height:1;margin-bottom:10px}
+.sv-result-label{font-family:var(--font-head);font-size:13px;font-weight:600;color:var(--white);margin-bottom:6px}
+.sv-result-client{font-size:12px;color:var(--muted-blue)}
+.sv-result-link{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--amber-gold);margin-top:12px;transition:opacity .2s}
+.sv-result-link:hover{opacity:.7}
+@media(max-width:768px){.sv-results-grid{grid-template-columns:1fr}}
+/* FOR WHO */
+#sv-forwho{padding:96px 0;background:var(--deep-space)}
+.sv-forwho-header{max-width:540px;margin:0 auto 56px;text-align:center}
+.sv-forwho-header .h2{color:var(--white);margin-bottom:16px}
+.sv-forwho-header p{color:var(--muted-blue)}
+.sv-forwho-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sv-who-card{background:var(--card-dark);border:1px solid var(--card-border);border-radius:var(--r-xl);padding:40px 32px}
+.sv-who-icon{font-size:32px;margin-bottom:20px}
+.sv-who-title{font-family:var(--font-head);font-size:17px;font-weight:700;color:var(--white);margin-bottom:12px}
+.sv-who-desc{font-size:15px;color:var(--muted-blue);line-height:1.65}
+@media(max-width:768px){.sv-forwho-grid{grid-template-columns:1fr}}
+/* FAQ */
+#sv-faq{padding:96px 0;background:var(--card-dark);border-top:1px solid var(--card-border)}
+.sv-faq-header{max-width:540px;margin:0 auto 56px;text-align:center}
+.sv-faq-header .h2{color:var(--white);margin-bottom:12px}
+.sv-faq-header p{color:var(--muted-blue)}
+.sv-faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:0}
+.sv-faq-item{border-bottom:1px solid var(--card-border)}
+.sv-faq-q{font-family:var(--font-head);font-size:17px;font-weight:700;color:var(--white);padding:28px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
+.sv-faq-q:hover{color:var(--amber-gold)}
+.sv-faq-icon{width:28px;height:28px;border-radius:50%;border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;transition:transform .3s,background .2s,border-color .2s;color:var(--muted-blue)}
+.sv-faq-item.open .sv-faq-icon{transform:rotate(45deg);background:var(--amber-gold);border-color:var(--amber-gold);color:var(--deep-space)}
+.sv-faq-a{font-size:16px;color:var(--muted-blue);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.16,1,.3,1),padding .35s}
+.sv-faq-item.open .sv-faq-a{max-height:400px;padding-bottom:28px}
+/* CTA */
+#sv-cta{padding:120px 0;background:var(--deep-space);text-align:center;position:relative;overflow:hidden}
+#sv-cta::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(0,47,167,.14) 0%,transparent 70%);pointer-events:none}
+.sv-cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.sv-cta-inner .h2{color:var(--white);margin-bottom:20px}
+.sv-cta-inner p{color:var(--muted-blue);font-size:18px;margin-bottom:40px;line-height:1.7}
+.sv-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+/* SERVICE NAV */
+#sv-nav{padding:48px 0;background:var(--card-dark);border-top:1px solid var(--card-border)}
+.sv-nav-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.sv-nav-link{display:flex;flex-direction:column;gap:4px;max-width:260px}
+.sv-nav-link span{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-blue)}
+.sv-nav-link strong{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--white);transition:color .2s}
+.sv-nav-link:hover strong{color:var(--amber-gold)}
+.sv-nav-all{font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--amber-gold);border:1px solid rgba(229,168,32,.35);padding:10px 20px;border-radius:var(--r-md);transition:background .2s}
+.sv-nav-all:hover{background:rgba(229,168,32,.08)}
+/* FOOTER */
+#footer{background:var(--card-dark);border-top:1px solid var(--card-border);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand img{height:32px;margin-bottom:16px}
+.footer-brand p{font-size:14px;color:var(--muted-blue);line-height:1.65;max-width:280px}
+.footer-col-title{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:20px}
+.footer-col ul{display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{font-size:14px;color:var(--muted-blue);transition:color .2s}
+.footer-col ul a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:32px;border-top:1px solid var(--card-border)}
+.footer-bottom p,.footer-bottom a{font-size:13px;color:var(--muted-blue)}
+.footer-bottom a:hover{color:var(--white)}
+.social-link{width:36px;height:36px;border-radius:var(--r-sm);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted-blue);font-size:14px;transition:color .2s,border-color .2s,background .2s}
+.social-link:hover{color:var(--white);border-color:var(--muted-blue);background:rgba(255,255,255,.06)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}}
+/* WhatsApp */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.4);transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:white}
+.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%) translateX(8px);background:var(--card-dark);border:1px solid var(--card-border);color:var(--white);border-radius:var(--r-md);padding:8px 14px;font-family:var(--font-head);font-size:13px;font-weight:600;white-space:nowrap;pointer-events:none;opacity:0;transition:all .2s}
+.wa-float:hover .wa-tooltip{opacity:1;transform:translateY(-50%) translateX(0)}
+/* COOKIE */
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;z-index:1100;background:rgba(13,24,38,.97);border-top:1px solid #1E3055;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);padding:20px 0}
+#cookieBanner.visible{transform:none}
+.cookie-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.cookie-text{flex:1;min-width:260px}
+.cookie-text p{font-size:14px;color:#B8CBE8;line-height:1.6}
+.cookie-text strong{color:#fff}
+.cookie-text a{color:#E5A820;text-decoration:underline;text-underline-offset:3px}
+.cookie-btns{display:flex;gap:12px;flex-shrink:0}
+.cookie-accept{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;padding:10px 22px;border-radius:10px;background:#E5A820;color:#08101E;cursor:pointer;border:none;transition:background .2s}
+.cookie-accept:hover{background:#f0b820}
+.cookie-decline{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;padding:10px 22px;border-radius:10px;background:transparent;color:#B8CBE8;border:1px solid #1E3055;cursor:pointer;transition:border-color .2s,color .2s}
+.cookie-decline:hover{border-color:#B8CBE8;color:#fff}
+@media(max-width:600px){.cookie-inner{padding:0 20px;gap:16px}.cookie-btns{width:100%}.cookie-accept,.cookie-decline{flex:1;text-align:center}}
+
+/* LIGHT THEME — UNIVERSAL READABILITY OVERRIDES */
+[data-theme="light"]{--deep-space:#08101E;--white:#FFFFFF;--light-bg:#F4F7FF;--light-card:#FFFFFF;--light-border:#C5D3F0;--muted-blue:#3A4F7A;--muted-ink:#3A4F7A;--card-dark:#FFFFFF;--card-border:#C5D3F0}
+[data-theme="light"] body{background:#F4F7FF;color:#08101E}
+[data-theme="light"] section{background:#F4F7FF}
+[data-theme="light"] section:nth-of-type(even){background:#FFFFFF}
+[data-theme="light"] h1,[data-theme="light"] h2,[data-theme="light"] h3,[data-theme="light"] h4,[data-theme="light"] h5,[data-theme="light"] h6,[data-theme="light"] .h1,[data-theme="light"] .h2,[data-theme="light"] .h3,[data-theme="light"] .h4{color:#08101E}
+[data-theme="light"] p,[data-theme="light"] li,[data-theme="light"] td,[data-theme="light"] label,[data-theme="light"] .body-lg{color:#3A4F7A}
+[data-theme="light"] .work-card,[data-theme="light"] .case-card,[data-theme="light"] .team-card,[data-theme="light"] .deliverable,[data-theme="light"] .value-item,[data-theme="light"] .insight-card,[data-theme="light"] .svc-card,[data-theme="light"] .pillar-card,[data-theme="light"] .seo-card,[data-theme="light"] .pricing-card{background:#FFFFFF !important;border-color:#C5D3F0 !important}
+[data-theme="light"] .work-card h3,[data-theme="light"] .case-card h3,[data-theme="light"] .team-card h3,[data-theme="light"] .deliverable .h4,[data-theme="light"] .value-item h3,[data-theme="light"] .insight-card h3,[data-theme="light"] .svc-card h3,[data-theme="light"] .pillar-card h3{color:#08101E}
+[data-theme="light"] .work-card p,[data-theme="light"] .case-card p,[data-theme="light"] .team-card p,[data-theme="light"] .deliverable p,[data-theme="light"] .value-item p,[data-theme="light"] .insight-card p{color:#3A4F7A}
+[data-theme="light"] .nav-logo img{filter:brightness(.2) contrast(1.4)}
+[data-theme="light"] #footer,[data-theme="light"] footer{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .footer-brand p,[data-theme="light"] .footer-col ul a,[data-theme="light"] .footer-bottom p{color:#3A4F7A}
+[data-theme="light"] .footer-col-title{color:#08101E}
+[data-theme="light"] .footer-bottom{border-color:#C5D3F0}
+[data-theme="light"] .social-link{border-color:#C5D3F0;color:#3A4F7A}
+[data-theme="light"] .social-link:hover{color:#08101E;border-color:#3A4F7A;background:#F4F7FF}
+[data-theme="light"] 
+
+
+[data-theme="light"] 
+[data-theme="light"] .tool-chip,[data-theme="light"] .s-nav-pill{background:#FFFFFF;color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .eyebrow{color:#E5A820}
+[data-theme="light"] input,[data-theme="light"] textarea,[data-theme="light"] select{background:#FFFFFF;color:#08101E;border-color:#C5D3F0}
+[data-theme="light"] input::placeholder,[data-theme="light"] textarea::placeholder{color:#8FA0BF}
+[data-theme="light"] .lang-menu,[data-theme="light"] .lang-dropdown{background:#FFFFFF;border-color:#C5D3F0}
+[data-theme="light"] .lang-menu button,[data-theme="light"] .lang-option{color:#3A4F7A}
+[data-theme="light"] .lang-menu button:hover,[data-theme="light"] .lang-option:hover{background:#F4F7FF;color:#08101E}
+[data-theme="light"] .pillar-num{color:#C5D3F0}
+[data-theme="light"] .wg-block{background:rgba(229,168,32,.05);border-color:rgba(229,168,32,.25)}
+[data-theme="light"] .wg-item{color:#3A4F7A}
+[data-theme="light"] .pfaq-q{color:#08101E}
+[data-theme="light"] .pfaq-a,[data-theme="light"] .pfaq-icon{color:#3A4F7A}
+[data-theme="light"] .seo-name{color:#08101E}
+[data-theme="light"] .seo-desc,[data-theme="light"] .seo-bullet{color:#3A4F7A}
+[data-theme="light"] #cookieBanner{background:rgba(255,255,255,.97);border-color:#C5D3F0}
+[data-theme="light"] .cookie-text p{color:#3A4F7A}
+[data-theme="light"] .cookie-text strong{color:#08101E}
+[data-theme="light"] .cookie-decline{color:#3A4F7A;border-color:#C5D3F0}
+[data-theme="light"] .cookie-decline:hover{color:#08101E;border-color:#3A4F7A}
+
+@media(max-width:900px){.nav-right 
+
+
+.nav-logo{flex-shrink:0}.nav-logo img{height:52px;width:auto}}
+
+/* Nav CTA: same line as menu, at far right edge, Option 5 styling */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px;right:20px;z-index:1100;font-weight:800!important;font-size:13px!important;padding:10px 18px!important;letter-spacing:.02em;background:transparent!important;color:var(--amber-gold,#E5A820)!important;border:2px solid var(--amber-gold,#E5A820)!important;border-radius:8px!important;overflow:hidden;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(229,168,32,.18);transition:color .4s}
+/* Reserve right space in non-scrolled nav so menu items dont fall under CTA */
+#navbar:not(.scrolled) .nav-inner{padding-right:170px!important}
+.nav-right .btn-gold::before,.nav-actions .nav-cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--amber-gold,#E5A820);transition:left .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{color:#08101E!important}
+.nav-right .btn-gold:hover::before,.nav-actions .nav-cta:hover::before{left:0}
+/* Hide CTA when nav scrolled (pill state) — user requested no clutter on scroll */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important;transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
+.nav-right .btn-gold,.nav-actions .nav-cta{transition:opacity .3s ease,visibility .3s ease,transform .3s ease,color .4s ease}
+@media(max-width:1180px){
+  .nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}
+  #navbar:not(.scrolled) .nav-inner{padding-right:40px!important}
+}
+
+/* ========================================================
+   UNIFIED BUTTON SYSTEM — Option 2 (White Ghost Slide) ONLY
+   Overrides every old btn-gold/blue/ghost/ghost-dark + nav CTA
+   ======================================================== */
+.btn-gold,.btn-blue,.btn-ghost,.btn-ghost-dark,.nav-right .btn-gold,.nav-actions .nav-cta{
+  position:relative!important;display:inline-flex!important;align-items:center!important;gap:8px!important;
+  background:transparent!important;color:#fff!important;
+  font-family:var(--font-head)!important;font-size:15px!important;font-weight:700!important;letter-spacing:.02em!important;
+  padding:14px 28px!important;border-radius:8px!important;
+  border:1.5px solid rgba(255,255,255,.55)!important;
+  transition:color .35s ease,border-color .35s ease!important;
+  z-index:0;overflow:hidden!important;text-decoration:none!important;
+  box-shadow:none!important;
+}
+.btn-gold::before,.btn-blue::before,.btn-ghost::before,.btn-ghost-dark::before,.nav-right .btn-gold::before,.nav-actions .nav-cta::before{display:none!important}
+.btn-gold::after,.btn-blue::after,.btn-ghost::after,.btn-ghost-dark::after,.nav-right .btn-gold::after,.nav-actions .nav-cta::after{
+  content:''!important;position:absolute!important;inset:0!important;
+  background:#fff!important;
+  transform:scaleX(0)!important;transform-origin:left!important;
+  transition:transform .35s cubic-bezier(.4,0,.2,1)!important;
+  z-index:-1!important;
+}
+.btn-gold:hover,.btn-blue:hover,.btn-ghost:hover,.btn-ghost-dark:hover,.nav-right .btn-gold:hover,.nav-actions .nav-cta:hover{
+  color:#08101E!important;border-color:#fff!important;
+}
+.btn-gold:hover::after,.btn-blue:hover::after,.btn-ghost:hover::after,.btn-ghost-dark:hover::after,.nav-right .btn-gold:hover::after,.nav-actions .nav-cta:hover::after{
+  transform:scaleX(1)!important;
+}
+/* Keep nav CTA fixed positioning */
+.nav-right .btn-gold,.nav-actions .nav-cta{position:fixed!important;top:14px!important;right:20px!important;z-index:1100!important;font-size:13px!important;font-weight:800!important;padding:10px 18px!important}
+/* Hide nav CTA when scrolled */
+#navbar.scrolled .nav-right .btn-gold,#navbar.scrolled .nav-actions .nav-cta{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateX(30px)!important}
+/* Hide nav CTA on narrow viewports */
+@media(max-width:1180px){.nav-right .btn-gold,.nav-actions .nav-cta{display:none!important}#navbar:not(.scrolled) .nav-inner{padding-right:40px!important}}
+</style>
+<!-- DMS:OG -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digitalmindssolutions.com/service-ai">
+<meta property="og:title" content="AI Automation & Business Systems. Digital Minds Solutions">
+<meta property="og:description" content="AI chatbots live in 5 days. Full CRM automation in 3 weeks. Lead follow-up, WhatsApp flows, and workflow automation built in-house.">
+<meta property="og:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Digital Minds Solutions">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DigitalMindsSol">
+<meta name="twitter:title" content="AI Automation & Business Systems. Digital Minds Solutions">
+<meta name="twitter:description" content="AI chatbots live in 5 days. Full CRM automation in 3 weeks. Lead follow-up, WhatsApp flows, and workflow automation built in-house.">
+<meta name="twitter:image" content="https://digitalmindssolutions.com/assets/og/og-default.jpg">
+<link rel="canonical" href="https://digitalmindssolutions.com/service-ai">
+<!-- /DMS:OG -->
+  <link rel="stylesheet" href="buttons.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="../ASSETS/logo/logo-main.svg.png" alt="Digital Minds Solutions"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle"><svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold">Book a Free Call</a>
+      <button class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <div class="m-ctas"><a href="https://cal.com/digitalminds-fx51uj" class="btn-gold">Book a Free Discovery Call</a><a href="https://wa.me/447426427646" class="btn-ghost" target="_blank">WhatsApp Us</a></div>
+</div>
+
+<!-- HERO -->
+<section id="sv-hero">
+  <div class="sv-hero-img"><img src="../ASSETS/case-studies/MyMedQ/ MyMedQ (1).jpg" alt="AI Automation & Business Systems" loading="eager"></div>
+  <div class="sv-hero-overlay"></div>
+  <div class="sv-hero-bottom"></div>
+  <div class="container">
+    <div class="sv-hero-content">
+      <div class="sv-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="services.html">Services</a>
+        <span>/</span>
+        <span style="color:var(--white)">AI Automation & Business Systems</span>
+      </div>
+      <div class="sv-num gs">Pillar Two · AI Automation</div>
+      <h1 class="sv-hero-h1 gs">Your business runs<br>while you sleep.<br><span>AI makes it real.</span></h1>
+      <p class="sv-hero-sub gs">Lead follow-up automated. Repetitive work eliminated. AI chatbot live in 5 days. Full CRM automation in 3 weeks. One team builds and runs the whole system.</p>
+      <div class="sv-hero-ctas gs">
+        <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold">Get a Free Proposal →</a>
+        <a href="services.html" class="btn-ghost">All Services →</a>
+      </div>
+      <div class="sv-tools gs"><span class="sv-tool-chip">OpenAI / Claude</span><span class="sv-tool-chip">GoHighLevel</span><span class="sv-tool-chip">HubSpot</span><span class="sv-tool-chip">Zapier / Make</span><span class="sv-tool-chip">WhatsApp Business API</span><span class="sv-tool-chip">Twilio</span><span class="sv-tool-chip">n8n</span><span class="sv-tool-chip">Custom APIs</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section id="sv-deliverables">
+  <div class="container">
+    <div class="sv-del-header">
+      <div class="eyebrow gs">What's Included</div>
+      <h2 class="h2 gs">Built in-house.<br>No exceptions.</h2>
+      <p class="gs">Every deliverable below is designed and shipped by the same in-house team. First brief to final launch. No outsourcing. No surprises.</p>
+    </div>
+    <div class="sv-del-grid gs">
+      <div class="sv-del-item">
+        <div class="sv-del-icon">🤖</div>
+        <div class="sv-del-title">AI Chatbots & Conversational Agents</div>
+        <div class="sv-del-desc">Custom-built assistants trained on your business knowledge. They qualify leads, answer FAQs, and book appointments 24/7 without a human in the loop.</div>
+      </div>
+      <div class="sv-del-item">
+        <div class="sv-del-icon">📩</div>
+        <div class="sv-del-title">Lead Capture & Follow-Up Automation</div>
+        <div class="sv-del-desc">Every lead gets contacted within minutes, not hours. Automated email and WhatsApp sequences nurture prospects from first touch to booked call.</div>
+      </div>
+      <div class="sv-del-item">
+        <div class="sv-del-icon">🔄</div>
+        <div class="sv-del-title">CRM Integration & Workflow Automation</div>
+        <div class="sv-del-desc">HubSpot, GoHighLevel, Salesforce, and custom CRM builds. Your pipeline updates itself. Your team focuses on selling, not admin.</div>
+      </div>
+      <div class="sv-del-item">
+        <div class="sv-del-icon">📊</div>
+        <div class="sv-del-title">Data Pipelines & Reporting Dashboards</div>
+        <div class="sv-del-desc">Automated data collection, cleaning, and visualisation. Real-time dashboards showing revenue, leads, and campaign performance in one place.</div>
+      </div>
+      <div class="sv-del-item">
+        <div class="sv-del-icon">📧</div>
+        <div class="sv-del-title">Email Marketing Automation</div>
+        <div class="sv-del-desc">Behavioural trigger sequences. List segmentation. A/B tested subject lines. Automated re-engagement flows. Average open rates above 28%.</div>
+      </div>
+      <div class="sv-del-item">
+        <div class="sv-del-icon">🔗</div>
+        <div class="sv-del-title">App & API Integration</div>
+        <div class="sv-del-desc">Zapier, Make, and custom webhook builds connecting your CRM, calendar, payment gateway, analytics, and support desk into one connected system.</div>
+      </div>
+      <div class="sv-del-item">
+        <div class="sv-del-icon">🧠</div>
+        <div class="sv-del-title">Custom AI Model Training</div>
+        <div class="sv-del-desc">Fine-tuned language models trained on your products, policies, and tone. An AI that sounds like your brand and knows your business inside out.</div>
+      </div>
+      <div class="sv-del-item">
+        <div class="sv-del-icon">📱</div>
+        <div class="sv-del-title">WhatsApp & SMS Automation</div>
+        <div class="sv-del-desc">Automated WhatsApp Business flows for lead qualification, appointment reminders, and post-purchase sequences. Response rates 4x higher than email.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="sv-process">
+  <div class="container">
+    <div class="sv-process-header">
+      <div class="eyebrow gs">How It Works</div>
+      <h2 class="h2 gs">From brief to<br>measurable results.</h2>
+      <p class="gs">A clear process. Honest timelines. You know what's happening at every step.</p>
+    </div>
+    <div class="sv-process-grid">
+      <div class="sv-step gs">
+        <div class="sv-step-dot">01</div>
+        <div class="sv-step-phase">Day 1–3</div>
+        <div class="sv-step-title">Audit & Map</div>
+        <div class="sv-step-desc">We map your current lead flow, mark every manual touchpoint, and design the automation architecture. You see exactly what we're building before we build it.</div>
+      </div>
+      <div class="sv-step gs">
+        <div class="sv-step-dot">02</div>
+        <div class="sv-step-phase">Day 3–5</div>
+        <div class="sv-step-title">Build & Test</div>
+        <div class="sv-step-desc">Chatbot built, trained on your content, and tested with real conversations. Integration with your existing calendar, CRM, and communication tools.</div>
+      </div>
+      <div class="sv-step gs">
+        <div class="sv-step-dot">03</div>
+        <div class="sv-step-phase">Week 2–3</div>
+        <div class="sv-step-title">Full CRM & Sequences</div>
+        <div class="sv-step-desc">Email sequences, WhatsApp flows, and pipeline automation deployed. Every trigger tested against real lead behaviour before it goes live.</div>
+      </div>
+      <div class="sv-step gs">
+        <div class="sv-step-dot">04</div>
+        <div class="sv-step-phase">Week 4+</div>
+        <div class="sv-step-title">Monitor & Optimise</div>
+        <div class="sv-step-desc">We track open rates, reply rates, booking rates, and pipeline velocity. Weekly reports. Monthly optimisation sprints to lift every metric.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="sv-results">
+  <div class="container">
+    <div class="sv-results-header">
+      <div class="eyebrow gs">Proven Results</div>
+      <h2 class="h2 gs">Real clients.<br>Real numbers.</h2>
+      <p class="gs">Not estimates. Not cherry-picks. Actual outcomes from named businesses in this service category.</p>
+    </div>
+    <div class="sv-results-grid gs">
+      <div class="sv-result-card">
+        <div class="sv-result-val">+300%</div>
+        <div class="sv-result-label">Qualified Leads</div>
+        <div class="sv-result-client">My Education Online</div>
+        <a href="case-meo.html" class="sv-result-link">View Case Study →</a>
+      </div>
+      <div class="sv-result-card">
+        <div class="sv-result-val">+50%</div>
+        <div class="sv-result-label">Organic Leads</div>
+        <div class="sv-result-client">MyMedQ</div>
+        <a href="case-mymedq.html" class="sv-result-link">View Case Study →</a>
+      </div>
+      <div class="sv-result-card">
+        <div class="sv-result-val">5 days</div>
+        <div class="sv-result-label">Chatbot Live</div>
+        <div class="sv-result-client">Typical AI Automation Delivery</div>
+        <a href="service-ai.html" class="sv-result-link">View Case Study →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section id="sv-forwho">
+  <div class="container">
+    <div class="sv-forwho-header">
+      <div class="eyebrow gs">Who It's For</div>
+      <h2 class="h2 gs">Right for your business?</h2>
+      <p class="gs">We work with businesses at specific stages. Here's who gets the most from this service.</p>
+    </div>
+    <div class="sv-forwho-grid gs">
+      <div class="sv-who-card gs">
+        <div class="sv-who-icon">📞</div>
+        <div class="sv-who-title">High-volume lead businesses</div>
+        <div class="sv-who-desc">Leads come in faster than your team can chase them. Automation means every lead gets a response in under 5 minutes. Every time.</div>
+      </div>
+      <div class="sv-who-card gs">
+        <div class="sv-who-icon">🏥</div>
+        <div class="sv-who-title">Service businesses</div>
+        <div class="sv-who-desc">Healthcare, education, fitness, legal, real estate. Any service business where booking, qualification, and follow-up eat your team's time.</div>
+      </div>
+      <div class="sv-who-card gs">
+        <div class="sv-who-icon">📈</div>
+        <div class="sv-who-title">Scaling companies</div>
+        <div class="sv-who-desc">You're growing fast and your manual processes are breaking. AI systems that scale with you, without hiring three more people to run them.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="sv-faq">
+  <div class="container">
+    <div class="sv-faq-header">
+      <div class="eyebrow gs">FAQ</div>
+      <h2 class="h2 gs">Questions we always<br>get asked.</h2>
+      <p class="gs">Honest answers. No marketing fluff.</p>
+    </div>
+    <div class="sv-faq-list">
+      <div class="sv-faq-item">
+        <div class="sv-faq-q">Do I need to know how AI works?<span class="sv-faq-icon">+</span></div>
+        <div class="sv-faq-a">No. We build, train, and manage everything. You tell us how your business works. We build the system that automates it.</div>
+      </div>
+      <div class="sv-faq-item">
+        <div class="sv-faq-q">How quickly can an AI chatbot go live?<span class="sv-faq-icon">+</span></div>
+        <div class="sv-faq-a">A trained chatbot integrated with your website and WhatsApp Business goes live in 5 business days. Full CRM automation takes 3 weeks.</div>
+      </div>
+      <div class="sv-faq-item">
+        <div class="sv-faq-q">Will it sound like a robot?<span class="sv-faq-icon">+</span></div>
+        <div class="sv-faq-a">No. We train every chatbot on your brand voice, product knowledge, and real customer conversations. It handles routine questions and escalates the complex ones to your team.</div>
+      </div>
+      <div class="sv-faq-item">
+        <div class="sv-faq-q">What CRM platforms do you work with?<span class="sv-faq-icon">+</span></div>
+        <div class="sv-faq-a">HubSpot, GoHighLevel, Salesforce, Pipedrive, and custom builds. We integrate with any tool that has an API or Zapier support.</div>
+      </div>
+      <div class="sv-faq-item">
+        <div class="sv-faq-q">What if a lead needs a human?<span class="sv-faq-icon">+</span></div>
+        <div class="sv-faq-a">Every automation has a defined escalation path. When a conversation needs a human, your team is notified instantly with full context.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="sv-cta">
+  <div class="container">
+    <div class="sv-cta-inner">
+      <div class="eyebrow gs" style="justify-content:center">Start Here</div>
+      <h2 class="h2 gs">Ready to get<br>started?</h2>
+      <p class="gs">Book a free 30-minute call. No pitch deck. No commitment. A direct conversation about your situation and what we'd do about it.</p>
+      <div class="sv-cta-btns gs">
+        <a href="https://cal.com/digitalminds-fx51uj" class="btn-gold">Book a Free Discovery Call →</a>
+        <a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20discuss%20your%20services" class="btn-ghost" target="_blank">WhatsApp Us →</a>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:var(--muted-blue);font-family:var(--font-head);font-weight:600">Response within 24hrs · No commitment · Free 30-min discovery call</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE NAV -->
+<section id="sv-nav">
+  <div class="container">
+    <div class="sv-nav-inner">
+      <a href="service-web.html" class="sv-nav-link"><span>← Previous Service</span><strong>Web Development</strong></a>
+      <a href="services.html" class="sv-nav-all">All Services ↗</a>
+      <a href="service-design.html" class="sv-nav-link" style="text-align:right"><span>Next Service →</span><strong>Design & Branding</strong></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="../ASSETS/logo/logo-white.svg.png" alt="Digital Minds Solutions"><p>Web development, AI automation, branding, marketing, and software. One team. No handoffs. Real results.</p><div style="display:flex;gap:12px;margin-top:20px"><a href="#" class="social-link">in</a><a href="#" class="social-link">ig</a><a href="https://youtu.be/96FyvCDcxRA" class="social-link" target="_blank">▶</a><a href="#" class="social-link">𝕏</a></div></div>
+      <div class="footer-col"><div class="footer-col-title">Services</div><ul><li><a href="service-web.html">Web Development</a></li><li><a href="service-ai.html">AI Automation</a></li><li><a href="service-design.html">Design & Branding</a></li><li><a href="service-marketing.html">Digital Marketing</a></li><li><a href="service-software.html">Software Dev</a></li><li><a href="service-seo.html">SEO / AEO / GEO / CRO</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Company</div><ul><li><a href="about.html">About Us</a></li><li><a href="work.html">Our Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Get In Touch</div><ul><li><a href="https://cal.com/digitalminds-fx51uj" target="_blank">Book a Discovery Call</a></li><li><a href="https://wa.me/447426427646" target="_blank">WhatsApp Us</a></li><li><a href="mailto:digitalmindss01@gmail.com">digitalmindss01@gmail.com</a></li><li><a href="tel:+447426427646">+44 7426 427646</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Digital Minds Solutions. All rights reserved. US-registered company.</p><p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/447426427646?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20Digital%20Minds%20Solutions" class="wa-float" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div class="wa-tooltip">WhatsApp us directly</div>
+</a>
+
+<!-- COOKIE CONSENT -->
+<div id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <div class="cookie-inner">
+    <div class="cookie-text"><p><strong>We use cookies</strong> to improve your experience, analyse traffic, and personalise content. By clicking "Accept", you consent to our use of cookies. Read our <a href="privacy.html">Privacy Policy</a>.</p></div>
+    <div class="cookie-btns">
+      <button id="cookieDecline" class="cookie-decline">Decline</button>
+      <button id="cookieAccept" class="cookie-accept">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  const root=document.documentElement,saved=localStorage.getItem('dms-theme'),preferred=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+  root.setAttribute('data-theme',saved||preferred);
+  document.getElementById('themeToggle').addEventListener('click',()=>{const next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);localStorage.setItem('dms-theme',next);});
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>60),{passive:true});
+  const hb=document.getElementById('navHamburger'),mm=document.getElementById('mobileMenu');
+  hb.addEventListener('click',()=>{hb.classList.toggle('active');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('active');mm.classList.remove('open');document.body.style.overflow=''}));
+  /* FAQ accordion */
+  document.querySelectorAll('.sv-faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.closest('.sv-faq-item');
+      const wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.sv-faq-item').forEach(i=>i.classList.remove('open'));
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+  /* GSAP */
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('#sv-hero .gs').forEach((el,i)=>{gsap.fromTo(el,{opacity:0,y:30},{opacity:1,y:0,duration:.8,ease:'power2.out',delay:.1+i*.15});});
+  gsap.utils.toArray('.gs:not(#sv-hero .gs)').forEach(el=>{
+    gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:.75,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}});
+  });
+  /* COOKIE */
+  (function(){
+    var COOKIE_KEY='dms_cookie_consent';
+    var banner=document.getElementById('cookieBanner');
+    if(!banner)return;
+    if(!localStorage.getItem(COOKIE_KEY)){setTimeout(function(){banner.classList.add('visible')},1400);}
+    document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'accepted');banner.classList.remove('visible');});
+    document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem(COOKIE_KEY,'declined');banner.classList.remove('visible');});
+  })();
+})();
+</script>
+<!-- CAL.COM POPUP EMBED -->
+<script type="text/javascript">
+(function(C,A,L){
+  let p=function(a,ar){a.q.push(ar)};let d=C.document;
+  C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,[L,namespace,ar[2]])}else p(cal,[L,ar[1]]);return}p(cal,ar)};
+})(window,"https://app.cal.com/embed/embed.js","init");
+Cal("init",{origin:"https://cal.com"});
+Cal("ui",{theme:"dark",styles:{branding:{brandColor:"#002FA7"}},hideEventTypeDetails:false,layout:"month_view"});
+document.querySelectorAll('a[href="https://cal.com/digitalminds-fx51uj"]').forEach(function(el){
+  if(!el.closest('footer')){el.addEventListener('click',function(e){e.preventDefault();Cal('modal',{calLink:'digitalminds-fx51uj',config:{layout:'month_view'}});});}});
+<\/script>
+<!-- DMS:LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://digitalmindssolutions.com/#organization",
+      "name": "Digital Minds Solutions",
+      "url": "https://digitalmindssolutions.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digitalmindssolutions.com/assets/logo/logo-white.svg.png"
+      },
+      "description": "Web development, AI automation, branding, digital marketing, and software. One team. No outsourcing. Real results.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Houston",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+44-7426-427646",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "digitalmindss01@gmail.com",
+          "contactType": "sales"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/digital-minds-solutions",
+        "https://www.instagram.com/digitalminds_solution"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digitalmindssolutions.com/service-ai#webpage",
+      "url": "https://digitalmindssolutions.com/service-ai",
+      "name": "AI Automation & Business Systems \u2014 Digital Minds Solutions",
+      "isPartOf": {
+        "@id": "https://digitalmindssolutions.com/#website"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://digitalmindssolutions.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://digitalmindssolutions.com/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI Automation & Business Systems",
+            "item": "https://digitalmindssolutions.com/service-ai"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AI Automation & Business Systems",
+      "provider": {
+        "@id": "https://digitalmindssolutions.com/#organization"
+      },
+      "url": "https://digitalmindssolutions.com/service-ai",
+      "description": "AI chatbots live in 5 days. Full CRM automation in 3 weeks. Lead follow-up, WhatsApp flows, and workflow automation built in-house."
+    }
+  ]
+}
+</script>
+<!-- /DMS:LD -->
+  <script src="neural-vortex.js"></script>
+  <script src="scroll-top.js"></script>
+  <script src="footer-marquee.js"></script>
+
+
+</body>
+</html>
